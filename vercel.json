@@ -1,0 +1,28 @@
+{
+  "rewrites": [
+    { "source": "/about/", "destination": "/about/index.html" },
+    { "source": "/blog/", "destination": "/blog/index.html" },
+    { "source": "/faq/", "destination": "/faq/index.html" },
+    { "source": "/faq", "destination": "/faq/index.html" },
+    { "source": "/services/", "destination": "/services/index.html" },
+    { "source": "/services/تنظيف-المنازل-والفلل/", "destination": "/services/تنظيف-المنازل-والفلل/index.html" },
+    { "source": "/services/تنظيف-المجالس-والكنب/", "destination": "/services/تنظيف-المجالس-والكنب/index.html" },
+    { "source": "/services/تنظيف-وعزل-الخزانات/", "destination": "/services/تنظيف-وعزل-الخزانات/index.html" },
+    { "source": "/services/تنظيف-المكيفات-والستائر/", "destination": "/services/تنظيف-المكيفات-والستائر/index.html" },
+    { "source": "/services/تنظيف-المسابح/", "destination": "/services/تنظيف-المسابح/index.html" },
+    { "source": "/services/مكافحة-الحشرات-والقوارض/", "destination": "/services/مكافحة-الحشرات-والقوارض/index.html" },
+    { "source": "/services/تنظيف-الشركات-والمكاتب/", "destination": "/services/تنظيف-الشركات-والمكاتب/index.html" },
+    { "source": "/services/التنظيف-العميق-الشامل/", "destination": "/services/التنظيف-العميق-الشامل/index.html" },
+    { "source": "/services/التنظيف-الاخضر-الصديق-للبيئة/", "destination": "/services/التنظيف-الاخضر-الصديق-للبيئة/index.html" },
+    { "source": "/services/التنظيف-الأخضر-الصديق-للبيئة/", "destination": "/services/التنظيف-الاخضر-الصديق-للبيئة/index.html" },
+    { "source": "/services/حماية-المجالس-بتقنية-النانو/", "destination": "/services/حماية-المجالس-بتقنية-النانو/index.html" },
+    { "source": "/terms", "destination": "/terms.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/refund", "destination": "/refund.html" },
+    { "source": "/accessibility", "destination": "/accessibility.html" }
+  ],
+  "redirects": [
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/cancellation", "destination": "/refund", "permanent": true }
+  ]
+}
