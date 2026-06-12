@@ -1,4 +1,9 @@
 {
+  "redirects": [
+    { "source": "/:path*", "has": [{ "type": "host", "value": "naqaa-cleaning.com" }], "destination": "https://www.naqaa-cleaning.com/:path*", "permanent": true },
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/cancellation", "destination": "/refund", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/about/", "destination": "/about/index.html" },
     { "source": "/blog/", "destination": "/blog/index.html" },
@@ -16,13 +21,26 @@
     { "source": "/services/التنظيف-الاخضر-الصديق-للبيئة/", "destination": "/services/التنظيف-الاخضر-الصديق-للبيئة/index.html" },
     { "source": "/services/التنظيف-الأخضر-الصديق-للبيئة/", "destination": "/services/التنظيف-الاخضر-الصديق-للبيئة/index.html" },
     { "source": "/services/حماية-المجالس-بتقنية-النانو/", "destination": "/services/حماية-المجالس-بتقنية-النانو/index.html" },
+    { "source": "/شركة-تنظيف-بالرياض/", "destination": "/شركة-تنظيف-بالرياض/index.html" },
+    { "source": "/شركة-تنظيف-بالرياض/home-cleaning-company/", "destination": "/شركة-تنظيف-بالرياض/home-cleaning-company/index.html" },
+    { "source": "/شركة-تنظيف-بالرياض/تنظيف-شقق/", "destination": "/شركة-تنظيف-بالرياض/تنظيف-شقق/index.html" },
+    { "source": "/شركة-تنظيف-بالرياض/تنظيف-فلل/", "destination": "/شركة-تنظيف-بالرياض/تنظيف-فلل/index.html" },
+    { "source": "/شركة-تنظيف-بالرياض/تنظيف-قصور/", "destination": "/شركة-تنظيف-بالرياض/تنظيف-قصور/index.html" },
+    { "source": "/شركة-تنظيف-بالرياض/تنظيف-منازل/", "destination": "/شركة-تنظيف-بالرياض/تنظيف-منازل/index.html" },
+    { "source": "/شركة-تنظيف-بالرياض/شركة-تنظيف-بالرياض/", "destination": "/شركة-تنظيف-بالرياض/شركة-تنظيف-بالرياض/index.html" },
+    { "source": "/شركة-تنظيف-بالرياض/شركة-تنظيف-كنب/", "destination": "/شركة-تنظيف-بالرياض/شركة-تنظيف-كنب/index.html" },
+    { "source": "/شركة-تنظيف-بالرياض/شركة-تنظيف-مجالس/", "destination": "/شركة-تنظيف-بالرياض/شركة-تنظيف-مجالس/index.html" },
+    { "source": "/شركة-تنظيف-بالرياض/شركة-تنظيف-منازل/", "destination": "/شركة-تنظيف-بالرياض/شركة-تنظيف-منازل/index.html" },
+    { "source": "/شركة-تنظيف-بالرياض/شركة-عزل-خزانات/", "destination": "/شركة-تنظيف-بالرياض/شركة-عزل-خزانات/index.html" },
+    { "source": "/شركة-تنظيف-بالرياض/شركة-مكافحة-حشرات/", "destination": "/شركة-تنظيف-بالرياض/شركة-مكافحة-حشرات/index.html" },
+    { "source": "/شركة-تنظيف-بالرياض/عزل-خزانات-المياه-الارضية/", "destination": "/شركة-تنظيف-بالرياض/عزل-خزانات-المياه-الارضية/index.html" },
+    { "source": "/شركة-تنظيف-بالرياض/عزل-خزانات/", "destination": "/شركة-تنظيف-بالرياض/عزل-خزانات/index.html" },
+    { "source": "/شركة-تنظيف-بالرياض/غسيل-سجاد/", "destination": "/شركة-تنظيف-بالرياض/غسيل-سجاد/index.html" },
+    { "source": "/شركة-تنظيف-بالرياض/مكافحة-حشرات/", "destination": "/شركة-تنظيف-بالرياض/مكافحة-حشرات/index.html" },
+    { "source": "/شركة-تنظيف-بجدة/", "destination": "/شركة-تنظيف-بجدة/index.html" },
     { "source": "/terms", "destination": "/terms.html" },
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/refund", "destination": "/refund.html" },
     { "source": "/accessibility", "destination": "/accessibility.html" }
-  ],
-  "redirects": [
-    { "source": "/home", "destination": "/", "permanent": true },
-    { "source": "/cancellation", "destination": "/refund", "permanent": true }
   ]
 }
