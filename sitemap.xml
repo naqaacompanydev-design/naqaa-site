@@ -3,7 +3,7 @@
 
   <!-- الصفحة الرئيسية -->
   <url>
-    <loc>https://naqaa-cleaning.com/</loc>
+    <loc>https://www.naqaa-cleaning.com/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,19 +11,19 @@
 
   <!-- صفحات رئيسية -->
   <url>
-    <loc>https://naqaa-cleaning.com/blog/</loc>
+    <loc>https://www.naqaa-cleaning.com/blog/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/services/</loc>
+    <loc>https://www.naqaa-cleaning.com/services/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/faq/</loc>
+    <loc>https://www.naqaa-cleaning.com/faq/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -31,61 +31,61 @@
 
   <!-- مقالات المدونة -->
   <url>
-    <loc>https://naqaa-cleaning.com/blog/سعر-تنظيف-الفيلا-بالرياض/</loc>
+    <loc>https://www.naqaa-cleaning.com/blog/سعر-تنظيف-الفيلا-بالرياض/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/blog/مكافحة-حشرات-وقوارض-بالرياض/</loc>
+    <loc>https://www.naqaa-cleaning.com/blog/مكافحة-حشرات-وقوارض-بالرياض/</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/blog/تنظيف-كنب-ومجالس-بالرياض/</loc>
+    <loc>https://www.naqaa-cleaning.com/blog/تنظيف-كنب-ومجالس-بالرياض/</loc>
     <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/blog/تنظيف-مساجد-بالرياض/</loc>
+    <loc>https://www.naqaa-cleaning.com/blog/تنظيف-مساجد-بالرياض/</loc>
     <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/blog/تنظيف-كافيهات-بالرياض/</loc>
+    <loc>https://www.naqaa-cleaning.com/blog/تنظيف-كافيهات-بالرياض/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/blog/تنظيف-مدارس-بالرياض/</loc>
+    <loc>https://www.naqaa-cleaning.com/blog/تنظيف-مدارس-بالرياض/</loc>
     <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/blog/تنظيف-منازل-بالرياض/</loc>
+    <loc>https://www.naqaa-cleaning.com/blog/تنظيف-منازل-بالرياض/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/blog/تنظيف-منازل-بعد-التشطيب-بالرياض/</loc>
+    <loc>https://www.naqaa-cleaning.com/blog/تنظيف-منازل-بعد-التشطيب-بالرياض/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/blog/افضل-شركة-تنظيف-منازل-امنة-للاطفال/</loc>
+    <loc>https://www.naqaa-cleaning.com/blog/افضل-شركة-تنظيف-منازل-امنة-للاطفال/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/blog/عزل-خزانات-بالرياض/</loc>
+    <loc>https://www.naqaa-cleaning.com/blog/عزل-خزانات-بالرياض/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -93,61 +93,61 @@
 
   <!-- صفحات الخدمات -->
   <url>
-    <loc>https://naqaa-cleaning.com/services/تنظيف-المنازل-والفلل/</loc>
+    <loc>https://www.naqaa-cleaning.com/services/تنظيف-المنازل-والفلل/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/services/تنظيف-المجالس-والكنب/</loc>
+    <loc>https://www.naqaa-cleaning.com/services/تنظيف-المجالس-والكنب/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/services/تنظيف-وعزل-الخزانات/</loc>
+    <loc>https://www.naqaa-cleaning.com/services/تنظيف-وعزل-الخزانات/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/services/تنظيف-المكيفات-والستائر/</loc>
+    <loc>https://www.naqaa-cleaning.com/services/تنظيف-المكيفات-والستائر/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/services/تنظيف-المسابح/</loc>
+    <loc>https://www.naqaa-cleaning.com/services/تنظيف-المسابح/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/services/مكافحة-الحشرات-والقوارض/</loc>
+    <loc>https://www.naqaa-cleaning.com/services/مكافحة-الحشرات-والقوارض/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/services/تنظيف-الشركات-والمكاتب/</loc>
+    <loc>https://www.naqaa-cleaning.com/services/تنظيف-الشركات-والمكاتب/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/services/التنظيف-العميق-الشامل/</loc>
+    <loc>https://www.naqaa-cleaning.com/services/التنظيف-العميق-الشامل/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/services/التنظيف-الاخضر-الصديق-للبيئة/</loc>
+    <loc>https://www.naqaa-cleaning.com/services/التنظيف-الاخضر-الصديق-للبيئة/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/services/حماية-المجالس-بتقنية-النانو/</loc>
+    <loc>https://www.naqaa-cleaning.com/services/حماية-المجالس-بتقنية-النانو/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -155,13 +155,13 @@
 
   <!-- صفحات المدن — الرياض -->
   <url>
-    <loc>https://naqaa-cleaning.com/شركة-تنظيف-بالرياض/</loc>
+    <loc>https://www.naqaa-cleaning.com/شركة-تنظيف-بالرياض/</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/شركة-تنظيف-بالرياض/home-cleaning-company/</loc>
+    <loc>https://www.naqaa-cleaning.com/شركة-تنظيف-بالرياض/home-cleaning-company/</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -169,25 +169,25 @@
 
   <!-- الصفحات القانونية -->
   <url>
-    <loc>https://naqaa-cleaning.com/terms</loc>
+    <loc>https://www.naqaa-cleaning.com/terms</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/privacy</loc>
+    <loc>https://www.naqaa-cleaning.com/privacy</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/refund</loc>
+    <loc>https://www.naqaa-cleaning.com/refund</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/accessibility</loc>
+    <loc>https://www.naqaa-cleaning.com/accessibility</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
