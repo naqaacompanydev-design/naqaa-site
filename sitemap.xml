@@ -28,6 +28,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.naqaa-cleaning.com/about/</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- مقالات المدونة -->
   <url>
@@ -92,49 +98,55 @@
   </url>
 
   <url>
-    <loc>https://naqaa-cleaning.com/blog/cleaning-company-riyadh/</loc>
+    <loc>https://www.naqaa-cleaning.com/blog/cleaning-company-riyadh/</loc>
     <lastmod>2026-06-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/blog/house-cleaning-north-riyadh/</loc>
+    <loc>https://www.naqaa-cleaning.com/blog/house-cleaning-north-riyadh/</loc>
     <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/blog/glass-facade-cleaning-riyadh/</loc>
+    <loc>https://www.naqaa-cleaning.com/blog/world-cup-cleaning-riyadh/</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.naqaa-cleaning.com/blog/glass-facade-cleaning-riyadh/</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/blog/house-cleaning-south-riyadh/</loc>
+    <loc>https://www.naqaa-cleaning.com/blog/house-cleaning-south-riyadh/</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/blog/house-cleaning-price-riyadh/</loc>
+    <loc>https://www.naqaa-cleaning.com/blog/house-cleaning-price-riyadh/</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/blog/house-cleaning-company-riyadh-guide/</loc>
+    <loc>https://www.naqaa-cleaning.com/blog/house-cleaning-company-riyadh-guide/</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/blog/cleaning-tips-before-booking-riyadh/</loc>
+    <loc>https://www.naqaa-cleaning.com/blog/cleaning-tips-before-booking-riyadh/</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://naqaa-cleaning.com/blog/same-day-house-cleaning-riyadh/</loc>
+    <loc>https://www.naqaa-cleaning.com/blog/same-day-house-cleaning-riyadh/</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
