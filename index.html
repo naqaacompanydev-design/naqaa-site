@@ -726,10 +726,18 @@ const hash = 'home';
 
 // ===== NAVBAR SCROLL =====
 const nav = document.getElementById('navbar');
+const backTopBtn = document.getElementById('backTop');
+let navTicking = false;
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-  document.getElementById('backTop').classList.toggle('visible', window.scrollY > 400);
-});
+  if(!navTicking){
+    window.requestAnimationFrame(() => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+      backTopBtn.classList.toggle('visible', window.scrollY > 400);
+      navTicking = false;
+    });
+    navTicking = true;
+  }
+}, {passive:true});
 
 // ===== SCROLL REVEAL =====
 function initReveal() {
@@ -779,7 +787,7 @@ function submitForm() {
 })();
 
   document.body.style.overflow = '';
-history.replaceState(null, document.title, window.location.pathname);}
+history.replaceState(null, document.title, window.location.pathname);
 </script>
 
 </body>
