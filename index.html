@@ -219,19 +219,6 @@ section{padding:80px 0}
 .metric-box-large{grid-column:span 2;display:flex;align-items:center;gap:16px;padding:22px 26px;background:linear-gradient(135deg,rgba(201,168,76,.1),rgba(201,168,76,.04));border:1px solid rgba(201,168,76,.22)}
 .mbl-icon{width:60px;height:60px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0}
 
-/* ===== CLIENTS ===== */
-#clients{background:var(--navy2)}
-.clients-header{text-align:center;margin-bottom:50px}
-.clients-header .divider{margin:16px auto}
-.ticker-wrap{overflow:hidden;position:relative}
-.ticker-wrap::before,.ticker-wrap::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2}
-.ticker-wrap::before{right:0;background:linear-gradient(to left,var(--navy2),transparent)}
-.ticker-wrap::after{left:0;background:linear-gradient(to right,var(--navy2),transparent)}
-.ticker-track{display:flex;gap:16px;animation:ticker 28s linear infinite;width:max-content}
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.client-pill{display:flex;align-items:center;gap:8px;background:rgba(17,34,64,.7);border:1px solid rgba(201,168,76,.12);padding:12px 20px;border-radius:50px;white-space:nowrap;font-size:13px;font-weight:600;color:rgba(248,246,240,.75);transition:all .3s}
-.client-pill:hover{border-color:rgba(201,168,76,.35);color:var(--gold2)}
-.client-dot{width:7px;height:7px;background:var(--gold);border-radius:50%;opacity:.7}
 
 /* ===== REVIEWS ===== */
 #reviews{background:linear-gradient(180deg,var(--navy2) 0%,var(--navy) 100%)}
@@ -552,24 +539,6 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
     </div>
   </section>
   
-  <!-- CLIENTS -->
-  <section id="clients">
-    <div class="container">
-      <div class="clients-header reveal">
-        <div class="section-tag">🤝 عملاؤنا</div>
-        <h2 class="section-title">شركاء <span class="gold">النجاح</span></h2>
-        <div class="divider"></div>
-        <p class="section-sub">فخورون بثقة كبرى الشركات والمؤسسات في المملكة بنا</p>
-      </div>
-    </div>
-    <div class="ticker-wrap">
-      <div class="ticker-track">
-        <div class="client-pill"><div class="client-dot"></div>موسم الرياض</div>
-        <div class="client-pill"><div class="client-dot"></div>هوتيل جاردن بلازا</div>
-        <div class="client-pill"><div class="client-dot"></div>بريرا</div>
-      </div>
-    </div>
-  </section>
 
 
   <!-- CONTACT -->
