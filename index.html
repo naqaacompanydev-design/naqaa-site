@@ -84,7 +84,7 @@ section{padding:80px 0}
 .divider{width:50px;height:3px;background:linear-gradient(90deg,var(--gold),transparent);margin:16px 0}
 
 /* ===== BUTTONS ===== */
-.btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);padding:14px 32px;border-radius:50px;font-weight:700;font-size:15px;border:none;cursor:pointer;transition:all .3s;box-shadow:0 6px 20px rgba(201,168,76,.35);display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.btn-primary{position:relative;overflow:hidden;isolation:isolate;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);padding:14px 32px;border-radius:50px;font-weight:700;font-size:15px;border:none;cursor:pointer;transition:all .3s;box-shadow:0 6px 20px rgba(201,168,76,.35);display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,168,76,.5)}
 .btn-outline{background:transparent;color:var(--white);padding:14px 32px;border-radius:50px;font-weight:600;font-size:15px;border:1.5px solid rgba(248,246,240,.25);cursor:pointer;transition:all .3s;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
 .btn-outline:hover{border-color:var(--gold);color:var(--gold2)}
@@ -154,16 +154,53 @@ section{padding:80px 0}
 
 /* ===== HERO ===== */
 .hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;will-change:transform}
+.hero-bg{position:absolute;inset:0;will-change:transform;animation:heroZoomIn 2.2s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes heroZoomIn{from{transform:scale(1.025)}to{transform:scale(1)}}
 .hero-bg-img{position:absolute;inset:-10%;width:120%;height:120%;background-image:url('hero-bg.jpg');background-size:cover;background-position:center center;will-change:transform;transition:transform .1s linear}
 .hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(to left,rgba(6,14,30,.45) 0%,rgba(6,14,30,.78) 45%,rgba(6,14,30,.92) 100%)}
+
+/* ===== PREMIUM AMBIENT BACKGROUND ===== */
+.hero-ambient{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.bokeh{position:absolute;border-radius:50%;filter:blur(46px);background:radial-gradient(circle,rgba(201,168,76,.45),transparent 70%);animation:bokehDrift ease-in-out infinite alternate}
+.bokeh-1{width:280px;height:280px;top:-60px;right:6%;opacity:.30;animation-duration:26s}
+.bokeh-2{width:200px;height:200px;bottom:2%;left:4%;opacity:.24;background:radial-gradient(circle,rgba(228,191,106,.4),transparent 70%);animation-duration:21s;animation-delay:-6s}
+.bokeh-3{width:340px;height:340px;top:26%;right:32%;opacity:.14;animation-duration:32s;animation-delay:-14s}
+@keyframes bokehDrift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-3%,4%) scale(1.06)}100%{transform:translate(3%,-3%) scale(.97)}}
+.sparkle{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;box-shadow:0 0 6px 2px rgba(245,217,142,.75);opacity:0;animation:sparkleTwinkle ease-in-out infinite}
+@keyframes sparkleTwinkle{0%,100%{opacity:0;transform:scale(.4)}50%{opacity:.85;transform:scale(1)}}
+.sparkle:nth-child(4){top:18%;left:22%;animation-duration:5.5s;animation-delay:.2s}
+.sparkle:nth-child(5){top:64%;left:12%;animation-duration:6.5s;animation-delay:1.8s}
+.sparkle:nth-child(6){top:30%;left:68%;animation-duration:5s;animation-delay:.9s}
+.sparkle:nth-child(7){top:75%;left:58%;animation-duration:7s;animation-delay:2.6s}
+.sparkle:nth-child(8){top:45%;left:85%;animation-duration:6s;animation-delay:1.3s}
+.sparkle:nth-child(9){top:12%;left:48%;animation-duration:5.8s;animation-delay:3.2s}
+.sparkle:nth-child(10){top:85%;left:30%;animation-duration:6.8s;animation-delay:.5s}
+
+/* ===== LIGHT SWEEP ===== */
+.btn-primary::after,.hero-badge::after{content:'';position:absolute;top:0;bottom:0;left:-60%;width:35%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:lightSweep 11s ease-in-out infinite}
+.hero-badge::after{animation-duration:9s;animation-delay:2.5s;background:linear-gradient(120deg,transparent,rgba(255,255,255,.4),transparent)}
+@keyframes lightSweep{0%{left:-60%}7%{left:140%}100%{left:140%}}
+
+/* ===== REVEAL VARIANTS ===== */
+.reveal-scale{transform:scale(.94) translateY(0)}
+.reveal-scale.visible{transform:scale(1) translateY(0)}
+.reveal-left{transform:translateX(-26px)}
+.reveal-left.visible{transform:translateX(0)}
+.reveal-right{transform:translateX(26px)}
+.reveal-right.visible{transform:translateX(0)}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+  .bokeh,.sparkle,.btn-primary::after,.hero-badge::after{display:none !important}
+}
 .hero-grid{display:none}
 .hero-glow{display:none}
 @keyframes glowPulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.8}50%{transform:translate(-50%,-50%) scale(1.1);opacity:1}}
 
 .hero-content{position:relative;z-index:2;width:100%;padding:148px 24px 70px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1200px;margin:0 auto}
 
-.hero-badge{display:flex;width:100%;justify-content:center;align-items:center;gap:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);padding:7px 16px;border-radius:50px;font-size:12px;color:var(--gold2);margin-bottom:22px;animation:fadeDown .8s ease}
+.hero-badge{position:relative;overflow:hidden;display:flex;width:100%;justify-content:center;align-items:center;gap:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);padding:7px 16px;border-radius:50px;font-size:12px;color:var(--gold2);margin-bottom:22px;animation:fadeDown .8s ease}
 @keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
@@ -502,6 +539,14 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
       <div class="hero-bg-img" id="heroBgImg"></div>
       <div class="hero-bg-overlay"></div>
     </div>
+    <div class="hero-ambient" aria-hidden="true">
+      <span class="bokeh bokeh-1"></span>
+      <span class="bokeh bokeh-2"></span>
+      <span class="bokeh bokeh-3"></span>
+      <span class="sparkle"></span><span class="sparkle"></span><span class="sparkle"></span>
+      <span class="sparkle"></span><span class="sparkle"></span><span class="sparkle"></span>
+      <span class="sparkle"></span>
+    </div>
     <div class="hero-content">
       <div>
         <div class="hero-badge">بـمناسبة عامنا الخامس خصـــ40%ـــــم لكافة الـخدمات</div>
@@ -552,7 +597,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   <!-- SERVICES PREVIEW -->
   <section id="services-section">
     <div class="container">
-      <div class="services-header reveal">
+      <div class="services-header reveal reveal-scale">
         <div class="section-tag">✨خدماتنا الاحترافية</div>
         <h2 class="section-title">كل ما تحتاجه من <span class="gold">خدمات التنظيف</span></h2>
         <div class="divider"></div>
@@ -578,7 +623,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   <section id="contact">
     <div class="container">
       <div class="contact-wrapper">
-        <div class="reveal">
+        <div class="reveal reveal-right">
           <div class="section-tag">📞 يشرفنا تواصلكم معنا </div>
           <h2 class="section-title">نظافة تليق<br><span class="gold">بمنزلك ومكانك</span></h2>
           <div class="divider"></div>
@@ -590,7 +635,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
             <div class="contact-item"><div class="ci-icon">📍</div><div><div class="ci-label">التغطية</div><div class="ci-value">الرياض , جدة</div></div></div>
           </div>
         </div>
-        <div class="contact-form reveal">
+        <div class="contact-form reveal reveal-left">
           <div class="form-title">احجز خدمتك الآن</div>
           <div class="form-row">
             <div class="form-group"><label>الاسم الكريم</label><input type="text" id="f-name" placeholder="أدخل اسمك" aria-label="الاسم"></div>
