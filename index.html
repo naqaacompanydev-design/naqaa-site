@@ -176,13 +176,21 @@ section{padding:80px 0}
 .sparkle:nth-child(9){top:12%;left:48%;animation-duration:5.8s;animation-delay:3.2s}
 .sparkle:nth-child(10){top:85%;left:30%;animation-duration:6.8s;animation-delay:.5s}
 
-.hero-bubble{position:absolute;bottom:-8%;border-radius:50%;border:1px solid rgba(248,246,240,.28);background:radial-gradient(circle at 35% 30%,rgba(248,246,240,.10),transparent 70%);animation:heroBubbleRise linear infinite}
-.hb-1{left:10%;width:14px;height:14px;animation-duration:16s;animation-delay:0s}
-.hb-2{left:24%;width:9px;height:9px;animation-duration:13s;animation-delay:3s}
-.hb-3{left:48%;width:18px;height:18px;animation-duration:19s;animation-delay:6.5s}
-.hb-4{left:68%;width:11px;height:11px;animation-duration:15s;animation-delay:2s}
-.hb-5{left:85%;width:15px;height:15px;animation-duration:17.5s;animation-delay:9s}
-@keyframes heroBubbleRise{0%{transform:translateY(0) translateX(0);opacity:0}10%{opacity:.5}90%{opacity:.2}100%{transform:translateY(-115%) translateX(14px);opacity:0}}
+.hero-bubble{position:absolute;bottom:-12%;border-radius:50%;border:1.5px solid rgba(248,246,240,.5);background:radial-gradient(circle at 32% 28%,rgba(248,246,240,.35),rgba(248,246,240,.05) 60%,transparent 75%);box-shadow:inset 0 0 12px rgba(248,246,240,.15);animation:heroBubbleRise linear infinite}
+.hb-1{left:8%;width:38px;height:38px;animation-duration:15s;animation-delay:0s}
+.hb-2{left:24%;width:24px;height:24px;animation-duration:12s;animation-delay:3s}
+.hb-3{left:46%;width:56px;height:56px;animation-duration:18s;animation-delay:6s}
+.hb-4{left:66%;width:30px;height:30px;animation-duration:14s;animation-delay:2s}
+.hb-5{left:84%;width:44px;height:44px;animation-duration:16.5s;animation-delay:8.5s}
+.hb-6{left:36%;width:20px;height:20px;animation-duration:11s;animation-delay:5s}
+.hb-7{left:92%;width:30px;height:30px;animation-duration:13.5s;animation-delay:1s}
+@keyframes heroBubbleRise{0%{transform:translateY(0) translateX(0);opacity:0}10%{opacity:.85}88%{opacity:.4}100%{transform:translateY(-125%) translateX(16px);opacity:0}}
+@media(max-width:768px){
+  .hero-bubble{border-width:2px}
+  .hb-1{width:46px;height:46px}
+  .hb-3{width:64px;height:64px}
+  .hb-5{width:50px;height:50px}
+}
 
 /* ===== LIGHT SWEEP ===== */
 .btn-primary::after,.hero-badge::after{content:'';position:absolute;top:0;bottom:0;left:-60%;width:35%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:lightSweep 11s ease-in-out infinite}
@@ -559,6 +567,8 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
       <span class="hero-bubble hb-3"></span>
       <span class="hero-bubble hb-4"></span>
       <span class="hero-bubble hb-5"></span>
+      <span class="hero-bubble hb-6"></span>
+      <span class="hero-bubble hb-7"></span>
     </div>
     <div class="hero-content">
       <div>
