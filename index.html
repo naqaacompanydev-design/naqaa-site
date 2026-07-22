@@ -99,8 +99,30 @@ section{padding:80px 0}
 @keyframes pageFadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 
 /* ===== NAVBAR ===== */
-#navbar{position:fixed;top:0;right:0;left:0;z-index:1000;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;transition:all .4s}
+#navbar{position:fixed;top:38px;right:0;left:0;z-index:1000;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;transition:all .4s}
 #navbar.scrolled{background:rgba(10,22,40,.97);backdrop-filter:blur(20px);padding:10px 24px;border-bottom:1px solid rgba(201,168,76,.15);box-shadow:0 4px 30px rgba(0,0,0,.4)}
+
+/* ===== ACTIVITY BAR ===== */
+#activity-bar{position:fixed;top:0;right:0;left:0;z-index:1001;height:38px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(90deg,var(--navy2) 0%,#0d1f3a 50%,var(--navy2) 100%);border-bottom:1px solid rgba(201,168,76,.22);box-shadow:0 2px 14px rgba(0,0,0,.35)}
+.activity-bar-bubbles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.activity-bar-bubbles span{position:absolute;bottom:-14px;width:6px;height:6px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(201,168,76,.55),rgba(201,168,76,.05));animation:activityBubble linear infinite}
+.activity-bar-bubbles span:nth-child(1){left:8%;width:5px;height:5px;animation-duration:9s;animation-delay:0s}
+.activity-bar-bubbles span:nth-child(2){left:26%;width:7px;height:7px;animation-duration:11s;animation-delay:1.5s}
+.activity-bar-bubbles span:nth-child(3){left:52%;width:4px;height:4px;animation-duration:8s;animation-delay:3s}
+.activity-bar-bubbles span:nth-child(4){left:74%;width:6px;height:6px;animation-duration:12s;animation-delay:.7s}
+.activity-bar-bubbles span:nth-child(5){left:90%;width:5px;height:5px;animation-duration:10s;animation-delay:2.2s}
+@keyframes activityBubble{0%{transform:translateY(0) scale(.7);opacity:0}12%{opacity:.6}88%{opacity:.25}100%{transform:translateY(-46px) scale(1);opacity:0}}
+.activity-bar-inner{position:relative;z-index:1;display:flex;align-items:center;gap:8px;padding:0 16px;max-width:100%}
+.activity-bar-dot{width:6px;height:6px;border-radius:50%;background:var(--gold2);box-shadow:0 0 6px 1px rgba(228,191,106,.7);flex-shrink:0;animation:activityDotPulse 1.8s ease-in-out infinite}
+@keyframes activityDotPulse{0%,100%{opacity:.5;transform:scale(.85)}50%{opacity:1;transform:scale(1.15)}}
+.activity-bar-text{font-family:'Cairo',sans-serif;font-size:12.5px;font-weight:600;color:rgba(248,246,240,.92);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:1;transform:translateY(0);transition:opacity .45s ease,transform .45s ease}
+.activity-bar-text.bar-hidden{opacity:0;transform:translateY(10px)}
+@media(max-width:768px){
+  #activity-bar{height:34px}
+  #navbar{top:34px}
+  .activity-bar-text{font-size:11px;max-width:78vw}
+  .activity-bar-inner{padding:0 12px;gap:6px}
+}
 
 /* LOGO */
 .logo{display:flex;align-items:center;gap:12px;cursor:pointer}
@@ -139,7 +161,7 @@ section{padding:80px 0}
 .hero-glow{display:none}
 @keyframes glowPulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.8}50%{transform:translate(-50%,-50%) scale(1.1);opacity:1}}
 
-.hero-content{position:relative;z-index:2;width:100%;padding:110px 24px 70px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1200px;margin:0 auto}
+.hero-content{position:relative;z-index:2;width:100%;padding:148px 24px 70px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1200px;margin:0 auto}
 
 .hero-badge{display:flex;width:100%;justify-content:center;align-items:center;gap:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);padding:7px 16px;border-radius:50px;font-size:12px;color:var(--gold2);margin-bottom:22px;animation:fadeDown .8s ease}
 @keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
@@ -365,7 +387,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   .nav-links{display:none}
   .hamburger{display:flex}
 
-  .hero-content{grid-template-columns:1fr;padding:90px 20px 56px;gap:36px}
+  .hero-content{grid-template-columns:1fr;padding:124px 20px 56px;gap:36px}
   .hero-visual{display:none}
   .hero-stats{gap:16px;justify-content:center;text-align:center}
   .hero-badge{text-align:center;justify-content:center}
@@ -429,6 +451,17 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   <meta name="theme-color" content="#0a1628">
 </head>
 <body>
+
+<!-- ===== ACTIVITY BAR ===== -->
+<div id="activity-bar" aria-hidden="true">
+  <div class="activity-bar-bubbles">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="activity-bar-inner">
+    <span class="activity-bar-dot"></span>
+    <span class="activity-bar-text" id="activityBarText"></span>
+  </div>
+</div>
 
 <!-- ===== NAVBAR ===== -->
 <nav id="navbar">
@@ -626,6 +659,72 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="للأعلى">↑</button>
 
 <script>
+// ===== ACTIVITY BAR =====
+(function(){
+  var messages = [
+    "فريقنا ينظف منزلًا الآن في حي الملكة.",
+    "فريق نقاء يعمل حاليًا على تنظيف فيلا في حي الملقا.",
+    "فريقنا ينجز الآن تنظيف مجلس في حي الياسمين.",
+    "أحد فرقنا في طريقه إلى عميل في حي النرجس.",
+    "يجري الآن تنظيف شقة سكنية في حي الصحافة.",
+    "فريقنا ينظف الكنب الآن في حي حطين.",
+    "يجري تنفيذ خدمة تنظيف عميق في حي العقيق.",
+    "فريق نقاء يعمل الآن داخل منزل في حي الندى.",
+    "بدأ فريقنا خدمة تنظيف فيلا في حي القيروان.",
+    "فريقنا ينفذ الآن خدمة تنظيف منزل في حي الربيع.",
+    "يجري تنظيف مجلس في حي التعاون.",
+    "أحد فرقنا متواجد حاليًا في حي المروج.",
+    "فريقنا يجهز منزلًا للتسليم بعد التنظيف في حي الورود.",
+    "يجري الآن تنظيف منزل عائلي في حي المصيف.",
+    "فريقنا يعمل داخل فيلا في حي العارض.",
+    "يجري تنفيذ خدمة تنظيف كنب في حي النفل.",
+    "فريقنا متواجد الآن في حي الفلاح لإنجاز خدمة تنظيف.",
+    "فريق نقاء وصل إلى موقع العميل في حي إشبيلية.",
+    "يجري الآن الانتهاء من اللمسات الأخيرة لتنظيف منزل في حي الرمال.",
+    "فريقنا يخدم أحد عملائنا حاليًا في حي غرناطة.",
+    "فريقنا ينظف فيلا الآن في حي المونسية.",
+    "يجري تنفيذ خدمة تنظيف منزل في حي القادسية.",
+    "أحد فرقنا يعمل حاليًا في حي الروابي.",
+    "فريقنا متواجد الآن داخل منزل في حي الخليج.",
+    "يجري تنظيف مجلس فاخر في حي الشهداء.",
+    "فريقنا يواصل تنظيف فيلا في حي الازدهار.",
+    "أحد فرقنا ينظف شقة سكنية في حي الربوة.",
+    "فريقنا يعمل الآن على تنظيف كنب في حي الروضة.",
+    "يجري تجهيز منزل بعد الانتهاء من أعمال التنظيف في حي الفيحاء.",
+    "فريقنا ينفذ الآن تنظيفًا عميقًا في حي السليمانية.",
+    "أحد فرقنا يخدم عميلًا حاليًا في حي العليا.",
+    "فريقنا يعمل داخل منزل في حي الواحة.",
+    "يجري الآن تنظيف فيلا في حي الريان.",
+    "فريقنا متواجد في حي الجزيرة لإنجاز خدمة تنظيف.",
+    "أحد فرقنا ينظف منزلًا في حي النسيم.",
+    "فريقنا يعمل الآن على تنظيف مجلس في حي السويدي.",
+    "يجري تنفيذ خدمة تنظيف منزل في حي بدر.",
+    "فريقنا يخدم أحد العملاء حاليًا في حي العزيزية.",
+    "أحد فرقنا ينجز أعمال التنظيف في حي طويق.",
+    "فريقنا ينهي الآن أعمال تنظيف منزل في حي الشفا."
+  ];
+  var textEl = document.getElementById('activityBarText');
+  if(!textEl) return;
+  var lastIndex = -1;
+  function pickNext(){
+    var idx;
+    do { idx = Math.floor(Math.random() * messages.length); } while(idx === lastIndex && messages.length > 1);
+    lastIndex = idx;
+    return messages[idx];
+  }
+  // initial message, no animation
+  textEl.textContent = pickNext();
+  setInterval(function(){
+    textEl.classList.add('bar-hidden');
+    setTimeout(function(){
+      textEl.textContent = pickNext();
+      // force reflow so the re-entry transition plays
+      void textEl.offsetWidth;
+      textEl.classList.remove('bar-hidden');
+    }, 450);
+  }, 6000);
+})();
+
 // ===== HERO PARALLAX =====
 (function(){
   var bgImg = document.getElementById('heroBgImg');
