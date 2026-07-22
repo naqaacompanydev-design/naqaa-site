@@ -17,6 +17,56 @@
       "permanent": false
     },
     {
+      "source": "/services/تنظيف-المنازل-والفلل.html",
+      "destination": "/services/تنظيف-المنازل-والفلل/",
+      "permanent": true
+    },
+    {
+      "source": "/services/تنظيف-المجالس-والكنب.html",
+      "destination": "/services/تنظيف-المجالس-والكنب/",
+      "permanent": true
+    },
+    {
+      "source": "/services/تنظيف-وعزل-الخزانات.html",
+      "destination": "/services/تنظيف-وعزل-الخزانات/",
+      "permanent": true
+    },
+    {
+      "source": "/services/تنظيف-المكيفات-والستائر.html",
+      "destination": "/services/تنظيف-المكيفات-والستائر/",
+      "permanent": true
+    },
+    {
+      "source": "/services/تنظيف-المسابح.html",
+      "destination": "/services/تنظيف-المسابح/",
+      "permanent": true
+    },
+    {
+      "source": "/services/مكافحة-الحشرات-والقوارض.html",
+      "destination": "/services/مكافحة-الحشرات-والقوارض/",
+      "permanent": true
+    },
+    {
+      "source": "/services/تنظيف-الشركات-والمكاتب.html",
+      "destination": "/services/تنظيف-الشركات-والمكاتب/",
+      "permanent": true
+    },
+    {
+      "source": "/services/التنظيف-العميق-الشامل.html",
+      "destination": "/services/التنظيف-العميق-الشامل/",
+      "permanent": true
+    },
+    {
+      "source": "/services/التنظيف-الاخضر-الصديق-للبيئة.html",
+      "destination": "/services/التنظيف-الاخضر-الصديق-للبيئة/",
+      "permanent": true
+    },
+    {
+      "source": "/services/حماية-المجالس-بتقنية-النانو.html",
+      "destination": "/services/حماية-المجالس-بتقنية-النانو/",
+      "permanent": true
+    },
+    {
       "source": "/home",
       "destination": "/",
       "permanent": true
