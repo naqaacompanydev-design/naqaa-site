@@ -39,6 +39,8 @@
   "name":"شركة نقاء لخدمات التنظيف",
   "description":"شركة نقاء لخدمات التنظيف أفضل شركة تنظيف في (الرياض، جدة) خصم 40% على تنظيف المنازل، المجالس، المساجد، وعقود الشركات وعزل الخزانات ومكافحة الحشرات خدمة 24 ساعة طول ايام الاسبوع اتصل بنا الآن 0545833481",
   "url":"https://www.naqaa-cleaning.com",
+  "logo":"https://www.naqaa-cleaning.com/android-chrome-512x512.png",
+  "image":"https://www.naqaa-cleaning.com/android-chrome-512x512.png",
   "telephone":"+966545833481",
   "priceRange":"$$",
   "address":{"@type":"PostalAddress","addressLocality":"الرياض","addressCountry":"SA"},
@@ -46,6 +48,15 @@
   "openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"},
   "areaServed":["الرياض","جدة","المدينة المنورة","الدمام","المملكة العربية السعودية"],
   "serviceType":["تنظيف منازل","تنظيف فلل","تنظيف مجالس","تنظيف خزانات","مكافحة حشرات","تنظيف مكيفات","تنظيف مسابح"],
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"5","bestRating":"5","worstRating":"1"},
+  "review":[
+    {"@type":"Review","author":{"@type":"Person","name":"سلطان الخيري"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"شغلهم نظيف وسريعين بالتواصل واتقان بالعمل، هذي المرة الثانية أجربهم في تنظيف المنزل، وباعتمدهم إن شاء الله الشركة الأولى للتنظيف عندي."},
+    {"@type":"Review","author":{"@type":"Person","name":"عبداللطيف الاجهر"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"أفضل شركة تنظيف منازل بالرياض، يستاهلون والله. تم تنظيف المجلس عندي وشغلهم جداً ممتاز."},
+    {"@type":"Review","author":{"@type":"Person","name":"تغريد العجاجي"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"ماشاء الله شغل نظيف وتعقيم للفيلا بشكل احترافي جداً، ألف شكر للعاملين اللي اشتغلوا بالتنظيف."},
+    {"@type":"Review","author":{"@type":"Person","name":"عبدالله الشمراني"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"تم تنظيف وعزل الخزان عندي، شغلهم ممتاز يستاهلون. أنصح بالتعامل معهم في تنظيف الخزانات وعزلها."},
+    {"@type":"Review","author":{"@type":"Person","name":"حاتم الزهراني"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"ماشاء الله شغل ممتاز، ووجود المشرف أحمد هاشم وتوجيهاته للعمالة والاهتمام بأبسط الأمور يوضح مدى الاهتمام."}
+  ],
+  "makesOffer":{"@type":"Offer","name":"خصم 40% على جميع خدمات التنظيف","description":"خصم 40% على تنظيف المنازل والفلل والمجالس والكنب وعزل الخزانات وخدمات التنظيف الأخرى بالرياض وجدة","priceCurrency":"SAR","availability":"https://schema.org/InStock","url":"https://www.naqaa-cleaning.com/"},
   "sameAs":["https://wa.me/966545833481"]
 }
 </script>
@@ -126,6 +137,7 @@ section{padding:80px 0}
 
 /* LOGO */
 .logo{display:flex;align-items:center;gap:12px;cursor:pointer}
+.logo-img{height:36px;width:auto;display:block}
 
 
 .logo-text{line-height:1.15}
@@ -369,25 +381,18 @@ section{padding:80px 0}
 
 /* ===== COVERAGE MAP ===== */
 #coverage-section{background:linear-gradient(180deg,var(--navy) 0%,var(--navy2) 100%)}
-.coverage-header{text-align:center;margin-bottom:50px}
+.coverage-header{text-align:center;margin-bottom:40px}
 .coverage-header .divider{margin:16px auto}
-.coverage-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-.coverage-card{position:relative;background:linear-gradient(160deg,rgba(17,34,64,.75),rgba(10,22,40,.95));border:1px solid rgba(201,168,76,.14);border-radius:22px;padding:26px 24px 30px;overflow:hidden}
-.coverage-card::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(201,168,76,.14) 1px,transparent 1px);background-size:22px 22px;opacity:.5;pointer-events:none}
-.coverage-card-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;position:relative;z-index:1}
-.coverage-city-icon{font-size:28px}
-.coverage-city-name{font-family:'Tajawal',sans-serif;font-weight:800;font-size:19px;color:var(--white)}
-.coverage-city-sub{font-size:12px;color:var(--gray)}
-.coverage-dots{position:relative;height:230px}
-.coverage-dot{position:absolute;display:flex;flex-direction:column;align-items:center;gap:5px;font-size:10.5px;font-weight:600;color:rgba(248,246,240,.78);white-space:nowrap;transform:translate(50%,-50%)}
-.coverage-dot::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--gold2);animation:coverageDotPulse 2.6s ease-out infinite}
-.coverage-dot:nth-child(2n)::before{animation-delay:.5s}
-.coverage-dot:nth-child(3n)::before{animation-delay:1s}
-.coverage-dot:nth-child(4n)::before{animation-delay:1.5s}
-@keyframes coverageDotPulse{0%{box-shadow:0 0 0 0 rgba(228,191,106,.55)}70%{box-shadow:0 0 0 11px rgba(228,191,106,0)}100%{box-shadow:0 0 0 0 rgba(228,191,106,0)}}
+.map-toggle{display:flex;justify-content:center;gap:12px;margin-bottom:26px}
+.map-toggle-btn{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);color:rgba(248,246,240,.8);padding:10px 26px;border-radius:50px;font-family:'Cairo',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .3s}
+.map-toggle-btn:hover{border-color:var(--gold);color:var(--gold2)}
+.map-toggle-btn.active{background:linear-gradient(135deg,var(--gold),var(--gold2));border-color:transparent;color:var(--navy)}
+.map-frame-wrap{max-width:900px;margin:0 auto;border-radius:22px;overflow:hidden;border:1px solid rgba(201,168,76,.18);box-shadow:0 20px 50px rgba(0,0,0,.35);transition:opacity .35s ease}
+.map-frame-wrap.map-loading{opacity:.35}
+.map-frame{display:block;width:100%;height:420px;border:0;filter:grayscale(.15) contrast(1.05)}
 @media(max-width:768px){
-  .coverage-grid{grid-template-columns:1fr}
-  .coverage-dots{height:210px}
+  .map-frame{height:300px}
+  .map-toggle-btn{padding:9px 20px;font-size:13px}
 }
 
 /* ===== FOOTER ===== */
@@ -575,6 +580,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 <!-- ===== NAVBAR ===== -->
 <nav id="navbar">
   <div onclick="location.href='/'" class="logo">
+    <img src="/logo.svg" alt="شركة نقاء لخدمات التنظيف" class="logo-img">
   </div>
   <ul class="nav-links">
     <li><a href="/" id="nav-home">الرئيسية</a></li>
@@ -817,43 +823,12 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
         <div class="divider"></div>
         <p class="section-sub">فرق نقاء منتشرة في أحياء المدينتين لتقديم الخدمة بسرعة أينما كنت</p>
       </div>
-      <div class="coverage-grid">
-        <div class="coverage-card reveal reveal-right">
-          <div class="coverage-card-head">
-            <span class="coverage-city-icon">🏙️</span>
-            <div><div class="coverage-city-name">الرياض</div><div class="coverage-city-sub">المكتب الرئيسي — حي العليا</div></div>
-          </div>
-          <div class="coverage-dots">
-            <span class="coverage-dot" style="top:18%;right:22%">العليا</span>
-            <span class="coverage-dot" style="top:32%;right:58%">الملقا</span>
-            <span class="coverage-dot" style="top:12%;right:48%">الياسمين</span>
-            <span class="coverage-dot" style="top:48%;right:14%">النرجس</span>
-            <span class="coverage-dot" style="top:58%;right:40%">حطين</span>
-            <span class="coverage-dot" style="top:70%;right:64%">الندى</span>
-            <span class="coverage-dot" style="top:40%;right:80%">القيروان</span>
-            <span class="coverage-dot" style="top:78%;right:26%">الربيع</span>
-            <span class="coverage-dot" style="top:64%;right:8%">إشبيلية</span>
-            <span class="coverage-dot" style="top:24%;right:8%">النفل</span>
-          </div>
-        </div>
-        <div class="coverage-card reveal reveal-left">
-          <div class="coverage-card-head">
-            <span class="coverage-city-icon">🌊</span>
-            <div><div class="coverage-city-name">جدة</div><div class="coverage-city-sub">فرع الخدمة — حي الصفا</div></div>
-          </div>
-          <div class="coverage-dots">
-            <span class="coverage-dot" style="top:20%;right:26%">الصفا</span>
-            <span class="coverage-dot" style="top:34%;right:60%">الروضة</span>
-            <span class="coverage-dot" style="top:14%;right:50%">الشاطئ</span>
-            <span class="coverage-dot" style="top:50%;right:16%">النعيم</span>
-            <span class="coverage-dot" style="top:60%;right:42%">السلامة</span>
-            <span class="coverage-dot" style="top:72%;right:66%">الحمراء</span>
-            <span class="coverage-dot" style="top:42%;right:80%">البوادي</span>
-            <span class="coverage-dot" style="top:80%;right:28%">الأندلس</span>
-            <span class="coverage-dot" style="top:66%;right:9%">الزهراء</span>
-            <span class="coverage-dot" style="top:26%;right:8%">الفيصلية</span>
-          </div>
-        </div>
+      <div class="map-toggle reveal">
+        <button class="map-toggle-btn active" id="btnRiyadh" onclick="switchCity('riyadh')">🏙️ الرياض</button>
+        <button class="map-toggle-btn" id="btnJeddah" onclick="switchCity('jeddah')">🌊 جدة</button>
+      </div>
+      <div class="map-frame-wrap reveal reveal-scale">
+        <iframe id="coverageMapFrame" class="map-frame" src="https://www.google.com/maps?q=حي+العليا+الرياض&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="خريطة تغطية نقاء للتنظيف"></iframe>
       </div>
     </div>
   </section>
@@ -899,6 +874,27 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="للأعلى">↑</button>
 
 <script>
+// ===== COVERAGE MAP TOGGLE =====
+(function(){
+  var cities = {
+    riyadh: { url: 'https://www.google.com/maps?q=حي+العليا+الرياض&output=embed', btn: 'btnRiyadh' },
+    jeddah: { url: 'https://www.google.com/maps?q=حي+الصفا+جدة&output=embed', btn: 'btnJeddah' }
+  };
+  window.switchCity = function(key){
+    var frame = document.getElementById('coverageMapFrame');
+    var wrap = frame ? frame.closest('.map-frame-wrap') : null;
+    var data = cities[key];
+    if(!frame || !data) return;
+    Object.keys(cities).forEach(function(k){
+      var btn = document.getElementById(cities[k].btn);
+      if(btn) btn.classList.toggle('active', k === key);
+    });
+    if(wrap) wrap.classList.add('map-loading');
+    frame.src = data.url;
+    frame.onload = function(){ if(wrap) wrap.classList.remove('map-loading'); };
+  };
+})();
+
 // ===== TESTIMONIALS CAROUSEL =====
 (function(){
   var track = document.getElementById('testiTrack');
