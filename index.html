@@ -851,8 +851,6 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 <a href="/about/">من نحن</a>
 <span class="footer-sep">-</span>
 <a href="/شركة-تنظيف-بالرياض/">شركة تنظيف بالرياض</a>
-<span class="footer-sep">-</span>
-<a href="/شركة-تنظيف-بجدة/">شركة تنظيف بجدة</a>
 </div>
 <div class="footer-bottom">
 <div>جميع الحقوق محفوظة © <span id="copy-year"></span> — <span>شركة نقاء لخدمات التنظيف</span></div>
@@ -1168,8 +1166,8 @@ function submitForm() {
   const name = document.getElementById('f-name')?.value || 'عميل';
   const phone = document.getElementById('f-phone')?.value || '';
   const service = document.getElementById('f-service')?.value || 'استفسار عام';
-  const msg = 'مرحباً، أنا ' + name + '%0Aرقمي: ' + phone + '%0Aأريد: ' + service;
-  window.open('https://wa.me/966545833481?text=' + msg, '_blank');
+  const msg = 'مرحباً، أنا ' + name + '\n' + 'رقمي: ' + phone + '\n' + 'أريد: ' + service;
+  window.open('https://wa.me/966545833481?text=' + encodeURIComponent(msg), '_blank');
 }
 </script>
 
