@@ -446,6 +446,17 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
     <span></span><span></span><span></span>
   </div>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()">✕</button>
+  <a href="/" onclick="toggleMenu()">الرئيسية</a>
+  <a href="/about/" onclick="toggleMenu()">من نحن</a>
+  <a href="/services/" onclick="location.href='/services/';toggleMenu()">الخدمات</a>
+  <a href="/blog/" onclick="location.href='/blog/';toggleMenu()">المدونة</a>
+  <a href="/faq/" onclick="location.href='/faq/';toggleMenu()">الأسئلة الشائعة</a>
+  <a href="/pricing/" onclick="location.href='/pricing/';toggleMenu()">الأسعار</a>
+  <a href="tel:0545833481" style="background:linear-gradient(135deg,#c9a84c,#e4bf6a);color:#0a1628;padding:14px 36px;border-radius:50px;font-weight:700" onclick="toggleMenu()">📞 0545833481</a>
+</div>
+
 <div style="background:rgba(17,34,64,.5);padding:10px 24px;font-size:12px;margin-top:70px">
 <div class="container" style="max-width:1200px;margin:0 auto">
 <nav class="page-breadcrumb">
@@ -594,7 +605,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 </footer>
 <script>
 function navigateTo(p){location.href=p==='home'?'/':'/#'+p;}
-function toggleMenu(){var m=document.getElementById('mobile-menu'),b=document.querySelector('.hamburger');if(m)m.classList.toggle('open');if(b)b.classList.toggle('active');}
+function toggleMenu(){var m=document.getElementById('mobileMenu'),b=document.querySelector('.hamburger');if(m)m.classList.toggle('open');if(b)b.classList.toggle('active');}
 document.addEventListener('DOMContentLoaded',function(){var y=document.getElementById('copy-year');if(y)y.textContent=new Date().getFullYear();});
 </script><script>(function(){var n=document.getElementById('navbar');if(!n)return;n.classList.add('scrolled');window.addEventListener('scroll',function(){n.classList.toggle('scrolled',window.scrollY>0);});})();</script>
 </body></html>
