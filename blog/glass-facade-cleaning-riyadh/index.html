@@ -202,12 +202,23 @@
     .reveal.visible{opacity:1;transform:none}
 
     @media(max-width:900px){.page-wrapper{grid-template-columns:1fr}.sidebar{order:-1}.sidebar-inner{position:static;flex-direction:row;flex-wrap:wrap}.sidebar-card,.sidebar-cta{flex:1 1 280px}.time-steps,.packages-grid,.mistakes-grid,.end-links-grid{grid-template-columns:1fr}}
-    @media(max-width:600px){.article-hero{height:260px}.article-hero-title{font-size:1.3rem}.nav-links{display:none}.cta-buttons{flex-direction:column;align-items:center}.btn-whatsapp,.btn-phone{width:100%;justify-content:center}}
-  </style>
+    @media(max-width:600px){.article-hero{height:260px}.article-hero-title{font-size:1.3rem}.cta-buttons{flex-direction:column;align-items:center}.btn-whatsapp,.btn-phone{width:100%;justify-content:center}}
+      .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);border-radius:8px}
+    .nav-hamburger span{width:20px;height:2px;background:var(--gold);display:block;border-radius:2px}
+    @media(max-width:600px){
+      .nav-hamburger{display:flex}
+      .nav-links{display:none;position:fixed;top:68px;right:0;left:0;background:rgba(10,22,40,.98);backdrop-filter:blur(12px);flex-direction:column;gap:0;padding:10px 0;border-bottom:1px solid rgba(201,168,76,.15);z-index:999}
+      .nav-links.open{display:flex}
+      .nav-links li{width:100%;text-align:center}
+      .nav-links a{display:block;padding:14px 20px;width:100%}
+      .nav-links .nav-cta{margin:8px 20px;display:block;text-align:center}
+    }
+</style>
 </head>
 <body>
   <nav>
     <a href="/" class="nav-brand">نقاء للتنظيف</a>
+    <div class="nav-hamburger" id="navHamburger"><span></span><span></span><span></span></div>
     <ul class="nav-links">
       <li><a href="/">الرئيسية</a></li>
       <li><a href="/services/">الخدمات</a></li>
@@ -732,6 +743,8 @@
     const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:.1});
     reveals.forEach(el=>observer.observe(el));
     window.addEventListener('scroll',()=>{document.querySelector('nav').style.boxShadow=window.scrollY>20?'0 4px 24px rgba(0,0,0,.4)':'none'});
-  </script>
+      const navHam=document.getElementById('navHamburger'),navLinksEl=document.querySelector('.nav-links');
+    if(navHam&&navLinksEl){navHam.addEventListener('click',()=>navLinksEl.classList.toggle('open'));}
+</script>
 </body>
 </html>
