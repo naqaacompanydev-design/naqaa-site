@@ -260,6 +260,20 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 .footer-nav-links a:hover{color:var(--gold2)}
 .footer-sep{color:rgba(201,168,76,.4);font-size:13px}
 .footer-bottom{border-top:1px solid rgba(201,168,76,.08);padding-top:18px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--gray);flex-wrap:wrap;gap:10px}
+.design-credit-bar{margin-top:18px;padding-top:18px;border-top:1px solid rgba(201,168,76,.08);text-align:center}
+.design-credit{position:relative;display:inline-flex;align-items:center;gap:9px;padding:10px 26px;border-radius:30px;cursor:pointer;border:1px solid rgba(201,168,76,.35);background:rgba(201,168,76,.04);animation:credit-pulse 2.5s ease-in-out infinite;transition:transform .3s}
+.design-credit:hover{transform:translateY(-2px)}
+.design-credit-dot{width:6px;height:6px;border-radius:50%;background:var(--gold2);animation:credit-blink 1.6s ease-in-out infinite}
+.design-credit-text{background:linear-gradient(90deg,#c9a84c 0%,#f6e6b4 25%,#c9a84c 50%,#f6e6b4 75%,#c9a84c 100%);background-size:300% auto;-webkit-background-clip:text;background-clip:text;color:transparent;font-size:13px;font-weight:700;letter-spacing:.3px;animation:credit-shimmer 4s linear infinite}
+@keyframes credit-shimmer{0%{background-position:0% center}100%{background-position:300% center}}
+@keyframes credit-pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,168,76,.3)}50%{box-shadow:0 0 16px 3px rgba(201,168,76,.25)}}
+@keyframes credit-blink{0%,100%{opacity:1}50%{opacity:.25}}
+.design-credit-popover{display:none;position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:#0d1830;border:1px solid rgba(201,168,76,.25);border-radius:8px;padding:8px;min-width:220px;box-shadow:0 10px 30px rgba(0,0,0,.5);z-index:60;flex-direction:column;gap:4px}
+.design-credit-popover.show{display:flex}
+.design-credit-popover a{color:var(--gray);font-size:12px;text-decoration:none;padding:8px 10px;border-radius:5px;transition:background .2s,color .2s;text-align:center}
+.design-credit-popover a:hover{background:rgba(201,168,76,.1);color:var(--gold2)}
+.design-credit-popover:after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#0d1830}
+
 .footer-bottom span{color:var(--gold2)}
 
 /* ===== FLOATING BUTTONS ===== */
@@ -630,6 +644,16 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 <a href="/accessibility" onmouseout="this.style.color='var(--gray)'" onmouseover="this.style.color='var(--gold2)'" style="color:var(--gray);text-decoration:none;transition:color .3s;">إمكانية الوصول</a>
 </div>
 </div>
+<div class="design-credit-bar">
+<span class="design-credit" id="design-credit">
+<span class="design-credit-dot"></span>
+<span class="design-credit-text">✦ تصميم وتطوير الموقع: شركة كليك زودياك ✦</span>
+<div class="design-credit-popover" id="design-credit-popover">
+<a href="https://wa.me/201023444798" target="_blank" rel="noopener">واتساب - 01023444798</a>
+<a href="https://wa.me/201212816311" target="_blank" rel="noopener">واتساب - 01212816311</a>
+</div>
+</span>
+</div>
 </div>
 </footer>
 
@@ -664,5 +688,22 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 <script>function toggleFaq(item){var o=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');});if(!o)item.classList.add('open');}</script>
+
+<script>
+(function(){
+  var trigger = document.getElementById('design-credit');
+  var popover = document.getElementById('design-credit-popover');
+  if(!trigger || !popover) return;
+  trigger.addEventListener('click', function(e){
+    e.stopPropagation();
+    popover.classList.toggle('show');
+  });
+  document.addEventListener('click', function(){
+    popover.classList.remove('show');
+  });
+})();
+console.log('%cDesigned & Developed by Click Zodiac | شركة كليك زودياك', 'color:#c9a84c;font-size:14px;font-weight:bold;');
+console.log('%cWhatsApp: 01023444798 / 01212816311', 'color:#9aa5b1;font-size:12px;');
+</script>
 </body>
 </html>
