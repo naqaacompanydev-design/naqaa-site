@@ -352,12 +352,12 @@ section{padding:80px 0}
 /* ===== CLIENTS MARQUEE ===== */
 .clients-marquee-wrap{position:relative;width:100%;overflow:hidden;margin-top:30px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .clients-marquee-track{display:flex;align-items:center;gap:80px;width:max-content;animation:clients-scroll 32s linear infinite}
-.client-logo{flex-shrink:0;height:280px;display:flex;align-items:center;justify-content:center}
-.client-logo img{height:100%;width:auto;max-width:650px;object-fit:contain}
+.client-logo{flex-shrink:0;height:280px;width:280px;display:flex;align-items:center;justify-content:center}
+.client-logo img{height:100%;width:100%;max-width:650px;object-fit:contain}
 @keyframes clients-scroll{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
 @media(max-width:700px){
   .clients-marquee-track{gap:50px;animation-duration:22s}
-  .client-logo{height:150px}
+  .client-logo{height:150px;width:150px}
   .client-logo img{max-width:340px}
 }
 .testi-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,.25);border:none;cursor:pointer;padding:0;transition:all .3s}
@@ -808,23 +808,23 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
     </div>
     <div class="clients-marquee-wrap">
       <div class="clients-marquee-track">
-        <div class="client-logo"><img src="/images/clients/فندق_روتانا_.png" alt="فندق روتانا" loading="lazy"></div>
-        <div class="client-logo"><img src="/images/clients/مطعم_حارة_سمك_.png" alt="مطعم حارة سمك" loading="lazy"></div>
-        <div class="client-logo"><img src="/images/clients/مطعم_طنجية_.png" alt="مطعم طنجية" loading="lazy"></div>
-        <div class="client-logo"><img src="/images/clients/براند_برالينا_.png" alt="براند برالينا" loading="lazy"></div>
-        <div class="client-logo"><img src="/images/clients/LA_لاونج_.png" alt="LA لاونج" loading="lazy"></div>
-        <div class="client-logo"><img src="/images/clients/مول_كيو_.png" alt="مول كيو" loading="lazy"></div>
-        <div class="client-logo"><img src="/images/clients/مسابح_كروزا_.png" alt="مسابح كروزا" loading="lazy"></div>
-        <div class="client-logo"><img src="/images/clients/اللبيشي_للتجارة_.png" alt="اللبيشي للتجارة" loading="lazy"></div>
+        <div class="client-logo"><img src="/images/clients/فندق_روتانا_.png" alt="فندق روتانا" loading="eager" width="320" height="320"></div>
+        <div class="client-logo"><img src="/images/clients/مطعم_حارة_سمك_.png" alt="مطعم حارة سمك" loading="eager" width="320" height="320"></div>
+        <div class="client-logo"><img src="/images/clients/مطعم_طنجية_.png" alt="مطعم طنجية" loading="eager" width="320" height="320"></div>
+        <div class="client-logo"><img src="/images/clients/براند_برالينا_.png" alt="براند برالينا" loading="eager" width="320" height="320"></div>
+        <div class="client-logo"><img src="/images/clients/LA_لاونج_.png" alt="LA لاونج" loading="eager" width="320" height="320"></div>
+        <div class="client-logo"><img src="/images/clients/مول_كيو_.png" alt="مول كيو" loading="eager" width="320" height="320"></div>
+        <div class="client-logo"><img src="/images/clients/مسابح_كروزا_.png" alt="مسابح كروزا" loading="eager" width="320" height="320"></div>
+        <div class="client-logo"><img src="/images/clients/اللبيشي_للتجارة_.png" alt="اللبيشي للتجارة" loading="eager" width="320" height="320"></div>
         <!-- duplicate set for seamless loop -->
-        <div class="client-logo" aria-hidden="true"><img src="/images/clients/فندق_روتانا_.png" alt="" loading="lazy"></div>
-        <div class="client-logo" aria-hidden="true"><img src="/images/clients/مطعم_حارة_سمك_.png" alt="" loading="lazy"></div>
-        <div class="client-logo" aria-hidden="true"><img src="/images/clients/مطعم_طنجية_.png" alt="" loading="lazy"></div>
-        <div class="client-logo" aria-hidden="true"><img src="/images/clients/براند_برالينا_.png" alt="" loading="lazy"></div>
-        <div class="client-logo" aria-hidden="true"><img src="/images/clients/LA_لاونج_.png" alt="" loading="lazy"></div>
-        <div class="client-logo" aria-hidden="true"><img src="/images/clients/مول_كيو_.png" alt="" loading="lazy"></div>
-        <div class="client-logo" aria-hidden="true"><img src="/images/clients/مسابح_كروزا_.png" alt="" loading="lazy"></div>
-        <div class="client-logo" aria-hidden="true"><img src="/images/clients/اللبيشي_للتجارة_.png" alt="" loading="lazy"></div>
+        <div class="client-logo" aria-hidden="true"><img src="/images/clients/فندق_روتانا_.png" alt="" loading="eager" width="320" height="320"></div>
+        <div class="client-logo" aria-hidden="true"><img src="/images/clients/مطعم_حارة_سمك_.png" alt="" loading="eager" width="320" height="320"></div>
+        <div class="client-logo" aria-hidden="true"><img src="/images/clients/مطعم_طنجية_.png" alt="" loading="eager" width="320" height="320"></div>
+        <div class="client-logo" aria-hidden="true"><img src="/images/clients/براند_برالينا_.png" alt="" loading="eager" width="320" height="320"></div>
+        <div class="client-logo" aria-hidden="true"><img src="/images/clients/LA_لاونج_.png" alt="" loading="eager" width="320" height="320"></div>
+        <div class="client-logo" aria-hidden="true"><img src="/images/clients/مول_كيو_.png" alt="" loading="eager" width="320" height="320"></div>
+        <div class="client-logo" aria-hidden="true"><img src="/images/clients/مسابح_كروزا_.png" alt="" loading="eager" width="320" height="320"></div>
+        <div class="client-logo" aria-hidden="true"><img src="/images/clients/اللبيشي_للتجارة_.png" alt="" loading="eager" width="320" height="320"></div>
       </div>
     </div>
   </section>
