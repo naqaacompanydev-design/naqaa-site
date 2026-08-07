@@ -348,18 +348,6 @@ section{padding:80px 0}
 .testi-arrow{flex-shrink:0;width:42px;height:42px;border-radius:50%;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);color:var(--gold2);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s}
 .testi-arrow:hover{background:rgba(201,168,76,.22);border-color:var(--gold);transform:scale(1.08)}
 .testi-dots{display:flex;justify-content:center;gap:9px;margin-top:24px}
-
-/* ===== CLIENTS MARQUEE ===== */
-.clients-marquee-wrap{position:relative;width:100%;overflow:hidden;margin-top:30px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.clients-marquee-track{display:flex;align-items:center;gap:80px;width:max-content;animation:clients-scroll 32s linear infinite}
-.client-logo{flex-shrink:0;height:280px;width:280px;display:flex;align-items:center;justify-content:center}
-.client-logo img{height:100%;width:100%;max-width:650px;object-fit:contain}
-@keyframes clients-scroll{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
-@media(max-width:700px){
-  .clients-marquee-track{gap:50px;animation-duration:22s}
-  .client-logo{height:150px;width:150px}
-  .client-logo img{max-width:340px}
-}
 .testi-dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,.25);border:none;cursor:pointer;padding:0;transition:all .3s}
 .testi-dot.active{background:var(--gold);width:22px;border-radius:5px}
 @media(max-width:768px){
@@ -800,41 +788,23 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   </section>
 
 
-  <!-- CLIENTS MARQUEE -->
-  <section id="clients" style="padding:50px 0;background:var(--navy);position:relative;overflow:hidden">
-    <div class="container" style="text-align:center;margin-bottom:8px">
-      <div class="section-tag" style="display:inline-flex">🤝 عملاؤنا الكرام</div>
-      <h2 class="section-title" style="font-size:clamp(20px,3vw,28px);margin-bottom:0">من ضمن <span class="gold">شركائنا في النجاح</span></h2>
-    </div>
-    <div class="clients-marquee-wrap">
-      <div class="clients-marquee-track">
-        <div class="client-logo"><img src="/images/clients/فندق_روتانا_.png" alt="فندق روتانا" loading="eager" width="320" height="320"></div>
-        <div class="client-logo"><img src="/images/clients/مطعم_حارة_سمك_.png" alt="مطعم حارة سمك" loading="eager" width="320" height="320"></div>
-        <div class="client-logo"><img src="/images/clients/مطعم_طنجية_.png" alt="مطعم طنجية" loading="eager" width="320" height="320"></div>
-        <div class="client-logo"><img src="/images/clients/براند_برالينا_.png" alt="براند برالينا" loading="eager" width="320" height="320"></div>
-        <div class="client-logo"><img src="/images/clients/LA_لاونج_.png" alt="LA لاونج" loading="eager" width="320" height="320"></div>
-        <div class="client-logo"><img src="/images/clients/مول_كيو_.png" alt="مول كيو" loading="eager" width="320" height="320"></div>
-        <div class="client-logo"><img src="/images/clients/مسابح_كروزا_.png" alt="مسابح كروزا" loading="eager" width="320" height="320"></div>
-        <div class="client-logo"><img src="/images/clients/اللبيشي_للتجارة_.png" alt="اللبيشي للتجارة" loading="eager" width="320" height="320"></div>
-        <!-- duplicate set for seamless loop -->
-        <div class="client-logo" aria-hidden="true"><img src="/images/clients/فندق_روتانا_.png" alt="" loading="eager" width="320" height="320"></div>
-        <div class="client-logo" aria-hidden="true"><img src="/images/clients/مطعم_حارة_سمك_.png" alt="" loading="eager" width="320" height="320"></div>
-        <div class="client-logo" aria-hidden="true"><img src="/images/clients/مطعم_طنجية_.png" alt="" loading="eager" width="320" height="320"></div>
-        <div class="client-logo" aria-hidden="true"><img src="/images/clients/براند_برالينا_.png" alt="" loading="eager" width="320" height="320"></div>
-        <div class="client-logo" aria-hidden="true"><img src="/images/clients/LA_لاونج_.png" alt="" loading="eager" width="320" height="320"></div>
-        <div class="client-logo" aria-hidden="true"><img src="/images/clients/مول_كيو_.png" alt="" loading="eager" width="320" height="320"></div>
-        <div class="client-logo" aria-hidden="true"><img src="/images/clients/مسابح_كروزا_.png" alt="" loading="eager" width="320" height="320"></div>
-        <div class="client-logo" aria-hidden="true"><img src="/images/clients/اللبيشي_للتجارة_.png" alt="" loading="eager" width="320" height="320"></div>
-      </div>
-    </div>
-  </section>
-
-
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
       <div class="contact-wrapper">
-        <div class="contact-form reveal reveal-left" style="max-width:640px">
+        <div class="reveal reveal-right">
+          <div class="section-tag">📞 يشرفنا تواصلكم معنا </div>
+          <h2 class="section-title">نظافة تليق<br><span class="gold">بمنزلك ومكانك</span></h2>
+          <div class="divider"></div>
+          <p class="section-sub">خدمة 24 ساعة نغطي كافة أنحاء المملكة. اتصل أو ارسل رسالة واتساب وسنواصل معك خلال دقائق</p>
+          <div class="contact-items">
+            <a href="tel:0545833481" class="contact-item"><div class="ci-icon">📞</div><div><div class="ci-label">اتصل الآن مباشرة</div><div class="ci-value">0545833481</div></div></a>
+            <a href="https://wa.me/966545833481?text=مرحباً،%20أريد%20الاستفسار%20عن%20خدمات%20التنظيف" target="_blank" rel="noopener" class="contact-item"><div class="ci-icon">💬</div><div><div class="ci-label">واتساب</div><div class="ci-value">تحدث معنا فوراً</div></div></a>
+            <div class="contact-item"><div class="ci-icon">🕐</div><div><div class="ci-label">ساعات العمل</div><div class="ci-value">24 ساعة / 7 أيام</div></div></div>
+            <div class="contact-item"><div class="ci-icon">📍</div><div><div class="ci-label">التغطية</div><div class="ci-value">الرياض , جدة</div></div></div>
+          </div>
+        </div>
+        <div class="contact-form reveal reveal-left">
           <div class="form-title">احجز خدمتك الآن</div>
           <div class="form-row">
             <div class="form-group"><label>الاسم الكريم</label><input type="text" id="f-name" placeholder="أدخل اسمك" aria-label="الاسم"></div>
