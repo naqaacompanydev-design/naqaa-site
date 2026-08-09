@@ -4,19 +4,19 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#0a1628">
 <title>حاسبة أسعار التنظيف بالرياض وجدة | شركة نقاء لخدمات التنظيف</title>
-<meta name="description" content="احسب سعر تنظيف منزلك أو مجلسك أو خزانك تقريباً في 3 خطوات بسيطة - شركة نقاء لخدمات التنظيف بالرياض وجدة، أسعار تنافسية وخصم 40%">
+<meta name="description" content="احسب سعر تنظيف منزلك أو مجلسك أو خزانك تقريباً في ثوانٍ - شركة نقاء لخدمات التنظيف بالرياض وجدة، أسعار تنافسية وخصم 40%">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://www.naqaa-cleaning.com/pricing/">
 <meta property="og:type" content="website"><meta property="og:url" content="https://www.naqaa-cleaning.com/pricing/">
 <meta property="og:title" content="حاسبة أسعار التنظيف بالرياض وجدة | شركة نقاء لخدمات التنظيف"><meta property="og:locale" content="ar_SA">
-<meta property="og:description" content="احسب سعر تنظيف منزلك أو مجلسك أو خزانك تقريباً في 3 خطوات بسيطة - شركة نقاء لخدمات التنظيف بالرياض وجدة، أسعار تنافسية وخصم 40%">
+<meta property="og:description" content="احسب سعر تنظيف منزلك أو مجلسك أو خزانك تقريباً في ثوانٍ - شركة نقاء لخدمات التنظيف بالرياض وجدة، أسعار تنافسية وخصم 40%">
 <meta property="og:site_name" content="شركة نقاء لخدمات التنظيف">
 <meta property="og:image" content="https://www.naqaa-cleaning.com/android-chrome-512x512.png">
 <meta property="og:image:width" content="512">
 <meta property="og:image:height" content="512">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="حاسبة أسعار التنظيف بالرياض وجدة | شركة نقاء لخدمات التنظيف">
-<meta name="twitter:description" content="احسب سعر تنظيف منزلك أو مجلسك أو خزانك تقريباً في 3 خطوات بسيطة - شركة نقاء لخدمات التنظيف بالرياض وجدة، أسعار تنافسية وخصم 40%">
+<meta name="twitter:description" content="احسب سعر تنظيف منزلك أو مجلسك أو خزانك تقريباً في ثوانٍ - شركة نقاء لخدمات التنظيف بالرياض وجدة، أسعار تنافسية وخصم 40%">
 <meta name="twitter:image" content="https://www.naqaa-cleaning.com/android-chrome-512x512.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -461,6 +461,39 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 .calc-result-summary{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.14);border-radius:12px;padding:14px 18px;font-size:13px;color:rgba(248,246,240,.8);line-height:2}
 .calc-restart{margin-top:14px;background:none;border:none;color:var(--gray);font-size:13px;font-weight:700;cursor:pointer;text-decoration:underline;transition:color .3s}
 .calc-restart:hover{color:var(--gold2)}
+
+/* ===== CART-STYLE CALCULATOR ===== */
+.cart-items{display:flex;flex-direction:column;gap:12px}
+.cart-item{background:rgba(10,22,40,.6);border:1px solid rgba(201,168,76,.16);border-radius:16px;padding:16px 18px;transition:border-color .3s}
+.cart-item.active{border-color:rgba(201,168,76,.5)}
+.cart-item-head{display:flex;align-items:center}
+.cart-check{display:flex;align-items:center;gap:12px;cursor:pointer;width:100%}
+.cart-check input{display:none}
+.cart-check-box{width:22px;height:22px;border-radius:7px;border:2px solid rgba(201,168,76,.4);flex-shrink:0;position:relative;transition:all .25s}
+.cart-check input:checked + .cart-check-box{background:linear-gradient(135deg,var(--gold),var(--gold2));border-color:var(--gold2)}
+.cart-check input:checked + .cart-check-box:after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#0a1628}
+.cart-item-title{font-size:15px;font-weight:700}
+.cart-item-body{display:none;margin-top:16px;padding-top:16px;border-top:1px solid rgba(201,168,76,.1);flex-direction:column;gap:14px}
+.cart-item-body.open{display:flex}
+.cart-field{display:flex;flex-direction:column;gap:8px}
+.cart-field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cart-field label{font-size:12px;color:var(--gray);font-weight:700}
+.cart-input,.cart-select{background:rgba(10,22,40,.7);border:1px solid rgba(201,168,76,.25);border-radius:10px;padding:12px 14px;font-size:14px;color:var(--white);font-family:'Cairo',sans-serif}
+.cart-select{cursor:pointer}
+.cart-pills{display:flex;flex-wrap:wrap;gap:8px}
+.cart-pill{background:rgba(10,22,40,.7);border:1px solid rgba(201,168,76,.2);border-radius:30px;padding:8px 18px;font-size:13px;font-weight:700;color:var(--gray);cursor:pointer;transition:all .25s;font-family:'Cairo',sans-serif}
+.cart-pill.active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0a1628;border-color:transparent}
+.cart-stepper{display:flex;align-items:center;gap:16px}
+.cart-stepper-btn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(201,168,76,.35);background:rgba(201,168,76,.08);color:var(--gold2);font-size:20px;font-weight:900;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center}
+.cart-stepper-btn:hover{background:rgba(201,168,76,.2)}
+.cart-stepper-val{font-size:17px;font-weight:800;min-width:24px;text-align:center}
+.cart-total-bar{position:sticky;bottom:14px;margin-top:22px;background:linear-gradient(145deg,rgba(17,34,64,.95),rgba(10,22,40,.98));border:1px solid rgba(201,168,76,.35);border-radius:16px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.cart-total-summary{font-size:12px;color:var(--gray);line-height:1.9}
+.cart-total-price{font-family:'Tajawal',sans-serif;font-size:24px;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--gold3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap}
+@media(max-width:640px){
+  .cart-field-row{grid-template-columns:1fr}
+  .cart-total-bar{flex-direction:column;align-items:flex-start}
+}
 @media(max-width:600px){
   .calc-wrap{padding:26px 18px}
   .calc-options-grid{grid-template-columns:repeat(2,1fr)}
@@ -498,84 +531,215 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 <div class="page-hero" style="padding-bottom:20px">
 <nav class="page-breadcrumb" style="margin-bottom:14px"><a href="/">الرئيسية</a> <span style="color:var(--gray);margin:0 6px">←</span> <span style="color:var(--white)">حاسبة الأسعار</span></nav>
 <h1>احسب سعر <span class="highlight" style="background:linear-gradient(135deg,var(--gold),var(--gold3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">تنظيفك الآن</span></h1>
-<p>في 3 خطوات بسيطة، اعرف النطاق السعري التقريبي لخدمتك خلال ثوانٍ</p>
+<p>اختر كل خدمة تحتاجها والسعر التقريبي هيتحدث لايف قدامك فورًا</p>
 </div>
 
 <div class="container">
-  <div class="calc-wrap">
-    <div class="calc-progress">
-      <div class="calc-progress-bar" id="calcProgressBar"></div>
-    </div>
-    <div class="calc-steps-label">
-      <span class="calc-step-label active" data-step-label="1">1. الخدمة</span>
-      <span class="calc-step-label" data-step-label="2">2. المساحة</span>
-      <span class="calc-step-label" data-step-label="3">3. المدينة</span>
-      <span class="calc-step-label" data-step-label="4">4. الحي</span>
-    </div>
+  <div class="calc-wrap" style="max-width:900px">
+    <p style="text-align:center;font-size:13px;color:var(--gray);margin-bottom:26px">اختر أي خدمة تحتاجها (تقدر تختار أكتر من خدمة في نفس الوقت) والسعر هيتحدث تلقائيًا تحت</p>
 
-    <!-- STEP 1: SERVICE -->
-    <div class="calc-step active" id="calcStep1">
-      <h2 class="calc-step-title">اختر نوع الخدمة</h2>
-      <div class="calc-options calc-options-grid">
-        <button class="calc-option" data-service="home" data-label="تنظيف منازل وفلل">🏠<span>تنظيف منازل وفلل</span></button>
-        <button class="calc-option" data-service="majlis" data-label="تنظيف مجالس وكنب">🛋️<span>تنظيف مجالس وكنب</span></button>
-        <button class="calc-option" data-service="tank" data-label="تنظيف وعزل خزانات">💧<span>تنظيف وعزل خزانات</span></button>
-        <button class="calc-option" data-service="ac" data-label="تنظيف مكيفات وستائر">❄️<span>تنظيف مكيفات وستائر</span></button>
-        <button class="calc-option" data-service="pool" data-label="تنظيف مسابح">🏊<span>تنظيف مسابح</span></button>
-        <button class="calc-option" data-service="pest" data-label="مكافحة حشرات وقوارض">🐜<span>مكافحة حشرات وقوارض</span></button>
-        <button class="calc-option" data-service="office" data-label="تنظيف شركات ومكاتب">🏢<span>تنظيف شركات ومكاتب</span></button>
-        <button class="calc-option" data-service="deep" data-label="التنظيف العميق الشامل">✨<span>التنظيف العميق الشامل</span></button>
-        <button class="calc-option" data-service="green" data-label="التنظيف الأخضر الصديق للبيئة">🌿<span>التنظيف الأخضر</span></button>
-        <button class="calc-option" data-service="nano" data-label="حماية المجالس بتقنية النانو">🛡️<span>حماية المجالس بالنانو</span></button>
+    <!-- CART ITEMS -->
+    <div class="cart-items">
+
+      <!-- HOME -->
+      <div class="cart-item" data-item="home">
+        <div class="cart-item-head">
+          <label class="cart-check"><input type="checkbox" data-toggle="home"><span class="cart-check-box"></span><span class="cart-item-title">🏠 تنظيف المنزل (شقة / فيلا)</span></label>
+        </div>
+        <div class="cart-item-body" data-body="home">
+          <div class="cart-field">
+            <label>نوع المكان</label>
+            <div class="cart-pills" data-group="home-type">
+              <button type="button" class="cart-pill active" data-value="flat">شقة</button>
+              <button type="button" class="cart-pill" data-value="villa">فيلا</button>
+            </div>
+          </div>
+          <div class="cart-field" data-show-when="home-type=flat">
+            <label>حجم الشقة</label>
+            <div class="cart-pills" data-group="home-flat-size">
+              <button type="button" class="cart-pill active" data-value="small">أقل من 100م²</button>
+              <button type="button" class="cart-pill" data-value="medium">100 - 250م²</button>
+              <button type="button" class="cart-pill" data-value="large">أكتر من 250م²</button>
+            </div>
+          </div>
+          <div class="cart-field" data-show-when="home-type=villa" style="display:none">
+            <label>مساحة الفيلا (م²)</label>
+            <input type="number" min="0" step="10" class="cart-input" id="home-villa-area" placeholder="مثال: 400">
+          </div>
+          <div class="cart-field">
+            <label>حالة المكان</label>
+            <select class="cart-select" id="home-condition">
+              <option value="resident">ساكن حاليًا</option>
+              <option value="after_finish">بعد التشطيب مباشرة</option>
+              <option value="before_move">قبل السكن (فاضي)</option>
+              <option value="furnished">مفروش بالكامل</option>
+            </select>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <!-- STEP 2: SIZE -->
-    <div class="calc-step" id="calcStep2">
-      <h2 class="calc-step-title">المساحة التقريبية (م²)</h2>
-      <p class="calc-step-sub">تنفع لأي نوع مكان — سكني أو تجاري</p>
-      <div class="calc-options calc-options-list">
-        <button class="calc-option calc-option-wide" data-size="s1" data-label="أقل من 100 م²">📏<span>أقل من 100 م² <small>قد شقة صغيرة أو مكتب صغير</small></span></button>
-        <button class="calc-option calc-option-wide" data-size="s2" data-label="من 100 إلى 250 م²">📏<span>من 100 إلى 250 م² <small>قد شقة كبيرة أو مكتب متوسط</small></span></button>
-        <button class="calc-option calc-option-wide" data-size="s3" data-label="من 250 إلى 500 م²">📏<span>من 250 إلى 500 م² <small>قد فيلا صغيرة أو محل تجاري</small></span></button>
-        <button class="calc-option calc-option-wide" data-size="s4" data-label="من 500 إلى 1000 م²">📏<span>من 500 إلى 1000 م² <small>قد فيلا كبيرة أو مكتب واسع</small></span></button>
-        <button class="calc-option calc-option-wide" data-size="s5" data-label="أكتر من 1000 م²">📏<span>أكتر من 1000 م² <small>قد مبنى أو منشأة كبيرة</small></span></button>
+      <!-- MAJLIS -->
+      <div class="cart-item" data-item="majlis">
+        <div class="cart-item-head">
+          <label class="cart-check"><input type="checkbox" data-toggle="majlis"><span class="cart-check-box"></span><span class="cart-item-title">🛋️ تنظيف المجالس والكنب</span></label>
+        </div>
+        <div class="cart-item-body" data-body="majlis">
+          <div class="cart-field">
+            <label>عدد القطع (كل مجلس/كنبة)</label>
+            <div class="cart-stepper">
+              <button type="button" class="cart-stepper-btn" data-step="majlis-qty" data-dir="-1">−</button>
+              <span class="cart-stepper-val" id="majlis-qty-val">1</span>
+              <button type="button" class="cart-stepper-btn" data-step="majlis-qty" data-dir="1">+</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <button class="calc-back" onclick="calcGoTo(1)">→ رجوع</button>
-    </div>
 
-    <!-- STEP 3: CITY -->
-    <div class="calc-step" id="calcStep3">
-      <h2 class="calc-step-title">المدينة</h2>
-      <div class="calc-options calc-options-list">
-        <button class="calc-option calc-option-wide" data-city="riyadh" data-label="الرياض">🏙️<span>الرياض</span></button>
-        <button class="calc-option calc-option-wide" data-city="jeddah" data-label="جدة">🌊<span>جدة</span></button>
+      <!-- TANK -->
+      <div class="cart-item" data-item="tank">
+        <div class="cart-item-head">
+          <label class="cart-check"><input type="checkbox" data-toggle="tank"><span class="cart-check-box"></span><span class="cart-item-title">💧 تنظيف وعزل الخزانات</span></label>
+        </div>
+        <div class="cart-item-body" data-body="tank">
+          <div class="cart-field-row">
+            <div class="cart-field">
+              <label>مساحة الخزان (م²)</label>
+              <input type="number" min="0" step="1" class="cart-input" id="tank-area" placeholder="مثال: 6">
+            </div>
+            <div class="cart-field">
+              <label>سعة الخزان (لتر)</label>
+              <input type="number" min="0" step="500" class="cart-input" id="tank-liters" placeholder="مثال: 5000">
+            </div>
+          </div>
+        </div>
       </div>
-      <button class="calc-back" onclick="calcGoTo(2)">→ رجوع</button>
-    </div>
 
-    <!-- STEP 4: NEIGHBORHOOD -->
-    <div class="calc-step" id="calcStep4">
-      <h2 class="calc-step-title">الحي</h2>
-      <select class="calc-select" id="calcNeighborhoodSelect">
-        <option value="" disabled selected>اختر الحي...</option>
-      </select>
-      <button class="btn-primary" id="calcNeighborhoodNext" style="width:100%;justify-content:center;margin-top:20px" disabled>متابعة ←</button>
-      <button class="calc-back" onclick="calcGoTo(3)">→ رجوع</button>
-    </div>
-
-    <!-- RESULT -->
-    <div class="calc-step" id="calcResult">
-      <div class="calc-result-card">
-        <div class="calc-result-icon">💰</div>
-        <div class="calc-result-label">السعر التقريبي لطلبك</div>
-        <div class="calc-result-price" id="calcResultPrice">من — إلى — ريال</div>
-        <div class="calc-result-note" id="calcResultNote">السعر النهائي بيتحدد بعد معاينة سريعة حسب حالة المكان الفعلية</div>
-        <div class="calc-result-summary" id="calcResultSummary"></div>
-        <a href="#" id="calcWhatsappBtn" class="btn-primary" target="_blank" rel="noopener" style="margin-top:20px;justify-content:center;width:100%">💬 احصل على عرض سعر دقيق عبر واتساب</a>
-        <button class="calc-restart" onclick="calcRestart()">🔄 احسب خدمة تانية</button>
+      <!-- AC -->
+      <div class="cart-item" data-item="ac">
+        <div class="cart-item-head">
+          <label class="cart-check"><input type="checkbox" data-toggle="ac"><span class="cart-check-box"></span><span class="cart-item-title">❄️ تنظيف المكيفات والستائر</span></label>
+        </div>
+        <div class="cart-item-body" data-body="ac">
+          <div class="cart-field">
+            <label>عدد الوحدات</label>
+            <div class="cart-stepper">
+              <button type="button" class="cart-stepper-btn" data-step="ac-qty" data-dir="-1">−</button>
+              <span class="cart-stepper-val" id="ac-qty-val">1</span>
+              <button type="button" class="cart-stepper-btn" data-step="ac-qty" data-dir="1">+</button>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- POOL -->
+      <div class="cart-item" data-item="pool">
+        <div class="cart-item-head">
+          <label class="cart-check"><input type="checkbox" data-toggle="pool"><span class="cart-check-box"></span><span class="cart-item-title">🏊 تنظيف المسابح</span></label>
+        </div>
+        <div class="cart-item-body" data-body="pool">
+          <div class="cart-field">
+            <label>مساحة المسبح (م²)</label>
+            <input type="number" min="0" step="1" class="cart-input" id="pool-area" placeholder="مثال: 30">
+          </div>
+        </div>
+      </div>
+
+      <!-- PEST -->
+      <div class="cart-item" data-item="pest">
+        <div class="cart-item-head">
+          <label class="cart-check"><input type="checkbox" data-toggle="pest"><span class="cart-check-box"></span><span class="cart-item-title">🐜 مكافحة الحشرات والقوارض</span></label>
+        </div>
+        <div class="cart-item-body" data-body="pest">
+          <div class="cart-field">
+            <label>نوع المكان</label>
+            <div class="cart-pills" data-group="pest-type">
+              <button type="button" class="cart-pill active" data-value="flat">شقة</button>
+              <button type="button" class="cart-pill" data-value="villa">فيلا</button>
+              <button type="button" class="cart-pill" data-value="shop">محل تجاري</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OFFICE -->
+      <div class="cart-item" data-item="office">
+        <div class="cart-item-head">
+          <label class="cart-check"><input type="checkbox" data-toggle="office"><span class="cart-check-box"></span><span class="cart-item-title">🏢 تنظيف الشركات والمكاتب</span></label>
+        </div>
+        <div class="cart-item-body" data-body="office">
+          <div class="cart-field-row">
+            <div class="cart-field">
+              <label>المساحة الكلية (م²)</label>
+              <input type="number" min="0" step="10" class="cart-input" id="office-area" placeholder="مثال: 300">
+            </div>
+            <div class="cart-field">
+              <label>عدد المكاتب / الأدوار</label>
+              <input type="number" min="1" step="1" class="cart-input" id="office-units" placeholder="مثال: 2">
+            </div>
+          </div>
+          <div class="cart-field">
+            <label>تكرار الخدمة</label>
+            <select class="cart-select" id="office-frequency">
+              <option value="once">مرة واحدة</option>
+              <option value="weekly">أسبوعي</option>
+              <option value="contract">عقد سنوي (خصم خاص)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEEP -->
+      <div class="cart-item" data-item="deep">
+        <div class="cart-item-head">
+          <label class="cart-check"><input type="checkbox" data-toggle="deep"><span class="cart-check-box"></span><span class="cart-item-title">✨ التنظيف العميق الشامل</span></label>
+        </div>
+        <div class="cart-item-body" data-body="deep">
+          <div class="cart-field">
+            <label>المساحة (م²)</label>
+            <input type="number" min="0" step="10" class="cart-input" id="deep-area" placeholder="مثال: 200">
+          </div>
+        </div>
+      </div>
+
+      <!-- GREEN -->
+      <div class="cart-item" data-item="green">
+        <div class="cart-item-head">
+          <label class="cart-check"><input type="checkbox" data-toggle="green"><span class="cart-check-box"></span><span class="cart-item-title">🌿 التنظيف الأخضر الصديق للبيئة</span></label>
+        </div>
+        <div class="cart-item-body" data-body="green">
+          <div class="cart-field">
+            <label>المساحة (م²)</label>
+            <input type="number" min="0" step="10" class="cart-input" id="green-area" placeholder="مثال: 200">
+          </div>
+        </div>
+      </div>
+
+      <!-- NANO -->
+      <div class="cart-item" data-item="nano">
+        <div class="cart-item-head">
+          <label class="cart-check"><input type="checkbox" data-toggle="nano"><span class="cart-check-box"></span><span class="cart-item-title">🛡️ حماية المجالس بتقنية النانو</span></label>
+        </div>
+        <div class="cart-item-body" data-body="nano">
+          <div class="cart-field">
+            <label>عدد القطع</label>
+            <div class="cart-stepper">
+              <button type="button" class="cart-stepper-btn" data-step="nano-qty" data-dir="-1">−</button>
+              <span class="cart-stepper-val" id="nano-qty-val">1</span>
+              <button type="button" class="cart-stepper-btn" data-step="nano-qty" data-dir="1">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
+
+    <!-- LIVE TOTAL BAR -->
+    <div class="cart-total-bar" id="cartTotalBar">
+      <div class="cart-total-summary" id="cartTotalSummary">اختر خدمة أو أكتر عشان يظهر السعر</div>
+      <div class="cart-total-price" id="cartTotalPrice">0 ريال</div>
+    </div>
+
+    <a href="#" id="cartWhatsappBtn" class="btn-primary" target="_blank" rel="noopener" style="margin-top:18px;justify-content:center;width:100%;display:none">💬 احصل على عرض سعر دقيق عبر واتساب</a>
   </div>
 </div>
 
@@ -617,140 +781,172 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 </div>
 </footer>
 <script>
-// ===== PRICING CALCULATOR =====
+// ===== PRICING CALCULATOR (CART STYLE) =====
 (function(){
-  // ⚠️⚠️ تنبيه هام: الأرقام دي تقديرية بس من عندي (تخمين عام لمتوسط السوق) عشان تجرب شكل النتيجة
+  // ⚠️⚠️ تنبيه هام جدًا: كل الأرقام هنا مبدئية (placeholder) من عندي بس عشان تجرب شكل الحاسبة
   // ⚠️⚠️ لازم تستبدلها بأسعارك الحقيقية قبل ما الصفحة تشتغل لايف - دي مش أسعار موثقة من نشاطك
-  // الصيغة: PRICING.serviceKey.sizeKey = [min, max]  (بالريال السعودي)
   var PRICING = {
-    home:   { s1: [150, 250], s2: [250, 450],  s3: [450, 750],  s4: [750, 1300],  s5: [1300, 2200] },
-    majlis: { s1: [100, 180], s2: [180, 300],  s3: [300, 500],  s4: [500, 800],   s5: [800, 1300] },
-    tank:   { s1: [200, 350], s2: [350, 550],  s3: [550, 850],  s4: [850, 1300],  s5: [1300, 2000] },
-    ac:     { s1: [150, 250], s2: [250, 400],  s3: [400, 650],  s4: [650, 1000],  s5: [1000, 1600] },
-    pool:   { s1: [200, 350], s2: [350, 550],  s3: [550, 850],  s4: [850, 1300],  s5: [1300, 2000] },
-    pest:   { s1: [180, 300], s2: [300, 500],  s3: [500, 800],  s4: [800, 1200],  s5: [1200, 1800] },
-    office: { s1: [200, 350], s2: [350, 600],  s3: [600, 1000], s4: [1000, 1700], s5: [1700, 2800] },
-    deep:   { s1: [250, 400], s2: [400, 700],  s3: [700, 1200], s4: [1200, 2000], s5: [2000, 3200] },
-    green:  { s1: [200, 350], s2: [350, 600],  s3: [600, 1000], s4: [1000, 1600], s5: [1600, 2600] },
-    nano:   { s1: [150, 280], s2: [280, 450],  s3: [450, 700],  s4: [700, 1100],  s5: [1100, 1700] }
+    home: {
+      flat: { small: 250, medium: 400, large: 700 },   // ✅ من كلام المستخدم (سعر "ساكن حاليًا")
+      villaRatePerM2: 3.5,                              // ⚠️ placeholder - سعر المتر للفلل (السعر النهائي هيقع بين 700-2500 حسب المساحة)
+      villaMin: 700, villaMax: 2500,
+      conditionExtraPct: { resident: 0, after_finish: 20, before_move: 20, furnished: 20 } // ✅ +20% ثابتة متفق عليها
+    },
+    majlis:  { perPiece: 80 },      // ⚠️ placeholder
+    tank:    { perM2: 15, per1000L: 40 }, // ⚠️ placeholder
+    ac:      { perUnit: 60 },       // ⚠️ placeholder
+    pool:    { perM2: 25 },         // ⚠️ placeholder
+    pest:    { flat: 200, villa: 350, shop: 300 }, // ⚠️ placeholder
+    office:  { perM2: 6, perUnit: 50, freqMultiplier: { once: 1, weekly: 0.9, contract: 0.75 } }, // ⚠️ placeholder
+    deep:    { perM2: 5 },          // ⚠️ placeholder
+    green:   { perM2: 5.5 },        // ⚠️ placeholder
+    nano:    { perPiece: 70 }       // ⚠️ placeholder
   };
 
-  var NEIGHBORHOODS = {
-    riyadh: ['العليا','الملقا','الياسمين','النرجس','حطين','الندى','القيروان','الربيع','التعاون','المروج','الورود','العارض','النفل','الفلاح','إشبيلية','غرناطة','المونسية','القادسية','الروابي','الخليج','الازدهار','الروضة','السليمانية','الواحة','الريان','النسيم','السويدي','طويق','حي آخر بالرياض'],
-    jeddah: ['الصفا','الروضة','الشاطئ','النعيم','السلامة','الحمراء','البوادي','الأندلس','الزهراء','الفيصلية','الرحاب','النزهة','حي آخر بجدة']
+  var LABELS = {
+    home: '🏠 تنظيف المنزل', majlis: '🛋️ المجالس والكنب', tank: '💧 الخزانات',
+    ac: '❄️ المكيفات والستائر', pool: '🏊 المسابح', pest: '🐜 مكافحة الحشرات',
+    office: '🏢 الشركات والمكاتب', deep: '✨ التنظيف العميق', green: '🌿 التنظيف الأخضر', nano: '🛡️ حماية النانو'
   };
 
-  var state = { service: null, serviceLabel: '', size: null, sizeLabel: '', city: null, cityLabel: '', neighborhood: null };
-  var progressBar = document.getElementById('calcProgressBar');
-  var stepLabels = document.querySelectorAll('[data-step-label]');
+  var qty = { majlis: 1, ac: 1, nano: 1 };
+  var pills = { 'home-type': 'flat', 'home-flat-size': 'small', 'pest-type': 'flat' };
 
-  function setProgress(step){
-    var pct = step * 25;
-    if(progressBar) progressBar.style.width = pct + '%';
-    stepLabels.forEach(function(l){
-      l.classList.toggle('active', parseInt(l.dataset.stepLabel, 10) <= step);
+  function activeItems(){
+    var out = [];
+    document.querySelectorAll('[data-toggle]').forEach(function(cb){
+      if(cb.checked) out.push(cb.dataset.toggle);
     });
+    return out;
   }
 
-  window.calcGoTo = function(step){
-    document.querySelectorAll('.calc-step').forEach(function(s){ s.classList.remove('active'); });
-    var target = document.getElementById('calcStep' + step);
-    if(target) target.classList.add('active');
-    setProgress(step);
-  };
-
-  window.calcRestart = function(){
-    state = { service: null, serviceLabel: '', size: null, sizeLabel: '', city: null, cityLabel: '', neighborhood: null };
-    var sel = document.getElementById('calcNeighborhoodSelect');
-    if(sel) sel.selectedIndex = 0;
-    var nextBtn = document.getElementById('calcNeighborhoodNext');
-    if(nextBtn) nextBtn.disabled = true;
-    calcGoTo(1);
-  };
-
-  function showResult(){
-    document.querySelectorAll('.calc-step').forEach(function(s){ s.classList.remove('active'); });
-    document.getElementById('calcResult').classList.add('active');
-    if(progressBar) progressBar.style.width = '100%';
-
-    var priceEl = document.getElementById('calcResultPrice');
-    var noteEl = document.getElementById('calcResultNote');
-    var summaryEl = document.getElementById('calcResultSummary');
-
-    var range = PRICING[state.service] ? PRICING[state.service][state.size] : null;
-    if(range && Array.isArray(range)){
-      priceEl.textContent = 'من ' + range[0] + ' إلى ' + range[1] + ' ريال تقريباً';
-      noteEl.textContent = 'السعر النهائي بيتحدد بعد معاينة سريعة حسب حالة المكان الفعلية';
+  function calcHomePrice(){
+    var base;
+    if(pills['home-type'] === 'villa'){
+      var area = parseFloat(document.getElementById('home-villa-area').value) || 0;
+      base = area * PRICING.home.villaRatePerM2;
+      if(area > 0){
+        base = Math.max(PRICING.home.villaMin, Math.min(PRICING.home.villaMax, base));
+      } else {
+        base = 0;
+      }
     } else {
-      priceEl.textContent = 'تواصل معنا لعرض سعر دقيق';
-      noteEl.textContent = 'الخدمة دي محتاجة تقييم مباشر عشان نديك أنسب سعر لحالتك';
+      base = PRICING.home.flat[pills['home-flat-size']] || 0;
+    }
+    var cond = document.getElementById('home-condition').value;
+    var extraPct = PRICING.home.conditionExtraPct[cond] || 0;
+    return Math.round(base * (1 + extraPct / 100));
+  }
+
+  function calcTankPrice(){
+    var area = parseFloat(document.getElementById('tank-area').value) || 0;
+    var liters = parseFloat(document.getElementById('tank-liters').value) || 0;
+    return Math.round(area * PRICING.tank.perM2 + (liters / 1000) * PRICING.tank.per1000L);
+  }
+
+  function calcOfficePrice(){
+    var area = parseFloat(document.getElementById('office-area').value) || 0;
+    var units = parseFloat(document.getElementById('office-units').value) || 1;
+    var freq = document.getElementById('office-frequency').value;
+    var base = area * PRICING.office.perM2 + units * PRICING.office.perUnit;
+    var mult = PRICING.office.freqMultiplier[freq] || 1;
+    return Math.round(base * mult);
+  }
+
+  function calcItemPrice(item){
+    switch(item){
+      case 'home': return calcHomePrice();
+      case 'majlis': return qty.majlis * PRICING.majlis.perPiece;
+      case 'tank': return calcTankPrice();
+      case 'ac': return qty.ac * PRICING.ac.perUnit;
+      case 'pool': return Math.round((parseFloat(document.getElementById('pool-area').value) || 0) * PRICING.pool.perM2);
+      case 'pest': return PRICING.pest[pills['pest-type']] || 0;
+      case 'office': return calcOfficePrice();
+      case 'deep': return Math.round((parseFloat(document.getElementById('deep-area').value) || 0) * PRICING.deep.perM2);
+      case 'green': return Math.round((parseFloat(document.getElementById('green-area').value) || 0) * PRICING.green.perM2);
+      case 'nano': return qty.nano * PRICING.nano.perPiece;
+      default: return 0;
+    }
+  }
+
+  function updateTotal(){
+    var items = activeItems();
+    var total = 0;
+    var lines = [];
+    items.forEach(function(item){
+      var price = calcItemPrice(item);
+      total += price;
+      lines.push(LABELS[item] + ': ' + price + ' ريال');
+    });
+
+    var summaryEl = document.getElementById('cartTotalSummary');
+    var priceEl = document.getElementById('cartTotalPrice');
+    var waBtn = document.getElementById('cartWhatsappBtn');
+
+    if(items.length === 0){
+      summaryEl.textContent = 'اختر خدمة أو أكتر عشان يظهر السعر';
+      priceEl.textContent = '0 ريال';
+      waBtn.style.display = 'none';
+      return;
     }
 
-    summaryEl.innerHTML =
-      '<div>🧹 الخدمة: ' + state.serviceLabel + '</div>' +
-      '<div>📐 المساحة: ' + state.sizeLabel + '</div>' +
-      '<div>📍 المدينة: ' + state.cityLabel + ' - ' + state.neighborhood + '</div>';
+    summaryEl.innerHTML = lines.join('<br>');
+    priceEl.textContent = total + ' ريال تقريباً';
+    waBtn.style.display = 'flex';
 
-    var msg = 'مرحباً، أريد عرض سعر لخدمة: ' + state.serviceLabel +
-               ' - ' + state.sizeLabel + ' - ' + state.cityLabel + ' (حي ' + state.neighborhood + ')';
-    var waBtn = document.getElementById('calcWhatsappBtn');
-    if(waBtn) waBtn.href = 'https://wa.me/966545833481?text=' + encodeURIComponent(msg);
+    var msg = 'مرحباً، أريد عرض سعر لـ: ' + lines.join(' | ') + ' | الإجمالي التقريبي: ' + total + ' ريال';
+    waBtn.href = 'https://wa.me/966545833481?text=' + encodeURIComponent(msg);
   }
 
-  document.querySelectorAll('#calcStep1 .calc-option').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      state.service = btn.dataset.service;
-      state.serviceLabel = btn.dataset.label;
-      calcGoTo(2);
+  // toggle item body visibility
+  document.querySelectorAll('[data-toggle]').forEach(function(cb){
+    cb.addEventListener('change', function(){
+      var body = document.querySelector('[data-body="' + cb.dataset.toggle + '"]');
+      var card = document.querySelector('[data-item="' + cb.dataset.toggle + '"]');
+      if(body) body.classList.toggle('open', cb.checked);
+      if(card) card.classList.toggle('active', cb.checked);
+      updateTotal();
     });
   });
 
-  document.querySelectorAll('#calcStep2 .calc-option').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      state.size = btn.dataset.size;
-      state.sizeLabel = btn.dataset.label;
-      calcGoTo(3);
+  // pills (single-select groups)
+  document.querySelectorAll('.cart-pills').forEach(function(group){
+    var groupName = group.dataset.group;
+    group.querySelectorAll('.cart-pill').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        group.querySelectorAll('.cart-pill').forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        pills[groupName] = btn.dataset.value;
+
+        // show/hide conditional fields (e.g. home-type)
+        document.querySelectorAll('[data-show-when]').forEach(function(el){
+          var cond = el.dataset.showWhen.split('=');
+          el.style.display = (pills[cond[0]] === cond[1]) ? '' : 'none';
+        });
+
+        updateTotal();
+      });
     });
   });
 
-  document.querySelectorAll('#calcStep3 .calc-option').forEach(function(btn){
+  // steppers
+  document.querySelectorAll('.cart-stepper-btn').forEach(function(btn){
     btn.addEventListener('click', function(){
-      state.city = btn.dataset.city;
-      state.cityLabel = btn.dataset.label;
-      populateNeighborhoods(state.city);
-      calcGoTo(4);
+      var key = btn.dataset.step.replace('-qty', '');
+      var dir = parseInt(btn.dataset.dir, 10);
+      qty[key] = Math.max(1, (qty[key] || 1) + dir);
+      document.getElementById(key + '-qty-val').textContent = qty[key];
+      updateTotal();
     });
   });
 
-  function populateNeighborhoods(cityKey){
-    var select = document.getElementById('calcNeighborhoodSelect');
-    var nextBtn = document.getElementById('calcNeighborhoodNext');
-    if(!select) return;
-    select.innerHTML = '<option value="" disabled selected>اختر الحي...</option>';
-    (NEIGHBORHOODS[cityKey] || []).forEach(function(name){
-      var opt = document.createElement('option');
-      opt.value = name;
-      opt.textContent = name;
-      select.appendChild(opt);
-    });
-    select.selectedIndex = 0;
-    if(nextBtn) nextBtn.disabled = true;
-  }
+  // inputs & selects
+  document.querySelectorAll('.cart-input, .cart-select').forEach(function(el){
+    el.addEventListener('input', updateTotal);
+    el.addEventListener('change', updateTotal);
+  });
 
-  var neighborhoodSelect = document.getElementById('calcNeighborhoodSelect');
-  var neighborhoodNextBtn = document.getElementById('calcNeighborhoodNext');
-  if(neighborhoodSelect){
-    neighborhoodSelect.addEventListener('change', function(){
-      if(neighborhoodNextBtn) neighborhoodNextBtn.disabled = !neighborhoodSelect.value;
-    });
-  }
-  if(neighborhoodNextBtn){
-    neighborhoodNextBtn.addEventListener('click', function(){
-      if(!neighborhoodSelect || !neighborhoodSelect.value) return;
-      state.neighborhood = neighborhoodSelect.value;
-      showResult();
-    });
-  }
+  updateTotal();
 })();
 </script>
 
