@@ -17,6 +17,11 @@
       "permanent": false
     },
     {
+      "source": "/faq.html",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
       "source": "/services/تنظيف-المنازل-والفلل.html",
       "destination": "/services/تنظيف-المنازل-والفلل/",
       "permanent": true
