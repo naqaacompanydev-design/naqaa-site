@@ -465,6 +465,11 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 .srv-related-list li a{display:flex;align-items:flex-start;gap:8px;color:var(--gray);font-size:14px;line-height:1.6;transition:color .3s}
 .srv-related-list li a::before{content:'←';color:var(--gold2);flex-shrink:0}
 .srv-related-list li a:hover{color:var(--gold2)}
+.srv-articles-card{border:2px solid rgba(201,168,76,.35);background:linear-gradient(145deg,rgba(201,168,76,.06),rgba(10,22,40,.9))}
+.srv-related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:16px}
+.srv-related-grid a{display:flex;align-items:center;gap:10px;background:rgba(201,168,76,.05);border:1px solid rgba(201,168,76,.2);border-radius:14px;padding:14px 16px;color:var(--white);font-size:13px;font-weight:600;line-height:1.55;transition:all .3s}
+.srv-related-grid a::before{content:'📄';flex-shrink:0;font-size:15px}
+.srv-related-grid a:hover{border-color:var(--gold);background:rgba(201,168,76,.14);transform:translateY(-2px)}
 
 .page-breadcrumb a{color:var(--gray);text-decoration:none;transition:color .3s}
 .page-breadcrumb a:hover{color:var(--gold2)}
@@ -701,18 +706,22 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
           </div>
         </div>
 
-        <!-- مقالات مرتبطة -->
-        <div class="srv-card">
-          <h2>مقالات مرتبطة</h2>
-          <ul class="srv-related-list">
-            <li><a href="/blog/cheap-professional-house-cleaning-riyadh/">شركة تنظيف منازل بالرياض رخيصة واحترافية | أفضل سعر مقابل الخدمة</a></li>
-            <li><a href="/blog/same-day-house-cleaning-riyadh/">أفضل شركة تنظيف منازل بالرياض | خدمة في نفس اليوم</a></li>
-            <li><a href="/blog/cleaning-tips-before-booking-riyadh/">قبل أن تطلب شركة تنظيف منازل بالرياض | اقرأ هذه النصائح المهمة</a></li>
-            <li><a href="/blog/house-cleaning-company-riyadh-guide/">هل تبحث عن شركة تنظيف منازل بالرياض؟ إليك كل ما تحتاج معرفته قبل الحجز</a></li>
-            <li><a href="/blog/house-cleaning-north-riyadh/">أفضل شركة تنظيف منازل بشمال الرياض | مؤسسة نقاء للتنظيف</a></li>
-            <li><a href="/blog/تنظيف-منازل-بالرياض/">تنظيف منازل بالرياض – مؤسسة نقاء للتنظيف</a></li>
-            <li><a href="/blog/سعر-تنظيف-الفيلا-بالرياض/">كم سعر تنظيف الفيلا بالرياض؟ دليل الأسعار الكامل لعام 2026</a></li>
-          </ul>
+        <!-- مقالات ذات صلة -->
+        <div class="srv-card srv-articles-card">
+          <h2>📚 مقالات ذات صلة</h2>
+          <div class="srv-related-grid">
+            <a href="/blog/cheap-professional-house-cleaning-riyadh/"><span>شركة تنظيف منازل بالرياض رخيصة واحترافية | أفضل سعر مقابل الخدمة</span></a>
+            <a href="/blog/same-day-house-cleaning-riyadh/"><span>أفضل شركة تنظيف منازل بالرياض | خدمة في نفس اليوم</span></a>
+            <a href="/blog/cleaning-tips-before-booking-riyadh/"><span>قبل أن تطلب شركة تنظيف منازل بالرياض | اقرأ هذه النصائح المهمة</span></a>
+            <a href="/blog/house-cleaning-company-riyadh-guide/"><span>هل تبحث عن شركة تنظيف منازل بالرياض؟ إليك كل ما تحتاج معرفته قبل الحجز</span></a>
+            <a href="/blog/house-cleaning-north-riyadh/"><span>أفضل شركة تنظيف منازل بشمال الرياض | مؤسسة نقاء للتنظيف</span></a>
+            <a href="/blog/house-cleaning-south-riyadh/"><span>أفضل شركة تنظيف منازل بجنوب الرياض | مؤسسة نقاء للتنظيف</span></a>
+            <a href="/blog/house-cleaning-price-riyadh/"><span>كم تكلفة تنظيف المنازل بالرياض؟ الدليل الكامل للأسعار والخدمات</span></a>
+            <a href="/blog/تنظيف-منازل-بالرياض/"><span>تنظيف منازل بالرياض – مؤسسة نقاء للتنظيف</span></a>
+            <a href="/blog/تنظيف-منازل-بعد-التشطيب-بالرياض/"><span>تنظيف المنازل بعد التشطيب بالرياض</span></a>
+            <a href="/blog/افضل-شركة-تنظيف-منازل-امنة-للاطفال/"><span>أفضل شركة تنظيف منازل آمنة على الأطفال</span></a>
+            <a href="/blog/سعر-تنظيف-الفيلا-بالرياض/"><span>كم سعر تنظيف الفيلا بالرياض؟ دليل الأسعار الكامل لعام 2026</span></a>
+          </div>
         </div>
 
         <!-- CTA داخل المحتوى -->

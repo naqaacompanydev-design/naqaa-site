@@ -229,6 +229,10 @@
       .nav-links a{display:block;padding:14px 20px;width:100%}
       .nav-links .nav-cta{margin:8px 20px;display:block;text-align:center}
     }
+
+.service-highlight-card{border:2px solid var(--gold) !important;background:linear-gradient(135deg,rgba(201,168,76,.15) 0%,var(--navy2) 100%) !important}
+.btn-service-highlight{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);padding:12px 24px;border-radius:50px;font-weight:700;font-size:.85rem;white-space:nowrap;transition:all .3s}
+.btn-service-highlight:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,.4)}
 </style>
 </head>
 <body>
@@ -635,21 +639,11 @@
           </div>
         </div>
 
-        <div class="sidebar-card reveal">
-          <div class="sidebar-card-head"><h4>🧽 خدماتنا</h4></div>
-          <div class="sidebar-card-body">
-            <ul class="related-list">
-              <li><a href="/services/تنظيف-المنازل-والفلل/">تنظيف المنازل والفلل</a></li>
-              <li><a href="/services/تنظيف-المجالس-والكنب/">تنظيف المجالس والكنب</a></li>
-              <li><a href="/services/تنظيف-وعزل-الخزانات/">تنظيف وعزل الخزانات</a></li>
-              <li><a href="/services/تنظيف-المكيفات-والستائر/">تنظيف المكيفات والستائر</a></li>
-              <li><a href="/services/تنظيف-المسابح/">تنظيف المسابح</a></li>
-              <li><a href="/services/مكافحة-الحشرات-والقوارض/">مكافحة الحشرات والقوارض</a></li>
-              <li><a href="/services/تنظيف-الشركات-والمكاتب/">تنظيف الشركات والمكاتب</a></li>
-              <li><a href="/services/التنظيف-العميق-الشامل/">التنظيف العميق الشامل</a></li>
-              <li><a href="/services/التنظيف-الاخضر-الصديق-للبيئة/">التنظيف الأخضر الصديق للبيئة</a></li>
-              <li><a href="/services/حماية-المجالس-بتقنية-النانو/">حماية المجالس بتقنية النانو</a></li>
-            </ul>
+        <div class="sidebar-card reveal service-highlight-card">
+          <div class="sidebar-card-head"><h4>🏡 خدمة المقال</h4></div>
+          <div class="sidebar-card-body" style="text-align:center">
+            <p style="color:var(--gray);font-size:.85rem;margin-bottom:14px;line-height:1.6">تحتاج تنظيف منزلك أو فيلتك؟</p>
+            <a href="/services/تنظيف-المنازل-والفلل/" class="btn-service-highlight">🧽 احجز الخدمة من هنا</a>
           </div>
         </div>
       </div>
