@@ -84,6 +84,7 @@ a{text-decoration:none;color:inherit}
 
 /* ===== NAVBAR ===== */
 nav#navbar{position:fixed;top:0;right:0;left:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;background:rgba(10,22,40,.97);border-bottom:1px solid rgba(201,168,76,.15);backdrop-filter:blur(10px)}
+.logo-img{height:50px;width:auto;display:block}
 .logo{cursor:pointer;min-width:40px;min-height:40px}
 .nav-links{display:flex;align-items:center;gap:28px;list-style:none}
 .nav-links a{color:var(--gray);font-size:14px;font-weight:600;transition:color .3s}
@@ -225,7 +226,9 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 
 <!-- ===== NAVBAR ===== -->
 <nav id="navbar">
-  <div onclick="location.href='/'" class="logo"></div>
+  <div onclick="location.href='/'" class="logo">
+    <img src="/logo.svg" alt="مؤسسة نقاء للتنظيف" class="logo-img" width="250" height="50">
+  </div>
   <ul class="nav-links">
     <li><a href="/">الرئيسية</a></li>
     <li><a href="/about/">من نحن</a></li>

@@ -45,6 +45,8 @@
 
     nav{position:fixed;top:0;right:0;left:0;z-index:1000;background:rgba(10,22,40,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.15);padding:0 5%;height:68px;display:flex;align-items:center;justify-content:space-between}
     .nav-brand{font-family:'Readex Pro',sans-serif;font-size:1.15rem;font-weight:700;color:var(--gold);letter-spacing:.02em}
+    .logo{display:flex;align-items:center;cursor:pointer}
+    .logo-img{height:50px;width:auto;display:block}
     .nav-links{display:flex;gap:28px;list-style:none}
     .nav-links a{color:var(--white);font-size:.9rem;font-weight:500;transition:color .2s}
     .nav-links a:hover{color:var(--gold)}
@@ -229,7 +231,7 @@
 <body>
 
   <nav>
-    <a href="/" class="nav-brand">نقاء للتنظيف</a>
+    <a href="/" class="logo"><img src="/logo.svg" alt="مؤسسة نقاء للتنظيف" class="logo-img" width="250" height="50"></a>
     <div class="nav-hamburger" id="navHamburger"><span></span><span></span><span></span></div>
     <ul class="nav-links">
       <li><a href="/">الرئيسية</a></li>
