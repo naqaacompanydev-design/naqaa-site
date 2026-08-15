@@ -69,7 +69,6 @@ section{padding:80px 0}
 #navbar.scrolled{background:rgba(10,22,40,.97);backdrop-filter:blur(20px);padding:10px 24px;border-bottom:1px solid rgba(201,168,76,.15);box-shadow:0 4px 30px rgba(0,0,0,.4)}
 
 /* LOGO */
-.logo-img{height:50px;width:auto;display:block}
 .logo{display:flex;align-items:center;gap:12px;cursor:pointer}
 .logo-svg-wrap{width:56px;height:56px;border-radius:50%;overflow:hidden;background:transparent;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:none;border:none}
 .logo-svg-wrap svg{width:100%;height:100%;object-fit:contain}
@@ -417,6 +416,11 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 .sb-btn:hover{opacity:.85}
 .page-breadcrumb a{color:var(--gray);text-decoration:none;transition:color .3s}
 .page-breadcrumb a:hover{color:var(--gold2)}
+
+.articles-mesh-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-top:10px}
+.articles-mesh-grid a{display:block;background:rgba(201,168,76,.05);border:1px solid rgba(201,168,76,.15);border-radius:10px;padding:9px 12px;color:var(--gray);font-size:12px;font-weight:600;line-height:1.5;transition:all .3s}
+.articles-mesh-grid a:hover{border-color:var(--gold);color:var(--gold2);background:rgba(201,168,76,.1)}
+.articles-mesh-grid a.mesh-home{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);border-color:transparent;text-align:center}
 </style>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -428,7 +432,10 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 <body>
 <nav id="navbar">
   <div onclick="location.href='/'" class="logo">
-    <img src="/logo.svg" alt="مؤسسة نقاء للتنظيف" class="logo-img" width="250" height="50">
+  </div>
+    <div class="logo-text">
+      <div class="logo-brand"/div>
+    </div>
   </div>
   <ul class="nav-links">
     <li><a href="/" onclick="location.href='/'" id="nav-home">الرئيسية</a></li>
@@ -595,16 +602,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 <p style="font-size:12px;color:var(--gray);margin-bottom:12px;line-height:1.6">تحتاج تنظيف منزلك أو فيلتك؟</p>
 <a href="/services/تنظيف-المنازل-والفلل/" class="sb-btn" style="background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy)">🧽 احجز الخدمة من هنا</a>
 </div>
-<div class="sb-card">
-<h3>📖 مقالات ذات صلة</h3>
-<a href="/blog/تنظيف-منازل-بالرياض/" style="display:flex;align-items:center;gap:10px;padding:10px;background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.08);border-radius:10px;text-decoration:none;margin-bottom:8px;transition:all .3s">
-<div><p style="font-size:12px;font-weight:700;color:var(--white);margin:0 0 2px;line-height:1.4">تنظيف منازل بالرياض – مؤسسة نقاء للتنظيف...</p><span style="font-size:11px;color:var(--gray)">تنظيف المنازل</span></div>
-</a><a href="/blog/عزل-خزانات-بالرياض/" style="display:flex;align-items:center;gap:10px;padding:10px;background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.08);border-radius:10px;text-decoration:none;margin-bottom:8px;transition:all .3s">
-<div><p style="font-size:12px;font-weight:700;color:var(--white);margin:0 0 2px;line-height:1.4">عزل وتنظيف الخزانات بالرياض بضمان رسمي – مؤسسة نقاء...</p><span style="font-size:11px;color:var(--gray)">تنظيف الخزانات</span></div>
-</a><a href="/blog/افضل-شركة-تنظيف-منازل-امنة-للاطفال/" style="display:flex;align-items:center;gap:10px;padding:10px;background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.08);border-radius:10px;text-decoration:none;margin-bottom:8px;transition:all .3s">
-<div><p style="font-size:12px;font-weight:700;color:var(--white);margin:0 0 2px;line-height:1.4">أفضل شركة تنظيف منازل آمنة على الأطفال...</p><span style="font-size:11px;color:var(--gray)">تنظيف المنازل</span></div>
-</a>
-</div>
+<div class="sb-card"><h3>📖 مقالات ذات صلة بتنظيف المنازل والفلل</h3><div class="articles-mesh-grid"><a href="/blog/cheap-professional-house-cleaning-riyadh/">تنظيف منازل رخيص واحترافي</a><a href="/blog/same-day-house-cleaning-riyadh/">تنظيف منازل في نفس اليوم</a><a href="/blog/cleaning-tips-before-booking-riyadh/">نصائح قبل حجز شركة تنظيف</a><a href="/blog/house-cleaning-company-riyadh-guide/">دليل اختيار شركة تنظيف منازل</a><a href="/blog/house-cleaning-north-riyadh/">تنظيف منازل شمال الرياض</a><a href="/blog/house-cleaning-south-riyadh/">تنظيف منازل جنوب الرياض</a><a href="/blog/house-cleaning-price-riyadh/">أسعار تنظيف المنازل بالرياض</a><a href="/blog/سعر-تنظيف-الفيلا-بالرياض/">سعر تنظيف الفيلا 2026</a><a href="/blog/تنظيف-منازل-بالرياض/">تنظيف منازل بالرياض (خصم 40%)</a><a href="/blog/افضل-شركة-تنظيف-منازل-امنة-للاطفال/">تنظيف منازل آمن على الأطفال</a><a href="/" class="mesh-home">🏠 الصفحة الرئيسية</a></div></div>
 </aside>
 </div>
 <footer id="main-footer">
