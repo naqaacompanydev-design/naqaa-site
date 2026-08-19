@@ -393,9 +393,17 @@ section{padding:80px 0}
 .testi-dot.active{background:var(--gold);width:22px;border-radius:5px}
 @media(max-width:768px){
   .testi-carousel{gap:8px}
-  .testi-card{padding:28px 20px}
-  .testi-arrow{width:34px;height:34px;font-size:12px}
-  .testi-text{font-size:13.5px;min-height:100px}
+  .testi-card{padding:16px 18px;text-align:start;display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+  .testi-card::before{display:none}
+  .testi-quote{position:absolute;top:8px;left:16px;font-size:46px;opacity:.18;margin:0}
+  .testi-person{order:1;flex:0 0 auto;gap:8px}
+  .testi-avatar{width:38px;height:38px;font-size:14px}
+  .testi-name{font-size:13px}
+  .testi-service{font-size:10.5px}
+  .testi-stars{order:2;flex:1;text-align:end;margin-bottom:0;font-size:13px;letter-spacing:2px}
+  .testi-text{order:3;flex:0 0 100%;font-size:13px;line-height:1.7;margin-bottom:0;min-height:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .testi-arrow{display:none}
+  .testi-dots{margin-top:14px}
 }
 
 /* ===== CONTACT ===== */
@@ -480,7 +488,8 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   .cmd-bar{left:50%;right:auto;bottom:24px;transform:translateX(-50%);border-radius:50px;border:1px solid rgba(201,168,76,.28);border-top:1px solid rgba(201,168,76,.28);overflow:hidden;box-shadow:0 12px 34px rgba(0,0,0,.4)}
   .cmd-btn{padding:14px 26px}
 }
-.back-top{position:fixed;bottom:76px;right:16px;width:44px;height:44px;background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--navy);z-index:998;transition:all .3s;opacity:0;transform:translateY(10px);box-shadow:0 4px 14px rgba(201,168,76,.35)}
+.back-top{position:fixed;bottom:76px;right:16px;width:38px;height:38px;background:rgba(10,22,40,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(201,168,76,.3);border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--gold2);z-index:998;transition:all .3s;opacity:0;transform:translateY(10px);box-shadow:0 4px 14px rgba(0,0,0,.3)}
+.back-top:hover{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);border-color:transparent}
 .back-top.visible{opacity:1;transform:translateY(0)}
 .back-top:hover{transform:translateY(-2px)}
 
