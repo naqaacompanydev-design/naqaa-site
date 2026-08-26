@@ -639,6 +639,30 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 }
 /* ===== BUTTON SVG COLORS ===== */
 .btn-primary svg{color:#0a1628;fill:#0a1628}
+
+/* ===== PACKAGES SECTION ===== */
+#packages-section{position:relative}
+.packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.pkg-card{position:relative;background:linear-gradient(160deg,rgba(17,34,64,.75),rgba(10,22,40,.95));border:1px solid rgba(201,168,76,.18);border-radius:22px;padding:30px 26px 26px;display:flex;flex-direction:column;transition:transform .35s,border-color .35s,box-shadow .35s}
+.pkg-card:hover{transform:translateY(-6px);border-color:rgba(201,168,76,.4);box-shadow:0 16px 40px rgba(0,0,0,.35)}
+.pkg-card.pkg-featured{border-color:rgba(201,168,76,.55);background:linear-gradient(160deg,rgba(201,168,76,.1),rgba(10,22,40,.97));transform:scale(1.04)}
+.pkg-card.pkg-featured:hover{transform:scale(1.04) translateY(-6px)}
+.pkg-discount-badge{position:absolute;top:-14px;right:24px;background:linear-gradient(135deg,var(--gold),var(--gold3));color:var(--navy);font-size:12.5px;font-weight:800;padding:6px 16px;border-radius:50px;box-shadow:0 6px 16px rgba(201,168,76,.4)}
+.pkg-most-wanted{display:inline-block;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);color:var(--gold2);font-size:11px;font-weight:700;padding:4px 12px;border-radius:50px;margin-bottom:14px;width:fit-content}
+.pkg-name{font-family:'Tajawal',sans-serif;font-size:19px;font-weight:800;color:var(--white);margin-bottom:14px;line-height:1.35}
+.pkg-includes{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-direction:column;gap:10px;flex-grow:1}
+.pkg-includes li{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:rgba(248,246,240,.85);line-height:1.5}
+.pkg-includes li svg{flex-shrink:0;margin-top:2px;color:var(--gold2)}
+.pkg-price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+.pkg-price-old{font-size:15px;color:var(--gray);text-decoration:line-through}
+.pkg-price-new{font-family:'Tajawal',sans-serif;font-size:28px;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--gold3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.pkg-price-unit{font-size:12px;color:var(--gray);margin-bottom:18px}
+.pkg-btn{margin-top:auto;width:100%;justify-content:center;text-align:center;text-decoration:none}
+@media(max-width:768px){
+  .packages-grid{grid-template-columns:1fr;gap:16px}
+  .pkg-card.pkg-featured{transform:none}
+  .pkg-card.pkg-featured:hover{transform:translateY(-4px)}
+}
 .btn-outline svg{color:var(--gold2);fill:var(--gold2)}
 .btn-outline:hover svg{color:var(--navy);fill:var(--navy)}
 .cmd-wa svg{color:#fff;fill:#fff}
@@ -817,6 +841,75 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
     </div>
   </section>
   
+
+  <!-- PACKAGES -->
+  <section id="packages-section">
+    <div class="container">
+      <div class="services-header reveal reveal-scale">
+        <div class="section-tag">🎁 باقاتنا المميزة</div>
+        <h2 class="section-title">وفّر أكتر مع <span class="gold">باقاتنا الجاهزة</span></h2>
+        <div class="divider"></div>
+        <p class="section-sub">باقات مجمّعة بخصومات حقيقية توفرلك عناء طلب كل خدمة لوحدها</p>
+      </div>
+      <div class="packages-grid">
+
+        <!-- PACKAGE 1: HOME -->
+        <div class="pkg-card pkg-featured reveal">
+          <div class="pkg-discount-badge">خصم 33%</div>
+          <span class="pkg-most-wanted">⭐ الأكثر طلباً</span>
+          <h3 class="pkg-name">باقة المنزل الشامل</h3>
+          <ul class="pkg-includes">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>تنظيف منزل متوسط (100 - 200 متر)</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>مكافحة حشرات للمنزل بالكامل</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>تنظيف جميع المجالس والكنب</li>
+          </ul>
+          <div class="pkg-price-row">
+            <span class="pkg-price-old">1200 ر.س</span>
+            <span class="pkg-price-new">800 ر.س</span>
+          </div>
+          <div class="pkg-price-unit">شامل الضريبة</div>
+          <a href="https://wa.me/966545833481?text=مرحباً،%20أريد%20طلب%20باقة%20المنزل%20الشامل%20(تنظيف%20+%20مكافحة%20حشرات%20+%20مجالس)%20بسعر%20800%20ريال" target="_blank" rel="noopener" class="btn-primary pkg-btn">⚡ اطلب الباقة الآن</a>
+        </div>
+
+        <!-- PACKAGE 2: OFFICES / B2B -->
+        <div class="pkg-card reveal">
+          <div class="pkg-discount-badge">خصم 20%</div>
+          <span class="pkg-most-wanted">🏢 عقد شركات</span>
+          <h3 class="pkg-name">باقة العقد الشهري للشركات</h3>
+          <ul class="pkg-includes">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>4 زيارات تنظيف شامل خلال الشهر</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>تغطية طابقين (حتى 200 متر لكل دور)</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>أرضيات، مكاتب، وكل مرافق الشركة</li>
+          </ul>
+          <div class="pkg-price-row">
+            <span class="pkg-price-old">4200 ر.س</span>
+            <span class="pkg-price-new">3360 ر.س</span>
+          </div>
+          <div class="pkg-price-unit">شهرياً / شامل الضريبة</div>
+          <a href="https://wa.me/966545833481?text=مرحباً،%20أريد%20طلب%20باقة%20العقد%20الشهري%20للشركات%20(4%20زيارات)%20بسعر%203360%20ريال" target="_blank" rel="noopener" class="btn-primary pkg-btn">⚡ اطلب الباقة الآن</a>
+        </div>
+
+        <!-- PACKAGE 3: TANKS / POST-FINISH -->
+        <div class="pkg-card reveal">
+          <div class="pkg-discount-badge">خصم 33%</div>
+          <span class="pkg-most-wanted">💧 ما بعد التشطيب</span>
+          <h3 class="pkg-name">باقة الخزانات الشاملة</h3>
+          <ul class="pkg-includes">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>تنظيف منزل متوسط بعد التشطيب</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>تنظيف الخزانات العلوية والأرضية</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>عزل الخزان الأرضي</li>
+          </ul>
+          <div class="pkg-price-row">
+            <span class="pkg-price-old">1800 ر.س</span>
+            <span class="pkg-price-new">1206 ر.س</span>
+          </div>
+          <div class="pkg-price-unit">شامل الضريبة</div>
+          <a href="https://wa.me/966545833481?text=مرحباً،%20أريد%20طلب%20باقة%20الخزانات%20الشاملة%20(تنظيف%20بعد%20التشطيب%20+%20خزانات%20+%20عزل)%20بسعر%201206%20ريال" target="_blank" rel="noopener" class="btn-primary pkg-btn">⚡ اطلب الباقة الآن</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- TESTIMONIALS -->
   <section id="testimonials-section">
