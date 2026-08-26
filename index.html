@@ -312,7 +312,6 @@ section{padding:80px 0}
 @media(max-width:768px){.services-header{margin-top:-46px;padding:24px 18px 22px;border-radius:20px}}
 .services-header .divider{margin:16px auto}
 .services-header .section-sub{margin:0 auto}
-.coverage-header .section-sub{margin:0 auto}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .service-card{position:relative;overflow:hidden;border-radius:18px;cursor:pointer;aspect-ratio:4/3;background:var(--navy2)}
 .service-card-img{position:absolute;inset:0;width:100%;height:100%}
@@ -428,22 +427,6 @@ section{padding:80px 0}
 .form-group textarea{resize:none;min-height:100px}
 .form-submit{width:100%;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);border:none;border-radius:50px;padding:15px;font-size:15px;font-weight:700;font-family:'Cairo',sans-serif;cursor:pointer;transition:all .3s;box-shadow:0 6px 18px rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;gap:8px;margin-top:6px}
 .form-submit:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(201,168,76,.45)}
-
-/* ===== COVERAGE MAP ===== */
-#coverage-section{background:linear-gradient(180deg,var(--navy) 0%,var(--navy2) 100%)}
-.coverage-header{text-align:center;margin-bottom:40px}
-.coverage-header .divider{margin:16px auto}
-.map-toggle{display:flex;justify-content:center;gap:12px;margin-bottom:26px}
-.map-toggle-btn{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);color:rgba(248,246,240,.8);padding:10px 26px;border-radius:50px;font-family:'Cairo',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .3s}
-.map-toggle-btn:hover{border-color:var(--gold);color:var(--gold2)}
-.map-toggle-btn.active{background:linear-gradient(135deg,var(--gold),var(--gold2));border-color:transparent;color:var(--navy)}
-.map-frame-wrap{max-width:900px;margin:0 auto;border-radius:22px;overflow:hidden;border:1px solid rgba(201,168,76,.18);box-shadow:0 20px 50px rgba(0,0,0,.35);transition:opacity .35s ease}
-.map-frame-wrap.map-loading{opacity:.35}
-.map-frame{display:block;width:100%;height:420px;border:0;filter:grayscale(.15) contrast(1.05)}
-@media(max-width:768px){
-  .map-frame{height:300px}
-  .map-toggle-btn{padding:9px 20px;font-size:13px}
-}
 
 /* ===== FOOTER ===== */
 footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1)}
@@ -1006,21 +989,6 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
           <div class="form-group"><label>رسالتك (اختياري)</label><textarea id="f-msg" placeholder="اكتب تفاصيل إضافية..."></textarea></div>
           <button class="form-submit" onclick="submitForm()">⚡ أرسل — سنتواصل معك فورا</button>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COVERAGE MAP -->
-  <section id="coverage-section">
-    <div class="container">
-      <div class="coverage-header reveal reveal-scale">
-        <div class="section-tag">📍 نطاق التغطية</div>
-        <h2 class="section-title">نصل إليك أينما كنت في <span class="gold">الرياض</span></h2>
-        <div class="divider"></div>
-        <p class="section-sub">فرق نقاء منتشرة في أحياء المدينة لتقديم الخدمة بسرعة أينما كنت</p>
-      </div>
-      <div class="map-frame-wrap reveal reveal-scale">
-        <iframe id="coverageMapFrame" class="map-frame" src="https://www.google.com/maps?q=حي+العليا+الرياض&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="خريطة تغطية نقاء للتنظيف"></iframe>
       </div>
     </div>
   </section>
