@@ -630,7 +630,9 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 .pkg-card:hover{transform:translateY(-6px);border-color:rgba(201,168,76,.4);box-shadow:0 16px 40px rgba(0,0,0,.35)}
 .pkg-card.pkg-featured{border-color:rgba(201,168,76,.55);background:linear-gradient(160deg,rgba(201,168,76,.1),rgba(10,22,40,.97));transform:scale(1.04)}
 .pkg-card.pkg-featured:hover{transform:scale(1.04) translateY(-6px)}
-.pkg-discount-badge{position:absolute;top:-14px;right:24px;background:linear-gradient(135deg,var(--gold),var(--gold3));color:var(--navy);font-size:12.5px;font-weight:800;padding:6px 16px;border-radius:50px;box-shadow:0 6px 16px rgba(201,168,76,.4)}
+.pkg-discount-badge{position:absolute;top:-14px;right:24px;z-index:2;background:linear-gradient(135deg,var(--gold),var(--gold3));color:var(--navy);font-size:12.5px;font-weight:800;padding:6px 16px;border-radius:50px;box-shadow:0 6px 16px rgba(201,168,76,.4)}
+.pkg-card-img{margin:-30px -26px 20px;border-radius:22px 22px 0 0;overflow:hidden}
+.pkg-card-img img{width:100%;height:auto;display:block}
 .pkg-most-wanted{display:inline-block;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);color:var(--gold2);font-size:11px;font-weight:700;padding:4px 12px;border-radius:50px;margin-bottom:14px;width:fit-content}
 .pkg-name{font-family:'Tajawal',sans-serif;font-size:19px;font-weight:800;color:var(--white);margin-bottom:14px;line-height:1.35}
 .pkg-includes{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-direction:column;gap:10px;flex-grow:1}
@@ -838,6 +840,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 
         <!-- PACKAGE 1: HOME -->
         <div class="pkg-card pkg-featured reveal">
+          <div class="pkg-card-img"><img src="/images/pkg-home-package.jpg" alt="باقة المنزل الشامل - تنظيف المنازل بالرياض" loading="lazy"></div>
           <div class="pkg-discount-badge">خصم 33%</div>
           <span class="pkg-most-wanted">⭐ الأكثر طلباً</span>
           <h3 class="pkg-name">باقة المنزل الشامل</h3>
@@ -856,6 +859,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 
         <!-- PACKAGE 2: OFFICES / B2B -->
         <div class="pkg-card reveal">
+          <div class="pkg-card-img"><img src="/images/pkg-office-package.jpg" alt="باقة العقد الشهري للشركات - تنظيف الشركات بالرياض" loading="lazy"></div>
           <div class="pkg-discount-badge">خصم 20%</div>
           <span class="pkg-most-wanted">🏢 عقد شركات</span>
           <h3 class="pkg-name">باقة العقد الشهري للشركات</h3>
@@ -874,6 +878,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 
         <!-- PACKAGE 3: TANKS / POST-FINISH -->
         <div class="pkg-card reveal">
+          <div class="pkg-card-img"><img src="/images/pkg-tank-package.jpg" alt="باقة الخزانات الشاملة - تنظيف وعزل الخزانات بالرياض" loading="lazy"></div>
           <div class="pkg-discount-badge">خصم 33%</div>
           <span class="pkg-most-wanted">💧 ما بعد التشطيب</span>
           <h3 class="pkg-name">باقة الخزانات الشاملة</h3>
@@ -1226,6 +1231,55 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
     }
   }, {passive:true});
 })();
+
+// ===== SPA NAVIGATION =====
+const pages = ['home','services','blog','faq','article1'];
+const pageTitles = {
+  home: 'مؤسسة نقاء للتنظيف | أفضل مؤسسة تنظيف بالرياض والمملكة',
+  services: 'خدمات التنظيف | مؤسسة نقاء للتنظيف بالمملكة العربية السعودية',
+  blog: 'مدونة نقاء | نصائح تنظيف المنازل والفلل في السعودية',
+  faq: 'الأسئلة الشائعة | مؤسسة نقاء للتنظيف',
+  article1: 'مؤسسة نقاء - أفضل مؤسسة تنظيف منازل آمنة على الأطفال في السعودية | نقاء'
+};
+
+function navigateTo(page) {
+  // hide all pages
+  pages.forEach(p => {
+    const el = document.getElementById('page-' + p);
+    if(el) { el.classList.remove('active'); }
+  });
+  // show target
+  const target = document.getElementById('page-' + page);
+  if(target) {
+    target.classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+    document.title = pageTitles[page] || pageTitles.home;
+    // Update nav active state
+    ['home','services','blog','faq'].forEach(p => {
+      const navEl = document.getElementById('nav-' + p);
+      if(navEl) navEl.classList.remove('active');
+    });
+    const activeNav = document.getElementById('nav-' + page);
+    if(activeNav) activeNav.classList.add('active');
+    // Re-trigger reveals
+    setTimeout(initReveal, 100);
+    // Update URL hash
+   // history.pushState(null, '', '#/' + page);
+  }
+}
+
+// Handle back button
+window.addEventListener('popstate', () => {
+const hash = 'home';
+  if(pages.includes(hash)) navigateTo(hash);
+});
+
+// Handle initial load from hash
+window.addEventListener('load', () => {
+const hash = 'home';
+  if(hash && pages.includes(hash)) navigateTo(hash);
+  else navigateTo('home');
+});
 
 // ===== NAVBAR SCROLL =====
 const nav = document.getElementById('navbar');
