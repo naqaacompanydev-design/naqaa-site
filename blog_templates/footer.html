@@ -1,0 +1,64 @@
+<footer id="main-footer">
+<div class="container">
+<div class="footer-nav-links">
+<a href="/" onclick="location.href='/'">الرئيسية</a>
+<span class="footer-sep">-</span>
+<a href="/services/" onclick="location.href='/services/'">الخدمات</a>
+<span class="footer-sep">-</span>
+<a href="/blog/" onclick="location.href='/blog/'">المدونة</a>
+<span class="footer-sep">-</span>
+<a href="/about/">من نحن</a>
+<span class="footer-sep">-</span>
+<a href="/شركة-تنظيف-بالرياض/">شركة تنظيف بالرياض</a>
+</div>
+<div class="footer-bottom">
+<div>جميع الحقوق محفوظة © <span id="copy-year"></span> — <span>مؤسسة نقاء للتنظيف</span></div>
+<div>
+<a href="/terms" onmouseout="this.style.color='var(--gray)'" onmouseover="this.style.color='var(--gold2)'" style="color:var(--gray);text-decoration:none;transition:color .3s;">الشروط والأحكام</a>
+<span style="color:var(--gray);margin:0 6px">|</span>
+<a href="/privacy" onmouseout="this.style.color='var(--gray)'" onmouseover="this.style.color='var(--gold2)'" style="color:var(--gray);text-decoration:none;transition:color .3s;">سياسة الخصوصية</a>
+<span style="color:var(--gray);margin:0 6px">|</span>
+<a href="/refund" onmouseout="this.style.color='var(--gray)'" onmouseover="this.style.color='var(--gold2)'" style="color:var(--gray);text-decoration:none;transition:color .3s;">سياسة الإلغاء والاسترجاع</a>
+<span style="color:var(--gray);margin:0 6px">|</span>
+<a href="/accessibility" onmouseout="this.style.color='var(--gray)'" onmouseover="this.style.color='var(--gold2)'" style="color:var(--gray);text-decoration:none;transition:color .3s;">إمكانية الوصول</a>
+</div>
+</div>
+<div class="design-credit-bar">
+<span class="design-credit" id="design-credit">
+<span class="design-credit-dot"></span>
+<span class="design-credit-text">✦ تصميم وتطوير الموقع: شركة كليك زودياك ✦</span>
+<div class="design-credit-popover" id="design-credit-popover">
+<a href="https://wa.me/201023444798" target="_blank" rel="noopener">واتساب - 01023444798</a>
+<a href="https://wa.me/201213816311" target="_blank" rel="noopener">واتساب - 01213816311</a>
+</div>
+</span>
+</div>
+</div>
+</footer>
+<script>
+function navigateTo(p){location.href=p==='home'?'/':'/#'+p;}
+function toggleMenu(){document.getElementById('ham').classList.toggle('open');document.getElementById('mobileMenu').classList.toggle('open');document.body.style.overflow=document.getElementById('mobileMenu').classList.contains('open')?'hidden':'';}
+document.addEventListener('DOMContentLoaded',function(){
+var y=document.getElementById('copy-year');if(y)y.textContent=new Date().getFullYear();
+var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(function(r){obs.observe(r);});
+});
+</script><script>(function(){var n=document.getElementById('navbar');if(!n)return;n.classList.add('scrolled');window.addEventListener('scroll',function(){n.classList.toggle('scrolled',window.scrollY>0);});})();</script>
+
+<script>
+(function(){
+  var trigger = document.getElementById('design-credit');
+  var popover = document.getElementById('design-credit-popover');
+  if(!trigger || !popover) return;
+  trigger.addEventListener('click', function(e){
+    e.stopPropagation();
+    popover.classList.toggle('show');
+  });
+  document.addEventListener('click', function(){
+    popover.classList.remove('show');
+  });
+})();
+console.log('%cDesigned & Developed by Click Zodiac | شركة كليك زودياك', 'color:#c9a84c;font-size:14px;font-weight:bold;');
+console.log('%cWhatsApp: 01023444798 / 01213816311', 'color:#9aa5b1;font-size:12px;');
+</script>
+</body></html>
