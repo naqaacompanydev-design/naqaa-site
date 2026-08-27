@@ -419,6 +419,9 @@ section{padding:80px 0}
 .form-title{font-family:'Tajawal',sans-serif;font-size:22px;font-weight:700;margin-bottom:24px;color:var(--white);text-align:center}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .form-group{margin-bottom:14px}
+.form-error{display:none;color:#ff6b6b;font-size:12.5px;margin-top:5px}
+.form-group.has-error input,.form-group.has-error select{border-color:#ff6b6b !important}
+.form-group.has-error .form-error{display:block}
 .form-group label{display:block;font-size:12px;color:var(--gray);margin-bottom:6px;font-weight:500}
 .form-group input,.form-group select,.form-group textarea{width:100%;background:rgba(10,22,40,.7);border:1px solid rgba(201,168,76,.15);border-radius:10px;padding:12px 14px;font-size:13px;font-family:'Cairo',sans-serif;color:var(--white);outline:none;transition:all .3s;direction:rtl}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(201,168,76,.45);box-shadow:0 0 0 3px rgba(201,168,76,.07)}
@@ -817,7 +820,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
         <a href="/services/تنظيف-المنازل-والفلل/" class="service-card reveal"><div class="service-card-img"><img src="/images/home-villa-cleaning.webp" alt="تنظيف المنازل والفلل" loading="lazy" width="400" height="180"><div class="service-card-img-overlay"></div></div><div class="service-card-body"><div class="service-badge">الأكثر طلباً</div><h3 class="service-name">تنظيف المنازل والفلل</h3><p class="service-desc">تنظيف شامل لجميع غرف المنزل والحمامات والمطابخ والأرضيات بأحدث المعدات ومنظفات آمنة صديقة للبيئة</p><div class="service-arrow">استكشف الخدمة ←</div></div></a>
         <a href="/services/تنظيف-الشركات-والمكاتب/" class="service-card reveal"><div class="service-card-img"><img src="/images/office-cleaning.webp" alt="تنظيف الشركات والمكاتب" loading="lazy" width="400" height="180"><div class="service-card-img-overlay"></div></div><div class="service-card-body"><div class="service-badge">عقود مرنة</div><h3 class="service-name">تنظيف الشركات والمكاتب</h3><p class="service-desc">خدمة تنظيف احترافية للشركات والمكاتب والمجمعات التجارية بعقود دورية مرنة تناسب بيئة العمل</p><div class="service-arrow">استكشف الخدمة ←</div></div></a>
         <a href="/services/تنظيف-المجالس-والكنب/" class="service-card reveal"><div class="service-card-img"><img src="/images/majlis-cleaning.webp" alt="تنظيف المجالس والكنب" loading="lazy" width="400" height="180"><div class="service-card-img-overlay"></div></div><div class="service-card-body"><div class="service-badge">عناية بالأقمشة</div><h3 class="service-name">تنظيف المجالس والكنب</h3><p class="service-desc">باستخدام المواد المخصصة لكل نوع قماش للوصول لأعلى درجات النظافة والقضاء على الجراثيم دون تلف الأقمشة</p><div class="service-arrow">استكشف الخدمة ←</div></div></a>
-        <a href="/services/تنظيف-وعزل-الخزانات/" class="service-card reveal"><div class="service-card-img"><img src="/images/tank-cleaning-insulation.webp" alt="تنظيف وعزل الخزانات" loading="lazy" width="400" height="180"><div class="service-card-img-overlay"></div></div><div class="service-card-body"><div class="service-badge">ضمان 5 سنوات</div><h3 class="service-name">تنظيف وعزل الخزانات</h3><p class="service-desc">تنظيف شامل وتعقيم كامل وعزل احترافي بالإيبوكسي عالي الجودة مع ضمان يصل إلى 5 سنوات</p><div class="service-arrow">استكشف الخدمة ←</div></div></a>
+        <a href="/services/تنظيف-وعزل-الخزانات/" class="service-card reveal"><div class="service-card-img"><img src="/images/tank-cleaning-insulation.webp" alt="تنظيف وعزل الخزانات" loading="lazy" width="400" height="180"><div class="service-card-img-overlay"></div></div><div class="service-card-body"><div class="service-badge">ضمان 10 سنوات</div><h3 class="service-name">تنظيف وعزل الخزانات</h3><p class="service-desc">تنظيف شامل وتعقيم كامل وعزل احترافي بالإيبوكسي عالي الجودة مع ضمان يصل إلى 10 سنوات</p><div class="service-arrow">استكشف الخدمة ←</div></div></a>
         <a href="/services/مكافحة-الحشرات-والقوارض/" class="service-card reveal"><div class="service-card-img"><img src="/images/pest-control.webp" alt="مكافحة الحشرات والقوارض" loading="lazy" width="400" height="180"><div class="service-card-img-overlay"></div></div><div class="service-card-body"><div class="service-badge">ضمان 6 أشهر</div><h3 class="service-name">مكافحة الحشرات والقوارض</h3><p class="service-desc">رش وإبادة جميع أنواع الحشرات والقوارض بمبيدات آمنة معتمدة مع ضمان عدم العودة لمدة 6 أشهر</p><div class="service-arrow">استكشف الخدمة ←</div></div></a>
       </div>
       <div style="text-align:center;margin-top:40px">
@@ -973,8 +976,8 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
         <div class="contact-form reveal reveal-left">
           <div class="form-title">احجز خدمتك الآن</div>
           <div class="form-row">
-            <div class="form-group"><label>الاسم الكريم</label><input type="text" id="f-name" placeholder="أدخل اسمك" aria-label="الاسم"></div>
-            <div class="form-group"><label>رقم الجوال</label><input type="tel" id="f-phone" placeholder="05xxxxxxxx" aria-label="رقم الجوال"></div>
+            <div class="form-group"><label>الاسم الكريم</label><input type="text" id="f-name" placeholder="أدخل اسمك" aria-label="الاسم"><div class="form-error" id="f-name-err"></div></div>
+            <div class="form-group"><label>رقم الجوال</label><input type="tel" id="f-phone" placeholder="05xxxxxxxx" aria-label="رقم الجوال"><div class="form-error" id="f-phone-err"></div></div>
           </div>
           <div class="form-group"><label>الخدمة المطلوبة</label>
             <select id="f-service" aria-label="الخدمة المطلوبة">
@@ -1323,11 +1326,42 @@ function toggleFaq(item) {
 
 // ===== FORM SUBMIT → WHATSAPP =====
 function submitForm() {
-  const name = document.getElementById('f-name')?.value || 'عميل';
-  const phone = document.getElementById('f-phone')?.value || '';
+  const nameEl = document.getElementById('f-name');
+  const phoneEl = document.getElementById('f-phone');
+  const nameGroup = nameEl.closest('.form-group');
+  const phoneGroup = phoneEl.closest('.form-group');
+  const nameErr = document.getElementById('f-name-err');
+  const phoneErr = document.getElementById('f-phone-err');
+
+  const name = nameEl.value.trim();
+  const phone = phoneEl.value.trim();
   const service = document.getElementById('f-service')?.value || 'استفسار عام';
-  const msg = 'مرحباً، أنا ' + name + '\n' + 'رقمي: ' + phone + '\n' + 'أريد: ' + service;
-  window.open('https://wa.me/966545833481?text=' + encodeURIComponent(msg), '_blank');
+  const msg = document.getElementById('f-msg')?.value || '';
+
+  let valid = true;
+  const saudiPhonePattern = /^(05|9665|\+9665)[0-9]{8}$/;
+
+  if (name.length < 2) {
+    nameGroup.classList.add('has-error');
+    nameErr.textContent = 'من فضلك اكتب اسمك';
+    valid = false;
+  } else {
+    nameGroup.classList.remove('has-error');
+  }
+
+  if (!saudiPhonePattern.test(phone.replace(/\s/g, ''))) {
+    phoneGroup.classList.add('has-error');
+    phoneErr.textContent = 'من فضلك اكتب رقم جوال سعودي صحيح (05xxxxxxxx)';
+    valid = false;
+  } else {
+    phoneGroup.classList.remove('has-error');
+  }
+
+  if (!valid) return;
+
+  let waMsg = 'مرحباً، أنا ' + name + '\n' + 'رقمي: ' + phone + '\n' + 'أريد: ' + service;
+  if (msg) waMsg += '\n' + 'تفاصيل إضافية: ' + msg;
+  window.open('https://wa.me/966545833481?text=' + encodeURIComponent(waMsg), '_blank');
 }
 </script>
 
