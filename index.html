@@ -1227,55 +1227,6 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   }, {passive:true});
 })();
 
-// ===== SPA NAVIGATION =====
-const pages = ['home','services','blog','faq','article1'];
-const pageTitles = {
-  home: 'مؤسسة نقاء للتنظيف | أفضل مؤسسة تنظيف بالرياض والمملكة',
-  services: 'خدمات التنظيف | مؤسسة نقاء للتنظيف بالمملكة العربية السعودية',
-  blog: 'مدونة نقاء | نصائح تنظيف المنازل والفلل في السعودية',
-  faq: 'الأسئلة الشائعة | مؤسسة نقاء للتنظيف',
-  article1: 'مؤسسة نقاء - أفضل مؤسسة تنظيف منازل آمنة على الأطفال في السعودية | نقاء'
-};
-
-function navigateTo(page) {
-  // hide all pages
-  pages.forEach(p => {
-    const el = document.getElementById('page-' + p);
-    if(el) { el.classList.remove('active'); }
-  });
-  // show target
-  const target = document.getElementById('page-' + page);
-  if(target) {
-    target.classList.add('active');
-    window.scrollTo({top:0, behavior:'smooth'});
-    document.title = pageTitles[page] || pageTitles.home;
-    // Update nav active state
-    ['home','services','blog','faq'].forEach(p => {
-      const navEl = document.getElementById('nav-' + p);
-      if(navEl) navEl.classList.remove('active');
-    });
-    const activeNav = document.getElementById('nav-' + page);
-    if(activeNav) activeNav.classList.add('active');
-    // Re-trigger reveals
-    setTimeout(initReveal, 100);
-    // Update URL hash
-   // history.pushState(null, '', '#/' + page);
-  }
-}
-
-// Handle back button
-window.addEventListener('popstate', () => {
-const hash = 'home';
-  if(pages.includes(hash)) navigateTo(hash);
-});
-
-// Handle initial load from hash
-window.addEventListener('load', () => {
-const hash = 'home';
-  if(hash && pages.includes(hash)) navigateTo(hash);
-  else navigateTo('home');
-});
-
 // ===== NAVBAR SCROLL =====
 const nav = document.getElementById('navbar');
 const backTopBtn = document.getElementById('backTop');
