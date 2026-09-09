@@ -115,6 +115,21 @@
       "source": "/شركة-تنظيف-بالرياض/شركة-تنظيف-بالرياض/",
       "destination": "/شركة-تنظيف-بالرياض/",
       "permanent": true
+    },
+    {
+      "source": "/blog/villa-price-quote-riyadh/",
+      "destination": "/blog/house-cleaning-price-riyadh/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/villa-cleaning-price-rooms-riyadh/",
+      "destination": "/blog/house-cleaning-price-riyadh/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/villa-price-inside-outside-riyadh/",
+      "destination": "/blog/house-cleaning-price-riyadh/",
+      "permanent": true
     }
   ],
   "rewrites": [
