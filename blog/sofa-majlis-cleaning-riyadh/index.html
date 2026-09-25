@@ -11,6 +11,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VQ0QH8WEB9"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VQ0QH8WEB9');</script>
+<script>
+/* Lead tracking: WhatsApp and phone clicks -> GA4 events (whatsapp_click / phone_click) */
+(function(){
+  var PHONE = '545833481';
+  function where(el){
+    if (el.closest('.cmd-bar') || el.matches('.cmd-btn,.phone-btn')) return 'floating_button';
+    if (el.closest('.mobile-menu')) return 'mobile_menu';
+    if (el.closest('nav,#navbar')) return 'header';
+    if (el.closest('footer')) return 'footer';
+    if (el.closest('.pkg-card')) return 'package_card';
+    if (el.closest('.hero,.page-hero,.article-hero')) return 'hero';
+    return 'page_content';
+  }
+  window.naqaaTrack = function(name, params){
+    if (typeof gtag === 'function') gtag('event', name, params || {});
+  };
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var name = /^tel:/i.test(href) && href.indexOf(PHONE) > -1 ? 'phone_click'
+             : href.indexOf('wa.me/966' + PHONE) > -1 ? 'whatsapp_click' : null;
+    if (!name) return;
+    naqaaTrack(name, {
+      link_location: where(a),
+      link_text: (a.textContent || a.title || '').replace(/\s+/g, ' ').trim().slice(0, 60)
+    });
+  }, true);
+})();
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>شركة تنظيف مجالس بالرياض | حجز سريع | مؤسسة نقاء</title>
