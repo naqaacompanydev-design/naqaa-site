@@ -392,6 +392,32 @@ section{padding:80px 0}
 #testimonials-section{background:linear-gradient(180deg,var(--navy2) 0%,var(--navy) 100%);overflow:hidden}
 .testi-header{text-align:center;margin-bottom:46px}
 .testi-header .divider{margin:16px auto}
+
+/* ===== CLIENT LOGOS ===== */
+#clients-section{padding:80px 0 30px;overflow:hidden}
+.clients-header{text-align:center;margin-bottom:48px}
+.clients-header .divider{margin:16px auto}
+.clients-header .section-sub{margin:0 auto}
+.clients-viewport{overflow:hidden}
+.clients-track{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:44px 64px;max-width:1080px;margin:0 auto;list-style:none;padding:0}
+.client-logo{flex:0 0 auto;display:flex;align-items:center;justify-content:center;height:96px}
+.client-logo img{max-height:84px;max-width:180px;width:auto;height:auto;object-fit:contain;transition:transform .35s ease}
+.client-logo:hover img{transform:scale(1.08)}
+.clients-track:not(.is-moving) .client-logo[aria-hidden="true"]{display:none}
+.clients-more{display:inline-flex;align-items:center;gap:6px;margin-top:44px;color:var(--gold2);font-size:14px;font-weight:700;border-bottom:1px solid rgba(201,168,76,.4)}
+@keyframes clientsScroll{from{transform:translateX(0)}to{transform:translateX(50%)}}
+@media(max-width:768px){
+  #clients-section{padding:60px 0 20px}
+  .clients-header{margin-bottom:36px}
+  .clients-viewport{-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+  .clients-track{flex-wrap:nowrap;justify-content:flex-start;width:max-content;max-width:none;gap:48px;padding:0 24px}
+  .clients-track.is-moving{animation:clientsScroll 38s linear infinite}
+  .client-logo{height:80px}
+  .client-logo img{max-height:68px;max-width:150px}
+}
+@media(max-width:768px) and (prefers-reduced-motion:reduce){
+  .clients-viewport{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
+}
 .testi-carousel{display:flex;align-items:center;gap:14px;max-width:760px;margin:0 auto}
 .testi-viewport{overflow:hidden;flex:1;border-radius:20px;direction:ltr;perspective:1100px}
 .testi-track{display:flex;transition:transform .6s cubic-bezier(.65,0,.35,1)}
@@ -940,6 +966,36 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
     </div>
   </section>
 
+  <!-- CLIENT LOGOS -->
+  <section id="clients-section" aria-labelledby="clients-title">
+    <div class="container">
+      <div class="clients-header reveal reveal-scale">
+        <div class="section-tag">🏢 موثوق من الجهات</div>
+        <h2 class="section-title" id="clients-title">جهات نفخر <span class="gold">بخدمتها</span></h2>
+        <div class="divider"></div>
+        <p class="section-sub">منشآت وشركات ومطاعم في الرياض تعتمد على نقاء</p>
+      </div>
+    </div>
+    <div class="clients-viewport">
+      <ul class="clients-track" id="clientsTrack">
+        <li class="client-logo"><img src="/images/clients/alhilal.png" alt="نادي الهلال" width="104" height="200" loading="lazy" decoding="async"></li>
+        <li class="client-logo"><img src="/images/clients/elaik.png" alt="مطعم إليك" width="336" height="200" loading="lazy" decoding="async"></li>
+        <li class="client-logo"><img src="/images/clients/q-mall.png" alt="مول كيو" width="370" height="200" loading="lazy" decoding="async"></li>
+        <li class="client-logo"><img src="/images/clients/al-lounge.png" alt="ال اي لاونج" width="146" height="200" loading="lazy" decoding="async"></li>
+        <li class="client-logo"><img src="/images/clients/haret-alsamak.png" alt="مطعم حارة السمك" width="204" height="200" loading="lazy" decoding="async"></li>
+        <li class="client-logo"><img src="/images/clients/alshams.png" alt="الشمس للمقاولات العامة" width="224" height="200" loading="lazy" decoding="async"></li>
+        <li class="client-logo"><img src="/images/clients/alsufyani.png" alt="شركة السفياني" width="369" height="200" loading="lazy" decoding="async"></li>
+        <li class="client-logo"><img src="/images/clients/alatawi.png" alt="العطاوي لخدمات الجوال" width="440" height="132" loading="lazy" decoding="async"></li>
+        <li class="client-logo"><img src="/images/clients/concrete.png" alt="كونكريت" width="344" height="200" loading="lazy" decoding="async"></li>
+        <li class="client-logo"><img src="/images/clients/aldalal.png" alt="الدلال لتجهيز الملاعب" width="184" height="200" loading="lazy" decoding="async"></li>
+        <li class="client-logo"><img src="/images/clients/zahrat-alrawdah.png" alt="زهرة الروضة" width="440" height="145" loading="lazy" decoding="async"></li>
+      </ul>
+    </div>
+    <div class="container" style="text-align:center">
+      <a href="/services/تنظيف-الشركات-والمكاتب/" class="clients-more">عرض قطاع الأعمال ←</a>
+    </div>
+  </section>
+
   <!-- TESTIMONIALS -->
   <section id="testimonials-section">
     <div class="container">
@@ -1416,6 +1472,33 @@ console.log('%cWhatsApp: 01023444798 / 01213816311', 'color:#9aa5b1;font-size:12
     }
     requestAnimationFrame(tick);
   });
+})();
+
+// Client logos: endless scrolling strip on mobile only
+(function(){
+  var track = document.getElementById('clientsTrack');
+  if(!track) return;
+  var mq = window.matchMedia('(max-width:768px)');
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cloned = false;
+  function update(){
+    if(mq.matches && !calm){
+      if(!cloned){
+        Array.prototype.slice.call(track.children).forEach(function(li){
+          var c = li.cloneNode(true);
+          c.setAttribute('aria-hidden','true');
+          c.querySelector('img').alt = '';
+          track.appendChild(c);
+        });
+        cloned = true;
+      }
+      track.classList.add('is-moving');
+    } else {
+      track.classList.remove('is-moving');
+    }
+  }
+  update();
+  if(mq.addEventListener) mq.addEventListener('change', update); else mq.addListener(update);
 })();
 
 // Smooth scroll for hero scroll cue
