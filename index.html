@@ -753,9 +753,12 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 #riyadh-context-section{padding:0 0 40px}
 #riyadh-context-section .section-title{font-size:clamp(20px,3vw,26px)}
 #riyadh-context-section .section-sub{max-width:760px}
-/* footer contact line */
-.footer-contact{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 22px;margin-bottom:18px;font-size:13px;color:rgba(248,246,240,.8)}
-.footer-contact a{color:var(--gold2);font-weight:700}
+/* designer credit: quiet line, no pulsing/shimmer */
+.design-credit{animation:none;border:0;background:none;padding:6px 12px}
+.design-credit-dot{display:none}
+.design-credit-text{animation:none;background:none;-webkit-background-clip:border-box;background-clip:border-box;color:rgba(201,168,76,.6);font-size:11.5px;font-weight:600;letter-spacing:0}
+.design-credit:hover .design-credit-text{color:var(--gold2)}
+.design-credit-bar{margin-top:12px;padding-top:12px}
 /* desktop floating bar in the corner, not over the content */
 @media(min-width:769px){.cmd-bar{left:24px;transform:none}#services-section{padding-top:80px}}
 /* testimonials: 3 cards per view on desktop, 1 on mobile (JS slides by one card) */
@@ -1245,19 +1248,12 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 <!-- ===== SHARED FOOTER ===== -->
 <footer id="main-footer">
 <div class="container">
-<div class="footer-contact">
-<span>📞 <a href="tel:+966545833481" dir="ltr">0545833481</a></span>
-<span>📍 الرياض — جميع الأحياء</span>
-<span>🕐 نعمل على مدار الساعة</span>
-</div>
 <div class="footer-nav-links">
 <a href="/">الرئيسية</a>
 <span class="footer-sep">-</span>
 <a href="/services/">الخدمات</a>
 <span class="footer-sep">-</span>
 <a href="/blog/">المدونة</a>
-<span class="footer-sep">-</span>
-<a href="/about/">من نحن</a>
 <span class="footer-sep">-</span>
 <a href="/شركة-تنظيف-بالرياض/">شركة تنظيف بالرياض</a>
 </div>
