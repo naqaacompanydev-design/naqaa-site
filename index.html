@@ -758,7 +758,13 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 .design-credit-dot{display:none}
 .design-credit-text{animation:none;background:none;-webkit-background-clip:border-box;background-clip:border-box;color:rgba(201,168,76,.6);font-size:11.5px;font-weight:600;letter-spacing:0}
 .design-credit:hover .design-credit-text{color:var(--gold2)}
-.design-credit-bar{margin-top:12px;padding-top:12px}
+.design-credit-bar{margin-top:8px;padding-top:8px}
+/* compact footer */
+footer{padding:18px 0 12px}
+.footer-nav-links{margin-bottom:12px}
+.footer-bottom{padding-top:12px;gap:6px}
+.design-credit{padding:4px 10px}
+@media(max-width:768px){.footer-bottom{gap:4px}.footer-nav-links{gap:6px 10px}}
 /* desktop floating bar in the corner, not over the content */
 @media(min-width:769px){.cmd-bar{left:24px;transform:none}#services-section{padding-top:80px}}
 /* testimonials: 3 cards per view on desktop, 1 on mobile (JS slides by one card) */
