@@ -121,7 +121,7 @@ a{text-decoration:none;color:inherit}
 }
 
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
-section{padding:80px 0}
+section{padding:56px 0}
 
 /* ===== TYPOGRAPHY ===== */
 .section-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);padding:6px 16px;border-radius:50px;font-size:12px;color:var(--gold2);margin-bottom:18px}
@@ -333,7 +333,7 @@ section{padding:80px 0}
 .divider-bubble-3{width:44px;height:44px;top:-30px;left:8%;animation-delay:1.6s}
 @keyframes dividerFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 @media(prefers-reduced-motion:reduce){.divider-bubble{animation:none}}
-.services-header{text-align:center;margin-bottom:56px;position:relative;z-index:4;margin-top:-108px;background:linear-gradient(145deg,rgba(17,34,64,.6),rgba(10,22,40,.8));backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(201,168,76,.25);border-radius:24px;padding:30px 22px 26px;box-shadow:0 22px 50px rgba(0,0,0,.35)}
+.services-header{text-align:center;margin-bottom:40px;position:relative;z-index:4;margin-top:-108px;background:linear-gradient(145deg,rgba(17,34,64,.6),rgba(10,22,40,.8));backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(201,168,76,.25);border-radius:24px;padding:30px 22px 26px;box-shadow:0 22px 50px rgba(0,0,0,.35)}
 @media(max-width:768px){.services-header{margin-top:-46px;padding:24px 18px 22px;border-radius:20px}}
 .services-header .divider{margin:16px auto}
 .services-header .section-sub{margin:0 auto}
@@ -390,12 +390,12 @@ section{padding:80px 0}
 
 /* ===== TESTIMONIALS CAROUSEL ===== */
 #testimonials-section{background:linear-gradient(180deg,var(--navy2) 0%,var(--navy) 100%);overflow:hidden}
-.testi-header{text-align:center;margin-bottom:46px}
+.testi-header{text-align:center;margin-bottom:32px}
 .testi-header .divider{margin:16px auto}
 
 /* ===== CLIENT LOGOS ===== */
-#clients-section{padding:80px 0 30px;overflow:hidden}
-.clients-header{text-align:center;margin-bottom:48px}
+#clients-section{padding:56px 0 24px;overflow:hidden}
+.clients-header{text-align:center;margin-bottom:32px}
 .clients-header .divider{margin:16px auto}
 .clients-header .section-sub{margin:0 auto}
 .clients-viewport{overflow:hidden}
@@ -406,11 +406,11 @@ section{padding:80px 0}
 .clients-track:not(.is-moving) .client-logo[aria-hidden="true"]{display:none}
 .client-logo.is-featured{height:136px}
 .client-logo.is-featured img{max-height:132px;max-width:none}
-.clients-more{display:inline-flex;align-items:center;gap:6px;margin-top:44px;color:var(--gold2);font-size:14px;font-weight:700;border-bottom:1px solid rgba(201,168,76,.4)}
+.clients-more{display:inline-flex;align-items:center;gap:6px;margin-top:30px;color:var(--gold2);font-size:14px;font-weight:700;border-bottom:1px solid rgba(201,168,76,.4)}
 @keyframes clientsScroll{from{transform:translateX(0)}to{transform:translateX(50%)}}
 @media(max-width:768px){
-  #clients-section{padding:60px 0 20px}
-  .clients-header{margin-bottom:36px}
+  #clients-section{padding:40px 0 16px}
+  .clients-header{margin-bottom:26px}
   .clients-viewport{-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
   .clients-track{flex-wrap:nowrap;justify-content:flex-start;width:max-content;max-width:none;gap:48px;padding:0 24px}
   .clients-track.is-moving{animation:clientsScroll 38s linear infinite}
@@ -423,7 +423,7 @@ section{padding:80px 0}
   .clients-viewport{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
 }
 .testi-carousel{display:flex;align-items:center;gap:14px;max-width:760px;margin:0 auto}
-.testi-viewport{overflow:hidden;flex:1;border-radius:20px;direction:ltr;perspective:1100px}
+.testi-viewport{overflow:hidden;flex:1;border-radius:20px;direction:rtl;perspective:1100px}
 .testi-track{display:flex;transition:transform .6s cubic-bezier(.65,0,.35,1)}
 .testi-card{direction:rtl;position:relative;z-index:0;flex:0 0 100%;background:linear-gradient(145deg,rgba(17,34,64,.7),rgba(10,22,40,.9));border:1px solid rgba(201,168,76,.14);border-radius:20px;padding:38px 34px;text-align:center;transform-style:preserve-3d;will-change:transform}
 .testi-card::before{content:'';position:absolute;left:50%;bottom:-14px;transform:translateX(-50%);width:66%;height:26px;background:radial-gradient(ellipse at center,rgba(201,168,76,.35),transparent 72%);filter:blur(11px);animation:testiGlowPulse 3.4s ease-in-out infinite;z-index:-1;pointer-events:none}
@@ -614,7 +614,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 
 /* ===== MOBILE ===== */
 @media(max-width:768px){
-  section{padding:60px 0}
+  section{padding:40px 0}
   .nav-links{display:none}
   .hamburger{display:flex}
 
@@ -726,32 +726,54 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 /* short tagline: plain text, not a pill that looks like a button */
 .hero-badge{background:none;border:0;padding:0;font-size:14px;font-weight:700;letter-spacing:.2px}
 /* section headers without the boxed frame (packages / riyadh) */
-.plain-header{background:none !important;border:0 !important;box-shadow:none !important;-webkit-backdrop-filter:none !important;backdrop-filter:none !important;margin-top:0 !important;padding:0 !important;margin-bottom:40px}
+.plain-header{background:none !important;border:0 !important;box-shadow:none !important;-webkit-backdrop-filter:none !important;backdrop-filter:none !important;margin-top:0 !important;padding:0 !important;margin-bottom:32px}
 /* mobile trust line under hero buttons */
 .hero-trust{display:none}
 /* how it works */
-#how-section{padding:70px 0}
-.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;list-style:none;padding:0;margin:0;counter-reset:how}
-.how-step{position:relative;padding:26px 22px;border-radius:18px;background:rgba(17,34,64,.45);border:1px solid rgba(201,168,76,.12);text-align:center}
-.how-num{width:44px;height:44px;margin:0 auto 14px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-weight:900;font-size:18px}
-.how-step h3{font-size:17px;font-weight:800;margin-bottom:6px;color:var(--white)}
+#how-section{padding:56px 0}
+.how-wrap{position:relative;max-width:980px;margin:0 auto}
+/* progress line through the step numbers; JS moves --p from 0% to 100% */
+.how-track{position:absolute;top:46px;right:16.66%;left:16.66%;height:2px;background:rgba(201,168,76,.15);border-radius:2px;z-index:0}
+.how-track span{position:absolute;top:0;right:0;height:100%;width:var(--p,0%);background:linear-gradient(to left,var(--gold),var(--gold3));border-radius:2px;box-shadow:0 0 10px rgba(228,191,106,.6);transition:width .9s cubic-bezier(.65,0,.35,1),height .9s cubic-bezier(.65,0,.35,1)}
+.how-steps{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;list-style:none;padding:0;margin:0}
+.how-step{position:relative;padding:22px 18px;border-radius:18px;text-align:center;border:1px solid transparent;transition:background .5s,border-color .5s,opacity .5s,transform .5s}
+.how-num{position:relative;width:48px;height:48px;margin:0 auto 14px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--navy);border:2px solid rgba(201,168,76,.35);color:var(--gold2);font-weight:900;font-size:18px;transition:background .5s,color .5s,border-color .5s,transform .5s}
+.how-step h3{font-size:17px;font-weight:800;margin-bottom:6px;color:var(--white);transition:color .5s}
 .how-step p{font-size:13.5px;color:var(--gray);line-height:1.7}
+.how-steps.is-running .how-step{opacity:.55}
+.how-steps.is-running .how-step.is-done,.how-steps.is-running .how-step.is-active{opacity:1}
+.how-step.is-done .how-num,.how-step.is-active .how-num{background:linear-gradient(135deg,var(--gold),var(--gold2));border-color:transparent;color:var(--navy)}
+.how-step.is-active{background:rgba(17,34,64,.55);border-color:rgba(201,168,76,.25);transform:translateY(-4px)}
+.how-step.is-active h3{color:var(--gold2)}
+.how-step.is-active .how-num{transform:scale(1.1)}
+.how-step.is-active .how-num::after{content:'';position:absolute;inset:-2px;border-radius:50%;border:2px solid var(--gold2);animation:howRing 1.6s ease-out infinite}
+@keyframes howRing{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+@media(prefers-reduced-motion:reduce){.how-step.is-active .how-num::after{animation:none;display:none}}
 /* riyadh text: quiet block near the end */
-#riyadh-context-section{padding:10px 0 60px}
+#riyadh-context-section{padding:0 0 40px}
 #riyadh-context-section .section-title{font-size:clamp(20px,3vw,26px)}
 #riyadh-context-section .section-sub{max-width:760px}
 /* footer contact line */
 .footer-contact{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 22px;margin-bottom:18px;font-size:13px;color:rgba(248,246,240,.8)}
 .footer-contact a{color:var(--gold2);font-weight:700}
 /* desktop floating bar in the corner, not over the content */
-@media(min-width:769px){.cmd-bar{left:24px;transform:none}}
+@media(min-width:769px){.cmd-bar{left:24px;transform:none}#services-section{padding-top:80px}}
+/* testimonials: 3 cards per view on desktop, 1 on mobile (JS slides by one card) */
+@media(min-width:769px){
+  .testi-carousel{max-width:1140px}
+  .testi-viewport{border-radius:0;padding:6px 0 18px}
+  .testi-track{gap:18px}
+  .testi-card{flex:0 0 calc((100% - 36px) / 3);padding:28px 22px;display:flex;flex-direction:column}
+  .testi-card .testi-text{flex:1;font-size:14px;min-height:0}
+}
+.testi-stars .off{color:rgba(201,168,76,.25)}
 @media(max-width:768px){
   .hero-badge{font-size:13px;margin-bottom:6px}
   .hero-btns{flex-direction:row;gap:10px}
   .hero-btns .btn-primary,.hero-btns .btn-outline{display:inline-flex;flex:1;width:auto;padding:12px 10px}
   .hero-trust{display:block;text-align:center;font-size:12.5px;color:rgba(248,246,240,.75);margin-top:12px}
   .hero-trust b{color:var(--gold2)}
-  .plain-header{margin-bottom:28px}
+  .plain-header{margin-bottom:22px}
   /* services: two compact columns instead of six tall cards */
   .services-grid{grid-template-columns:1fr 1fr;gap:10px}
   .service-card{aspect-ratio:1/1}
@@ -759,10 +781,13 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   .service-badge{font-size:9px;padding:3px 8px;margin-bottom:6px}
   .service-name{font-size:14px;margin-bottom:0}
   .service-desc,.service-arrow{display:none}
-  .how-steps{grid-template-columns:1fr;gap:12px}
-  .how-step{display:flex;align-items:center;gap:14px;text-align:start;padding:16px}
-  .how-num{margin:0;flex-shrink:0;width:38px;height:38px;font-size:16px}
-  #how-section{padding:50px 0}
+  .how-steps{grid-template-columns:1fr;gap:10px}
+  .how-step{display:flex;align-items:center;gap:14px;text-align:start;padding:14px}
+  .how-step.is-active{transform:translateX(-4px)}
+  .how-num{margin:0;flex-shrink:0;width:40px;height:40px;font-size:16px}
+  .how-track{top:34px;bottom:34px;right:33px;left:auto;width:2px;height:auto}
+  .how-track span{width:100%;height:var(--p,0%)}
+  #how-section{padding:40px 0}
 }
 
 </style>
@@ -1055,9 +1080,27 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
         <a href="https://maps.app.goo.gl/pjCBxz5XXxGcYiXA6" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;color:var(--gold2);font-size:14px;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(201,168,76,.4)">⭐ 4.7/5 من 16 تقييم — شاهد كل التقييمات على خرائط جوجل ←</a>
       </div>
       <div class="testi-carousel reveal">
-        <button class="testi-arrow testi-prev" onclick="testiMove(-1)" aria-label="السابق">❮</button>
+        <button class="testi-arrow testi-prev" onclick="testiMove(-1)" aria-label="السابق">❯</button>
         <div class="testi-viewport">
           <div class="testi-track" id="testiTrack">
+            <div class="testi-card">
+              <div class="testi-quote">”</div>
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-text">حدث عطل في أحد الأجهزة لدي بسبب العمال، وبمجرد تواصلت مع الإدارة كان التعامل في قمة الاحترافية والرقي والتقدير للعميل، حيث تكفلت الشركة بكامل مصاريف إصلاح الجهاز. تجربة ممتازة وتدل على أمانتهم، وأنصح بالتعامل مع شركة نقاء بشدة.</p>
+              <div class="testi-person">
+                <div class="testi-avatar">م</div>
+                <div><div class="testi-name">محمد معيوف الدوسري</div><div class="testi-service">تقييم على خرائط جوجل</div></div>
+              </div>
+            </div>
+            <div class="testi-card">
+              <div class="testi-quote">”</div>
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-text">يعطيهم العافية، شغلهم ممتاز ونظافتهم تفرق، وتعاملهم راقي ومحترم جداً. أنصح فيهم لتنظيف المنازل والفلل.</p>
+              <div class="testi-person">
+                <div class="testi-avatar">H</div>
+                <div><div class="testi-name">Mr.Hossam</div><div class="testi-service">تنظيف منازل وفلل</div></div>
+              </div>
+            </div>
             <div class="testi-card">
               <div class="testi-quote">”</div>
               <div class="testi-stars">★★★★★</div>
@@ -1065,6 +1108,16 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
               <div class="testi-person">
                 <div class="testi-avatar"><img src="/images/testimonials/sultan.webp" alt="سلطان الخيري" style="object-position:center 22%"></div>
                 <div><div class="testi-name">سلطان الخيري</div><div class="testi-service">تنظيف منازل وفلل</div></div>
+              </div>
+            </div>
+
+            <div class="testi-card">
+              <div class="testi-quote">”</div>
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-text">تعاملت مع مؤسسة نقاء للتنظيف وكانت تجربتي ممتازة حقيقي؛ شغل مرتب والتزام بالمواعيد وأسعارهم مناسبة. جربتهم في تنظيف المنزل وأنصح فيهم 👍</p>
+              <div class="testi-person">
+                <div class="testi-avatar">A</div>
+                <div><div class="testi-name">Ahmed Ashour</div><div class="testi-service">تنظيف منزل</div></div>
               </div>
             </div>
             <div class="testi-card">
@@ -1076,6 +1129,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
                 <div><div class="testi-name">عبداللطيف الاجهر</div><div class="testi-service">تنظيف مجالس وكنب</div></div>
               </div>
             </div>
+
             <div class="testi-card">
               <div class="testi-quote">”</div>
               <div class="testi-stars">★★★★★</div>
@@ -1083,6 +1137,16 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
               <div class="testi-person">
                 <div class="testi-avatar"><img src="/images/testimonials/taghreed.webp" alt="تغريد العجاجي" style="object-position:center 20%"></div>
                 <div><div class="testi-name">تغريد العجاجي</div><div class="testi-service">تنظيف منازل وفلل</div></div>
+              </div>
+            </div>
+
+            <div class="testi-card">
+              <div class="testi-quote">”</div>
+              <div class="testi-stars">★★★★<span class="off">★</span></div>
+              <p class="testi-text">صحيح وصلوا متأخرين نص ساعة عن الموعد، لكن الصراحة شغل يبرد الخاطر وشيء يبيض الوجه. المشرف متواجد طول فترة التنظيف وحريص على أدق التفاصيل.. مشكورين ويعطيكم ألف عافية.</p>
+              <div class="testi-person">
+                <div class="testi-avatar">M</div>
+                <div><div class="testi-name">Mohamed Ali</div><div class="testi-service">تقييم على خرائط جوجل</div></div>
               </div>
             </div>
             <div class="testi-card">
@@ -1094,6 +1158,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
                 <div><div class="testi-name">عبدالله الشمراني</div><div class="testi-service">تنظيف وعزل خزانات</div></div>
               </div>
             </div>
+
             <div class="testi-card">
               <div class="testi-quote">”</div>
               <div class="testi-stars">★★★★★</div>
@@ -1103,9 +1168,10 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
                 <div><div class="testi-name">حاتم الزهراني</div><div class="testi-service">تنظيف شامل</div></div>
               </div>
             </div>
+
           </div>
         </div>
-        <button class="testi-arrow testi-next" onclick="testiMove(1)" aria-label="التالي">❯</button>
+        <button class="testi-arrow testi-next" onclick="testiMove(1)" aria-label="التالي">❮</button>
       </div>
       <div class="testi-dots" id="testiDots"></div>
     </div>
@@ -1120,11 +1186,14 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
         <h2 class="section-title">كيف نخدمك <span class="gold">في 3 خطوات</span></h2>
         <div class="divider"></div>
       </div>
-      <ol class="how-steps">
+      <div class="how-wrap">
+      <div class="how-track" aria-hidden="true"><span></span></div>
+      <ol class="how-steps" id="howSteps">
         <li class="how-step reveal"><span class="how-num">1</span><div><h3>تواصل معنا</h3><p>راسلنا على واتساب أو اتصل، وأخبرنا بالخدمة والحي.</p></div></li>
         <li class="how-step reveal"><span class="how-num">2</span><div><h3>سعر وموعد واضح</h3><p>نحدد لك السعر قبل البدء ونتفق على الموعد اللي يناسبك.</p></div></li>
         <li class="how-step reveal"><span class="how-num">3</span><div><h3>تنفيذ بضمان</h3><p>فريق مدرب ينفذ الخدمة، ولو ما رضيت نعيدها مجاناً.</p></div></li>
       </ol>
+      </div>
     </div>
   </section>
 
@@ -1242,22 +1311,30 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   var current = 0;
   var autoTimer = null;
 
-  for(var i=0;i<count;i++){
-    var dot = document.createElement('button');
-    dot.className = 'testi-dot' + (i===0 ? ' active' : '');
-    dot.setAttribute('aria-label', 'الشريحة ' + (i+1));
-    dot.addEventListener('click', (function(idx){
-      return function(){ goTo(idx); restartAuto(); };
-    })(i));
-    dotsWrap.appendChild(dot);
+  var mq = window.matchMedia ? window.matchMedia('(min-width:769px)') : null;
+  var dots = [];
+  function perView(){ return mq && mq.matches ? 3 : 1; }
+  function pages(){ return Math.max(1, count - perView() + 1); }
+  function buildDots(){
+    dotsWrap.innerHTML = '';
+    for(var i=0;i<pages();i++){
+      var dot = document.createElement('button');
+      dot.className = 'testi-dot';
+      dot.setAttribute('aria-label', 'الشريحة ' + (i+1));
+      dot.addEventListener('click', (function(idx){
+        return function(){ goTo(idx); restartAuto(); };
+      })(i));
+      dotsWrap.appendChild(dot);
+    }
+    dots = dotsWrap.querySelectorAll('.testi-dot');
   }
-  var dots = dotsWrap.querySelectorAll('.testi-dot');
 
   function render(){
-    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    var x = cards[0].offsetLeft - cards[current].offsetLeft;
+    track.style.transform = 'translateX(' + x + 'px)';
     dots.forEach(function(d, i){ d.classList.toggle('active', i === current); });
-    var activeCard = cards[current];
-    if(activeCard){
+    if(perView() === 1){
+      var activeCard = cards[current];
       cards.forEach(function(c){ c.classList.remove('depth-in'); });
       requestAnimationFrame(function(){
         requestAnimationFrame(function(){
@@ -1267,9 +1344,16 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
     }
   }
   function goTo(idx){
-    current = (idx + count) % count;
+    var p = pages();
+    current = (idx + p) % p;
     render();
   }
+  buildDots();
+  if(mq){
+    var onChange = function(){ current = 0; buildDots(); render(); };
+    if(mq.addEventListener) mq.addEventListener('change', onChange); else if(mq.addListener) mq.addListener(onChange);
+  }
+  window.addEventListener('resize', function(){ render(); }, {passive:true});
   window.testiMove = function(dir){
     goTo(current + dir);
     restartAuto();
@@ -1299,7 +1383,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
       if(startX === null) return;
       var diff = e.changedTouches[0].clientX - startX;
       if(Math.abs(diff) > 40){
-        testiMove(diff > 0 ? -1 : 1);
+        testiMove(diff > 0 ? 1 : -1);
       }
       startX = null;
     }, {passive:true});
@@ -1325,6 +1409,37 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
       });
     });
   }
+})();
+
+// ===== HOW IT WORKS: steps light up one after another =====
+(function(){
+  var list = document.getElementById('howSteps');
+  if(!list) return;
+  var steps = list.querySelectorAll('.how-step');
+  var track = document.querySelector('.how-track');
+  var n = steps.length, i = 0, timer = null;
+  function show(k){
+    steps.forEach(function(s, j){
+      s.classList.toggle('is-done', j < k);
+      s.classList.toggle('is-active', j === k);
+    });
+    if(track) track.style.setProperty('--p', (n > 1 ? Math.min(k, n - 1) / (n - 1) * 100 : 100) + '%');
+  }
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    show(n); return;
+  }
+  function tick(){
+    show(i);
+    var wait = i === n - 1 ? 3200 : 2000;
+    i = (i + 1) % n;
+    timer = setTimeout(tick, wait);
+  }
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting && !timer){ list.classList.add('is-running'); i = 0; tick(); }
+      else if(!e.isIntersecting && timer){ clearTimeout(timer); timer = null; }
+    });
+  }, {threshold: .35}).observe(list);
 })();
 
 // ===== HERO PARALLAX =====
