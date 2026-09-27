@@ -718,6 +718,53 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 .hero-btns a{display:inline-flex;align-items:center;gap:8px}
 .phone-float a{display:flex;align-items:center;justify-content:center}
 
+/* ===== CALM LAYOUT (v2) ===== */
+/* fewer moving things: no sparkles/rising bubbles, no spinning icons, no flashing WhatsApp bar */
+.sparkle,.hero-bubble,.divider-bubble,.activity-bar-bubbles,.hero-badge::after{display:none !important}
+.hero-stat-gear,.hero-stat-gear-rev,.hero-stat-refresh svg,.cmd-wa,.testi-card::before,.activity-bar-dot{animation:none !important}
+.card-discount::after{animation-duration:7s}
+/* short tagline: plain text, not a pill that looks like a button */
+.hero-badge{background:none;border:0;padding:0;font-size:14px;font-weight:700;letter-spacing:.2px}
+/* section headers without the boxed frame (packages / riyadh) */
+.plain-header{background:none !important;border:0 !important;box-shadow:none !important;-webkit-backdrop-filter:none !important;backdrop-filter:none !important;margin-top:0 !important;padding:0 !important;margin-bottom:40px}
+/* mobile trust line under hero buttons */
+.hero-trust{display:none}
+/* how it works */
+#how-section{padding:70px 0}
+.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;list-style:none;padding:0;margin:0;counter-reset:how}
+.how-step{position:relative;padding:26px 22px;border-radius:18px;background:rgba(17,34,64,.45);border:1px solid rgba(201,168,76,.12);text-align:center}
+.how-num{width:44px;height:44px;margin:0 auto 14px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-weight:900;font-size:18px}
+.how-step h3{font-size:17px;font-weight:800;margin-bottom:6px;color:var(--white)}
+.how-step p{font-size:13.5px;color:var(--gray);line-height:1.7}
+/* riyadh text: quiet block near the end */
+#riyadh-context-section{padding:10px 0 60px}
+#riyadh-context-section .section-title{font-size:clamp(20px,3vw,26px)}
+#riyadh-context-section .section-sub{max-width:760px}
+/* footer contact line */
+.footer-contact{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 22px;margin-bottom:18px;font-size:13px;color:rgba(248,246,240,.8)}
+.footer-contact a{color:var(--gold2);font-weight:700}
+/* desktop floating bar in the corner, not over the content */
+@media(min-width:769px){.cmd-bar{left:24px;transform:none}}
+@media(max-width:768px){
+  .hero-badge{font-size:13px;margin-bottom:6px}
+  .hero-btns{flex-direction:row;gap:10px}
+  .hero-btns .btn-primary,.hero-btns .btn-outline{display:inline-flex;flex:1;width:auto;padding:12px 10px}
+  .hero-trust{display:block;text-align:center;font-size:12.5px;color:rgba(248,246,240,.75);margin-top:12px}
+  .hero-trust b{color:var(--gold2)}
+  .plain-header{margin-bottom:28px}
+  /* services: two compact columns instead of six tall cards */
+  .services-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .service-card{aspect-ratio:1/1}
+  .service-card-body{padding:12px}
+  .service-badge{font-size:9px;padding:3px 8px;margin-bottom:6px}
+  .service-name{font-size:14px;margin-bottom:0}
+  .service-desc,.service-arrow{display:none}
+  .how-steps{grid-template-columns:1fr;gap:12px}
+  .how-step{display:flex;align-items:center;gap:14px;text-align:start;padding:16px}
+  .how-num{margin:0;flex-shrink:0;width:38px;height:38px;font-size:16px}
+  #how-section{padding:50px 0}
+}
+
 </style>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -736,7 +783,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   </div>
   <div class="activity-bar-inner">
     <span class="activity-bar-dot"></span>
-    <span class="activity-bar-text" id="activityBarText"></span>
+    <span class="activity-bar-text">نخدم جميع أحياء الرياض على مدار الساعة</span>
   </div>
 </div>
 
@@ -800,7 +847,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
     <div class="hero-content">
       <div class="hero-photo-frame">
         <img src="hero-bg.jpg" alt="فريق نقاء أثناء تنظيف عميق" loading="eager">
-        <span class="hero-photo-badge">⚡ خصم 40% بمناسبة اليوم الوطني </span>
+        <span class="hero-photo-badge">خصم 40% على خدماتنا</span>
       </div>
       <div>
         <div class="hero-badge">لا تشيل هم ... نسعد بخدمتك </div>
@@ -811,6 +858,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
           <a href="https://wa.me/966545833481?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%81" class="btn-primary" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884z"/></svg>  احجز الآن</a>
           <a href="tel:+966545833481" class="btn-outline"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> اتصل الآن </a>
         </div>
+        <p class="hero-trust"><b>⭐ 4.7</b> على خرائط جوجل • ضمان الإعادة مجاناً</p>
 
         <div class="hero-stats" id="heroStats">
           <div class="hero-stat">
@@ -872,14 +920,14 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
     <span class="divider-bubble divider-bubble-3" aria-hidden="true"></span>
     <div class="container">
       <div class="services-header reveal reveal-scale">
-        <div class="section-tag">✨خدماتنا الاحترافية</div>
+        <div class="section-tag">خدماتنا الاحترافية</div>
         <h2 class="section-title">كل ما تحتاجه من <span class="gold">خدمات التنظيف</span></h2>
         <div class="divider"></div>
         <p class="section-sub">جاهزية تامة لكافة أعمال التنظيف والتعقيم والتطهير على مدار الساعة</p>
       </div>
       <div class="services-grid">
         <a href="/services/تنظيف-المنازل-والفلل/" class="service-card reveal"><div class="service-card-img"><img src="/images/home-villa-cleaning.webp" alt="تنظيف المنازل والفلل" loading="lazy" width="400" height="180"><div class="service-card-img-overlay"></div></div><div class="service-card-body"><div class="service-badge">الأكثر طلباً</div><h3 class="service-name">تنظيف المنازل والفلل</h3><p class="service-desc">تنظيف شامل لجميع غرف المنزل والحمامات والمطابخ والأرضيات بأحدث المعدات ومنظفات آمنة صديقة للبيئة</p><div class="service-arrow">استكشف الخدمة ←</div></div></a>
-        <a href="/شركة-تنظيف-بالرياض/تنظيف-منازل/" class="service-card reveal"><div class="service-card-img"><img src="/images/home-villa-cleaning.webp" alt="شركة تنظيف منازل بالرياض" loading="lazy" width="400" height="180"><div class="service-card-img-overlay"></div></div><div class="service-card-body"><div class="service-badge">مخصص للرياض</div><h3 class="service-name">شركة تنظيف منازل بالرياض</h3><p class="service-desc">خدمة تنظيف منازل متخصصة تغطي كل أحياء الرياض، بفريق مدرب وأسعار واضحة وحجز سريع</p><div class="service-arrow">استكشف الخدمة ←</div></div></a>
+        <a href="/شركة-تنظيف-بالرياض/تنظيف-منازل/" class="service-card reveal"><div class="service-card-img"><img src="/images/deep-cleaning.webp" alt="شركة تنظيف منازل بالرياض" loading="lazy" width="400" height="180"><div class="service-card-img-overlay"></div></div><div class="service-card-body"><div class="service-badge">مخصص للرياض</div><h3 class="service-name">شركة تنظيف منازل بالرياض</h3><p class="service-desc">خدمة تنظيف منازل متخصصة تغطي كل أحياء الرياض، بفريق مدرب وأسعار واضحة وحجز سريع</p><div class="service-arrow">استكشف الخدمة ←</div></div></a>
         <a href="/services/تنظيف-الشركات-والمكاتب/" class="service-card reveal"><div class="service-card-img"><img src="/images/office-cleaning.webp" alt="تنظيف الشركات والمكاتب" loading="lazy" width="400" height="180"><div class="service-card-img-overlay"></div></div><div class="service-card-body"><div class="service-badge">عقود مرنة</div><h3 class="service-name">تنظيف الشركات والمكاتب</h3><p class="service-desc">خدمة تنظيف احترافية للشركات والمكاتب والمجمعات التجارية بعقود دورية مرنة تناسب بيئة العمل</p><div class="service-arrow">استكشف الخدمة ←</div></div></a>
         <a href="/services/تنظيف-المجالس-والكنب/" class="service-card reveal"><div class="service-card-img"><img src="/images/majlis-cleaning.webp" alt="تنظيف المجالس والكنب" loading="lazy" width="400" height="180"><div class="service-card-img-overlay"></div></div><div class="service-card-body"><div class="service-badge">عناية بالأقمشة</div><h3 class="service-name">تنظيف المجالس والكنب</h3><p class="service-desc">باستخدام المواد المخصصة لكل نوع قماش للوصول لأعلى درجات النظافة والقضاء على الجراثيم دون تلف الأقمشة</p><div class="service-arrow">استكشف الخدمة ←</div></div></a>
         <a href="/services/تنظيف-وعزل-الخزانات/" class="service-card reveal"><div class="service-card-img"><img src="/images/tank-cleaning-insulation.webp" alt="تنظيف وعزل الخزانات" loading="lazy" width="400" height="180"><div class="service-card-img-overlay"></div></div><div class="service-card-body"><div class="service-badge">ضمان 10 سنوات</div><h3 class="service-name">تنظيف وعزل الخزانات</h3><p class="service-desc">تنظيف شامل وتعقيم كامل وعزل احترافي بالإيبوكسي عالي الجودة مع ضمان يصل إلى 10 سنوات</p><div class="service-arrow">استكشف الخدمة ←</div></div></a>
@@ -892,22 +940,42 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   </section>
   
 
-  <!-- LOCAL SEO CONTEXT SECTION -->
-  <section id="riyadh-context-section">
+  <!-- CLIENT LOGOS -->
+  <section id="clients-section" aria-labelledby="clients-title">
     <div class="container">
-      <div class="services-header reveal reveal-scale">
-        <h2 class="section-title">شركة تنظيف بالرياض تغطي جميع الأحياء</h2>
+      <div class="clients-header reveal reveal-scale">
+        <div class="section-tag">موثوق من الجهات</div>
+        <h2 class="section-title" id="clients-title">جهات نفخر <span class="gold">بخدمتها</span></h2>
         <div class="divider"></div>
-        <p class="section-sub">بصفتنا <a href="/شركة-تنظيف-بالرياض/" style="color:var(--gold2);text-decoration:underline">شركة تنظيف بالرياض</a> متكاملة الخدمات، نصل إلى معظم أحياء العاصمة بفريق مدرب ومعدات حديثة، ونغطي تنظيف المنازل والفلل والشقق وعزل الخزانات ومكافحة الحشرات وتنظيف المجالس والسجاد وما بعد التشطيب — بأسعار واضحة ومواعيد مرنة على مدار الساعة.</p>
+        <p class="section-sub">منشآت وشركات ومطاعم في الرياض تعتمد على نقاء</p>
       </div>
+    </div>
+    <div class="clients-viewport">
+      <ul class="clients-track" id="clientsTrack">
+        <li class="client-logo is-featured"><img src="/images/clients/alhilal.png" alt="نادي الهلال" width="104" height="200" loading="lazy" decoding="async"></li>
+        <li class="client-logo"><img src="/images/clients/alrajhi.png" alt="مصرف الراجحي" width="440" height="156" loading="lazy" decoding="async"></li>
+        <li class="client-logo"><img src="/images/clients/elaik.png" alt="مطعم إليك" width="336" height="200" loading="lazy" decoding="async"></li>
+        <li class="client-logo"><img src="/images/clients/q-mall.png" alt="مول كيو" width="370" height="200" loading="lazy" decoding="async"></li>
+        <li class="client-logo"><img src="/images/clients/al-lounge.png" alt="ال اي لاونج" width="146" height="200" loading="lazy" decoding="async"></li>
+        <li class="client-logo"><img src="/images/clients/haret-alsamak.png" alt="مطعم حارة السمك" width="204" height="200" loading="lazy" decoding="async"></li>
+        <li class="client-logo"><img src="/images/clients/alshams.png" alt="الشمس للمقاولات العامة" width="224" height="200" loading="lazy" decoding="async"></li>
+        <li class="client-logo"><img src="/images/clients/alsufyani.png" alt="شركة السفياني" width="369" height="200" loading="lazy" decoding="async"></li>
+        <li class="client-logo"><img src="/images/clients/alatawi.png" alt="العطاوي لخدمات الجوال" width="440" height="132" loading="lazy" decoding="async"></li>
+        <li class="client-logo"><img src="/images/clients/concrete.png" alt="كونكريت" width="344" height="200" loading="lazy" decoding="async"></li>
+        <li class="client-logo"><img src="/images/clients/aldalal.png" alt="الدلال لتجهيز الملاعب" width="184" height="200" loading="lazy" decoding="async"></li>
+        <li class="client-logo"><img src="/images/clients/zahrat-alrawdah.png" alt="زهرة الروضة" width="440" height="145" loading="lazy" decoding="async"></li>
+      </ul>
+    </div>
+    <div class="container" style="text-align:center">
+      <a href="/شركة-تنظيف-بالرياض/عقود-تنظيف-دورية/" class="clients-more">عرض قطاع الأعمال ←</a>
     </div>
   </section>
 
   <!-- PACKAGES -->
   <section id="packages-section">
     <div class="container">
-      <div class="services-header reveal reveal-scale">
-        <div class="section-tag">🎁 باقاتنا المميزة</div>
+      <div class="services-header plain-header reveal reveal-scale">
+        <div class="section-tag">باقاتنا المميزة</div>
         <h2 class="section-title">وفّر أكتر مع <span class="gold">باقاتنا الجاهزة</span></h2>
         <div class="divider"></div>
         <p class="section-sub">باقات مجمّعة بخصومات حقيقية توفرلك عناء طلب كل خدمة لوحدها</p>
@@ -976,42 +1044,11 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
     </div>
   </section>
 
-  <!-- CLIENT LOGOS -->
-  <section id="clients-section" aria-labelledby="clients-title">
-    <div class="container">
-      <div class="clients-header reveal reveal-scale">
-        <div class="section-tag">🏢 موثوق من الجهات</div>
-        <h2 class="section-title" id="clients-title">جهات نفخر <span class="gold">بخدمتها</span></h2>
-        <div class="divider"></div>
-        <p class="section-sub">منشآت وشركات ومطاعم في الرياض تعتمد على نقاء</p>
-      </div>
-    </div>
-    <div class="clients-viewport">
-      <ul class="clients-track" id="clientsTrack">
-        <li class="client-logo is-featured"><img src="/images/clients/alhilal.png" alt="نادي الهلال" width="104" height="200" loading="lazy" decoding="async"></li>
-        <li class="client-logo"><img src="/images/clients/alrajhi.png" alt="مصرف الراجحي" width="440" height="156" loading="lazy" decoding="async"></li>
-        <li class="client-logo"><img src="/images/clients/elaik.png" alt="مطعم إليك" width="336" height="200" loading="lazy" decoding="async"></li>
-        <li class="client-logo"><img src="/images/clients/q-mall.png" alt="مول كيو" width="370" height="200" loading="lazy" decoding="async"></li>
-        <li class="client-logo"><img src="/images/clients/al-lounge.png" alt="ال اي لاونج" width="146" height="200" loading="lazy" decoding="async"></li>
-        <li class="client-logo"><img src="/images/clients/haret-alsamak.png" alt="مطعم حارة السمك" width="204" height="200" loading="lazy" decoding="async"></li>
-        <li class="client-logo"><img src="/images/clients/alshams.png" alt="الشمس للمقاولات العامة" width="224" height="200" loading="lazy" decoding="async"></li>
-        <li class="client-logo"><img src="/images/clients/alsufyani.png" alt="شركة السفياني" width="369" height="200" loading="lazy" decoding="async"></li>
-        <li class="client-logo"><img src="/images/clients/alatawi.png" alt="العطاوي لخدمات الجوال" width="440" height="132" loading="lazy" decoding="async"></li>
-        <li class="client-logo"><img src="/images/clients/concrete.png" alt="كونكريت" width="344" height="200" loading="lazy" decoding="async"></li>
-        <li class="client-logo"><img src="/images/clients/aldalal.png" alt="الدلال لتجهيز الملاعب" width="184" height="200" loading="lazy" decoding="async"></li>
-        <li class="client-logo"><img src="/images/clients/zahrat-alrawdah.png" alt="زهرة الروضة" width="440" height="145" loading="lazy" decoding="async"></li>
-      </ul>
-    </div>
-    <div class="container" style="text-align:center">
-      <a href="/شركة-تنظيف-بالرياض/عقود-تنظيف-دورية/" class="clients-more">عرض قطاع الأعمال ←</a>
-    </div>
-  </section>
-
   <!-- TESTIMONIALS -->
   <section id="testimonials-section">
     <div class="container">
       <div class="testi-header reveal reveal-scale">
-        <div class="section-tag">💬 آراء عملائنا</div>
+        <div class="section-tag">آراء عملائنا</div>
         <h2 class="section-title">ماذا يقول <span class="gold">عملاؤنا</span></h2>
         <div class="divider"></div>
         <p class="section-sub">تجارب حقيقية من عملاء اختاروا نقاء لثقتهم في جودة الخدمة</p>
@@ -1075,6 +1112,33 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   </section>
 
 
+  <!-- HOW IT WORKS -->
+  <section id="how-section">
+    <div class="container">
+      <div class="services-header plain-header reveal">
+        <div class="section-tag">خطوات بسيطة</div>
+        <h2 class="section-title">كيف نخدمك <span class="gold">في 3 خطوات</span></h2>
+        <div class="divider"></div>
+      </div>
+      <ol class="how-steps">
+        <li class="how-step reveal"><span class="how-num">1</span><div><h3>تواصل معنا</h3><p>راسلنا على واتساب أو اتصل، وأخبرنا بالخدمة والحي.</p></div></li>
+        <li class="how-step reveal"><span class="how-num">2</span><div><h3>سعر وموعد واضح</h3><p>نحدد لك السعر قبل البدء ونتفق على الموعد اللي يناسبك.</p></div></li>
+        <li class="how-step reveal"><span class="how-num">3</span><div><h3>تنفيذ بضمان</h3><p>فريق مدرب ينفذ الخدمة، ولو ما رضيت نعيدها مجاناً.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- LOCAL SEO CONTEXT SECTION -->
+  <section id="riyadh-context-section">
+    <div class="container">
+      <div class="services-header plain-header reveal">
+        <h2 class="section-title">شركة تنظيف بالرياض تغطي جميع الأحياء</h2>
+        <div class="divider"></div>
+        <p class="section-sub">بصفتنا <a href="/شركة-تنظيف-بالرياض/" style="color:var(--gold2);text-decoration:underline">شركة تنظيف بالرياض</a> متكاملة الخدمات، نصل إلى معظم أحياء العاصمة بفريق مدرب ومعدات حديثة، ونغطي تنظيف المنازل والفلل والشقق وعزل الخزانات ومكافحة الحشرات وتنظيف المجالس والسجاد وما بعد التشطيب — بأسعار واضحة ومواعيد مرنة على مدار الساعة.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
@@ -1083,7 +1147,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
           <div class="form-title">احجز خدمتك الآن</div>
           <div class="form-row">
             <div class="form-group"><label>الاسم الكريم</label><input type="text" id="f-name" placeholder="أدخل اسمك" aria-label="الاسم"><div class="form-error" id="f-name-err"></div></div>
-            <div class="form-group"><label>رقم الجوال</label><input type="tel" id="f-phone" placeholder="05xxxxxxxx" aria-label="رقم الجوال"><div class="form-error" id="f-phone-err"></div></div>
+            <div class="form-group"><label>الحي</label><input type="text" id="f-area" placeholder="مثال: الملقا" aria-label="الحي"><div class="form-error" id="f-area-err"></div></div>
           </div>
           <div class="form-group"><label>الخدمة المطلوبة</label>
             <select id="f-service" aria-label="الخدمة المطلوبة">
@@ -1101,7 +1165,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
             </select>
           </div>
           <div class="form-group"><label>رسالتك (اختياري)</label><textarea id="f-msg" placeholder="اكتب تفاصيل إضافية..."></textarea></div>
-          <button class="form-submit" onclick="submitForm()">⚡ أرسل — سنتواصل معك فورا</button>
+          <button class="form-submit" onclick="submitForm()">أرسل الطلب عبر واتساب</button>
         </div>
       </div>
     </div>
@@ -1112,6 +1176,11 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 <!-- ===== SHARED FOOTER ===== -->
 <footer id="main-footer">
 <div class="container">
+<div class="footer-contact">
+<span>📞 <a href="tel:+966545833481" dir="ltr">0545833481</a></span>
+<span>📍 الرياض — جميع الأحياء</span>
+<span>🕐 نعمل على مدار الساعة</span>
+</div>
 <div class="footer-nav-links">
 <a href="/">الرئيسية</a>
 <span class="footer-sep">-</span>
@@ -1258,72 +1327,6 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   }
 })();
 
-// ===== ACTIVITY BAR =====
-(function(){
-  var messages = [
-    "فريقنا ينظف منزلًا الآن في حي الملكة.",
-    "فريق نقاء يعمل حاليًا على تنظيف فيلا في حي الملقا.",
-    "فريقنا ينجز الآن تنظيف مجلس في حي الياسمين.",
-    "أحد فرقنا في طريقه إلى عميل في حي النرجس.",
-    "يجري الآن تنظيف شقة سكنية في حي الصحافة.",
-    "فريقنا ينظف الكنب الآن في حي حطين.",
-    "يجري تنفيذ خدمة تنظيف عميق في حي العقيق.",
-    "فريق نقاء يعمل الآن داخل منزل في حي الندى.",
-    "بدأ فريقنا خدمة تنظيف فيلا في حي القيروان.",
-    "فريقنا ينفذ الآن خدمة تنظيف منزل في حي الربيع.",
-    "يجري تنظيف مجلس في حي التعاون.",
-    "أحد فرقنا متواجد حاليًا في حي المروج.",
-    "فريقنا يجهز منزلًا للتسليم بعد التنظيف في حي الورود.",
-    "يجري الآن تنظيف منزل عائلي في حي المصيف.",
-    "فريقنا يعمل داخل فيلا في حي العارض.",
-    "يجري تنفيذ خدمة تنظيف كنب في حي النفل.",
-    "فريقنا متواجد الآن في حي الفلاح لإنجاز خدمة تنظيف.",
-    "فريق نقاء وصل إلى موقع العميل في حي إشبيلية.",
-    "يجري الآن الانتهاء من اللمسات الأخيرة لتنظيف منزل في حي الرمال.",
-    "فريقنا يخدم أحد عملائنا حاليًا في حي غرناطة.",
-    "فريقنا ينظف فيلا الآن في حي المونسية.",
-    "يجري تنفيذ خدمة تنظيف منزل في حي القادسية.",
-    "أحد فرقنا يعمل حاليًا في حي الروابي.",
-    "فريقنا متواجد الآن داخل منزل في حي الخليج.",
-    "يجري تنظيف مجلس فاخر في حي الشهداء.",
-    "فريقنا يواصل تنظيف فيلا في حي الازدهار.",
-    "أحد فرقنا ينظف شقة سكنية في حي الربوة.",
-    "فريقنا يعمل الآن على تنظيف كنب في حي الروضة.",
-    "يجري تجهيز منزل بعد الانتهاء من أعمال التنظيف في حي الفيحاء.",
-    "فريقنا ينفذ الآن تنظيفًا عميقًا في حي السليمانية.",
-    "أحد فرقنا يخدم عميلًا حاليًا في حي العليا.",
-    "فريقنا يعمل داخل منزل في حي الواحة.",
-    "يجري الآن تنظيف فيلا في حي الريان.",
-    "فريقنا متواجد في حي الجزيرة لإنجاز خدمة تنظيف.",
-    "أحد فرقنا ينظف منزلًا في حي النسيم.",
-    "فريقنا يعمل الآن على تنظيف مجلس في حي السويدي.",
-    "يجري تنفيذ خدمة تنظيف منزل في حي بدر.",
-    "فريقنا يخدم أحد العملاء حاليًا في حي العزيزية.",
-    "أحد فرقنا ينجز أعمال التنظيف في حي طويق.",
-    "فريقنا ينهي الآن أعمال تنظيف منزل في حي الشفا."
-  ];
-  var textEl = document.getElementById('activityBarText');
-  if(!textEl) return;
-  var lastIndex = -1;
-  function pickNext(){
-    var idx;
-    do { idx = Math.floor(Math.random() * messages.length); } while(idx === lastIndex && messages.length > 1);
-    lastIndex = idx;
-    return messages[idx];
-  }
-  // initial message, no animation
-  textEl.textContent = pickNext();
-  setInterval(function(){
-    textEl.classList.add('bar-hidden');
-    setTimeout(function(){
-      textEl.textContent = pickNext();
-      // force reflow so the re-entry transition plays
-      void textEl.offsetWidth;
-      textEl.classList.remove('bar-hidden');
-    }, 450);
-  }, 6000);
-})();
-
 // ===== HERO PARALLAX =====
 (function(){
   var bgImg = document.getElementById('heroBgImg');
@@ -1388,39 +1391,23 @@ function toggleFaq(item) {
 // ===== FORM SUBMIT → WHATSAPP =====
 function submitForm() {
   const nameEl = document.getElementById('f-name');
-  const phoneEl = document.getElementById('f-phone');
   const nameGroup = nameEl.closest('.form-group');
-  const phoneGroup = phoneEl.closest('.form-group');
   const nameErr = document.getElementById('f-name-err');
-  const phoneErr = document.getElementById('f-phone-err');
 
   const name = nameEl.value.trim();
-  const phone = phoneEl.value.trim();
+  const area = document.getElementById('f-area')?.value.trim() || '';
   const service = document.getElementById('f-service')?.value || 'استفسار عام';
   const msg = document.getElementById('f-msg')?.value || '';
-
-  let valid = true;
-  const saudiPhonePattern = /^(05|9665|\+9665)[0-9]{8}$/;
 
   if (name.length < 2) {
     nameGroup.classList.add('has-error');
     nameErr.textContent = 'من فضلك اكتب اسمك';
-    valid = false;
-  } else {
-    nameGroup.classList.remove('has-error');
+    return;
   }
+  nameGroup.classList.remove('has-error');
 
-  if (!saudiPhonePattern.test(phone.replace(/\s/g, ''))) {
-    phoneGroup.classList.add('has-error');
-    phoneErr.textContent = 'من فضلك اكتب رقم جوال سعودي صحيح (05xxxxxxxx)';
-    valid = false;
-  } else {
-    phoneGroup.classList.remove('has-error');
-  }
-
-  if (!valid) return;
-
-  let waMsg = 'مرحباً، أنا ' + name + '\n' + 'رقمي: ' + phone + '\n' + 'أريد: ' + service;
+  let waMsg = 'السلام عليكم، أنا ' + name + '\n' + 'أريد: ' + service;
+  if (area) waMsg += '\n' + 'الحي: ' + area;
   if (msg) waMsg += '\n' + 'تفاصيل إضافية: ' + msg;
   naqaaTrack('ضغطة_واتساب', {link_location: 'فورم الحجز', link_text: 'فورم الحجز'});
   window.open('https://wa.me/966545833481?text=' + encodeURIComponent(waMsg), '_blank');
