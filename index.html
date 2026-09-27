@@ -684,27 +684,32 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 /* ===== PACKAGES SECTION ===== */
 #packages-section{position:relative}
 .packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
-.pkg-card{position:relative;background:linear-gradient(160deg,rgba(17,34,64,.75),rgba(10,22,40,.95));border:1px solid rgba(201,168,76,.18);border-radius:22px;padding:30px 26px 26px;display:flex;flex-direction:column;transition:transform .35s,border-color .35s,box-shadow .35s}
+.pkg-card{position:relative;background:linear-gradient(160deg,rgba(17,34,64,.75),rgba(10,22,40,.95));border:1px solid rgba(201,168,76,.18);border-radius:22px;padding:24px 22px 22px;display:flex;flex-direction:column;transition:transform .35s,border-color .35s,box-shadow .35s}
 .pkg-card:hover{transform:translateY(-6px);border-color:rgba(201,168,76,.4);box-shadow:0 16px 40px rgba(0,0,0,.35)}
 .pkg-card.pkg-featured{border-color:rgba(201,168,76,.55);background:linear-gradient(160deg,rgba(201,168,76,.1),rgba(10,22,40,.97));transform:scale(1.04)}
 .pkg-card.pkg-featured:hover{transform:scale(1.04) translateY(-6px)}
 .pkg-discount-badge{position:absolute;top:-14px;right:24px;z-index:2;background:linear-gradient(135deg,var(--gold),var(--gold3));color:var(--navy);font-size:12.5px;font-weight:800;padding:6px 16px;border-radius:50px;box-shadow:0 6px 16px rgba(201,168,76,.4)}
-.pkg-card-img{margin:-30px -26px 20px;border-radius:22px 22px 0 0;overflow:hidden}
-.pkg-card-img img{width:100%;height:auto;display:block}
+.pkg-card-img{margin:-24px -22px 16px;border-radius:22px 22px 0 0;overflow:hidden}
+.pkg-card-img img{width:100%;height:190px;object-fit:cover;object-position:center 52%;display:block}
 .pkg-most-wanted{display:inline-block;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);color:var(--gold2);font-size:11px;font-weight:700;padding:4px 12px;border-radius:50px;margin-bottom:14px;width:fit-content}
-.pkg-name{font-family:'Cairo',sans-serif;font-size:19px;font-weight:800;color:var(--white);margin-bottom:14px;line-height:1.35}
-.pkg-includes{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-direction:column;gap:10px;flex-grow:1}
+.pkg-name{font-family:'Cairo',sans-serif;font-size:19px;font-weight:800;color:var(--white);margin-bottom:12px;line-height:1.35}
+.pkg-includes{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:8px;flex-grow:1}
 .pkg-includes li{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:rgba(248,246,240,.85);line-height:1.5}
 .pkg-includes li svg{flex-shrink:0;margin-top:2px;color:var(--gold2)}
 .pkg-price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
 .pkg-price-old{font-size:15px;color:var(--gray);text-decoration:line-through}
 .pkg-price-new{font-family:'Cairo',sans-serif;font-size:28px;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--gold3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.pkg-price-unit{font-size:12px;color:var(--gray);margin-bottom:18px}
+.pkg-price-unit{font-size:12px;color:var(--gray);margin-bottom:14px}
 .pkg-btn{margin-top:auto;width:100%;justify-content:center;text-align:center;text-decoration:none}
+.pkg-swipe-hint{display:none}
 @media(max-width:768px){
-  .packages-grid{grid-template-columns:1fr;gap:16px}
-  .pkg-card.pkg-featured{transform:none}
-  .pkg-card.pkg-featured:hover{transform:translateY(-4px)}
+  .packages-grid{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:18px 24px 8px;margin:0 -24px;scroll-padding:0 24px}
+  .packages-grid::-webkit-scrollbar{display:none}
+  .packages-grid .pkg-card{flex:0 0 84%;scroll-snap-align:start}
+  .packages-grid .pkg-card.reveal{opacity:1;transform:none}
+  .pkg-card-img img{height:150px}
+  .pkg-card.pkg-featured,.pkg-card:hover,.pkg-card.pkg-featured:hover{transform:none}
+  .pkg-swipe-hint{display:block;text-align:center;font-size:12.5px;color:var(--gray);margin-top:10px}
 }
 .btn-outline svg{color:var(--gold2);fill:var(--gold2)}
 .btn-outline:hover svg{color:var(--navy);fill:var(--navy)}
@@ -967,6 +972,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
         </div>
 
       </div>
+      <p class="pkg-swipe-hint" aria-hidden="true">← اسحب لمشاهدة باقي الباقات</p>
     </div>
   </section>
 
