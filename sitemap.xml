@@ -9,6 +9,14 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- English homepage -->
+  <url>
+    <loc>https://www.naqaa-cleaning.com/en/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- صفحات رئيسية -->
   <url>
     <loc>https://www.naqaa-cleaning.com/blog/</loc>
