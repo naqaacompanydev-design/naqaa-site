@@ -828,7 +828,14 @@ body{direction:ltr}
   .how-step.is-active{transform:translateX(4px)}
   .hero-photo-badge{left:auto;right:12px}
 }
-@media(min-width:769px){.cmd-bar{left:auto;right:24px}.back-top{bottom:96px;right:24px}}</style>
+@media(min-width:769px){.cmd-bar{left:auto;right:24px}.back-top{bottom:96px;right:24px}}/* language button next to the menu icon (mobile only) */
+.lang-mobile{display:none}
+@media(max-width:768px){
+  #navbar{flex-wrap:nowrap}
+  .logo-img{height:42px}
+  .lang-mobile{display:inline-flex;align-items:center;justify-content:center;order:4;height:36px;padding:0 12px;margin-inline-start:8px;flex-shrink:0;border:1px solid rgba(201,168,76,.35);border-radius:8px;background:rgba(201,168,76,.1);color:var(--gold2);font-size:13px;font-weight:700;font-family:'Cairo',sans-serif}
+}
+</style>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -861,6 +868,7 @@ body{direction:ltr}
     <li><a href="/" class="lang-switch" hreflang="ar" lang="ar">العربية</a></li>
     <li><a href="tel:+966545833481" class="nav-cta">📞 Call now</a></li>
   </ul>
+  <a href="/" class="lang-mobile" hreflang="ar" lang="ar" aria-label="النسخة العربية">عربي</a>
   <div class="hamburger" id="ham" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </div>
