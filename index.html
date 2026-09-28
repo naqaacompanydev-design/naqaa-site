@@ -459,7 +459,40 @@ footer{background:#050d18;border-top:1px solid rgba(201,168,76,.1);padding:24px 
 .marq li,.marq li.big{height:112px;width:200px;flex:0 0 200px;border-radius:20px}
 .marq img,.marq li.big img{max-height:82px;max-width:164px}
 .marq li.big img{max-height:94px}
-@media(min-width:900px){.marq ul{gap:20px}.marq li,.marq li.big{height:132px;width:240px;flex-basis:240px}.marq img,.marq li.big img{max-height:98px;max-width:196px}.marq li.big img{max-height:112px}}/* ===== CENTERED LAYOUT ===== */
+@media(min-width:900px){.marq ul{gap:20px}.marq li,.marq li.big{height:132px;width:240px;flex-basis:240px}.marq img,.marq li.big img{max-height:98px;max-width:196px}.marq li.big img{max-height:112px}}/* ===== SERVICES: full image visible, name under it ===== */
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.svc2{display:flex;flex-direction:column;border-radius:20px;overflow:hidden;background:linear-gradient(170deg,#0f213a,#081426);border:1px solid rgba(201,168,76,.18);transition:transform .45s var(--ease),border-color .35s,box-shadow .45s var(--ease)}
+.svc2:hover{transform:translateY(-4px);border-color:rgba(201,168,76,.45);box-shadow:0 18px 40px -18px rgba(0,0,0,.7)}
+.ph{position:relative;aspect-ratio:16/10;overflow:hidden;isolation:isolate}
+.ph::before{content:'';position:absolute;inset:-12%;z-index:-1;background:var(--img) center/cover;filter:blur(16px) brightness(.55)}
+.ph img{width:100%;height:100%;object-fit:contain;transition:transform .8s var(--ease)}
+.svc2:hover .ph img{transform:scale(1.04)}
+.ph .go{position:absolute;top:8px;left:8px;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(7,17,31,.6);border:1px solid rgba(248,246,240,.2);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:background .35s,transform .45s var(--ease)}
+.ph .go svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2}
+.svc2:hover .go{background:var(--gold2);transform:rotate(-45deg)}.svc2:hover .go svg{stroke:#1a1405}
+.bd{padding:12px 10px 14px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;flex:1}
+.bd .tag{margin:0;font-size:10px}
+.bd h3{font-size:15px;font-weight:800;line-height:1.35}
+.bd p{display:none;font-size:13.5px;color:var(--muted);line-height:1.6}
+@media(min-width:900px){.svc-grid{grid-template-columns:repeat(3,1fr);gap:20px}.ph .go{width:38px;height:38px;top:12px;left:12px}.bd{padding:18px 18px 20px}.bd h3{font-size:19px}.bd p{display:block}.bd .tag{font-size:11px}}/* ===== BIGGER LOGO + centered menu lines ===== */
+#hdr .wrap{padding:0 14px}
+.hdr-in{height:78px;gap:6px}
+.logo{flex:1 1 auto;min-width:0;display:flex;align-items:center}
+.logo img{width:100%;max-width:270px;height:auto;max-height:54px}
+.hdr-actions{flex:0 0 auto;gap:6px}
+.pill{height:42px;padding:0 11px}
+.burger{width:42px;height:42px;padding:0;margin:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;line-height:0}
+.burger span{display:block;margin:0 auto}
+.hero-in{padding-top:92px}
+@media(min-width:1000px){
+  #hdr .wrap{padding:0 20px}
+  .hdr-in{height:104px;gap:10px}
+  .logo{flex:0 0 auto}
+  .logo img{width:auto;max-width:none;height:64px;max-height:none}
+  .hero-in{padding-top:124px}
+}
+@media(min-width:1000px){.burger{display:none}.nav{gap:18px}.nav a{white-space:nowrap;font-size:14.5px}.logo img{height:52px}}
+@media(min-width:1200px){.logo img{height:80px}.nav{gap:24px}.nav a{font-size:16px}}/* ===== CENTERED LAYOUT ===== */
 .hero-copy{text-align:center;margin:0 auto}
 .hero h1 > .gold{display:block}
 .hero .sub{margin:0 auto}
@@ -553,13 +586,13 @@ footer{background:#050d18;border-top:1px solid rgba(201,168,76,.1);padding:24px 
       <h2 class="h2">كل ما تحتاجه من <span class="gold">خدمات التنظيف</span></h2>
       <p class="lead">فريق مدرب ومعدات حديثة ومواد آمنة، لكل مساحة من بيتك أو منشأتك.</p>
     </div>
-    <div class="bento">
-      <a class="svc xl rv-in" href="/services/تنظيف-المنازل-والفلل/"><img src="/images/hero/hero-home.jpg" alt="تنظيف المنازل والفلل" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span><div class="in"><span class="tag">الأكثر طلباً</span><h3>تنظيف المنازل والفلل</h3><p>تنظيف شامل لكل الغرف والحمامات والمطابخ والأرضيات بأحدث المعدات ومنظفات آمنة.</p></div></a>
-      <a class="svc w2 rv-in" style="--d:.08s" href="/services/تنظيف-وعزل-الخزانات/"><img src="/images/hero/hero-tank.jpg" alt="تنظيف وعزل الخزانات" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span><div class="in"><span class="tag">ضمان 10 سنوات</span><h3>تنظيف وعزل الخزانات</h3><p>تعقيم كامل وعزل احترافي بالإيبوكسي للخزانات العلوية والأرضية.</p></div></a>
-      <a class="svc rv-in" style="--d:.12s" href="/services/تنظيف-المجالس-والكنب/"><img src="/images/majlis-cleaning.webp" alt="تنظيف المجالس والكنب" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span><div class="in"><span class="tag">عناية بالأقمشة</span><h3>المجالس والكنب</h3></div></a>
-      <a class="svc rv-in" style="--d:.16s" href="/services/مكافحة-الحشرات-والقوارض/"><img src="/images/pest-control.webp" alt="مكافحة الحشرات والقوارض" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span><div class="in"><span class="tag">ضمان 6 أشهر</span><h3>مكافحة الحشرات</h3></div></a>
-      <a class="svc w2 rv-in" style="--d:.08s" href="/services/تنظيف-الشركات-والمكاتب/"><img src="/images/hero/hero-office.jpg" alt="تنظيف الشركات والمكاتب" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span><div class="in"><span class="tag">عقود مرنة</span><h3>تنظيف الشركات والمكاتب</h3><p>عقود شهرية وسنوية للمكاتب والمنشآت التجارية.</p></div></a>
-      <a class="svc w2 rv-in" style="--d:.12s" href="/services/التنظيف-العميق-الشامل/"><img src="/images/deep-cleaning.webp" alt="التنظيف العميق الشامل" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span><div class="in"><span class="tag">تنظيف 360°</span><h3>التنظيف العميق الشامل</h3><p>خلف الأثاث والأسقف والجدران، مثالي قبل وبعد الانتقال.</p></div></a>
+    <div class="svc-grid">
+      <a class="svc2 rv-in" style="--d:0.00s" href="/services/تنظيف-المنازل-والفلل/"><div class="ph" style="--img:url('/images/home-villa-cleaning.webp')"><img src="/images/home-villa-cleaning.webp" alt="تنظيف المنازل والفلل" width="236" height="157" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span></div><div class="bd"><span class="tag">الأكثر طلباً</span><h3>تنظيف المنازل والفلل</h3><p>تنظيف شامل لكل الغرف والحمامات والمطابخ والأرضيات بمنظفات آمنة.</p></div></a>
+      <a class="svc2 rv-in" style="--d:0.06s" href="/services/تنظيف-وعزل-الخزانات/"><div class="ph" style="--img:url('/images/tank-cleaning-insulation.webp')"><img src="/images/tank-cleaning-insulation.webp" alt="تنظيف وعزل الخزانات" width="720" height="520" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span></div><div class="bd"><span class="tag">ضمان 10 سنوات</span><h3>تنظيف وعزل الخزانات</h3><p>تعقيم كامل وعزل احترافي بالإيبوكسي للخزانات العلوية والأرضية.</p></div></a>
+      <a class="svc2 rv-in" style="--d:0.12s" href="/services/تنظيف-المجالس-والكنب/"><div class="ph" style="--img:url('/images/majlis-cleaning.webp')"><img src="/images/majlis-cleaning.webp" alt="تنظيف المجالس والكنب" width="634" height="321" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span></div><div class="bd"><span class="tag">عناية بالأقمشة</span><h3>تنظيف المجالس والكنب</h3><p>بمواد مخصصة لكل قماش تزيل البقع والروائح بدون أي ضرر.</p></div></a>
+      <a class="svc2 rv-in" style="--d:0.18s" href="/services/مكافحة-الحشرات-والقوارض/"><div class="ph" style="--img:url('/images/pest-control.webp')"><img src="/images/pest-control.webp" alt="مكافحة الحشرات والقوارض" width="634" height="356" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span></div><div class="bd"><span class="tag">ضمان 6 أشهر</span><h3>مكافحة الحشرات والقوارض</h3><p>مبيدات آمنة معتمدة مع ضمان عدم العودة لمدة 6 أشهر.</p></div></a>
+      <a class="svc2 rv-in" style="--d:0.24s" href="/services/تنظيف-الشركات-والمكاتب/"><div class="ph" style="--img:url('/images/office-cleaning.webp')"><img src="/images/office-cleaning.webp" alt="تنظيف الشركات والمكاتب" width="634" height="381" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span></div><div class="bd"><span class="tag">عقود مرنة</span><h3>تنظيف الشركات والمكاتب</h3><p>عقود شهرية وسنوية للمكاتب والمنشآت التجارية.</p></div></a>
+      <a class="svc2 rv-in" style="--d:0.30s" href="/services/التنظيف-العميق-الشامل/"><div class="ph" style="--img:url('/images/deep-cleaning.webp')"><img src="/images/deep-cleaning.webp" alt="التنظيف العميق الشامل" width="576" height="374" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span></div><div class="bd"><span class="tag">تنظيف 360°</span><h3>التنظيف العميق الشامل</h3><p>خلف الأثاث والأسقف والجدران، مثالي قبل وبعد الانتقال.</p></div></a>
     </div>
     <div class="more rv-in"><a class="btn btn-ghost" href="/services/">كل خدماتنا ←</a></div>
   </div>
