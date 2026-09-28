@@ -89,6 +89,16 @@
       "permanent": true
     },
     {
+      "source": "/new",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/new/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/home",
       "destination": "/",
       "permanent": true
