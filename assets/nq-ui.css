@@ -1,0 +1,122 @@
+/* Naqaa shared UI — header, mobile menu, footer, floating bar and inner-page polish.
+   Loaded by every page except the homepage (which carries the same design inline). */
+:root{
+  --nq-bg:#07111f;--nq-bg2:#0b1a2e;--nq-gold:#c9a84c;--nq-gold2:#e4bf6a;--nq-gold3:#f5d98e;
+  --nq-white:#f8f6f0;--nq-muted:#9aa8bf;--nq-line:rgba(201,168,76,.18);--nq-ease:cubic-bezier(.22,1,.36,1);
+}
+.nq-wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 14px}
+
+/* ---------- progress + header ---------- */
+#nq-progress{position:fixed;top:0;right:0;left:0;height:3px;z-index:1300;transform-origin:right;transform:scaleX(0);background:linear-gradient(90deg,var(--nq-gold3),var(--nq-gold))}
+html[dir=ltr] #nq-progress{transform-origin:left}
+#nq-hdr{position:fixed;top:0;right:0;left:0;z-index:1200;background:rgba(7,17,31,.9);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:0 1px 0 var(--nq-line);font-family:'Cairo',system-ui,sans-serif}
+.nq-hdr-in{display:flex;align-items:center;gap:6px;height:74px}
+.nq-logo{flex:1 1 auto;min-width:0;display:flex;align-items:center}
+.nq-logo img{display:block;width:100%;max-width:260px;height:auto;max-height:52px}
+.nq-nav{display:none}
+.nq-actions{flex:0 0 auto;display:flex;align-items:center;gap:6px}
+.nq-pill{display:inline-flex;align-items:center;justify-content:center;height:42px;padding:0 11px;border-radius:12px;border:1px solid var(--nq-line);background:rgba(201,168,76,.08);color:var(--nq-gold2)!important;font-size:15px;font-weight:800;text-decoration:none!important;font-family:'Cairo',sans-serif}
+.nq-call{display:none}
+.nq-burger{width:42px;height:42px;padding:0;margin:0;border-radius:12px;border:1px solid var(--nq-line);background:rgba(201,168,76,.08);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;line-height:0}
+.nq-burger span{display:block;width:21px;height:2.2px;border-radius:2px;background:var(--nq-gold2);transition:transform .35s var(--nq-ease),opacity .2s}
+.nq-open .nq-burger span:nth-child(1){transform:translateY(7.2px) rotate(45deg)}
+.nq-open .nq-burger span:nth-child(2){opacity:0}
+.nq-open .nq-burger span:nth-child(3){transform:translateY(-7.2px) rotate(-45deg)}
+#nq-menu{position:fixed;top:82px;right:12px;left:12px;z-index:1150;display:flex;flex-direction:column;align-items:center;text-align:center;padding:10px 18px 18px;border-radius:22px;border:1px solid rgba(201,168,76,.22);background:rgba(9,20,36,.97);box-shadow:0 24px 60px -20px rgba(0,0,0,.8),0 0 0 100vmax rgba(3,8,16,.55);opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .35s var(--nq-ease),visibility .35s,transform .35s var(--nq-ease);font-family:'Cairo',sans-serif}
+.nq-open #nq-menu{opacity:1;visibility:visible;transform:none}
+#nq-menu a{width:100%;text-align:center;font-size:20px;font-weight:800;padding:12px 0;color:var(--nq-white)!important;text-decoration:none!important;border-bottom:1px solid rgba(201,168,76,.08)}
+#nq-menu a.on{color:var(--nq-gold2)!important}
+#nq-menu .nq-menu-call{margin-top:14px;border:0;border-radius:50px;height:52px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--nq-gold),var(--nq-gold2) 60%,var(--nq-gold3));color:#1a1405!important;font-size:17px}
+@media(min-width:1000px){
+  .nq-wrap{padding:0 20px}
+  .nq-hdr-in{height:92px;gap:10px}
+  .nq-logo{flex:0 0 auto}
+  .nq-logo img{width:auto;max-width:none;height:52px;max-height:none}
+  .nq-nav{display:flex;align-items:center;gap:18px;margin-inline-start:auto}
+  .nq-nav a{position:relative;font-size:14.5px;font-weight:700;color:rgba(248,246,240,.85)!important;text-decoration:none!important;white-space:nowrap;padding:4px 0}
+  .nq-nav a::after{content:'';position:absolute;bottom:-3px;right:0;width:0;height:2px;border-radius:2px;background:var(--nq-gold2);transition:width .35s var(--nq-ease)}
+  html[dir=ltr] .nq-nav a::after{right:auto;left:0}
+  .nq-nav a:hover,.nq-nav a.on{color:var(--nq-gold2)!important}
+  .nq-nav a:hover::after,.nq-nav a.on::after{width:100%}
+  .nq-actions{margin-inline-start:18px}
+  .nq-call{display:inline-flex;align-items:center;height:46px;padding:0 20px;border-radius:50px;background:linear-gradient(135deg,var(--nq-gold),var(--nq-gold2) 60%,var(--nq-gold3));color:#1a1405!important;font-weight:800;font-size:14.5px;text-decoration:none!important;white-space:nowrap;box-shadow:0 10px 26px -10px rgba(201,168,76,.6)}
+  .nq-burger,#nq-menu{display:none}
+}
+@media(min-width:1200px){.nq-logo img{height:72px}.nq-nav{gap:24px}.nq-nav a{font-size:15.5px}}
+
+/* ---------- floating WhatsApp / call bar ---------- */
+#nq-fbar{position:fixed;bottom:0;right:0;left:0;z-index:1100;display:flex;background:rgba(7,17,31,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid rgba(201,168,76,.3);padding-bottom:env(safe-area-inset-bottom);font-family:'Cairo',sans-serif;transform:none!important;border-radius:0}
+#nq-fbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;height:60px;font-weight:800;font-size:15px;text-decoration:none!important;padding:0}
+#nq-fbar svg{width:20px;height:20px;flex-shrink:0}
+#nq-fbar .w{background:#25D366;color:#fff!important}
+#nq-fbar .c{color:var(--nq-gold2)!important;background:transparent}
+body.nq-inner{padding-bottom:64px}
+@media(min-width:900px){
+  body.nq-inner{padding-bottom:0}
+  #nq-fbar{left:24px;right:auto;bottom:24px;border-radius:50px;overflow:hidden;border:1px solid rgba(201,168,76,.3);box-shadow:0 16px 40px -10px rgba(0,0,0,.6);transform:translateY(140px)!important;transition:transform .5s var(--nq-ease)}
+  html[dir=ltr] #nq-fbar{left:auto;right:24px}
+  #nq-fbar.show{transform:none!important}
+  #nq-fbar a{flex:0 0 auto;white-space:nowrap;height:52px;padding:0 24px}
+}
+
+/* ---------- footer ---------- */
+#nq-footer{background:#050d18;border-top:1px solid rgba(201,168,76,.1);padding:22px 0 14px;text-align:center;font-family:'Cairo',sans-serif;margin:0}
+.nq-f-links{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 18px;font-size:13.5px;margin-bottom:12px}
+.nq-f-links a,.nq-f-legal a{color:var(--nq-muted)!important;text-decoration:none!important}
+.nq-f-links a:hover,.nq-f-legal a:hover{color:var(--nq-gold2)!important}
+.nq-f-bottom{font-size:11.5px;color:var(--nq-muted);display:flex;flex-direction:column;gap:6px;align-items:center}
+.nq-f-bottom b{color:var(--nq-gold2);font-weight:700}
+.nq-f-legal{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 12px}
+.nq-credit{position:relative;display:inline-block;margin-top:10px;font-size:11.5px;color:rgba(201,168,76,.6);cursor:pointer}
+.nq-credit:hover{color:var(--nq-gold2)}
+.nq-credit-pop{display:none;position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:#0d1830;border:1px solid var(--nq-line);border-radius:10px;padding:8px;min-width:210px;flex-direction:column;gap:4px;z-index:60}
+.nq-credit-pop.show{display:flex}
+.nq-credit-pop a{padding:8px;border-radius:6px;color:var(--nq-muted)!important;font-size:12px;text-decoration:none!important}
+@media(min-width:900px){.nq-f-bottom{flex-direction:row;justify-content:space-between}}
+
+/* ---------- retire the old chrome ---------- */
+.phone-float,.float-btns,.back-top,#backTop{display:none!important}
+
+/* ---------- inner pages: hero upgrade ---------- */
+body.nq-inner .page-hero,body.nq-inner .srv-hero,body.nq-inner .legal-hero{position:relative;overflow:hidden;isolation:isolate;padding-top:124px;background:radial-gradient(70% 70% at 80% 0%,rgba(201,168,76,.14),transparent 70%),linear-gradient(180deg,#0b1a2e,#07111f)}
+body.nq-inner .page-hero::before{opacity:.5}
+body.nq-inner .nq-photo{background:linear-gradient(180deg,rgba(7,17,31,.78) 0%,rgba(7,17,31,.62) 45%,rgba(7,17,31,.9) 100%),var(--nq-img) center/cover no-repeat}
+body.nq-inner .nq-photo::after{content:'';position:absolute;inset:0;z-index:-1;background:radial-gradient(60% 60% at 50% 40%,rgba(201,168,76,.12),transparent 70%)}
+body.nq-inner .nq-photo .srv-hero-icon{display:none}
+body.nq-inner .page-hero h1,body.nq-inner .srv-hero h1,body.nq-inner .legal-hero h1{letter-spacing:-.3px;text-shadow:0 4px 24px rgba(0,0,0,.35)}
+body.nq-inner .srv-hero-tag,body.nq-inner .legal-hero-tag{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);background:rgba(7,17,31,.45)}
+body.nq-inner .srv-hero-btns .btn-wa,body.nq-inner .srv-hero-btns .btn-call{height:52px;padding:0 26px;border-radius:50px;font-size:15px}
+body.nq-inner .srv-hero-btns .btn-call{background:rgba(7,17,31,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+@media(min-width:1000px){body.nq-inner .page-hero,body.nq-inner .srv-hero,body.nq-inner .legal-hero{padding-top:150px}}
+
+/* trust strip under the hero */
+.nq-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:620px;margin:26px auto 0;border:1px solid rgba(248,246,240,.12);border-radius:18px;background:rgba(7,17,31,.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-family:'Cairo',sans-serif}
+.nq-stats div{padding:12px 4px;text-align:center;position:relative}
+.nq-stats div+div::before{content:'';position:absolute;right:0;top:22%;bottom:22%;width:1px;background:linear-gradient(180deg,transparent,rgba(201,168,76,.45),transparent)}
+html[dir=ltr] .nq-stats div+div::before{right:auto;left:0}
+.nq-stats b{display:block;font-size:clamp(17px,4.8vw,24px);font-weight:900;line-height:1.15;color:#fff}
+.nq-stats b em{font-style:normal;color:var(--nq-gold2)}
+.nq-stats span{display:block;font-size:10.5px;color:var(--nq-muted);margin-top:2px}
+@media(min-width:900px){.nq-stats span{font-size:12px}.nq-stats div{padding:15px 6px}}
+
+/* ---------- inner pages: content polish ---------- */
+body.nq-inner .srv-card,body.nq-inner .sidebar-card,body.nq-inner .legal-card,body.nq-inner .faq-item,body.nq-inner .article-card,body.nq-inner .blog-card{border-radius:20px}
+body.nq-inner .srv-card{border:1px solid rgba(201,168,76,.14);background:linear-gradient(165deg,rgba(16,35,61,.75),rgba(7,17,31,.9));transition:border-color .35s}
+body.nq-inner .srv-card:hover{border-color:rgba(201,168,76,.32)}
+body.nq-inner .srv-card h2{position:relative;padding-inline-start:14px}
+body.nq-inner .srv-card h2::before{content:'';position:absolute;inset-inline-start:0;top:.3em;bottom:.3em;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--nq-gold3),var(--nq-gold))}
+body.nq-inner .srv-card[style*="text-align:center"] h2{padding-inline-start:0}
+body.nq-inner .srv-card[style*="text-align:center"] h2::before{display:none}
+body.nq-inner .srv-step{border-radius:16px}
+body.nq-inner .srv-step-num{background:linear-gradient(135deg,var(--nq-gold),var(--nq-gold2));color:#1a1405}
+@media(min-width:900px){body.nq-inner .srv-sidebar{position:sticky;top:110px}}
+body.nq-inner .blog-card,body.nq-inner .article-card{transition:transform .45s var(--nq-ease),box-shadow .45s var(--nq-ease),border-color .35s}
+body.nq-inner .blog-card:hover,body.nq-inner .article-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(0,0,0,.7)}
+
+/* blog article hero sits under the fixed header */
+body.nq-inner .article-hero{margin-top:74px}
+@media(min-width:1000px){body.nq-inner .article-hero{margin-top:92px}}
+
+/* old blog breadcrumb bar was fixed at the top: keep it in the article flow */
+body.nq-inner nav.breadcrumb{position:static!important;top:auto!important;box-shadow:none!important;margin-bottom:14px}
+body.nq-inner .sidebar-inner{top:110px}
