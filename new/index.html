@@ -64,9 +64,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:description" content="تنظيف منازل وفلل ومجالس، عزل خزانات بضمان حتى 10 سنوات، مكافحة حشرات وعقود شركات في جميع أحياء الرياض على مدار الساعة.">
 <meta property="og:locale" content="ar_SA">
 <meta property="og:site_name" content="مؤسسة نقاء للتنظيف">
-<meta property="og:image" content="https://www.naqaa-cleaning.com/images/hero/hero-home.jpg">
+<meta property="og:image" content="https://www.naqaa-cleaning.com/images/hero/hero-sofa.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.naqaa-cleaning.com/images/hero/hero-home.jpg">
+<meta name="twitter:image" content="https://www.naqaa-cleaning.com/images/hero/hero-sofa.jpg">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="/images/hero/hero-home.jpg" as="image" fetchpriority="high">
+<link rel="preload" href="/images/hero/hero-sofa.jpg" as="image" fetchpriority="high">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300..900&display=swap">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -172,14 +172,14 @@ section{position:relative}
 @media(min-width:1000px){.nav{display:flex}.hdr-actions{margin-inline-start:22px}.burger{display:none}.hdr-call{display:inline-flex;height:44px;padding:0 20px;font-size:14px}.logo img{height:46px}.hdr-in{height:78px}}
 
 /* hero */
-.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-start;overflow:hidden;isolation:isolate}
 .slides{position:absolute;inset:0;z-index:-2}
 .slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.12);transition:opacity 1.4s ease}
-.slides img.on{opacity:1;animation:kb 8s linear forwards}
-@keyframes kb{from{transform:scale(1.12) translate3d(0,0,0)}to{transform:scale(1.02) translate3d(-1.5%,1%,0)}}
-.hero::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,17,31,.55) 0%,rgba(7,17,31,.25) 30%,rgba(7,17,31,.78) 62%,var(--bg) 100%)}
+.slides img{opacity:1;transform:scale(1.02);object-position:center 58%;animation:kb 22s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.12) translate3d(-1.5%,-1%,0)}}
+.hero::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,17,31,.82) 0%,rgba(7,17,31,.6) 40%,rgba(7,17,31,.45) 65%,rgba(7,17,31,.75) 88%,var(--bg) 100%)}
 .hero::after{content:'';position:absolute;inset:0;z-index:-1;background:radial-gradient(60% 50% at 85% 20%,rgba(201,168,76,.16),transparent 70%)}
-.hero-in{width:100%;padding-top:110px;padding-bottom:34px}
+.hero-in{width:100%;padding-top:96px;padding-bottom:96px}
 .hero .eyebrow{background:rgba(7,17,31,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .offer{display:inline-flex;margin-inline-start:6px;padding:6px 12px;border-radius:50px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a1405;font-size:12px;font-weight:800;vertical-align:middle}
 .hero h1{font-size:clamp(38px,11vw,78px);line-height:1.08;font-weight:900;letter-spacing:-.8px;margin:18px 0 14px;text-shadow:0 4px 30px rgba(0,0,0,.35)}
@@ -454,9 +454,7 @@ footer{background:#050d18;border-top:1px solid rgba(201,168,76,.1);padding:24px 
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="slides" aria-hidden="true">
-    <img src="/images/hero/hero-home.jpg" alt="" class="on" fetchpriority="high">
-    <img src="/images/hero/hero-office.jpg" alt="" loading="lazy">
-    <img src="/images/hero/hero-tank.jpg" alt="" loading="lazy">
+    <img src="/images/hero/hero-sofa.jpg" alt="" fetchpriority="high" width="736" height="981">
   </div>
   <div class="wrap hero-in">
     <div class="hero-copy">
@@ -472,10 +470,6 @@ footer{background:#050d18;border-top:1px solid rgba(201,168,76,.1);padding:24px 
         <div class="stat"><b><em>+</em><span data-to="2500">0</span></b><span>عميل راضٍ</span></div>
         <div class="stat"><b><span data-to="15">0</span></b><span>سنة خبرة</span></div>
         <div class="stat"><b>24<em>/</em>7</b><span>نستقبل طلباتك</span></div>
-      </div>
-      <div class="slide-nav">
-        <div class="bars" id="bars"><button class="on" aria-label="الصورة 1"><i></i></button><button aria-label="الصورة 2"><i></i></button><button aria-label="الصورة 3"><i></i></button></div>
-        <span class="slide-cap" id="cap">تنظيف المنازل والفلل</span>
       </div>
     </div>
   </div>
@@ -773,20 +767,6 @@ footer{background:#050d18;border-top:1px solid rgba(201,168,76,.1);padding:24px 
       });
     })(h1);
   }
-
-  /* hero slideshow */
-  var slides = $$('.slides img'), bars = $$('#bars button'), cap = $('#cap'), cur = 0, timer;
-  var caps = ['تنظيف المنازل والفلل', 'عقود تنظيف الشركات', 'تنظيف وعزل الخزانات'];
-  function show(i){
-    slides[cur].classList.remove('on'); bars[cur].classList.remove('on');
-    cur = (i + slides.length) % slides.length;
-    void slides[cur].offsetWidth; void bars[cur].offsetWidth;
-    slides[cur].classList.add('on'); bars[cur].classList.add('on');
-    cap.style.opacity = 0; setTimeout(function(){ cap.textContent = caps[cur]; cap.style.opacity = 1; }, 250);
-  }
-  function play(){ clearInterval(timer); if(!reduce) timer = setInterval(function(){ show(cur + 1); }, 6000); }
-  bars.forEach(function(b, i){ b.addEventListener('click', function(){ show(i); play(); }); });
-  play();
 
   /* counters */
   function count(el){
