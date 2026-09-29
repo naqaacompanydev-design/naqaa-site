@@ -1,60 +1,18 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KSS7QXXP');</script>
-<!-- End Google Tag Manager -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VQ0QH8WEB9"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VQ0QH8WEB9');</script>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","yohfvybmze");</script>
-<script>
-/* Lead tracking: WhatsApp and phone clicks -> GA4 events (ضغطة_واتساب / ضغطة_اتصال) */
-(function(){
-  var PHONE = '545833481';
-  function where(el){
-    if (el.closest('.cmd-bar') || el.matches('.cmd-btn,.phone-btn')) return 'الزرار العائم';
-    if (el.closest('.mobile-menu')) return 'قايمة الموبايل';
-    if (el.closest('nav,#navbar')) return 'القايمة فوق';
-    if (el.closest('footer')) return 'آخر الصفحة';
-    if (el.closest('.pkg-card')) return 'كارت الباقة';
-    if (el.closest('.hero,.page-hero,.article-hero')) return 'أول الصفحة';
-    return 'جوه الصفحة';
-  }
-  window.naqaaTrack = function(name, params){
-    if (typeof gtag === 'function') gtag('event', name, params || {});
-  };
-  document.addEventListener('click', function(e){
-    var a = e.target.closest && e.target.closest('a[href]');
-    if (!a) return;
-    var href = a.getAttribute('href') || '';
-    var name = /^tel:/i.test(href) && href.indexOf(PHONE) > -1 ? 'ضغطة_اتصال'
-             : href.indexOf('wa.me/966' + PHONE) > -1 ? 'ضغطة_واتساب' : null;
-    if (!name) return;
-    naqaaTrack(name, {
-      link_location: where(a),
-      link_text: (a.textContent || a.title || '').replace(/\s+/g, ' ').trim().slice(0, 60)
-    });
-  }, true);
-})();
-</script>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#0a1628">
 <title>مدونة مؤسسة نقاء لخدمات للتنظيف | نصائح وإرشادات تنظيف احترافية</title>
-<meta name="description" content="مدونة مؤسسة نقاء للتنظيف: نصائح وإرشادات التنظيف الاحترافي في الرياض من خبرائنا، مع خصم 40% لفترة محدودة على جميع الخدمات. اتصل 0545833481.">
+<meta name="description" content="مدونة مؤسسة نقاء للتنظيف دليلك الشامل لنصائح التنظيف الاحترافي بالسعودية استمتع بمعلومات قيمة من خبرائنا واستمتع بخصم 30% لفترة محدودة على كافة خدماتنا اتصل الآن:0545833481">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://www.naqaa-cleaning.com/blog/">
   <meta property="og:type" content="website"><meta property="og:url" content="https://www.naqaa-cleaning.com/blog/">
-<meta property="og:title" content="مدونة مؤسسة نقاء لخدمات للتنظيف | نصائح وإرشادات تنظيف احترافية"><meta property="og:locale" content="ar_SA">
+<meta property="og:title" content="مدونة نقاء للتنظيف"><meta property="og:locale" content="ar_SA">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300..900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300..900&display=swap"></noscript>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=Tajawal:wght@300;400;500;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=Tajawal:wght@300;400;500;700;900&display=swap"></noscript>
 <style>
 /* ===== RESET & BASE ===== */
 *{margin:0;padding:0;box-sizing:border-box}
@@ -79,7 +37,7 @@ section{padding:80px 0}
 
 /* ===== TYPOGRAPHY ===== */
 .section-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);padding:6px 16px;border-radius:50px;font-size:12px;color:var(--gold2);margin-bottom:18px}
-.section-title{font-family:'Cairo',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:900;line-height:1.25;margin-bottom:14px}
+.section-title{font-family:'Tajawal',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:900;line-height:1.25;margin-bottom:14px}
 .section-title .gold{color:var(--gold2)}
 .section-sub{font-size:clamp(14px,2vw,16px);color:var(--gray);line-height:1.75;max-width:600px}
 .divider{width:50px;height:3px;background:linear-gradient(90deg,var(--gold),transparent);margin:16px 0}
@@ -145,12 +103,12 @@ section{padding:80px 0}
 @keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
-.hero-title{font-family:'Cairo',sans-serif;font-size:clamp(36px,5vw,58px);font-weight:900;line-height:1.2;margin-bottom:20px;animation:fadeUp .8s ease .2s both}
+.hero-title{font-family:'Tajawal',sans-serif;font-size:clamp(36px,5vw,58px);font-weight:900;line-height:1.2;margin-bottom:20px;animation:fadeUp .8s ease .2s both}
 .hero-title .highlight{background:linear-gradient(135deg,var(--gold),var(--gold3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-sub{font-size:clamp(14px,2vw,16px);color:rgba(248,246,240,.65);line-height:1.8;margin-bottom:36px;animation:fadeUp .8s ease .4s both}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp .8s ease .6s both}
 .hero-stats{display:flex;gap:clamp(16px,4vw,36px);margin-top:48px;animation:fadeUp .8s ease .8s both;flex-wrap:wrap}
-.stat-num{font-family:'Cairo',sans-serif;font-size:clamp(28px,5vw,38px);font-weight:900;color:var(--gold2);line-height:1}
+.stat-num{font-family:'Tajawal',sans-serif;font-size:clamp(28px,5vw,38px);font-weight:900;color:var(--gold2);line-height:1}
 .stat-num small{font-size:55%}
 .stat-lbl{font-size:11px;color:var(--gray);margin-top:3px}
 
@@ -159,9 +117,9 @@ section{padding:80px 0}
 .hero-card-main{background:linear-gradient(145deg,rgba(17,34,64,.9),rgba(10,22,40,.95));border:1px solid rgba(201,168,76,.2);border-radius:20px;padding:32px 28px;width:100%;max-width:400px;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4)}
 .hero-card-main::before{content:'';position:absolute;top:0;right:0;width:180px;height:180px;background:radial-gradient(circle,rgba(201,168,76,.08) 0%,transparent 70%)}
 .card-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.25);padding:4px 12px;border-radius:50px;font-size:11px;color:var(--gold3);margin-bottom:16px}
-.card-offer-title{font-family:'Cairo',sans-serif;font-size:22px;font-weight:900;margin-bottom:4px}
+.card-offer-title{font-family:'Tajawal',sans-serif;font-size:22px;font-weight:900;margin-bottom:4px}
 .card-offer-sub{font-size:12px;color:var(--gray);margin-bottom:20px}
-.card-discount{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-family:'Cairo',sans-serif;font-size:48px;font-weight:900;text-align:center;padding:20px;border-radius:14px;margin-bottom:20px;position:relative;overflow:hidden}
+.card-discount{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-family:'Tajawal',sans-serif;font-size:48px;font-weight:900;text-align:center;padding:20px;border-radius:14px;margin-bottom:20px;position:relative;overflow:hidden}
 .card-discount span{font-size:20px}
 .card-discount::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent 40%,rgba(255,255,255,.1) 50%,transparent 60%);animation:shine 2.5s infinite}
 @keyframes shine{0%{transform:translateX(-100%) rotate(45deg)}100%{transform:translateX(100%) rotate(45deg)}}
@@ -202,13 +160,13 @@ section{padding:80px 0}
 .why-features{display:flex;flex-direction:column;gap:18px}
 .why-item{display:flex;gap:16px;align-items:flex-start;padding:20px;background:rgba(10,22,40,.5);border:1px solid rgba(201,168,76,.08);border-radius:14px;transition:all .3s}
 .why-item:hover{border-color:rgba(201,168,76,.25);background:rgba(10,22,40,.8);transform:translateX(-5px)}
-.why-num{width:42px;height:42px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Cairo',sans-serif;font-size:16px;font-weight:900;color:var(--navy);flex-shrink:0}
+.why-num{width:42px;height:42px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Tajawal',sans-serif;font-size:16px;font-weight:900;color:var(--navy);flex-shrink:0}
 .why-text .t{font-size:15px;font-weight:700;margin-bottom:4px;color:var(--white)}
 .why-text .d{font-size:12px;color:var(--gray);line-height:1.6}
 .why-metrics{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .metric-box{background:linear-gradient(145deg,rgba(17,34,64,.8),rgba(10,22,40,.9));border:1px solid rgba(201,168,76,.12);border-radius:18px;padding:28px 20px;text-align:center;transition:all .3s}
 .metric-box:hover{border-color:rgba(201,168,76,.35);transform:scale(1.03)}
-.metric-big{font-family:'Cairo',sans-serif;font-size:clamp(36px,5vw,50px);font-weight:900;background:linear-gradient(135deg,var(--gold),var(--gold3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:6px}
+.metric-big{font-family:'Tajawal',sans-serif;font-size:clamp(36px,5vw,50px);font-weight:900;background:linear-gradient(135deg,var(--gold),var(--gold3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:6px}
 .metric-big small{font-size:55%}
 .metric-label{font-size:12px;color:var(--gray)}
 .metric-box-large{grid-column:span 2;display:flex;align-items:center;gap:16px;padding:22px 26px;background:linear-gradient(135deg,rgba(201,168,76,.1),rgba(201,168,76,.04));border:1px solid rgba(201,168,76,.22)}
@@ -255,7 +213,7 @@ section{padding:80px 0}
 .ci-label{font-size:11px;color:var(--gray);margin-bottom:2px}
 .ci-value{font-size:14px;font-weight:600;color:var(--white)}
 .contact-form{background:linear-gradient(145deg,rgba(17,34,64,.7),rgba(10,22,40,.9));border:1px solid rgba(201,168,76,.15);border-radius:22px;padding:36px 32px}
-.form-title{font-family:'Cairo',sans-serif;font-size:22px;font-weight:700;margin-bottom:24px;color:var(--white)}
+.form-title{font-family:'Tajawal',sans-serif;font-size:22px;font-weight:700;margin-bottom:24px;color:var(--white)}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .form-group{margin-bottom:14px}
 .form-group label{display:block;font-size:12px;color:var(--gray);margin-bottom:6px;font-weight:500}
@@ -304,7 +262,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 /* ===== SERVICES PAGE ===== */
 .page-hero{padding:140px 24px 70px;text-align:center;background:linear-gradient(135deg,var(--navy) 0%,#0d1f3c 100%);position:relative;overflow:hidden}
 .page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.03) 1px,transparent 1px);background-size:60px 60px}
-.page-hero h1{font-family:'Cairo',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:900;margin-bottom:16px;position:relative}
+.page-hero h1{font-family:'Tajawal',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:900;margin-bottom:16px;position:relative}
 .page-hero p{font-size:16px;color:var(--gray);max-width:600px;margin:0 auto;position:relative}
 .page-breadcrumb{display:flex;align-items:center;gap:8px;justify-content:center;margin-bottom:20px;font-size:12px;color:var(--gray);position:relative}
 .page-breadcrumb span{color:var(--gold2);cursor:pointer}
@@ -315,7 +273,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 .service-full-card:hover{border-color:rgba(201,168,76,.35);transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.3)}
 .sfc-header{background:linear-gradient(135deg,rgba(201,168,76,.12),rgba(201,168,76,.04));padding:28px 24px;border-bottom:1px solid rgba(201,168,76,.1)}
 .sfc-icon{font-size:40px;margin-bottom:14px}
-.sfc-title{font-family:'Cairo',sans-serif;font-size:20px;font-weight:900;color:var(--white);margin-bottom:6px}
+.sfc-title{font-family:'Tajawal',sans-serif;font-size:20px;font-weight:900;color:var(--white);margin-bottom:6px}
 .sfc-badge{font-size:11px;color:var(--gold2);background:rgba(201,168,76,.1);padding:3px 10px;border-radius:50px;display:inline-block}
 .sfc-body{padding:24px}
 .sfc-desc{font-size:13px;color:var(--gray);line-height:1.8;margin-bottom:18px}
@@ -327,7 +285,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 
 /* CTA STRIP */
 .cta-strip{background:linear-gradient(135deg,rgba(201,168,76,.15),rgba(201,168,76,.05));border:1px solid rgba(201,168,76,.25);border-radius:20px;padding:48px;text-align:center;margin:0 0 60px}
-.cta-strip h2{font-family:'Cairo',sans-serif;font-size:clamp(24px,4vw,36px);font-weight:900;margin-bottom:12px}
+.cta-strip h2{font-family:'Tajawal',sans-serif;font-size:clamp(24px,4vw,36px);font-weight:900;margin-bottom:12px}
 .cta-strip p{color:var(--gray);margin-bottom:28px;font-size:15px}
 .cta-strip-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
@@ -343,27 +301,27 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 .blog-cat{position:absolute;top:12px;right:12px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);padding:4px 12px;border-radius:50px;font-size:11px;font-weight:700}
 .blog-card-body{padding:22px}
 .blog-date{font-size:11px;color:var(--gray);margin-bottom:8px}
-.blog-card-title{font-family:'Cairo',sans-serif;font-size:17px;font-weight:700;color:var(--white);line-height:1.4;margin-bottom:10px}
+.blog-card-title{font-family:'Tajawal',sans-serif;font-size:17px;font-weight:700;color:var(--white);line-height:1.4;margin-bottom:10px}
 .blog-card-excerpt{font-size:12px;color:var(--gray);line-height:1.7;margin-bottom:16px}
 .blog-read-more{display:inline-flex;align-items:center;gap:6px;color:var(--gold2);font-size:12px;font-weight:600}
 
 /* ===== ARTICLE PAGE ===== */
 .article-layout{display:grid;grid-template-columns:1fr 300px;gap:40px;padding:40px 0 80px;align-items:start}
-.article-main h1{font-family:'Cairo',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:900;line-height:1.3;margin-bottom:16px}
+.article-main h1{font-family:'Tajawal',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:900;line-height:1.3;margin-bottom:16px}
 .article-meta{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(201,168,76,.1)}
 .article-meta span{font-size:12px;color:var(--gray);display:flex;align-items:center;gap:5px}
 .article-img{width:100%;border-radius:16px;overflow:hidden;margin-bottom:32px;aspect-ratio:16/9}
 .article-img img{width:100%;height:100%;object-fit:cover}
 .article-body{font-size:15px;line-height:1.9;color:rgba(248,246,240,.85)}
-.article-body h2{font-family:'Cairo',sans-serif;font-size:clamp(20px,3vw,26px);font-weight:900;color:var(--gold2);margin:32px 0 14px;padding-bottom:8px;border-bottom:2px solid rgba(201,168,76,.2)}
-.article-body h3{font-family:'Cairo',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin:24px 0 10px}
+.article-body h2{font-family:'Tajawal',sans-serif;font-size:clamp(20px,3vw,26px);font-weight:900;color:var(--gold2);margin:32px 0 14px;padding-bottom:8px;border-bottom:2px solid rgba(201,168,76,.2)}
+.article-body h3{font-family:'Tajawal',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin:24px 0 10px}
 .article-body p{margin-bottom:16px}
 .article-body ul{list-style:none;margin:0 0 16px;padding:0}
 .article-body ul li{padding:6px 0 6px 0;display:flex;align-items:flex-start;gap:10px;color:rgba(248,246,240,.8);font-size:14px}
 .article-body ul li::before{content:'✦';color:var(--gold);flex-shrink:0;margin-top:2px;font-size:10px}
 .article-sidebar{position:sticky;top:90px}
 .sidebar-card{background:linear-gradient(145deg,rgba(17,34,64,.8),rgba(10,22,40,.9));border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:24px;margin-bottom:20px}
-.sidebar-card h3{font-family:'Cairo',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(201,168,76,.12)}
+.sidebar-card h3{font-family:'Tajawal',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(201,168,76,.12)}
 .sidebar-cta-btn{display:block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);padding:14px;border-radius:12px;text-align:center;font-weight:700;font-size:14px;margin-bottom:10px;cursor:pointer}
 .sidebar-cta-btn:hover{opacity:.9}
 
@@ -379,7 +337,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 .faq-item.open .faq-answer{max-height:300px;padding:0 24px 22px}
 .faq-answer p{font-size:14px;color:var(--gray);line-height:1.8}
 .faq-cta-box{background:linear-gradient(135deg,rgba(201,168,76,.12),rgba(201,168,76,.04));border:1px solid rgba(201,168,76,.25);border-radius:20px;padding:40px;text-align:center;margin-top:20px}
-.faq-cta-box h3{font-family:'Cairo',sans-serif;font-size:24px;font-weight:900;margin-bottom:10px}
+.faq-cta-box h3{font-family:'Tajawal',sans-serif;font-size:24px;font-weight:900;margin-bottom:10px}
 .faq-cta-box p{color:var(--gray);margin-bottom:24px}
 
 /* ===== MOBILE ===== */
@@ -449,7 +407,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
     .pagination-wrap a:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
     .pagination-wrap span.current{background:var(--gold);color:var(--navy);border:1px solid var(--gold)}
     .pagination-wrap .pag-prev,.pagination-wrap .pag-next{width:auto;padding:0 20px;border-radius:24px;gap:6px;font-size:.85rem}
-    .blog-page-title{font-family:'Cairo',sans-serif;font-size:1rem;color:var(--gray);text-align:center;margin-bottom:4px}
+    .blog-page-title{font-family:'Tajawal',sans-serif;font-size:1rem;color:var(--gray);text-align:center;margin-bottom:4px}
 </style>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -466,51 +424,52 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"url":"https://www.naqaa-cleaning.com/blog/تنظيف-مساجد-بالرياض/","name":"أفضل شركة تنظيف مساجد بالرياض 2026"},{"@type":"ListItem","position":2,"url":"https://www.naqaa-cleaning.com/blog/تنظيف-كافيهات-بالرياض/","name":"شركة تنظيف كافيهات بالرياض 2026 | خدمات احترافية وضمان على الجودة"},{"@type":"ListItem","position":3,"url":"https://www.naqaa-cleaning.com/blog/تنظيف-مدارس-بالرياض/","name":"شركة تنظيف مدارس بالرياض 2026 | خدمات احترافية وضمان على الجودة"},{"@type":"ListItem","position":4,"url":"https://www.naqaa-cleaning.com/blog/cleaning-company-riyadh/","name":"شركة تنظيف بالرياض | مؤسسة نقاء للتنظيف"}]}
 </script>
-<link rel="stylesheet" href="/assets/nq-ui.css">
-</head><body class="nq-inner">
-<!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSS7QXXP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
-<div id="nq-progress" aria-hidden="true"></div>
-<header id="nq-hdr">
-  <nav class="nq-wrap nq-hdr-in" aria-label="القائمة الرئيسية">
-    <a href="/" class="nq-logo" aria-label="مؤسسة نقاء للتنظيف - الرئيسية"><img src="/logo.svg" alt="مؤسسة نقاء للتنظيف" width="230" height="46"></a>
-    <div class="nq-nav">
-      <a href="/">الرئيسية</a>
-      <a href="/services/">الخدمات</a>
-      <a href="/شركة-تنظيف-بالرياض/">شركة تنظيف بالرياض</a>
-      <a href="/pricing/">الأسعار</a>
-      <a href="/about/">من نحن</a>
-      <a href="/blog/">المدونة</a>
-    </div>
-    <div class="nq-actions">
-      <a href="/en/" class="nq-pill" hreflang="en" lang="en">EN</a>
-      <a href="tel:+966545833481" class="nq-call">اتصل الآن</a>
-      <button class="nq-burger" id="nq-burger" type="button" aria-label="القائمة" aria-expanded="false" aria-controls="nq-menu"><span></span><span></span><span></span></button>
-    </div>
-  </nav>
-</header>
-<nav id="nq-menu" aria-label="قائمة الجوال">
-  <a href="/">الرئيسية</a>
-  <a href="/services/">الخدمات</a>
-  <a href="/شركة-تنظيف-بالرياض/">شركة تنظيف بالرياض</a>
-  <a href="/pricing/">احسب السعر</a>
-  <a href="/about/">من نحن</a>
-  <a href="/blog/">المدونة</a>
-  <a href="tel:+966545833481" class="nq-menu-call">📞 0545833481</a>
-</nav><div id="navbar" hidden></div><div id="nav-home" hidden></div><div id="nav-services" hidden></div><div id="nav-blog" hidden></div><div id="nav-faq" hidden></div><div id="nav-pricing" hidden></div><div id="ham" hidden></div><div id="mobileMenu" hidden></div><div id="main-footer" hidden></div><div id="copy-year" hidden></div><div id="design-credit" hidden></div><div id="design-credit-popover" hidden></div>
+</head><body>
+<nav id="navbar">
+  <div onclick="location.href='/'" class="logo">
+    <img src="/logo.svg" alt="مؤسسة نقاء للتنظيف" class="logo-img" width="250" height="50" fetchpriority="high">
+  </div>
+  <ul class="nav-links">
+    <li><a href="/" onclick="location.href='/'" id="nav-home">الرئيسية</a></li>
+    <li><a href="/services/" onclick="location.href='/services/'" id="nav-services">الخدمات</a></li>
+    <li><a href="/blog/" onclick="location.href='/blog/'" id="nav-blog">المدونة</a></li>
+    <li><a href="/faq/" onclick="location.href='/faq/'" id="nav-faq">الأسئلة الشائعة</a></li>
+    <li><a href="tel:0545833481" class="nav-cta">📞 اتصل الآن</a></li>
+  
+    <li><a href="/pricing/" onclick="location.href='/pricing/'" id="nav-pricing">الأسعار</a></li></ul>
+  <div class="hamburger" id="ham" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()">✕</button>
+  <a href="/" onclick="toggleMenu()">الرئيسية</a>
+  <a href="/about/" onclick="toggleMenu()">من نحن</a>
+  <a href="/services/" onclick="location.href='/services/';toggleMenu()">الخدمات</a>
+  <a href="/blog/" onclick="location.href='/blog/';toggleMenu()">المدونة</a>
+  <a href="/faq/" onclick="location.href='/faq/';toggleMenu()">الأسئلة الشائعة</a>
+  <a href="tel:0545833481" style="background:linear-gradient(135deg,#c9a84c,#e4bf6a);color:#0a1628;padding:14px 36px;border-radius:50px;font-weight:700" onclick="toggleMenu()">📞 0545833481</a>
 
-
-
+  <a href="/pricing/" onclick="location.href='/pricing/';toggleMenu()">الأسعار</a></div>
 <div class="page-hero">
 <nav class="page-breadcrumb" style="margin-bottom:14px"><a href="/">الرئيسية</a> <span style="color:var(--gray);margin:0 6px">←</span> <span style="color:var(--white)">المدونة</span></nav>
 <h1>مدونة <span class="highlight" style="background:linear-gradient(135deg,var(--gold),var(--gold3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">نقاء</span></h1>
 <p>نصائح وإرشادات تنظيف متخصصة من خبراء مؤسسة نقاء للتنظيف</p>
 </div>
-<div class="container"><div class="blog-grid"><a href="/blog/west-riyadh-villa-cleaning/" class="blog-card-link"><article class="blog-card reveal">
+<div class="container"><div class="blog-grid"><a href="/blog/one-time-vs-contract-cleaning-riyadh/" class="blog-card-link"><article class="blog-card reveal">
+<div class="blog-card-img"><img src="/blog/one-time-vs-contract-cleaning-riyadh/one_time_vs_contract_riyadh_1.jpg" alt="مشرفة جودة تراجع قائمة مهام التنظيف بعد زيارة فريق تنظيف منزلي بالرياض" loading="lazy"></div>
+<div class="blog-card-body">
+<span class="blog-cat">دليل الاختيار • عقود وحجوزات</span>
+<h2 class="blog-card-title">حجز لمرة وحدة ولا تعاقد؟ دليلك مع شركات التنظيف بالرياض</h2>
+<p class="blog-card-excerpt">دليل نقاء للتنظيف: الفرق بين الحجز لمرة وحدة والتعاقد الدوري مع شركات التنظيف بالرياض، ومميزات كل خيار، وكيف تختار الأنسب لبيتك وميزانيتك.</p>
+<div class="blog-date">📅 سبتمبر 2026 • 40 دقيقة</div>
+</div></article></a>
+<a href="/blog/west-riyadh-villa-cleaning/" class="blog-card-link"><article class="blog-card reveal">
 <div class="blog-card-img"><img src="/blog/west-riyadh-villa-cleaning/west_riyadh_villa_cleaning_1.jpg" alt="فريق نقاء للتنظيف يستخدم جهاز تنظيف بالبخار على سجادة داخل فيلا بغرب الرياض ضمن تغطية أحياء المنطقة الحديثة" loading="lazy"></div>
 <div class="blog-card-body">
 <span class="blog-cat">دليل الاختيار • تغطية جغرافية</span>
 <h2 class="blog-card-title">شركة تنظيف فلل بغرب الرياض</h2>
-<p class="blog-card-excerpt">دليل نقاء للتنظيف: كيف تختار أفضل خيار لتنظيف فلل غرب الرياض، ولماذا تراعي تغطية تنظيف الفلل بأحياء غرب الرياض تحديات الفلل الحديثة والمخططات الجديدة.</p>
+<p class="blog-card-excerpt">دليل نقاء للتنظيف: إزاي تختار أفضل خيار لتنظيف فلل غرب الرياض، وليه تغطية تنظيف الفلل بأحياء غرب الرياض تراعي تحديات الفلل الحديثة والمخططات الجديدة.</p>
 <div class="blog-date">📅 سبتمبر 2026 • 40 دقيقة</div>
 </div></article></a>
 <a href="/blog/east-riyadh-house-cleaning/" class="blog-card-link"><article class="blog-card reveal">
@@ -592,14 +551,6 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 <h2 class="blog-card-title">أكثر الأسئلة اللي يسألها العملاء الجدد عن شركة تنظيف بالرياض</h2>
 <p class="blog-card-excerpt">دليل نقاء للتنظيف يجاوب على أكثر الأسئلة اللي يسألها العملاء الجدد عن شركات التنظيف بالرياض: السعر، الترخيص، الضمان، وخدمة العملاء.</p>
 <div class="blog-date">📅 سبتمبر 2026 • 40 دقيقة</div>
-</div></article></a>
-<a href="/blog/eco-friendly-cleaning-companies-riyadh/" class="blog-card-link"><article class="blog-card reveal">
-<div class="blog-card-img"><img src="/blog/eco-friendly-cleaning-companies-riyadh/eco_friendly_cleaning_companies_riyadh_1.jpg" alt="فريق نقاء للتنظيف يستخدم منتجات صديقة للبيئة وآمنة على الأطفال بالرياض" loading="lazy"></div>
-<div class="blog-card-body">
-<span class="blog-cat">دليل الاختيار • تنظيف آمن وصحي</span>
-<h2 class="blog-card-title">شركات التنظيف الصديقة للبيئة بالرياض | تستاهل الاختيار؟</h2>
-<p class="blog-card-excerpt">دليل نقاء للتنظيف عن شركات التنظيف الصديقة للبيئة بالرياض: هل هي فعلًا خيار آمن على الأطفال، وإزاي تفرق بين الالتزام الحقيقي والادعاء التسويقي.</p>
-<div class="blog-date">📅 سبتمبر 2026 • 40 دقيقة</div>
 </div></article></a></div></div>
 <div class="pagination-wrap">
   <span class="current">1</span>
@@ -610,23 +561,44 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   <a href="/blog/page/6/">6</a>
   <a href="/blog/page/2/" title="الصفحة التالية" class="pag-next">التالية ›</a>
 </div>
-<p class="blog-page-title">صفحة 1 من 6 — 65 مقال</p>
-<footer id="nq-footer">
-  <div class="nq-wrap">
-    <div class="nq-f-links"><a href="/">الرئيسية</a><a href="/services/">الخدمات</a><a href="/pricing/">الأسعار</a><a href="/blog/">المدونة</a><a href="/faq/">الأسئلة الشائعة</a><a href="/شركة-تنظيف-بالرياض/">شركة تنظيف بالرياض</a><a href="/en/" hreflang="en" lang="en">English</a></div>
-    <div class="nq-f-bottom">
-      <div>جميع الحقوق محفوظة © <span id="nq-yr"></span> — <b>مؤسسة نقاء للتنظيف</b></div>
-      <div class="nq-f-legal"><a href="/terms">الشروط والأحكام</a><a href="/privacy">سياسة الخصوصية</a><a href="/refund">سياسة الإلغاء والاسترجاع</a><a href="/accessibility">إمكانية الوصول</a></div>
-    </div>
-    <span class="nq-credit" id="nq-credit">✦ تصميم وتطوير الموقع: شركة كليك زودياك ✦
-      <span class="nq-credit-pop" id="nq-credit-pop"><a href="https://wa.me/201023444798" target="_blank" rel="noopener">واتساب - 01023444798</a><a href="https://wa.me/201213816311" target="_blank" rel="noopener">واتساب - 01213816311</a></span>
-    </span>
-  </div>
-</footer>
-<div id="nq-fbar" class="cmd-bar">
-  <a class="w" href="https://wa.me/966545833481?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%81" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.78h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88z"/></svg> واتساب</a>
-  <a class="c" href="tel:+966545833481"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> اتصل بنا</a>
+<p class="blog-page-title">صفحة 1 من 6 — 66 مقال</p>
+<footer id="main-footer">
+<div class="container">
+<div class="footer-nav-links">
+<a href="/" onclick="location.href='/'">الرئيسية</a>
+<span class="footer-sep">-</span>
+<a href="/services/" onclick="location.href='/services/'">الخدمات</a>
+<span class="footer-sep">-</span>
+<a href="/blog/" onclick="location.href='/blog/'">المدونة</a>
+<span class="footer-sep">-</span>
+<a href="/about/">من نحن</a>
+<span class="footer-sep">-</span>
+<a href="/شركة-تنظيف-بالرياض/">شركة تنظيف بالرياض</a>
 </div>
+<div class="footer-bottom">
+<div>جميع الحقوق محفوظة © <span id="copy-year"></span> — <span>مؤسسة نقاء للتنظيف</span></div>
+<div>
+<a href="/terms" onmouseout="this.style.color='var(--gray)'" onmouseover="this.style.color='var(--gold2)'" style="color:var(--gray);text-decoration:none;transition:color .3s;">الشروط والأحكام</a>
+<span style="color:var(--gray);margin:0 6px">|</span>
+<a href="/privacy" onmouseout="this.style.color='var(--gray)'" onmouseover="this.style.color='var(--gold2)'" style="color:var(--gray);text-decoration:none;transition:color .3s;">سياسة الخصوصية</a>
+<span style="color:var(--gray);margin:0 6px">|</span>
+<a href="/refund" onmouseout="this.style.color='var(--gray)'" onmouseover="this.style.color='var(--gold2)'" style="color:var(--gray);text-decoration:none;transition:color .3s;">سياسة الإلغاء والاسترجاع</a>
+<span style="color:var(--gray);margin:0 6px">|</span>
+<a href="/accessibility" onmouseout="this.style.color='var(--gray)'" onmouseover="this.style.color='var(--gold2)'" style="color:var(--gray);text-decoration:none;transition:color .3s;">إمكانية الوصول</a>
+</div>
+</div>
+<div class="design-credit-bar">
+<span class="design-credit" id="design-credit">
+<span class="design-credit-dot"></span>
+<span class="design-credit-text">✦ تصميم وتطوير الموقع: شركة كليك زودياك ✦</span>
+<div class="design-credit-popover" id="design-credit-popover">
+<a href="https://wa.me/201023444798" target="_blank" rel="noopener">واتساب - 01023444798</a>
+<a href="https://wa.me/201213816311" target="_blank" rel="noopener">واتساب - 01213816311</a>
+</div>
+</span>
+</div>
+</div>
+</footer>
 <script>
 function navigateTo(p){location.href=p==='home'?'/':'/#'+p;}
 function toggleMenu(){document.getElementById('ham').classList.toggle('open');document.getElementById('mobileMenu').classList.toggle('open');document.body.style.overflow=document.getElementById('mobileMenu').classList.contains('open')?'hidden':'';}
@@ -653,5 +625,4 @@ document.querySelectorAll('.reveal').forEach(function(r){obs.observe(r);});
 console.log('%cDesigned & Developed by Click Zodiac | شركة كليك زودياك', 'color:#c9a84c;font-size:14px;font-weight:bold;');
 console.log('%cWhatsApp: 01023444798 / 01213816311', 'color:#9aa5b1;font-size:12px;');
 </script>
-<script src="/assets/nq-ui.js" defer></script>
 </body></html>
