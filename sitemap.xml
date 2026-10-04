@@ -568,12 +568,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.naqaa-cleaning.com/services/تنظيف-وعزل-الخزانات/</loc>
-    <lastmod>2026-08-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.naqaa-cleaning.com/services/تنظيف-المكيفات-والستائر/</loc>
     <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -645,6 +639,11 @@
   </url>
   <url>
     <loc>https://www.naqaa-cleaning.com/شركة-تنظيف-بالرياض/تنظيف-خزانات/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.naqaa-cleaning.com/شركة-تنظيف-بالرياض/تنظيف-وعزل-خزانات/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
