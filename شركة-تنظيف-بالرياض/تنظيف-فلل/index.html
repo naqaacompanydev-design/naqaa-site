@@ -903,6 +903,9 @@ body.nq-inner .sidebar-inner{top:110px}</style>
 
 .tk-hs-vis[data-a="4"] .l5,.tk-hs-vis[data-a="5"] .l6{opacity:1;animation:tkGlow 1.6s ease-in-out infinite}
 .tk-hs-vis .hs-plan text{font:800 13px Cairo,sans-serif;fill:#cbd5e1}
+
+.tk-plans.three{grid-template-columns:repeat(3,1fr);max-width:760px}
+@media(max-width:900px){.tk-plans.three{grid-template-columns:1fr 1fr}.tk-plans.three .link{grid-column:span 2}}
 /* ---- phone-first hero: headline, tank and buttons all on the first screen ---- */
 .tk-sec,.tk-final{overflow-x:clip}
 @media(max-width:900px){
