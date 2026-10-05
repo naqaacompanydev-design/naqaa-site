@@ -656,6 +656,35 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   .tk-rev-stars i{font-size:32px}
   .tk-rev .tk-btns{flex-direction:column;align-items:stretch}.tk-rev .tk-btn{justify-content:center}
 }
+
+/* compact links: tabs */
+.tk-more-sec{padding:40px 0}
+.tk-tabs{position:relative;display:flex;max-width:440px;margin:0 auto 18px;padding:5px;border-radius:50px;background:rgba(13,29,51,.8);border:1px solid var(--tk-line)}
+.tk-tabs button{all:unset;flex:1;position:relative;z-index:1;text-align:center;cursor:pointer;padding:10px 8px;border-radius:50px;font:800 14px 'Cairo',sans-serif;color:#9aa8bf;transition:color .3s}
+.tk-tabs button.on{color:#07111f}
+.tk-tabs button:focus-visible{outline:2px solid var(--tk-water);outline-offset:2px}
+.tk-tabs .ind{position:absolute;top:5px;bottom:5px;right:5px;width:calc(50% - 5px);border-radius:50px;background:linear-gradient(135deg,var(--tk-gold),var(--tk-gold2));transition:transform .45s var(--tk-ease)}
+.tk-tabs.s2 .ind{transform:translateX(-100%)}
+.tk-pan{display:none}
+.tk-pan.on{display:block;animation:tkFlash .4s var(--tk-ease)}
+.tk-arts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.tk-arts a{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;border-radius:14px;background:rgba(13,29,51,.65);border:1px solid var(--tk-line);color:#e2e8f0;font-size:13.5px;font-weight:700;line-height:1.6;transition:all .3s}
+.tk-arts a i{font-style:normal;color:var(--tk-water);font-weight:900;transition:transform .3s}
+.tk-arts a:hover{border-color:var(--tk-gold2);color:var(--tk-gold2)}.tk-arts a:hover i{transform:translateX(-4px)}
+.tk-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.tk-chips a{padding:8px 14px;border-radius:50px;background:rgba(13,29,51,.65);border:1px solid var(--tk-line);color:#cbd5e1;font-size:13.5px;font-weight:700;white-space:nowrap;transition:all .3s}
+.tk-chips a:hover{border-color:var(--tk-gold2);color:var(--tk-gold2);transform:translateY(-2px)}
+.tk-chips a.all{border-color:rgba(201,168,76,.5);color:var(--tk-gold2)}
+@media(max-width:900px){
+  .tk-arts{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin:0 -16px;padding:2px 16px 6px;scrollbar-width:none}
+  .tk-arts::-webkit-scrollbar{display:none}
+  .tk-arts a{flex:0 0 72%;scroll-snap-align:start}
+}
+@media(max-width:600px){
+  .tk-more-sec{padding:30px 0}
+  .tk-tabs button{font-size:13px;padding:9px 6px}
+  .tk-chips a{font-size:12.5px;padding:7px 12px}
+}
 /* ---- phone-first hero: headline, tank and buttons all on the first screen ---- */
 .tk-sec,.tk-final{overflow-x:clip}
 @media(max-width:900px){
@@ -716,6 +745,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   .tk-murky,.tk-dirt,.tk-lbl-b{opacity:0}.tk-clean,.tk-lbl-a,.tk-spark{opacity:1}.tk-coat{stroke-dashoffset:0}
 }
 </style>
+
 
 
 
@@ -1076,32 +1106,38 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   </div>
 </section>
 
-<section class="tk-sec">
+<section class="tk-sec tk-more-sec" id="tk-more">
   <div class="tk-wrap">
-    <h2 class="tk-h2 rv">مقالات ممكن تفيدك</h2>
-    <div class="tk-links">
-      <a class="rv" href="/blog/عزل-خزانات-بالرياض/">عزل وتنظيف الخزانات بالرياض بضمان رسمي</a>
-      <a class="rv" style="--d:.06s" href="/blog/water-tank-insulation-cleaning-tips-riyadh/">نصائح لعزل وتنظيف خزانات المياه بالرياض</a>
-      <a class="rv" style="--d:.12s" href="/blog/tank-insulation-materials-riyadh/">أنواع مواد عزل الخزانات وأيش أفضلها لمناخ الرياض</a>
-      <a class="rv" style="--d:.18s" href="/blog/tank-reinsulation-timing-riyadh/">خزانك عمره كم سنة؟ علامة تعلمك انه حان وقت العزل</a>
+    <div class="tk-tabs" role="tablist" aria-label="روابط مفيدة">
+      <button type="button" role="tab" id="tk-tab-a" aria-controls="tk-pan-a" aria-selected="true" class="on">📚 مقالات تفيدك</button>
+      <button type="button" role="tab" id="tk-tab-s" aria-controls="tk-pan-s" aria-selected="false">🧰 خدماتنا الثانية</button>
+      <span class="ind" aria-hidden="true"></span>
     </div>
-    <h2 class="tk-h2 rv" style="margin-top:44px">خدمات ثانية بالرياض</h2>
-    <div class="tk-links">
-      <a class="rv" href="/شركة-تنظيف-بالرياض/تنظيف-خزانات/">شركة تنظيف خزانات بالرياض</a>
-      <a class="rv" href="/شركة-تنظيف-بالرياض/عزل-خزانات/">شركة عزل خزانات بالرياض</a>
-      <a class="rv" href="/شركة-تنظيف-بالرياض/تنظيف-منازل/">شركة تنظيف منازل بالرياض</a>
-      <a class="rv" href="/شركة-تنظيف-بالرياض/تنظيف-فلل/">شركة تنظيف فلل بالرياض</a>
-      <a class="rv" href="/شركة-تنظيف-بالرياض/تنظيف-شقق/">شركة تنظيف شقق بالرياض</a>
-      <a class="rv" href="/شركة-تنظيف-بالرياض/مكافحة-حشرات/">شركة مكافحة حشرات بالرياض</a>
-      <a class="rv" href="/شركة-تنظيف-بالرياض/شركة-تنظيف-مجالس/">شركة تنظيف مجالس وكنب بالرياض</a>
-      <a class="rv" href="/شركة-تنظيف-بالرياض/غسيل-سجاد/">شركة تنظيف سجاد وموكيت بالرياض</a>
-      <a class="rv" href="/شركة-تنظيف-بالرياض/تنظيف-بعد-التشطيب/">شركة تنظيف بعد التشطيب بالرياض</a>
-      <a class="rv" href="/شركة-تنظيف-بالرياض/عقود-تنظيف-دورية/">عقود تنظيف شهرية وسنوية بالرياض</a>
+    <div class="tk-pan on" id="tk-pan-a" role="tabpanel" aria-labelledby="tk-tab-a">
+      <div class="tk-arts">
+        <a href="/blog/عزل-خزانات-بالرياض/"><span>عزل وتنظيف الخزانات بالرياض بضمان رسمي</span><i>←</i></a>
+        <a href="/blog/water-tank-insulation-cleaning-tips-riyadh/"><span>نصائح لعزل وتنظيف خزانات المياه بالرياض</span><i>←</i></a>
+        <a href="/blog/tank-insulation-materials-riyadh/"><span>أنواع مواد عزل الخزانات وأيش أفضلها لمناخ الرياض</span><i>←</i></a>
+        <a href="/blog/tank-reinsulation-timing-riyadh/"><span>خزانك عمره كم سنة؟ علامة تعلمك انه حان وقت العزل</span><i>←</i></a>
+      </div>
     </div>
-    <p class="tk-note rv">هذي الخدمة جزء من <a href="/شركة-تنظيف-بالرياض/">خدمات شركة تنظيف بالرياض</a> اللي نقدمها. وإذا تبي خدمة وحدة بس، شوف صفحة <a href="/شركة-تنظيف-بالرياض/تنظيف-خزانات/">تنظيف خزانات بالرياض</a> أو صفحة <a href="/شركة-تنظيف-بالرياض/عزل-خزانات/">عزل خزانات بالرياض</a>.</p>
+    <div class="tk-pan" id="tk-pan-s" role="tabpanel" aria-labelledby="tk-tab-s">
+      <div class="tk-chips">
+        <a href="/شركة-تنظيف-بالرياض/تنظيف-خزانات/">💧 تنظيف خزانات</a>
+        <a href="/شركة-تنظيف-بالرياض/عزل-خزانات/">🛡️ عزل خزانات</a>
+        <a href="/شركة-تنظيف-بالرياض/تنظيف-منازل/">🏠 تنظيف منازل</a>
+        <a href="/شركة-تنظيف-بالرياض/تنظيف-فلل/">🏡 تنظيف فلل</a>
+        <a href="/شركة-تنظيف-بالرياض/تنظيف-شقق/">🏢 تنظيف شقق</a>
+        <a href="/شركة-تنظيف-بالرياض/مكافحة-حشرات/">🐜 مكافحة حشرات</a>
+        <a href="/شركة-تنظيف-بالرياض/شركة-تنظيف-مجالس/">🛋️ تنظيف مجالس وكنب</a>
+        <a href="/شركة-تنظيف-بالرياض/غسيل-سجاد/">🧶 غسيل سجاد وموكيت</a>
+        <a href="/شركة-تنظيف-بالرياض/تنظيف-بعد-التشطيب/">🧱 تنظيف بعد التشطيب</a>
+        <a href="/شركة-تنظيف-بالرياض/عقود-تنظيف-دورية/">📅 عقود تنظيف دورية</a>
+        <a href="/شركة-تنظيف-بالرياض/" class="all">كل خدمات شركة تنظيف بالرياض ←</a>
+      </div>
+    </div>
   </div>
 </section>
-
 <section class="tk-sec" id="tk-rev-sec">
   <div class="tk-wrap">
     <div class="tk-rev rv rv-z">
@@ -1408,6 +1444,15 @@ document.getElementById('copy-year').textContent=new Date().getFullYear();
     if (el) el.addEventListener('click', function(){ if (w.naqaaTrack) w.naqaaTrack(p[1], { link_location: 'قسم التقييم' }); });
   });
 
+  /* 19) compact links tabs */
+  var tabsBox = $('.tk-tabs'), tabBtns = $$('.tk-tabs button');
+  tabBtns.forEach(function(b, i){
+    b.addEventListener('click', function(){
+      tabBtns.forEach(function(x, j){ x.classList.toggle('on', i === j); x.setAttribute('aria-selected', i === j); var p = d.getElementById(x.getAttribute('aria-controls')); if (p) p.classList.toggle('on', i === j); });
+      tabsBox.classList.toggle('s2', i === 1);
+    });
+  });
+
   /* 12) scroll: timeline fill + side tank meter */
   var tl = $('#tk-tl'), steps = $$('.tk-step'), meter = $('#tk-meter'), mv = $('#tk-meter-v'), ticking = false;
   function onScroll(){
@@ -1430,6 +1475,7 @@ document.getElementById('copy-year').textContent=new Date().getFullYear();
   onScroll();
 })();
 </script>
+
 
 
 
