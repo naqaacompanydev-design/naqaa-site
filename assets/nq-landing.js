@@ -424,6 +424,36 @@
     if (inp) { inp.addEventListener('input', check); inp.addEventListener('change', check); }
   }
 
+  /* 28) lazy muted videos: load and play only while on screen */
+  var vids = $$('video.mj-vid');
+  if (vids.length && 'IntersectionObserver' in w) {
+    var vio = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        var v = e.target;
+        if (e.isIntersecting) {
+          if (!v.src) { v.src = v.getAttribute('data-src'); }
+          if (!reduce) { var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+        } else if (!v.paused) v.pause();
+      });
+    }, { threshold: .35 });
+    vids.forEach(function(v){ vio.observe(v); v.addEventListener('click', function(){ if (v.paused) v.play(); else v.pause(); }); });
+  }
+
+  /* 29) reel dots follow the horizontal scroll */
+  var reel = $('.mj-reel'), rdots = $('.mj-dots');
+  if (reel && rdots) {
+    var cards = $$('.mj-reel .mj-card');
+    rdots.innerHTML = cards.map(function(){ return '<i></i>'; }).join('');
+    var dl = $$('.mj-dots i');
+    var upd = function(){
+      var mid = reel.getBoundingClientRect().left + reel.clientWidth / 2, best = 0, bd = 1e9;
+      cards.forEach(function(c, i){ var r = c.getBoundingClientRect(), dd = Math.abs(r.left + r.width / 2 - mid); if (dd < bd) { bd = dd; best = i; } });
+      dl.forEach(function(x, i){ x.classList.toggle('on', i === best); });
+    };
+    reel.addEventListener('scroll', function(){ requestAnimationFrame(upd); }, { passive: true });
+    upd();
+  }
+
   /* 12) scroll: timeline fill + side tank meter */
   var tl = $('#tk-tl'), steps = $$('.tk-step'), meter = $('#tk-meter'), mv = $('#tk-meter-v'), ticking = false;
   function onScroll(){
