@@ -10,6 +10,18 @@
       ]
     },
     {
+      "source": "/assets/nq-landing.css",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/assets/nq-landing.js",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
       "source": "/(.*)\\.(jpg|jpeg|png|webp|svg|ico)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=2592000, stale-while-revalidate=86400" }
