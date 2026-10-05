@@ -422,11 +422,6 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 .tk-price .side a b{color:var(--tk-water);white-space:nowrap}
 
 /* areas marquee */
-.tk-areas{margin-top:30px;display:flex;flex-direction:column;gap:14px;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
-.tk-areas .row{display:flex;gap:12px;width:max-content;animation:tkMarq 30s linear infinite}
-.tk-areas .row.rev{animation-direction:reverse;animation-duration:36s}
-.tk-areas span{white-space:nowrap;padding:10px 20px;border-radius:50px;background:rgba(13,29,51,.7);border:1px solid var(--tk-line);color:#cbd5e1;font-size:14px;font-weight:600}
-.tk-areas span::before{content:'📍';margin-inline-end:6px}
 
 /* why */
 .tk-why{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:36px}.tk-why .tk-tilt{flex:1 1 180px;max-width:230px}
@@ -578,6 +573,10 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   .tk-war-until{font-size:14px;padding:10px 14px}
 }
 
+/* hero: service area */
+.tk-area{display:inline-flex;align-items:center;gap:6px;margin-top:12px;margin-inline-start:12px;padding:7px 14px;border-radius:50px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.35);color:#f8f6f0;font-size:14px;font-weight:700;animation:tkFloat 4s ease-in-out infinite}
+.tk-area b{color:var(--tk-gold2)}
+@media(max-width:900px){.tk-hero .tk-area{order:5;justify-self:center;margin-inline-start:0;font-size:13px}}
 /* hero: cleaning-only link */
 .tk-only{display:inline-flex;align-items:center;gap:6px;margin-top:14px;color:var(--tk-water);font-size:14px;font-weight:800;border-bottom:1px dashed rgba(56,189,248,.5);padding-bottom:2px}
 .tk-only b{color:var(--tk-gold2)}
@@ -631,93 +630,16 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 .tk-hs-tabs button.on{background:var(--tk-gold2);color:#07111f;border-color:var(--tk-gold2)}
 .tk-hs-note{margin-top:14px;color:var(--tk-water);font-weight:800;font-size:14.5px}
 
-/* scroll-driven cleaning stages */
-.tk-stg{position:relative;height:calc(6 * 62vh);margin-top:20px}
-.tk-stg-pin{position:sticky;top:84px;height:calc(100vh - 100px);max-width:1100px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.tk-stg-vis{display:flex;justify-content:center}
-.tk-stg-vis svg{width:100%;max-width:400px;max-height:calc(100vh - 150px);height:auto;overflow:visible;filter:drop-shadow(0 26px 40px rgba(0,0,0,.45))}
-.tk-stg-vis .sg-lbl{font:800 17px 'Cairo',sans-serif;fill:var(--tk-gold2)}
-.tk-stg-vis .sg-murky{transform:translateY(380px);transition:transform 1.2s var(--tk-ease)}
-.tk-stg-vis[data-s="1"] .sg-murky{transform:translateY(150px);animation:sgDrain 3.2s ease-in-out infinite alternate}
-@keyframes sgDrain{to{transform:translateY(300px)}}
-.tk-stg-vis .sg-sed{opacity:0;transition:opacity .8s;transform-box:fill-box;transform-origin:center bottom}
-.tk-stg-vis:is([data-s="1"],[data-s="2"]) .sg-sed{opacity:1}
-.tk-stg-vis[data-s="2"] .sg-sed{animation:sgSuck 1.6s ease-in-out infinite alternate}
-@keyframes sgSuck{to{transform:scaleY(.35)}}
-.tk-stg-vis .sg-algae{opacity:0;transition:opacity 2.4s ease}
-.tk-stg-vis:is([data-s="1"],[data-s="2"]) .sg-algae{opacity:1;transition-duration:.4s}
-.tk-stg-vis .sg-hose{opacity:0;transition:opacity .5s;animation:sgFlow .8s linear infinite}
-.tk-stg-vis:is([data-s="1"],[data-s="2"]) .sg-hose{opacity:1}
-@keyframes sgFlow{to{stroke-dashoffset:48}}
-.tk-stg-vis .sg-noz{opacity:0;transition:opacity .4s}
-.tk-stg-vis:is([data-s="3"],[data-s="4"]) .sg-noz{opacity:1}
-.tk-stg-vis .sg-jets{opacity:0;stroke-dasharray:10 9;transform-origin:200px 110px;transition:opacity .4s}
-.tk-stg-vis[data-s="3"] .sg-jets{opacity:1;animation:sgFlow .5s linear infinite,sgSway 1.4s ease-in-out infinite alternate}
-@keyframes sgSway{from{transform:rotate(-14deg)}to{transform:rotate(14deg)}}
-.tk-stg-vis .sg-mist{opacity:0;transition:opacity .6s}
-.tk-stg-vis[data-s="4"] .sg-mist{opacity:.9}
-.tk-stg-vis[data-s="4"] .sg-mist circle{animation:tkBac 2.4s ease-in-out infinite}
-.tk-stg-vis .sg-coat{stroke-dasharray:1000;stroke-dashoffset:1000;transition:stroke-dashoffset 2s var(--tk-ease)}
-.tk-stg-vis:is([data-s="5"],[data-s="6"]) .sg-coat{stroke-dashoffset:0}
-.tk-stg-vis .sg-coatbg{transition:opacity 1.2s}
-.tk-stg-vis:is([data-s="5"],[data-s="6"]) .sg-coatbg{opacity:.28}
-.tk-stg-vis .sg-clean{transform:translateY(380px);transition:transform 1.8s var(--tk-ease)}
-.tk-stg-vis[data-s="6"] .sg-clean{transform:translateY(160px)}
-.tk-stg-vis .sg-spark{opacity:0;transition:opacity .6s .9s}
-.tk-stg-vis[data-s="6"] .sg-spark{opacity:1}
-.tk-stg-txt{text-align:right;display:flex;flex-direction:column;gap:10px}
-.tk-stg-bar{height:5px;border-radius:5px;background:rgba(201,168,76,.15);overflow:hidden;margin-bottom:6px}
-.tk-stg-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--tk-gold2),var(--tk-water));transition:width .2s linear}
-.tk-stg-item{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border-radius:18px;border:1px solid transparent;opacity:.38;cursor:pointer;transition:all .45s var(--tk-ease)}
-.tk-stg-item .n{flex-shrink:0;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:14px;color:var(--tk-gold2);background:rgba(201,168,76,.12);transition:all .45s}
-.tk-stg-item h3{font-size:17px;font-weight:900;color:#fff;margin-bottom:2px}
-.tk-stg-item p{font-size:14.5px;color:#9aa8bf;line-height:1.8}
-.tk-stg-item.on{opacity:1;background:rgba(17,34,64,.9);border-color:rgba(56,189,248,.4);transform:translateX(-6px)}
-.tk-stg-item.on .n{background:var(--tk-water);color:#07111f;box-shadow:0 0 0 6px rgba(56,189,248,.15)}
-.tk-stg-item.done .n{background:#22c55e;color:#07111f}
-
-/* reminder */
-.tk-rem{max-width:820px;margin:30px auto 0}
-.tk-rem-opts{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
-.tk-rem-opts button{all:unset;cursor:pointer;padding:10px 16px;border-radius:50px;background:rgba(13,29,51,.7);border:1px solid var(--tk-line);color:#e2e8f0;font:700 14px 'Cairo',sans-serif;transition:all .3s var(--tk-ease)}
-.tk-rem-opts button:focus-visible{outline:2px solid var(--tk-water);outline-offset:2px}
-.tk-rem-opts button.on{background:var(--tk-gold2);border-color:var(--tk-gold2);color:#07111f;transform:scale(1.05)}
-.tk-rem-res{--rc:#64748b;margin-top:20px;display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:center;text-align:right;padding:22px;border-radius:22px;background:linear-gradient(160deg,rgba(17,34,64,.9),rgba(7,17,31,.96));border:1px solid var(--tk-line);transition:border-color .5s}
-.tk-rem-res[data-st="ok"]{--rc:#22c55e;border-color:rgba(34,197,94,.45)}
-.tk-rem-res[data-st="soon"]{--rc:#f59e0b;border-color:rgba(245,158,11,.45)}
-.tk-rem-res[data-st="late"]{--rc:#ef4444;border-color:rgba(239,68,68,.5)}
-.tk-rem-res .ring{position:relative;width:150px}
-.tk-rem-res .ring svg{width:100%;height:auto;display:block}
-.tk-rem-res .arc{stroke:var(--rc);transition:stroke-dashoffset 1.1s var(--tk-ease),stroke .5s}
-.tk-rem-res .c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.tk-rem-res .c b{font-size:38px;font-weight:900;color:var(--rc);line-height:1;transition:color .5s}
-.tk-rem-res .c span{font-size:13px;color:#9aa8bf;font-weight:700;margin-top:4px}
-.tk-rem-res[data-st="late"] .ring{animation:tkShake .5s ease 2}
-.tk-rem-txt b{display:block;font-size:19px;font-weight:900;color:#fff;margin-bottom:4px}
-.tk-rem-txt p{font-size:15px;color:#9aa8bf;line-height:1.8;margin-bottom:14px}
-.tk-rem-txt.flash{animation:tkFlash .45s var(--tk-ease)}
-
 @media(max-width:900px){
   .tk-hero .tk-only{order:5;justify-self:center}
   .tk-quiz{grid-template-columns:1fr}
   .tk-hs{grid-template-columns:1fr;gap:16px}.tk-hs-vis{max-width:280px}
-  .tk-stg{height:calc(6 * 55vh)}
-  .tk-stg-pin{top:70px;height:calc(100vh - 140px);height:calc(100svh - 140px);grid-template-columns:1fr;grid-template-rows:auto auto;gap:10px;align-content:center;padding:0 16px}
-  .tk-stg-vis svg{max-width:260px;max-height:42vh;max-height:42svh}
-  .tk-stg-item{display:none;opacity:1}
-  .tk-stg-item.on{display:flex;transform:none;animation:tkFlash .45s var(--tk-ease)}
-  .tk-rem-res{grid-template-columns:1fr;justify-items:center;text-align:center}
-  .tk-rem-res .ring{width:130px}
-  .tk-rem-txt .tk-btn{width:100%;justify-content:center}
 }
 @media(max-width:600px){
   .tk-quiz-opts{gap:8px}
   .tk-opt{padding:11px 10px;font-size:13px;gap:8px}.tk-opt span{font-size:19px}
   .tk-hs-card{padding:18px 16px}.tk-hs-card h3{font-size:18px}
-  .tk-stg-item{padding:12px 14px}.tk-stg-item h3{font-size:16px}.tk-stg-item p{font-size:14px}
-  .tk-rem-opts button{padding:9px 13px;font-size:13px}
 }
-@media(prefers-reduced-motion:reduce){.tk-stg-vis *{animation:none!important}}
 /* ---- phone-first hero: headline, tank and buttons all on the first screen ---- */
 .tk-sec,.tk-final{overflow-x:clip}
 @media(max-width:900px){
@@ -750,7 +672,6 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   .tk-step{padding:16px 16px}.tk-step.on{transform:none}
   .tk-price .num{font-size:54px}.tk-price .side{padding:20px 18px}
   .tk-price .main .tk-btn{width:100%;justify-content:center}
-  .tk-areas span{padding:8px 15px;font-size:13px}
   .tk-q button{padding:16px 16px;font-size:15px}.tk-q .a p{padding:0 16px 16px;font-size:14.5px}
   .tk-final{padding:64px 0 120px}.tk-final .waves{height:110px}
   .tk-ba{border-radius:18px}.tk-ba .knob{width:50px;height:50px;margin:-25px 0 0 -25px}
@@ -779,6 +700,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   .tk-murky,.tk-dirt,.tk-lbl-b{opacity:0}.tk-clean,.tk-lbl-a,.tk-spark{opacity:1}.tk-coat{stroke-dashoffset:0}
 }
 </style>
+
 
 
 
@@ -831,6 +753,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
         <a href="tel:0545833481" class="tk-btn tk-btn-call">📞 اتصل واحجز</a>
       </div>
       <a class="tk-only" href="/شركة-تنظيف-بالرياض/تنظيف-خزانات/">تبي تنظيف بس؟ يبدأ من <b>200 ريال</b> ←</a>
+      <div class="tk-area">📍 نخدم <b>جميع أحياء الرياض</b></div>
       <div class="tk-stats">
         <div class="tk-stat"><b><span data-count="4.7" data-dec="1">4.7</span>★</b><span>تقييم جوجل</span></div>
         <div class="tk-stat"><b>+<span data-count="2500">2,500</span></b><span>عميل راضي</span></div>
@@ -903,7 +826,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   <span>📜 ضمان مكتوب <b>10 سنين</b> على العزل</span>
   <span>🧽 تنظيف الخزان بس يبدأ من <b>200 ريال</b></span>
   <span>🦠 المويه الراكدة والرواسب <b>بيئة للبكتيريا</b></span>
-  <span>📍 نغطي <b>أغلب أحياء الرياض</b></span>
+  <span>📍 نخدم <b>جميع أحياء الرياض</b></span>
 </div></div>
 
 <section class="tk-sec">
@@ -988,51 +911,6 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   </div>
 </section>
 
-<section class="tk-sec tk-stg-sec" id="tk-stg-sec">
-  <div class="tk-wrap tk-center">
-    <div class="tk-eyebrow rv">مراحل الشغل</div>
-    <h2 class="tk-h2 rv" style="--d:.05s">وش نسوي في خزانك؟ <em>خطوة بخطوة</em></h2>
-    <p class="tk-lead rv" style="--d:.1s">انزل بالصفحة وشوف كل مرحلة تصير على الخزان.</p>
-  </div>
-  <div class="tk-stg" id="tk-stg">
-    <div class="tk-stg-pin">
-      <div class="tk-stg-vis" id="tk-stg-vis" data-s="1" aria-hidden="true">
-        <svg viewBox="0 0 400 430">
-          <defs>
-            <clipPath id="sgIn"><rect x="82" y="92" width="236" height="276" rx="22"/></clipPath>
-            <linearGradient id="sgMud" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9a8257"/><stop offset="1" stop-color="#4a3b22"/></linearGradient>
-            <linearGradient id="sgClean" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#67e8f9"/><stop offset="1" stop-color="#0369a1"/></linearGradient>
-          </defs>
-          <rect x="70" y="80" width="260" height="300" rx="30" fill="#0e2038" stroke="#c9a84c" stroke-width="4"/>
-          <g clip-path="url(#sgIn)">
-            <rect class="sg-coatbg" x="82" y="92" width="236" height="276" fill="#0ea5e9" opacity="0"/>
-            <g class="sg-murky"><path class="tk-wave1" fill="url(#sgMud)" d="M-200 0 q50 -12 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 V300 H-200Z"/></g>
-            <g class="sg-algae" fill="#4f6b25"><circle cx="96" cy="200" r="14"/><circle cx="102" cy="228" r="9"/><circle cx="306" cy="240" r="11"/><circle cx="300" cy="150" r="9" fill="#a1531c"/></g>
-            <ellipse class="sg-sed" cx="200" cy="368" rx="140" ry="26" fill="#3b2f1b"/>
-            <g class="sg-jets" stroke="#bae6fd" stroke-width="4" stroke-linecap="round"><line x1="200" y1="110" x2="96" y2="210"/><line x1="200" y1="110" x2="200" y2="350"/><line x1="200" y1="110" x2="304" y2="230"/></g>
-            <g class="sg-mist" fill="#a7f3d0"><circle cx="120" cy="300" r="4"/><circle cx="170" cy="330" r="3"/><circle cx="230" cy="310" r="5"/><circle cx="280" cy="340" r="3"/><circle cx="150" cy="250" r="3"/><circle cx="250" cy="260" r="4"/><circle cx="200" cy="200" r="3"/><circle cx="130" cy="180" r="2.5"/><circle cx="270" cy="170" r="3"/></g>
-            <g class="sg-clean"><path class="tk-wave2" fill="url(#sgClean)" d="M-200 0 q50 -12 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 V300 H-200Z"/></g>
-            <g class="sg-spark" fill="#fff"><path d="M140 220 l4 10 l10 4 l-10 4 l-4 10 l-4 -10 l-10 -4 l10 -4z"/><path d="M262 260 l3 7 l7 3 l-7 3 l-3 7 l-3 -7 l-7 -3 l7 -3z"/></g>
-          </g>
-          <rect class="sg-coat" x="86" y="96" width="228" height="268" rx="20" fill="none" stroke="#22d3ee" stroke-width="5"/>
-          <path class="sg-hose" d="M200 40 V70 Q200 86 200 96 V340" fill="none" stroke="#f59e0b" stroke-width="7" stroke-linecap="round" stroke-dasharray="14 10"/>
-          <circle class="sg-noz" cx="200" cy="106" r="9" fill="#e2e8f0"/>
-          <rect x="150" y="62" width="100" height="24" rx="8" fill="#1b3354" stroke="#c9a84c" stroke-width="3"/>
-          <text class="sg-lbl" x="200" y="418" text-anchor="middle" direction="rtl" id="tk-stg-lbl">تفريغ الخزان</text>
-        </svg>
-      </div>
-      <div class="tk-stg-txt">
-        <div class="tk-stg-bar"><i id="tk-stg-bar"></i></div>
-        <div class="tk-stg-item on" data-i="1"><span class="n">1</span><div><h3>🚰 تفريغ الخزان</h3><p>نفضي المويه القديمة من الخزان بمضخة.</p></div></div>
-        <div class="tk-stg-item" data-i="2"><span class="n">2</span><div><h3>🌀 شفط الطين والرواسب</h3><p>نشفط الطين اللي تجمع في القاع.</p></div></div>
-        <div class="tk-stg-item" data-i="3"><span class="n">3</span><div><h3>💦 غسيل بالضغط</h3><p>نغسل الجدران والأرضية بماكينة ضغط، ونشيل الطحالب والصدأ.</p></div></div>
-        <div class="tk-stg-item" data-i="4"><span class="n">4</span><div><h3>🧪 تعقيم وشطف</h3><p>نعقم الخزان كله بمواد آمنة، وبعدين نشطفه.</p></div></div>
-        <div class="tk-stg-item" data-i="5"><span class="n">5</span><div><h3>🛡️ عزل بالإيبوكسي</h3><p>إذا طلبت العزل، نعالج الشقوق ونعزل بإيبوكسي آمن على المويه 100%.</p></div></div>
-        <div class="tk-stg-item" data-i="6"><span class="n">6</span><div><h3>✨ تعبئة وتسليم</h3><p>نعبي الخزان من جديد ونفحصه معك قبل نطلع.</p></div></div>
-      </div>
-    </div>
-  </div>
-</section>
 <section class="tk-sec">
   <div class="tk-wrap tk-center">
     <div class="tk-eyebrow rv">من شغلنا</div>
@@ -1048,32 +926,6 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   </div>
 </section>
 
-<section class="tk-sec" id="tk-rem-sec">
-  <div class="tk-wrap tk-center">
-    <div class="tk-eyebrow rv">تذكير</div>
-    <h2 class="tk-h2 rv" style="--d:.05s">متى آخر مرة <em>نظفت خزانك؟</em></h2>
-    <p class="tk-lead rv" style="--d:.1s">اختر تقريبًا، ونحسب لك موعد التنظيف الجاي على أساس تنظيف كل 6 شهور.</p>
-    <div class="tk-rem rv" style="--d:.15s">
-      <div class="tk-rem-opts" role="group" aria-label="آخر تنظيف">
-        <button type="button" data-m="0">هالشهر</button>
-        <button type="button" data-m="2">قبل شهرين</button>
-        <button type="button" data-m="4">قبل 4 شهور</button>
-        <button type="button" data-m="6">قبل 6 شهور</button>
-        <button type="button" data-m="9">قبل 9 شهور</button>
-        <button type="button" data-m="12">قبل سنة أو أكثر</button>
-        <button type="button" data-m="-1">ما أذكر</button>
-      </div>
-      <div class="tk-rem-res" id="tk-rem" data-st="idle" aria-live="polite">
-        <div class="ring">
-          <svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="rgba(201,168,76,.15)" stroke-width="10"/><circle class="arc" id="tk-rem-arc" cx="60" cy="60" r="50" fill="none" stroke-width="10" stroke-linecap="round" transform="rotate(-90 60 60)"/></svg>
-          <div class="c"><b id="tk-rem-big">؟</b><span id="tk-rem-small">اختر</span></div>
-        </div>
-        <div class="tk-rem-txt"><b id="tk-rem-title">اختر متى نظفت خزانك آخر مرة</b><p id="tk-rem-desc">ونقول لك إذا جا وقت التنظيف أو لا.</p>
-        <a id="tk-rem-wa" href="https://wa.me/966545833481?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%AD%D8%AA%D8%A7%D8%AC%20%D8%A5%D9%84%D9%89%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%AA%D9%86%D8%B8%D9%8A%D9%81%20%D9%88%D8%B9%D8%B2%D9%84%20%D8%A7%D9%84%D8%AE%D8%B2%D8%A7%D9%86%D8%A7%D8%AA%0A%D8%A7%D9%84%D8%AD%D9%8A%3A%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D8%AE%D8%B2%D8%A7%D9%86%3A%20%D8%A3%D8%B1%D8%B6%D9%8A%20%2F%20%D8%B9%D9%84%D9%88%D9%8A" target="_blank" rel="noopener" class="tk-btn tk-btn-wa">💬 احجز تنظيف</a></div>
-      </div>
-    </div>
-  </div>
-</section>
 <section class="tk-sec" id="tk-mats-sec">
   <div class="tk-wrap tk-center">
     <div class="tk-eyebrow rv">مواد العزل</div>
@@ -1177,25 +1029,13 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 
 <section class="tk-sec">
   <div class="tk-wrap tk-center">
-    <div class="tk-eyebrow rv">وين نخدم</div>
-    <h2 class="tk-h2 rv" style="--d:.05s">مناطق الرياض اللي نغطيها</h2>
-    <p class="tk-lead rv" style="--d:.1s">نوصل أغلب أحياء الرياض، وغالبًا بنفس اليوم:</p>
-  </div>
-  <div class="tk-areas rv" style="--d:.15s">
-    <div class="row"><span>العليا</span><span>الملقا</span><span>النرجس</span><span>حطين</span><span>الياسمين</span><span>السويدي</span><span>النخيل</span><span>العليا</span><span>الملقا</span><span>النرجس</span><span>حطين</span><span>الياسمين</span><span>السويدي</span><span>النخيل</span></div>
-    <div class="row rev"><span>الربيع</span><span>الملز</span><span>الروضة</span><span>الازدهار</span><span>قرطبة</span><span>الدرعية</span><span>النزهة</span><span>الربيع</span><span>الملز</span><span>الروضة</span><span>الازدهار</span><span>قرطبة</span><span>الدرعية</span><span>النزهة</span></div>
-  </div>
-</section>
-
-<section class="tk-sec">
-  <div class="tk-wrap tk-center">
     <div class="tk-eyebrow rv">ليش نقاء</div>
     <h2 class="tk-h2 rv" style="--d:.05s">ليش تختار <em>مؤسسة نقاء</em> لتنظيف وعزل خزانك؟</h2>
     <div class="tk-why">
       <div class="tk-tilt rv" style="--d:0s"><div class="ic">⏱️</div><h3>تنظيف وعزل في زيارة وحدة، توفر وقت ومشوار</h3></div>
       <div class="tk-tilt rv" style="--d:.08s"><div class="ic">📜</div><h3>ضمان مكتوب 10 سنين على العزل</h3></div>
       <div class="tk-tilt rv" style="--d:.16s"><div class="ic">💧</div><h3>إيبوكسي آمن على مويه الشرب 100%</h3></div>
-      <div class="tk-tilt rv" style="--d:.24s"><div class="ic">🗺️</div><h3>نغطي أغلب أحياء الرياض</h3></div>
+      <div class="tk-tilt rv" style="--d:.24s"><div class="ic">🗺️</div><h3>نخدم جميع أحياء الرياض</h3></div>
       <div class="tk-tilt rv" style="--d:.32s"><div class="ic">💬</div><h3>أسعار واضحة وخدمة عملاء على مدار الساعة</h3></div>
     </div>
   </div>
@@ -1530,57 +1370,10 @@ document.getElementById('copy-year').textContent=new Date().getFullYear();
     if (!reduce) setInterval(function(){ if (hsSeen && !hsTouched) hs((hsI + 1) % 4); }, 3200);
   }
 
-  /* 16) last cleaning reminder */
-  var remRes = $('#tk-rem'), arc = $('#tk-rem-arc'), C = 2 * Math.PI * 50;
-  var MONTHS = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
-  function monthAt(k){ var dt = new Date(); dt.setDate(1); dt.setMonth(dt.getMonth() + k); return MONTHS[dt.getMonth()] + ' ' + dt.getFullYear(); }
-  function months(n){ n = Math.abs(n); return n === 1 ? 'شهر' : n === 2 ? 'شهرين' : n <= 10 ? n + ' شهور' : n + ' شهر'; }
-  function unit(n){ n = Math.abs(n); return n === 1 ? 'شهر' : n === 2 ? 'شهرين' : n <= 10 ? 'شهور' : 'شهر'; }
-  if (arc) { arc.style.strokeDasharray = C; arc.style.strokeDashoffset = C; }
-  $$('.tk-rem-opts button').forEach(function(b){
-    b.addEventListener('click', function(){
-      $$('.tk-rem-opts button').forEach(function(x){ x.classList.toggle('on', x === b); });
-      var m = +b.dataset.m, left = 6 - m, st, big, small, title, desc, frac;
-      if (m < 0) { st = 'late'; big = '!'; small = 'ما تذكر'; frac = 1; title = 'إذا ما تذكر، غالبًا فات الموعد'; desc = 'الأفضل تنظفه الحين وتبدأ العد من جديد.'; }
-      else if (left > 0) { st = left >= 3 ? 'ok' : 'soon'; big = left; small = unit(left) + ' باقية'; frac = m / 6; title = 'باقي لك ' + months(left) + ' على التنظيف الجاي'; desc = 'موعدك تقريبًا في ' + monthAt(left) + '. تقدر تحجز من الحين.'; }
-      else if (left === 0) { st = 'soon'; big = '0'; small = 'هالشهر'; frac = 1; title = 'جا وقت التنظيف هالشهر'; desc = 'موعدك في ' + monthAt(0) + '. احجز الحين.'; }
-      else { st = 'late'; big = -left; small = unit(left) + ' تأخير'; frac = 1; title = 'متأخر ' + months(left) + ' عن موعد التنظيف ⚠️'; desc = 'كان المفروض تنظفه في ' + monthAt(left) + '. احجز الحين.'; }
-      remRes.setAttribute('data-st', st);
-      $('#tk-rem-big').textContent = big; $('#tk-rem-small').textContent = small;
-      $('#tk-rem-title').textContent = title; $('#tk-rem-desc').textContent = desc;
-      arc.style.strokeDashoffset = C * (1 - Math.min(frac, 1));
-      flash($('#tk-rem-title').parentNode);
-      $('#tk-rem-wa').href = waLink('السلام عليكم، أبي أحجز تنظيف خزان.\nآخر تنظيف: ' + b.textContent + TAIL);
-    });
-  });
-
-  /* 17) scroll-driven cleaning stages */
-  var stg = $('#tk-stg'), stgVis = $('#tk-stg-vis'), stgItems = $$('.tk-stg-item'), stgBar = $('#tk-stg-bar'), stgLbl = $('#tk-stg-lbl'), stgCur = 1;
-  var STG = ['تفريغ الخزان','شفط الطين والرواسب','غسيل بالضغط','تعقيم وشطف','عزل بالإيبوكسي','تعبئة وتسليم'];
-  function stages(){
-    if (!stg) return;
-    var r = stg.getBoundingClientRect(), span = r.height - w.innerHeight * .75;
-    var p = Math.max(0, Math.min(1, -r.top / (span > 0 ? span : 1)));
-    var s = Math.min(6, Math.floor(p * 6) + 1);
-    stgBar.style.width = (p * 100).toFixed(1) + '%';
-    if (s === stgCur) return;
-    stgCur = s;
-    stgVis.setAttribute('data-s', s);
-    stgLbl.textContent = STG[s - 1];
-    stgItems.forEach(function(it){ var i = +it.dataset.i; it.classList.toggle('on', i === s); it.classList.toggle('done', i < s); });
-  }
-  stgItems.forEach(function(it){
-    it.addEventListener('click', function(){
-      var i = +it.dataset.i, top = stg.getBoundingClientRect().top + w.scrollY, span = stg.offsetHeight - w.innerHeight * .75;
-      w.scrollTo({ top: top + span * (i - .5) / 6, behavior: 'smooth' });
-    });
-  });
-
   /* 12) scroll: timeline fill + side tank meter */
   var tl = $('#tk-tl'), steps = $$('.tk-step'), meter = $('#tk-meter'), mv = $('#tk-meter-v'), ticking = false;
   function onScroll(){
     ticking = false;
-    stages();
     var vh = w.innerHeight;
     if (tl) {
       var r = tl.getBoundingClientRect(), p = Math.max(0, Math.min(1, (vh * .6 - r.top) / r.height));
@@ -1599,6 +1392,7 @@ document.getElementById('copy-year').textContent=new Date().getFullYear();
   onScroll();
 })();
 </script>
+
 
 
 
