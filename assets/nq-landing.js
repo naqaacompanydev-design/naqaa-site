@@ -210,17 +210,19 @@
     var sel = opts.filter(function(o){ return o.dataset.k !== 'none' && o.getAttribute('aria-pressed') === 'true'; }).map(function(o){ return o.dataset.k; });
     var none = opts.some(function(o){ return o.dataset.k === 'none' && o.getAttribute('aria-pressed') === 'true'; });
     var lv = sel.length >= 2 ? '2' : sel.length === 1 ? '1' : none ? 'ok' : '0';
-    var t = {
+    var texts = {
       '0':  ['اختر العلامات اللي تلاحظها', 'كل ما اخترت علامة، يتغير لون المويه في الخزان.', '💬 اسألنا عن خزانك'],
       'ok': ['خزانك على ما يبدو تمام 👍', 'بس لا تنسى تنظفه وتعقمه كل 6 شهور.', '💬 احجز موعد التنظيف الجاي'],
       '1':  ['ننصحك تنظف خزانك قريب', 'فيه علامة تدل إن الخزان يحتاج تنظيف، والأفضل ما تأجله.', '💬 احجز تنظيف الخزان'],
       '2':  ['خزانك يحتاج تنظيف الحين', 'لاحظت أكثر من علامة، وهذا غالبًا معناه رواسب أو طحالب داخل الخزان.', '💬 احجز تنظيف الحين']
-    }[lv];
+    };
+    try { var custom = qres.getAttribute('data-texts'); if (custom) texts = JSON.parse(custom); } catch(e){}
+    var t = texts[lv];
     qres.setAttribute('data-lv', lv);
     qt.textContent = t[0]; qd.textContent = t[1]; qwa.textContent = t[2];
     flash(qt.parentNode);
-    if (lv === 'ok') qwa.href = waLink('السلام عليكم، أبي أحجز موعد تنظيف خزان.' + TAIL);
-    else if (lv !== '0') qwa.href = waLink('السلام عليكم، أبي تنظيف خزان.\nلاحظت: ' + sel.join('، ') + TAIL);
+    if (lv === 'ok') qwa.href = waLink((qres.getAttribute('data-msg-ok') || 'السلام عليكم، أبي أحجز موعد تنظيف خزان.') + TAIL);
+    else if (lv !== '0') qwa.href = waLink((qres.getAttribute('data-msg') || 'السلام عليكم، أبي تنظيف خزان.') + '\nلاحظت: ' + sel.join('، ') + TAIL);
   }
   opts.forEach(function(o){
     o.addEventListener('click', function(){
