@@ -640,6 +640,22 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   .tk-opt{padding:11px 10px;font-size:13px;gap:8px}.tk-opt span{font-size:19px}
   .tk-hs-card{padding:18px 16px}.tk-hs-card h3{font-size:18px}
 }
+
+/* rate us on Google */
+.tk-rev{position:relative;max-width:760px;margin:0 auto;text-align:center;padding:40px 24px 34px;border-radius:28px;overflow:hidden;background:radial-gradient(80% 90% at 50% 0%,rgba(201,168,76,.16),transparent 70%),linear-gradient(160deg,rgba(17,34,64,.92),rgba(7,17,31,.97));border:1px solid rgba(201,168,76,.4)}
+.tk-rev .tk-lead{margin:0 auto 22px}
+.tk-rev .tk-btns{justify-content:center}
+.tk-rev-stars{display:flex;justify-content:center;gap:6px;margin-bottom:14px;direction:ltr}
+.tk-rev-stars i{font-style:normal;font-size:38px;line-height:1;color:rgba(201,168,76,.22);animation:tkStar 3.6s ease-in-out infinite}
+.tk-rev-stars i:nth-child(2){animation-delay:.18s}.tk-rev-stars i:nth-child(3){animation-delay:.36s}.tk-rev-stars i:nth-child(4){animation-delay:.54s}.tk-rev-stars i:nth-child(5){animation-delay:.72s}
+@keyframes tkStar{0%,8%{color:rgba(201,168,76,.22);transform:scale(1)}16%{color:#f5d98e;transform:scale(1.35) rotate(-12deg);text-shadow:0 0 18px rgba(245,217,142,.8)}24%,78%{color:#e4bf6a;transform:scale(1);text-shadow:0 0 10px rgba(228,191,106,.45)}92%,100%{color:rgba(201,168,76,.22);transform:scale(1)}}
+.tk-btn-rev{background:linear-gradient(135deg,var(--tk-gold),var(--tk-gold2));color:#0a1628;box-shadow:0 12px 30px -10px rgba(201,168,76,.7)}
+.tk-btn-rev::after{content:'';position:absolute;inset:0;border-radius:inherit;border:2px solid var(--tk-gold2);animation:tkPulse 2.4s infinite}
+@media(max-width:600px){
+  .tk-rev{padding:30px 16px 26px;border-radius:22px}
+  .tk-rev-stars i{font-size:32px}
+  .tk-rev .tk-btns{flex-direction:column;align-items:stretch}.tk-rev .tk-btn{justify-content:center}
+}
 /* ---- phone-first hero: headline, tank and buttons all on the first screen ---- */
 .tk-sec,.tk-final{overflow-x:clip}
 @media(max-width:900px){
@@ -700,6 +716,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   .tk-murky,.tk-dirt,.tk-lbl-b{opacity:0}.tk-clean,.tk-lbl-a,.tk-spark{opacity:1}.tk-coat{stroke-dashoffset:0}
 }
 </style>
+
 
 
 
@@ -1085,6 +1102,21 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   </div>
 </section>
 
+<section class="tk-sec" id="tk-rev-sec">
+  <div class="tk-wrap">
+    <div class="tk-rev rv rv-z">
+      <div class="tk-rev-stars" aria-hidden="true"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div>
+      <div class="tk-eyebrow">رأيك يهمنا</div>
+      <h2 class="tk-h2">خدمناك قبل؟ <em>قيّمنا على جوجل</em></h2>
+      <p class="tk-lead">تقييمك يساعد غيرك يختار صح، وما ياخذ منك أكثر من دقيقة.</p>
+      <div class="tk-btns">
+        <a href="https://g.page/r/CbxUQ30jfv9PEBM/review" target="_blank" rel="noopener" class="tk-btn tk-btn-rev" id="tk-rev-btn">⭐ اكتب تقييمك على جوجل</a>
+        <a href="https://maps.app.goo.gl/pjCBxz5XXxGcYiXA6" target="_blank" rel="noopener" class="tk-btn tk-btn-call" id="tk-rev-map">📍 شوف تقييمات العملاء</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="tk-final">
   <div class="tk-wrap">
     <h2 class="tk-h2 rv">احجز <em>شركة تنظيف وعزل خزانات بالرياض</em> الحين</h2>
@@ -1370,6 +1402,12 @@ document.getElementById('copy-year').textContent=new Date().getFullYear();
     if (!reduce) setInterval(function(){ if (hsSeen && !hsTouched) hs((hsI + 1) % 4); }, 3200);
   }
 
+  /* 18) Google review clicks */
+  [['#tk-rev-btn', 'ضغطة_تقييم_جوجل'], ['#tk-rev-map', 'ضغطة_تقييمات_الخريطة']].forEach(function(p){
+    var el = $(p[0]);
+    if (el) el.addEventListener('click', function(){ if (w.naqaaTrack) w.naqaaTrack(p[1], { link_location: 'قسم التقييم' }); });
+  });
+
   /* 12) scroll: timeline fill + side tank meter */
   var tl = $('#tk-tl'), steps = $$('.tk-step'), meter = $('#tk-meter'), mv = $('#tk-meter-v'), ticking = false;
   function onScroll(){
@@ -1392,6 +1430,7 @@ document.getElementById('copy-year').textContent=new Date().getFullYear();
   onScroll();
 })();
 </script>
+
 
 
 
