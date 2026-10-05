@@ -357,6 +357,16 @@
     });
   });
 
+  /* 25b) hub: a light runs around one service card at a time */
+  var hbLit = -1;
+  if (hbCards.length && !reduce) setInterval(function(){
+    if (d.hidden) return;
+    var vis = hbCards.filter(function(c){ return !c.classList.contains('off'); });
+    hbCards.forEach(function(c){ c.classList.remove('lit'); });
+    if (!vis.length) return;
+    hbLit = (hbLit + 1) % vis.length; vis[hbLit].classList.add('lit');
+  }, 2200);
+
   /* 26) hub: "not sure what you need?" helper */
   var wz = $('#hb-wz');
   if (wz) {

@@ -1125,7 +1125,18 @@ body.nq-inner .sidebar-inner{top:110px}</style>
 .hb-card b{font-size:16px;font-weight:900}
 .hb-card .pr{font-weight:900;color:var(--tk-gold2);font-size:15px}.hb-card .pr.ask{color:var(--tk-water)}
 .hb-card .tag{align-self:flex-start;margin-top:6px;font-size:11.5px;font-weight:800;padding:3px 10px;border-radius:50px;background:rgba(34,197,94,.12);color:#86efac;border:1px solid rgba(34,197,94,.3)}
-.hb-card i{position:absolute;top:14px;left:14px;font-style:normal;color:var(--tk-water);font-weight:900}
+.hb-card .tag{margin-bottom:12px}
+.hb-card .go{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:6px;height:40px;border-radius:12px;border:1.5px solid rgba(228,191,106,.65);color:var(--tk-gold2);font-weight:900;font-size:14px;transition:background .3s,color .3s,border-color .3s,transform .2s}
+.hb-card .go i{font-style:normal;transition:transform .3s var(--tk-ease)}
+.hb-card:hover .go,.hb-card:focus-visible .go,.hb-card.lit .go{background:linear-gradient(135deg,var(--tk-gold),var(--tk-gold2));color:#07111f;border-color:transparent}
+.hb-card:hover .go i,.hb-card.lit .go i{transform:translateX(-4px)}
+.hb-card:active{transform:scale(.97)}
+@property --hb-a{syntax:'<angle>';inherits:false;initial-value:0deg}
+.hb-card{border-width:2px}
+.hb-card.lit{border-color:transparent;background:linear-gradient(160deg,#112240,#07111f) padding-box,conic-gradient(from var(--hb-a),rgba(201,168,76,.25) 0deg,rgba(201,168,76,.25) 200deg,var(--tk-gold2) 280deg,var(--tk-water) 320deg,rgba(201,168,76,.25) 360deg) border-box;box-shadow:0 0 0 1px rgba(228,191,106,.15),0 14px 34px -12px rgba(228,191,106,.4);animation:hbA 2.2s linear infinite}
+.hb-card.lit::after{transform:translateX(120%)}
+.hb-card.pop.lit{animation:hbPop .5s var(--tk-ease) both,hbA 2.2s linear infinite}
+@keyframes hbA{to{--hb-a:360deg}}
 .hb-card.off{display:none}
 .hb-card.pop{animation:hbPop .5s var(--tk-ease) both;animation-delay:calc(var(--k,0) * 50ms)}
 @keyframes hbPop{from{opacity:0;transform:translateY(16px) scale(.96)}to{opacity:1;transform:none}}
@@ -1203,7 +1214,7 @@ body.nq-inner .sidebar-inner{top:110px}</style>
   .hb-dz{grid-template-columns:1fr;gap:16px}.hb-compass{max-width:190px}
 }
 @media(max-width:600px){
-  .hb-card{padding:14px 12px}.hb-card .ic{font-size:26px}.hb-card b{font-size:14.5px}.hb-card .pr{font-size:13.5px}.hb-card .tag{font-size:10.5px;padding:2px 8px}
+  .hb-card{padding:14px 12px}.hb-card .ic{font-size:26px}.hb-card b{font-size:14.5px}.hb-card .pr{font-size:13.5px}.hb-card .tag{font-size:10.5px;padding:2px 8px}.hb-card .go{height:36px;font-size:13px}
   .hb-filter button{padding:8px 12px;font-size:13px}
   .hb-wz{padding:18px 14px}.hb-wz-opts button{padding:10px 12px;font-size:13.5px}
   .hb-row{padding:12px 12px;gap:8px}.hb-row .n{font-size:14px}.hb-row b{font-size:13.5px}
@@ -1354,17 +1365,17 @@ body.nq-inner .sidebar-inner{top:110px}</style>
       <button type="button" class="on" data-f="all" aria-pressed="true">الكل</button><button type="button" data-f="clean" aria-pressed="false">🧹 التنظيف</button><button type="button" data-f="tanks" aria-pressed="false">💧 الخزانات</button><button type="button" data-f="pest" aria-pressed="false">🐜 المكافحة</button><button type="button" data-f="furn" aria-pressed="false">🛋️ مجالس وسجاد</button>
     </div>
     <div class="hb-grid">
-      <a class="hb-card rv" style="--d:0.00s" data-c="clean" href="/شركة-تنظيف-بالرياض/تنظيف-منازل/"><span class="ic">🏠</span><b>تنظيف منازل</b><span class="pr">من 250 ريال</span><span class="tag">ضمان الرجوع</span><i>←</i></a>
-      <a class="hb-card rv" style="--d:0.05s" data-c="clean" href="/شركة-تنظيف-بالرياض/تنظيف-شقق/"><span class="ic">🏢</span><b>تنظيف شقق</b><span class="pr">من 250 ريال</span><span class="tag">ضمان الرجوع</span><i>←</i></a>
-      <a class="hb-card rv" style="--d:0.10s" data-c="clean" href="/شركة-تنظيف-بالرياض/تنظيف-فلل/"><span class="ic">🏡</span><b>تنظيف فلل</b><span class="pr">من 600 ريال</span><span class="tag">ضمان الرجوع</span><i>←</i></a>
-      <a class="hb-card rv" style="--d:0.15s" data-c="clean" href="/شركة-تنظيف-بالرياض/تنظيف-بعد-التشطيب/"><span class="ic">🧱</span><b>تنظيف بعد التشطيب</b><span class="pr">من 350 ريال</span><span class="tag">ضمان الرجوع</span><i>←</i></a>
-      <a class="hb-card rv" style="--d:0.20s" data-c="tanks" href="/شركة-تنظيف-بالرياض/تنظيف-خزانات/"><span class="ic">💧</span><b>تنظيف خزانات</b><span class="pr">من 200 ريال</span><span class="tag">تعقيم آمن</span><i>←</i></a>
-      <a class="hb-card rv" style="--d:0.25s" data-c="tanks" href="/شركة-تنظيف-بالرياض/عزل-خزانات/"><span class="ic">🛡️</span><b>عزل خزانات</b><span class="pr">من 900 ريال</span><span class="tag">ضمان 10 سنين</span><i>←</i></a>
-      <a class="hb-card rv" style="--d:0.30s" data-c="tanks" href="/شركة-تنظيف-بالرياض/تنظيف-وعزل-خزانات/"><span class="ic">💎</span><b>تنظيف وعزل خزانات</b><span class="pr">من 900 ريال</span><span class="tag">ضمان 10 سنين</span><i>←</i></a>
-      <a class="hb-card rv" style="--d:0.35s" data-c="pest" href="/شركة-تنظيف-بالرياض/مكافحة-حشرات/"><span class="ic">🐜</span><b>مكافحة حشرات</b><span class="pr">من 200 ريال</span><span class="tag">ضمان 6 شهور</span><i>←</i></a>
-      <a class="hb-card rv" style="--d:0.40s" data-c="furn" href="/شركة-تنظيف-بالرياض/شركة-تنظيف-مجالس/"><span class="ic">🛋️</span><b>تنظيف مجالس وكنب</b><span class="pr ask">اطلب السعر</span><span class="tag">في مكانك</span><i>←</i></a>
-      <a class="hb-card rv" style="--d:0.45s" data-c="furn" href="/شركة-تنظيف-بالرياض/غسيل-سجاد/"><span class="ic">🧶</span><b>غسيل سجاد وموكيت</b><span class="pr ask">اطلب السعر</span><span class="tag">سجاد وموكيت</span><i>←</i></a>
-      <a class="hb-card rv" style="--d:0.50s" data-c="clean" href="/شركة-تنظيف-بالرياض/عقود-تنظيف-دورية/"><span class="ic">📅</span><b>عقود تنظيف دورية</b><span class="pr ask">اطلب السعر</span><span class="tag">شهري وسنوي</span><i>←</i></a>
+      <a class="hb-card rv" style="--d:0.00s" data-c="clean" href="/شركة-تنظيف-بالرياض/تنظيف-منازل/"><span class="ic">🏠</span><b>تنظيف منازل</b><span class="pr">من 250 ريال</span><span class="tag">ضمان الرجوع</span><span class="go">شوف التفاصيل <i>←</i></span></a>
+      <a class="hb-card rv" style="--d:0.05s" data-c="clean" href="/شركة-تنظيف-بالرياض/تنظيف-شقق/"><span class="ic">🏢</span><b>تنظيف شقق</b><span class="pr">من 250 ريال</span><span class="tag">ضمان الرجوع</span><span class="go">شوف التفاصيل <i>←</i></span></a>
+      <a class="hb-card rv" style="--d:0.10s" data-c="clean" href="/شركة-تنظيف-بالرياض/تنظيف-فلل/"><span class="ic">🏡</span><b>تنظيف فلل</b><span class="pr">من 600 ريال</span><span class="tag">ضمان الرجوع</span><span class="go">شوف التفاصيل <i>←</i></span></a>
+      <a class="hb-card rv" style="--d:0.15s" data-c="clean" href="/شركة-تنظيف-بالرياض/تنظيف-بعد-التشطيب/"><span class="ic">🧱</span><b>تنظيف بعد التشطيب</b><span class="pr">من 350 ريال</span><span class="tag">ضمان الرجوع</span><span class="go">شوف التفاصيل <i>←</i></span></a>
+      <a class="hb-card rv" style="--d:0.20s" data-c="tanks" href="/شركة-تنظيف-بالرياض/تنظيف-خزانات/"><span class="ic">💧</span><b>تنظيف خزانات</b><span class="pr">من 200 ريال</span><span class="tag">تعقيم آمن</span><span class="go">شوف التفاصيل <i>←</i></span></a>
+      <a class="hb-card rv" style="--d:0.25s" data-c="tanks" href="/شركة-تنظيف-بالرياض/عزل-خزانات/"><span class="ic">🛡️</span><b>عزل خزانات</b><span class="pr">من 900 ريال</span><span class="tag">ضمان 10 سنين</span><span class="go">شوف التفاصيل <i>←</i></span></a>
+      <a class="hb-card rv" style="--d:0.30s" data-c="tanks" href="/شركة-تنظيف-بالرياض/تنظيف-وعزل-خزانات/"><span class="ic">💎</span><b>تنظيف وعزل خزانات</b><span class="pr">من 900 ريال</span><span class="tag">ضمان 10 سنين</span><span class="go">شوف التفاصيل <i>←</i></span></a>
+      <a class="hb-card rv" style="--d:0.35s" data-c="pest" href="/شركة-تنظيف-بالرياض/مكافحة-حشرات/"><span class="ic">🐜</span><b>مكافحة حشرات</b><span class="pr">من 200 ريال</span><span class="tag">ضمان 6 شهور</span><span class="go">شوف التفاصيل <i>←</i></span></a>
+      <a class="hb-card rv" style="--d:0.40s" data-c="furn" href="/شركة-تنظيف-بالرياض/شركة-تنظيف-مجالس/"><span class="ic">🛋️</span><b>تنظيف مجالس وكنب</b><span class="pr ask">اطلب السعر</span><span class="tag">في مكانك</span><span class="go">شوف التفاصيل <i>←</i></span></a>
+      <a class="hb-card rv" style="--d:0.45s" data-c="furn" href="/شركة-تنظيف-بالرياض/غسيل-سجاد/"><span class="ic">🧶</span><b>غسيل سجاد وموكيت</b><span class="pr ask">اطلب السعر</span><span class="tag">سجاد وموكيت</span><span class="go">شوف التفاصيل <i>←</i></span></a>
+      <a class="hb-card rv" style="--d:0.50s" data-c="clean" href="/شركة-تنظيف-بالرياض/عقود-تنظيف-دورية/"><span class="ic">📅</span><b>عقود تنظيف دورية</b><span class="pr ask">اطلب السعر</span><span class="tag">شهري وسنوي</span><span class="go">شوف التفاصيل <i>←</i></span></a>
     </div>
   </div>
 </section>
@@ -1610,7 +1621,7 @@ window.addEventListener('scroll',()=>{document.getElementById('backTop').classLi
 document.getElementById('copy-year').textContent=new Date().getFullYear();
 </script>
 <script src="/assets/nq-ui.js" defer></script>
-<script src="/assets/nq-landing.js?v=0bdb78e8" defer></script>
+<script src="/assets/nq-landing.js?v=c8791afd" defer></script>
 
 </body>
 </html>
