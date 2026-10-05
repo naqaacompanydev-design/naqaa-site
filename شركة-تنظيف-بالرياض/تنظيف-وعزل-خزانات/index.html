@@ -161,6 +161,286 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 }
 </style>
 <link rel="stylesheet" href="/assets/nq-ui.css">
+<style>
+/* ===== Tank cleaning + insulation landing (tk-) ===== */
+:root{--tk-navy:#07111f;--tk-navy2:#0d1d33;--tk-gold:#c9a84c;--tk-gold2:#e4bf6a;--tk-water:#38bdf8;--tk-water2:#22d3ee;--tk-murky:#7a6440;--tk-line:rgba(201,168,76,.18);--tk-ease:cubic-bezier(.22,1,.36,1)}
+.tk-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.tk-sec{padding:72px 0;position:relative}
+.tk-sec:nth-of-type(even){background:linear-gradient(180deg,rgba(13,29,51,.55),rgba(7,17,31,0))}
+.tk-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--tk-water);background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.25);padding:5px 14px;border-radius:50px;margin-bottom:14px}
+.tk-h2{font-size:clamp(24px,3.6vw,36px);font-weight:900;line-height:1.3;color:#f8f6f0;margin-bottom:12px}
+.tk-h2 em{font-style:normal;background:linear-gradient(90deg,var(--tk-gold2),var(--tk-water));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tk-lead{color:#9aa8bf;font-size:16px;line-height:1.9;max-width:720px}
+.tk-center{text-align:center}.tk-center .tk-lead{margin:0 auto}
+
+/* reveal */
+.tk-js .rv{opacity:0;transform:translateY(34px);transition:opacity .8s var(--tk-ease),transform .8s var(--tk-ease);transition-delay:var(--d,0s)}
+.tk-js .rv.rv-r{transform:translateX(-40px)}.tk-js .rv.rv-l{transform:translateX(40px)}.tk-js .rv.rv-z{transform:scale(.88)}
+.tk-js .rv.in{opacity:1;transform:none}
+
+/* ---------- HERO ---------- */
+.tk-hero{position:relative;overflow:hidden;isolation:isolate;padding:118px 0 56px;background:radial-gradient(60% 70% at 15% 30%,rgba(56,189,248,.16),transparent 70%),radial-gradient(50% 60% at 90% 0%,rgba(201,168,76,.16),transparent 70%),linear-gradient(180deg,#0b1a2e,#07111f)}
+.tk-hero::before{content:'';position:absolute;inset:0;z-index:-1;background:url('/images/tank-cleaning-insulation.webp') center/cover no-repeat;opacity:.08;filter:grayscale(.3)}
+.tk-hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.tk-crumb{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;color:#8a9ab5;margin-bottom:16px}.tk-crumb a{color:var(--tk-gold2)}
+.tk-live{display:inline-flex;align-items:center;gap:10px;background:rgba(7,17,31,.6);border:1px solid rgba(34,197,94,.35);color:#d1fae5;font-size:13px;font-weight:700;padding:7px 16px;border-radius:50px;margin-bottom:18px;backdrop-filter:blur(8px)}
+.tk-live i{width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.7);animation:tkPing 1.8s infinite}
+.tk-live.night{border-color:rgba(147,197,253,.35);color:#dbeafe}.tk-live.night i{background:#93c5fd;box-shadow:0 0 0 0 rgba(147,197,253,.7)}
+@keyframes tkPing{0%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}80%,100%{box-shadow:0 0 0 12px rgba(34,197,94,0)}}
+.tk-hero h1{font-size:clamp(30px,5vw,54px);font-weight:900;line-height:1.2;color:#fff;margin-bottom:14px;letter-spacing:-.5px}
+.tk-hero h1 .gl{background:linear-gradient(90deg,var(--tk-gold2),#fff 45%,var(--tk-water) 90%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:tkShine 6s linear infinite}
+@keyframes tkShine{to{background-position:-200% center}}
+.tk-typed{font-size:clamp(17px,2.4vw,22px);font-weight:700;color:#cbd5e1;margin-bottom:14px;min-height:1.6em}
+.tk-typed b{color:var(--tk-water)}
+.tk-typed .cur{display:inline-block;width:2px;height:1.05em;background:var(--tk-gold2);vertical-align:-3px;margin-inline-start:3px;animation:tkBlink 1s steps(1) infinite}
+@keyframes tkBlink{50%{opacity:0}}
+.tk-hero p.tk-sub{color:#9aa8bf;font-size:16px;line-height:1.9;max-width:560px;margin-bottom:24px}
+.tk-btns{display:flex;flex-wrap:wrap;gap:12px}
+.tk-btn{position:relative;display:inline-flex;align-items:center;gap:9px;height:54px;padding:0 28px;border-radius:50px;font-weight:800;font-size:15px;overflow:hidden;transition:transform .3s var(--tk-ease),box-shadow .3s}
+.tk-btn:hover{transform:translateY(-3px)}
+.tk-btn-wa{background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;box-shadow:0 12px 30px -10px rgba(37,211,102,.6)}
+.tk-btn-wa::after{content:'';position:absolute;inset:0;border-radius:inherit;border:2px solid #25D366;animation:tkPulse 2.4s infinite}
+@keyframes tkPulse{0%{transform:scale(1);opacity:.9}70%,100%{transform:scale(1.25);opacity:0}}
+.tk-btn-call{border:1px solid rgba(201,168,76,.45);color:var(--tk-gold2);background:rgba(7,17,31,.4)}
+.tk-btn::before{content:'';position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);animation:tkSweep 4.5s infinite}
+@keyframes tkSweep{0%,60%{left:-60%}100%{left:130%}}
+.tk-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:30px;max-width:560px}
+.tk-stat{background:rgba(13,29,51,.6);border:1px solid var(--tk-line);border-radius:16px;padding:12px 8px;text-align:center;backdrop-filter:blur(6px)}
+.tk-stat b{display:block;font-size:22px;font-weight:900;color:var(--tk-gold2);line-height:1.2}
+.tk-stat>span{font-size:11.5px;color:#8a9ab5}
+
+/* tank svg */
+.tk-tank-box{position:relative;max-width:440px;margin:0 auto;width:100%}
+.tk-tank{width:100%;height:auto;display:block;overflow:visible;transform:perspective(900px) rotateY(calc(var(--mx,0)*8deg)) rotateX(calc(var(--my,0)*-6deg));transition:transform .4s var(--tk-ease);filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))}
+.tk-wave1{animation:tkWave 6s linear infinite}.tk-wave2{animation:tkWave 9s linear infinite reverse}
+@keyframes tkWave{to{transform:translateX(-200px)}}
+.tk-murky{animation:tkMurky 12s var(--tk-ease) infinite}
+.tk-clean{animation:tkClean 12s var(--tk-ease) infinite}
+@keyframes tkMurky{0%,32%{opacity:1}50%,88%{opacity:0}100%{opacity:1}}
+@keyframes tkClean{0%,32%{opacity:0}50%,88%{opacity:1}100%{opacity:0}}
+.tk-scan{animation:tkScan 12s var(--tk-ease) infinite}
+@keyframes tkScan{0%,28%{transform:translateY(0);opacity:0}30%{opacity:1}50%{transform:translateY(270px);opacity:1}54%,100%{transform:translateY(270px);opacity:0}}
+.tk-coat{stroke-dasharray:1100;stroke-dashoffset:1100;animation:tkCoat 12s var(--tk-ease) infinite}
+@keyframes tkCoat{0%,52%{stroke-dashoffset:1100;opacity:1}76%,88%{stroke-dashoffset:0;opacity:1}96%,100%{stroke-dashoffset:0;opacity:0}}
+.tk-bub{animation:tkBub 4s ease-in infinite;opacity:0}
+@keyframes tkBub{0%{transform:translateY(0);opacity:0}15%{opacity:.8}100%{transform:translateY(-230px);opacity:0}}
+.tk-dirt{animation:tkDirt 12s ease infinite}
+@keyframes tkDirt{0%,30%{opacity:1}46%,92%{opacity:0}100%{opacity:1}}
+.tk-spark{animation:tkSpark 12s ease infinite;transform-box:fill-box;transform-origin:center}
+@keyframes tkSpark{0%,52%{opacity:0;transform:scale(0)}60%{opacity:1;transform:scale(1.2)}70%,86%{opacity:1;transform:scale(.9)}92%,100%{opacity:0;transform:scale(0)}}
+.tk-lbl{font-family:'Cairo',sans-serif;font-weight:800;font-size:15px}
+.tk-lbl-b{animation:tkMurky 12s ease infinite}.tk-lbl-a{animation:tkClean 12s ease infinite}
+.tk-chip{position:absolute;display:flex;align-items:center;gap:7px;background:rgba(7,17,31,.82);border:1px solid var(--tk-line);color:#f8f6f0;font-size:13px;font-weight:700;padding:8px 14px;border-radius:14px;box-shadow:0 14px 30px -12px rgba(0,0,0,.6);backdrop-filter:blur(8px);animation:tkFloat 5s ease-in-out infinite}
+.tk-chip b{color:var(--tk-water)}
+.tk-chip.c1{top:8%;right:-4%}.tk-chip.c2{top:44%;left:-8%;animation-delay:-1.6s}.tk-chip.c3{bottom:6%;right:2%;animation-delay:-3.2s}
+@keyframes tkFloat{50%{transform:translateY(-12px)}}
+.tk-paused *{animation-play-state:paused!important}
+
+/* ticker */
+.tk-ticker{position:relative;overflow:hidden;border-top:1px solid var(--tk-line);border-bottom:1px solid var(--tk-line);background:rgba(13,29,51,.7);padding:14px 0;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.tk-track{display:flex;gap:48px;width:max-content;animation:tkMarq 38s linear infinite}
+.tk-ticker:hover .tk-track{animation-play-state:paused}
+.tk-track span{white-space:nowrap;color:#cbd5e1;font-size:14.5px;font-weight:600}
+.tk-track span b{color:var(--tk-gold2)}
+@keyframes tkMarq{to{transform:translateX(50%)}}
+
+/* combo */
+.tk-combo{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:18px;align-items:center;margin-top:36px}
+.tk-ccard{position:relative;background:linear-gradient(160deg,rgba(17,34,64,.85),rgba(7,17,31,.95));border:1px solid var(--tk-line);border-radius:22px;padding:28px 22px;text-align:center;overflow:hidden;transition:transform .4s var(--tk-ease),border-color .4s}
+.tk-ccard:hover{transform:translateY(-8px);border-color:rgba(56,189,248,.45)}
+.tk-ccard .ic{width:72px;height:72px;margin:0 auto 14px;border-radius:22px;display:grid;place-items:center;font-size:34px;background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.25);animation:tkBob 4s ease-in-out infinite}
+.tk-ccard.gold .ic{background:rgba(201,168,76,.12);border-color:rgba(201,168,76,.35);animation-delay:-2s}
+.tk-ccard.win{border-color:rgba(201,168,76,.5);box-shadow:0 0 0 1px rgba(201,168,76,.2),0 30px 60px -30px rgba(201,168,76,.5)}
+.tk-ccard.win::before{content:'';position:absolute;inset:-60%;background:conic-gradient(from 0deg,transparent,rgba(201,168,76,.18),transparent 30%);animation:tkSpin 7s linear infinite;z-index:0}
+.tk-ccard>*{position:relative;z-index:1}
+.tk-ccard h3{font-size:19px;font-weight:900;color:#fff;margin-bottom:8px}
+.tk-ccard p{color:#9aa8bf;font-size:14.5px;line-height:1.8}
+.tk-op{font-size:34px;font-weight:900;color:var(--tk-gold2);animation:tkBob 3s ease-in-out infinite}
+@keyframes tkBob{50%{transform:translateY(-8px)}}
+@keyframes tkSpin{to{transform:rotate(360deg)}}
+
+/* before / after */
+.tk-ba{position:relative;max-width:900px;margin:36px auto 0;aspect-ratio:16/9;border-radius:24px;overflow:hidden;border:1px solid var(--tk-line);box-shadow:0 40px 80px -40px rgba(0,0,0,.8);cursor:ew-resize;touch-action:pan-y;user-select:none;direction:ltr}
+.tk-ba svg{position:absolute;inset:0;width:100%;height:100%}
+.tk-ba .after{clip-path:inset(0 0 0 var(--p,50%))}
+.tk-ba .bar{position:absolute;top:0;bottom:0;left:var(--p,50%);width:3px;margin-left:-1.5px;background:linear-gradient(var(--tk-gold2),var(--tk-water));box-shadow:0 0 20px rgba(56,189,248,.6)}
+.tk-ba .knob{position:absolute;top:50%;left:var(--p,50%);width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:rgba(7,17,31,.85);border:2px solid var(--tk-gold2);display:grid;place-items:center;color:var(--tk-gold2);font-size:20px;font-weight:900;backdrop-filter:blur(6px);box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.tk-ba .knob:focus-visible{outline:3px solid var(--tk-water);outline-offset:3px}
+.tk-ba .tag{position:absolute;top:16px;padding:6px 14px;border-radius:50px;font-size:13px;font-weight:800;font-family:'Cairo',sans-serif;direction:rtl}
+.tk-ba .tag.b{left:16px;background:rgba(122,100,64,.9);color:#fff}.tk-ba .tag.a{right:16px;background:rgba(56,189,248,.9);color:#05202e}
+.tk-hint{text-align:center;color:#8a9ab5;font-size:13px;margin-top:12px}
+
+/* included */
+.tk-inc{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.tk-item{position:relative;display:flex;gap:16px;align-items:flex-start;background:rgba(13,29,51,.6);border:1px solid var(--tk-line);border-radius:20px;padding:22px 20px;transition:transform .4s var(--tk-ease),background .4s}
+.tk-item:hover{transform:translateY(-6px);background:rgba(17,34,64,.9)}
+.tk-item .ic{position:relative;flex-shrink:0;width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:26px;background:linear-gradient(135deg,rgba(56,189,248,.18),rgba(201,168,76,.12))}
+.tk-item .ic::after{content:'';position:absolute;inset:-5px;border-radius:20px;border:1px dashed rgba(56,189,248,.4);animation:tkSpin 14s linear infinite}
+.tk-item h3{font-size:16px;font-weight:900;color:#fff;margin-bottom:4px}
+.tk-item p{font-size:14px;color:#9aa8bf;line-height:1.7}
+.tk-item .n{position:absolute;top:12px;left:16px;font-size:12px;font-weight:900;color:rgba(201,168,76,.45)}
+
+/* timeline */
+.tk-tl{position:relative;max-width:760px;margin:40px auto 0;padding-right:46px}
+.tk-tl::before,.tk-tl .fill{content:'';position:absolute;right:19px;top:8px;bottom:8px;width:3px;border-radius:3px;background:rgba(201,168,76,.15)}
+.tk-tl .fill{bottom:auto;height:var(--tlp,0%);background:linear-gradient(var(--tk-gold2),var(--tk-water));box-shadow:0 0 16px rgba(56,189,248,.5);transition:height .15s linear}
+.tk-step{position:relative;margin-bottom:22px;background:rgba(13,29,51,.6);border:1px solid var(--tk-line);border-radius:20px;padding:20px 22px;transition:border-color .5s,transform .5s var(--tk-ease),background .5s}
+.tk-step .dot{position:absolute;right:-46px;top:18px;width:41px;height:41px;border-radius:50%;display:grid;place-items:center;font-size:19px;background:#0b1a2e;border:2px solid rgba(201,168,76,.3);transition:all .5s var(--tk-ease)}
+.tk-step.on{border-color:rgba(56,189,248,.4);background:rgba(17,34,64,.9);transform:translateX(-6px)}
+.tk-step.on .dot{border-color:var(--tk-water);box-shadow:0 0 0 6px rgba(56,189,248,.12),0 0 24px rgba(56,189,248,.5);transform:scale(1.1)}
+.tk-step.on .dot span{animation:tkWig 1.2s ease-in-out infinite}
+@keyframes tkWig{0%,100%{transform:rotate(0)}25%{transform:rotate(-14deg)}75%{transform:rotate(14deg)}}
+.tk-step small{font-size:12px;font-weight:800;color:var(--tk-gold2)}
+.tk-step h3{font-size:17px;font-weight:900;color:#fff;margin:2px 0 4px}
+.tk-step p{font-size:14.5px;color:#9aa8bf;line-height:1.8}
+
+/* price */
+.tk-price{position:relative;max-width:820px;margin:36px auto 0;display:grid;grid-template-columns:1.2fr 1fr;gap:0;border-radius:28px;overflow:hidden;border:1px solid rgba(201,168,76,.4);background:linear-gradient(135deg,rgba(201,168,76,.14),rgba(13,29,51,.9) 55%)}
+.tk-price::after{content:'';position:absolute;top:0;bottom:0;width:30%;left:-40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.12),transparent);transform:skewX(-18deg);animation:tkSweep 6s infinite}
+.tk-price .main{padding:34px 32px}
+.tk-price .from{color:#9aa8bf;font-size:15px;font-weight:700}
+.tk-price .num{font-size:clamp(48px,7vw,72px);font-weight:900;color:var(--tk-gold2);line-height:1.1}
+.tk-price .num small{font-size:22px;color:#f8f6f0;margin-inline-start:6px}
+.tk-price .note{color:#9aa8bf;font-size:14px;line-height:1.8;margin:8px 0 18px}
+.tk-price .side{padding:30px 26px;background:rgba(7,17,31,.55);display:flex;flex-direction:column;gap:12px;justify-content:center}
+.tk-price .side a{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 16px;border-radius:14px;border:1px solid var(--tk-line);color:#f8f6f0;font-weight:700;font-size:14.5px;transition:all .3s}
+.tk-price .side a:hover{border-color:var(--tk-water);background:rgba(56,189,248,.08);transform:translateX(-4px)}
+.tk-price .side a b{color:var(--tk-water);white-space:nowrap}
+
+/* areas marquee */
+.tk-areas{margin-top:30px;display:flex;flex-direction:column;gap:14px;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.tk-areas .row{display:flex;gap:12px;width:max-content;animation:tkMarq 30s linear infinite}
+.tk-areas .row.rev{animation-direction:reverse;animation-duration:36s}
+.tk-areas span{white-space:nowrap;padding:10px 20px;border-radius:50px;background:rgba(13,29,51,.7);border:1px solid var(--tk-line);color:#cbd5e1;font-size:14px;font-weight:600}
+.tk-areas span::before{content:'📍';margin-inline-end:6px}
+
+/* why */
+.tk-why{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:36px}.tk-why .tk-tilt{flex:1 1 180px;max-width:230px}
+.tk-tilt{background:linear-gradient(160deg,rgba(17,34,64,.85),rgba(7,17,31,.95));border:1px solid var(--tk-line);border-radius:20px;padding:24px 16px;text-align:center;transform:perspective(700px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .2s ease-out,border-color .3s;will-change:transform}
+.tk-tilt:hover{border-color:rgba(201,168,76,.5)}
+.tk-tilt .ic{font-size:34px;margin-bottom:10px;display:inline-block;animation:tkBob 4s ease-in-out infinite}
+.tk-tilt:nth-child(2) .ic{animation-delay:-.8s}.tk-tilt:nth-child(3) .ic{animation-delay:-1.6s}.tk-tilt:nth-child(4) .ic{animation-delay:-2.4s}.tk-tilt:nth-child(5) .ic{animation-delay:-3.2s}
+.tk-tilt h3{font-size:15px;font-weight:800;color:#f8f6f0;line-height:1.6}
+
+/* faq */
+.tk-faq{max-width:820px;margin:34px auto 0;display:flex;flex-direction:column;gap:12px}
+.tk-q{background:rgba(13,29,51,.6);border:1px solid var(--tk-line);border-radius:18px;overflow:hidden;transition:border-color .3s}
+.tk-q.open{border-color:rgba(56,189,248,.45)}
+.tk-q button{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 22px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:16px;font-weight:800;color:#f8f6f0}
+.tk-q button:focus-visible{outline:2px solid var(--tk-water);outline-offset:-2px}
+.tk-q button i{flex-shrink:0;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:rgba(201,168,76,.12);color:var(--tk-gold2);font-style:normal;font-size:20px;transition:transform .4s var(--tk-ease),background .3s}
+.tk-q.open button i{transform:rotate(45deg);background:rgba(56,189,248,.18);color:var(--tk-water)}
+.tk-q .a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--tk-ease)}
+.tk-q.open .a{grid-template-rows:1fr}
+.tk-q .a>div{overflow:hidden}
+.tk-q .a p{padding:0 22px 18px;color:#9aa8bf;font-size:15px;line-height:1.9}
+
+/* links */
+.tk-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:26px}
+.tk-links a{display:flex;align-items:center;gap:10px;padding:15px 18px;border-radius:16px;background:rgba(13,29,51,.6);border:1px solid var(--tk-line);color:#e2e8f0;font-size:14px;font-weight:700;line-height:1.6;transition:all .3s}
+.tk-links a:hover{border-color:var(--tk-gold2);transform:translateY(-3px);color:var(--tk-gold2)}
+.tk-links a::before{content:'←';color:var(--tk-water);font-weight:900}
+.tk-note{margin-top:22px;color:#9aa8bf;font-size:14.5px;line-height:1.9}.tk-note a{color:var(--tk-gold2);font-weight:700;text-decoration:underline}
+
+/* final cta */
+.tk-final{position:relative;overflow:hidden;padding:90px 0 150px;text-align:center;background:linear-gradient(180deg,#07111f,#0b1a2e)}
+.tk-final .waves{position:absolute;left:0;right:0;bottom:0;height:150px;pointer-events:none}
+.tk-final .waves svg{position:absolute;bottom:0;left:0;width:200%;height:100%}
+.tk-final .w1{animation:tkWaveB 14s linear infinite;opacity:.5}.tk-final .w2{animation:tkWaveB 9s linear infinite reverse;opacity:.8}
+@keyframes tkWaveB{to{transform:translateX(-50%)}}
+.tk-final .tk-btns{justify-content:center;margin-top:26px}
+
+/* side scroll tank */
+.tk-meter{position:fixed;left:22px;top:50%;z-index:900;width:58px;transform:translateY(-50%) translateX(-120px);transition:transform .6s var(--tk-ease);text-align:center;pointer-events:none}
+.tk-meter.show{transform:translateY(-50%)}
+.tk-meter .tank{position:relative;height:150px;border-radius:16px;border:2px solid rgba(201,168,76,.55);background:rgba(7,17,31,.85);overflow:hidden;box-shadow:0 14px 30px -10px rgba(0,0,0,.6)}
+.tk-meter .lvl{position:absolute;left:0;right:0;bottom:0;height:var(--lv,0%);background:linear-gradient(180deg,var(--tk-water2),#0284c7);transition:height .2s linear,filter .4s}
+.tk-meter .lvl::before{content:'';position:absolute;top:-6px;left:-50%;width:200%;height:12px;background:radial-gradient(circle at 10px -2px,transparent 8px,var(--tk-water2) 9px) 0 0/20px 12px repeat-x;animation:tkWave 2.5s linear infinite}
+.tk-meter b{display:block;margin-top:8px;font-size:13px;font-weight:900;color:var(--tk-gold2)}
+.tk-meter small{display:block;font-size:10.5px;color:#8a9ab5;line-height:1.4}
+
+/* responsive */
+@media(max-width:1100px){.tk-meter{display:none}}
+@media(max-width:900px){
+  .tk-hero{padding-top:104px}
+  .tk-hero-grid{grid-template-columns:1fr;gap:26px;text-align:center}
+  .tk-hero p.tk-sub{margin-inline:auto}.tk-btns{justify-content:center}.tk-crumb{justify-content:center}
+  .tk-stats{margin-inline:auto}
+  .tk-tank-box{max-width:330px}
+  .tk-combo{grid-template-columns:1fr;gap:10px}.tk-op{text-align:center;font-size:28px}
+  .tk-inc{grid-template-columns:1fr 1fr}
+  .tk-price{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .tk-sec{padding:56px 0}
+  .tk-stats{grid-template-columns:repeat(2,1fr)}
+  .tk-inc{grid-template-columns:1fr}
+  .tk-why{gap:10px}.tk-why .tk-tilt{flex-basis:100%;max-width:none;display:flex;align-items:center;gap:14px;text-align:right;padding:14px 16px;transform:none}.tk-why .tk-tilt .ic{margin:0;font-size:26px}
+  .tk-chip{font-size:11.5px;padding:6px 10px}.tk-chip.c2{left:-2%}.tk-chip.c1{right:0}
+  .tk-ba{aspect-ratio:4/3}
+  .tk-price .main{padding:28px 22px}
+}
+/* ---- phone-first hero: headline, tank and buttons all on the first screen ---- */
+.tk-sec,.tk-final{overflow-x:clip}
+@media(max-width:900px){
+  .tk-hero{padding:84px 0 34px}
+  .tk-hero-grid{gap:0}
+  .tk-hero-grid>div:first-child{display:contents}
+  .tk-crumb{order:0;display:none}
+  .tk-live{order:1;justify-self:center;font-size:12px;padding:6px 13px;margin-bottom:12px}
+  .tk-hero h1{order:2;font-size:clamp(27px,8vw,38px);margin-bottom:6px}
+  .tk-typed{order:3;font-size:16px;margin-bottom:4px}
+  .tk-tank-box{order:4;max-width:250px;margin:4px auto 10px}
+  .tk-btns{order:5}
+  .tk-hero p.tk-sub{order:6;font-size:14.5px;margin:18px auto 0}
+  .tk-stats{order:7;margin-top:18px}
+  .tk-js .rv.rv-r,.tk-js .rv.rv-l{transform:translateY(34px)}
+}
+@media(max-width:600px){
+  .tk-wrap{padding:0 16px}
+  .tk-btns{flex-wrap:nowrap;gap:10px}
+  .tk-hero .tk-btn{flex:1;justify-content:center;height:52px;padding:0 10px;font-size:14px}
+  .tk-final .tk-btns{flex-direction:column;align-items:stretch}.tk-final .tk-btn{justify-content:center}
+  .tk-stats{grid-template-columns:repeat(4,1fr);gap:6px}
+  .tk-stat{padding:9px 4px;border-radius:12px}.tk-stat b{font-size:17px}.tk-stat>span{font-size:10px}
+  .tk-chip{font-size:11px;padding:5px 9px;border-radius:10px}
+  .tk-chip.c1{top:4%;right:-10%}.tk-chip.c2{top:46%;left:-12%}.tk-chip.c3{bottom:12%;right:-8%}
+  .tk-h2{font-size:23px}.tk-lead{font-size:15px}
+  .tk-ccard{padding:22px 18px}.tk-ccard .ic{width:60px;height:60px;font-size:28px}
+  .tk-item{padding:18px 16px}
+  .tk-tl{padding-right:40px}.tk-step .dot{right:-40px;width:36px;height:36px;font-size:16px}.tk-tl::before,.tk-tl .fill{right:16px}
+  .tk-step{padding:16px 16px}.tk-step.on{transform:none}
+  .tk-price .num{font-size:54px}.tk-price .side{padding:20px 18px}
+  .tk-price .main .tk-btn{width:100%;justify-content:center}
+  .tk-areas span{padding:8px 15px;font-size:13px}
+  .tk-q button{padding:16px 16px;font-size:15px}.tk-q .a p{padding:0 16px 16px;font-size:14.5px}
+  .tk-final{padding:64px 0 120px}.tk-final .waves{height:110px}
+  .tk-ba{border-radius:18px}.tk-ba .knob{width:50px;height:50px;margin:-25px 0 0 -25px}
+}
+@media(max-width:600px){
+  .tk-combo{gap:6px;margin-top:26px}
+  .tk-ccard{display:grid;grid-template-columns:56px 1fr;column-gap:14px;align-items:center;text-align:right;padding:16px}
+  .tk-ccard .ic{grid-row:span 2;width:56px;height:56px;font-size:26px;margin:0;border-radius:16px}
+  .tk-ccard h3{font-size:17px;margin-bottom:2px}.tk-ccard p{font-size:13.5px;line-height:1.7}
+  .tk-ccard:hover{transform:none}
+  .tk-op{font-size:22px;line-height:1}
+  .tk-inc{grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
+  .tk-item{flex-direction:column;align-items:center;text-align:center;gap:10px;padding:18px 12px}
+  .tk-item .ic{width:50px;height:50px;font-size:24px}
+  .tk-item h3{font-size:15px}.tk-item p{font-size:12.5px;line-height:1.6}
+  .tk-item .n{top:8px;left:10px;font-size:11px}
+}
+/* tap feedback on touch screens */
+@media(hover:none){
+  .tk-item:active,.tk-ccard:active,.tk-tilt:active,.tk-links a:active{transform:scale(.97)}
+  .tk-btn:active{transform:scale(.96)}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .tk-js .rv{opacity:1;transform:none}
+  .tk-murky,.tk-dirt,.tk-lbl-b{opacity:0}.tk-clean,.tk-lbl-a,.tk-spark{opacity:1}.tk-coat{stroke-dashoffset:0}
+}
+</style>
 </head>
 <body class="nq-inner">
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSS7QXXP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -196,107 +476,281 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 
 
 
-<div class="srv-hero nq-photo" style="--nq-img:url('/images/tank-cleaning-insulation.webp')">
-  <div class="container">
-    <nav class="page-breadcrumb"><a href="/">الرئيسية</a><span>›</span><a href="/شركة-تنظيف-بالرياض/">شركة تنظيف بالرياض</a><span>›</span><span>شركة تنظيف وعزل خزانات بالرياض</span></nav>
-    <div class="srv-hero-tag">💧 شركة تنظيف وعزل خزانات بالرياض</div>
-    <span class="srv-hero-icon">💧</span>
-    <h1>شركة تنظيف وعزل خزانات بالرياض</h1>
-    <p>غسيل وتعقيم وعزل خزانات المياه العلوية والأرضية بالرياض في زيارة واحدة، عشان مياه نظيفة وخزان محمي من التسريب لسنوات.</p>
-    <div class="srv-hero-btns">
-      <a href="https://wa.me/966545833481?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%AD%D8%AA%D8%A7%D8%AC%20%D8%A5%D9%84%D9%89%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%AA%D9%86%D8%B8%D9%8A%D9%81%20%D9%88%D8%B9%D8%B2%D9%84%20%D8%A7%D9%84%D8%AE%D8%B2%D8%A7%D9%86%D8%A7%D8%AA%0A%D8%A7%D9%84%D8%AD%D9%8A%3A%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D8%AE%D8%B2%D8%A7%D9%86%3A%20%D8%A3%D8%B1%D8%B6%D9%8A%20%2F%20%D8%B9%D9%84%D9%88%D9%8A" target="_blank" rel="noopener" class="btn-wa">💬 احجز عبر واتساب</a>
-      <a href="tel:0545833481" class="btn-call">📞 اتصل الآن للحجز</a>
+<script>document.documentElement.classList.add('tk-js')</script>
+<section class="tk-hero hero" id="tk-hero">
+  <div class="tk-wrap tk-hero-grid">
+    <div>
+      <nav class="tk-crumb" aria-label="مسار التنقل"><a href="/">الرئيسية</a><span>›</span><a href="/شركة-تنظيف-بالرياض/">شركة تنظيف بالرياض</a><span>›</span><span>شركة تنظيف وعزل خزانات بالرياض</span></nav>
+      <div class="tk-live" id="tk-live"><i></i><span>فريقنا متاح الآن — نوصلك غالبًا بنفس اليوم</span></div>
+      <h1>شركة <span class="gl">تنظيف وعزل خزانات</span> <span id="tk-h1-type"></span>بالرياض</h1>
+      <div class="tk-typed" aria-hidden="true">نخدم خزانات <b id="tk-typed"></b><span class="cur"></span></div>
+      <p class="tk-sub">غسيل وتعقيم وعزل خزانات المياه العلوية والأرضية في زيارة واحدة، عشان مياه نظيفة وخزان محمي من التسريب لسنوات.</p>
+      <div class="tk-btns">
+        <a href="https://wa.me/966545833481?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%AD%D8%AA%D8%A7%D8%AC%20%D8%A5%D9%84%D9%89%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%AA%D9%86%D8%B8%D9%8A%D9%81%20%D9%88%D8%B9%D8%B2%D9%84%20%D8%A7%D9%84%D8%AE%D8%B2%D8%A7%D9%86%D8%A7%D8%AA%0A%D8%A7%D9%84%D8%AD%D9%8A%3A%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D8%AE%D8%B2%D8%A7%D9%86%3A%20%D8%A3%D8%B1%D8%B6%D9%8A%20%2F%20%D8%B9%D9%84%D9%88%D9%8A" target="_blank" rel="noopener" class="tk-btn tk-btn-wa">💬 احجز عبر واتساب</a>
+        <a href="tel:0545833481" class="tk-btn tk-btn-call">📞 اتصل الآن للحجز</a>
+      </div>
+      <div class="tk-stats">
+        <div class="tk-stat"><b><span data-count="4.7" data-dec="1">4.7</span>★</b><span>تقييم جوجل</span></div>
+        <div class="tk-stat"><b>+<span data-count="2500">2,500</span></b><span>عميل راضٍ</span></div>
+        <div class="tk-stat"><b><span data-count="15">15</span></b><span>سنة خبرة</span></div>
+        <div class="tk-stat"><b>24/7</b><span>نستقبل طلباتك</span></div>
+      </div>
     </div>
-    <div class="nq-stats"><div><b>4.7<em>★</em></b><span>تقييم جوجل</span></div><div><b><em>+</em>2,500</b><span>عميل راضٍ</span></div><div><b>15</b><span>سنة خبرة</span></div><div><b>24<em>/</em>7</b><span>نستقبل طلباتك</span></div></div>
-  </div>
-</div>
 
-<div class="srv-body">
-  <div class="container">
-    <div class="srv-layout">
-      <main>
-        <div class="srv-card">
-          <h2>نبذة عن شركة تنظيف وعزل خزانات بالرياض</h2>
-          <p>التنظيف يشيل الطين والرواسب والطحالب من الخزان، والعزل يمنع التسريب ويحمي المياه من التلوث. والأفضل يتموا مع بعض، لأن العزل لازم يتعمل على خزان نظيف وجاف عشان يثبت صح. تقدم مؤسسة نقاء للتنظيف خدمة <strong>تنظيف وعزل خزانات بالرياض</strong> في زيارة واحدة بضمان رسمي على العزل.</p><p>نتعامل مع الخزانات العلوية والأرضية بمختلف الأحجام، ونستخدم مواد تعقيم وعزل معتمدة وآمنة على مياه الشرب.</p>
-        <p class="hub-link-note"> وهي جزء من <a href="/شركة-تنظيف-بالرياض/">خدمات شركة تنظيف بالرياض</a> الشاملة اللي بنقدمها. ولو محتاج خدمة واحدة بس، شوف صفحة <a href="/شركة-تنظيف-بالرياض/تنظيف-خزانات/">تنظيف خزانات بالرياض</a> أو صفحة <a href="/شركة-تنظيف-بالرياض/عزل-خزانات/">عزل خزانات بالرياض</a>.</p>
-        </div>
-
-        <div class="srv-card">
-          <h2>ماذا تشمل الخدمة في شركة تنظيف وعزل خزانات بالرياض؟</h2>
-          <ul><li>فحص الخزان وتحديد حالة الجدران والشقوق</li><li>تفريغ المياه وشفط الطين والرواسب من القاع</li><li>غسيل الخزان بالضغط وإزالة الطحالب والصدأ</li><li>تعقيم الخزان بالكامل بمواد آمنة</li><li>معالجة الشقوق وعزل الخزان بمواد معتمدة لمياه الشرب</li><li>فحص نهائي للعزل وإعادة تعبئة الخزان</li></ul>
-        </div>
-
-        <div class="srv-card">
-          <h2>الأسعار</h2>
-          <div class="srv-price-box">
-            <div class="srv-price-num">من 900 ريال</div>
-            <div>الأسعار تقريبية وتختلف حسب سعة الخزان ونوعه (علوي أو أرضي) وحالته — تواصل معنا لعرض سعر دقيق ومجاني.</div>
-          </div>
-        </div>
-
-        <div class="srv-card">
-          <h2>مناطق الرياض التي نغطيها في شركة تنظيف وعزل خزانات بالرياض</h2>
-          <p>نصل إلى معظم أحياء الرياض بنفس اليوم غالبًا:</p>
-          <div class="srv-areas"><span>العليا</span><span>الملقا</span><span>النرجس</span><span>حطين</span><span>الياسمين</span><span>السويدي</span><span>النخيل</span><span>الربيع</span><span>الملز</span><span>الروضة</span><span>الازدهار</span><span>قرطبة</span><span>الدرعية</span><span>النزهة</span></div>
-        </div>
-
-        <div class="srv-card">
-          <h2>كيف تتم الخدمة في شركة تنظيف وعزل خزانات بالرياض؟</h2>
-          <div class="srv-steps">
-            <div class="srv-step"><div class="srv-step-num">1</div><div class="srv-step-body"><h3>📞 تواصل وتحديد الاحتياج</h3><p>اتصال أو واتساب لتحديد الحي ونوع الخزان (علوي أو أرضي) وسعته التقريبية.</p></div></div>
-            <div class="srv-step"><div class="srv-step-num">2</div><div class="srv-step-body"><h3>💰 عرض سعر واضح</h3><p>تحديد السعر وموعد الزيارة بدون أي رسوم مخفية قبل بدء العمل.</p></div></div>
-            <div class="srv-step"><div class="srv-step-num">3</div><div class="srv-step-body"><h3>🧰 تنظيف ثم عزل</h3><p>تفريغ وغسيل وتعقيم الخزان، وبعد ما ينشف نبدأ العزل بمواد معتمدة.</p></div></div>
-            <div class="srv-step"><div class="srv-step-num">4</div><div class="srv-step-body"><h3>✅ مراجعة نهائية</h3><p>فحص العزل مع العميل وإعادة تعبئة الخزان قبل المغادرة.</p></div></div>
-          </div>
-        </div>
-
-        <div class="srv-card">
-          <h2>لماذا تختار مؤسسة نقاء كـ شركة تنظيف وعزل خزانات بالرياض؟</h2>
-          <ul>
-            <li>تنظيف وعزل في زيارة واحدة يوفر وقتك وتكلفتك</li>
-            <li>ضمان رسمي على أعمال العزل</li>
-            <li>مواد آمنة على مياه الشرب والأطفال</li>
-            <li>تغطية معظم أحياء الرياض</li>
-            <li>أسعار واضحة وخدمة عملاء على مدار الساعة</li>
-          </ul>
-        </div>
-
-        <div class="srv-card">
-          <h2>الأسئلة الشائعة</h2>
-          <div style="margin-bottom:18px"><h3>ليش أعمل تنظيف وعزل مع بعض؟</h3><p style="margin-bottom:0">العزل لازم يتم على خزان نظيف وجاف عشان يثبت صح، فعمل الاثنين في زيارة واحدة يوفر عليك الوقت والتكلفة ويضمن نتيجة أفضل.</p></div><div style="margin-bottom:18px"><h3>هل مواد العزل والتعقيم آمنة على مياه الشرب؟</h3><p style="margin-bottom:0">نعم، نستخدم مواد تعقيم وعزل معتمدة وآمنة للاستخدام مع مياه الشرب.</p></div><div style="margin-bottom:18px"><h3>هل تقدمون ضمانًا على العزل؟</h3><p style="margin-bottom:0">نعم، نقدم ضمانًا رسميًا على أعمال العزل.</p></div><div style="margin-bottom:18px"><h3>كم يستغرق تنظيف وعزل خزان واحد؟</h3><p style="margin-bottom:0">يعتمد على حجم الخزان وحالته، وغالبًا يتم إنجازه في نفس اليوم مع ترك وقت كافٍ لجفاف العزل قبل التعبئة.</p></div><div style="margin-bottom:18px"><h3>هل تتعاملون مع الخزانات الأرضية الكبيرة؟</h3><p style="margin-bottom:0">نعم، نتعامل مع الخزانات العلوية والأرضية بمختلف الأحجام.</p></div><div style="margin-bottom:18px"><h3>كيف أحجز الخدمة؟</h3><p style="margin-bottom:0">اتصل بنا أو راسلنا واتساب على 0545833481 وحدد الحي ونوع الخزان وسعته التقريبية.</p></div>
-        </div>
-
-        <div class="srv-card srv-articles-card" style="border:2px solid rgba(201,168,76,.35)">
-          <h2>📚 مقالات ذات صلة</h2>
-          <div class="srv-related-grid"><a href="/blog/عزل-خزانات-بالرياض/"><span>عزل وتنظيف الخزانات بالرياض بضمان رسمي</span></a><a href="/blog/water-tank-insulation-cleaning-tips-riyadh/"><span>نصائح لعزل وتنظيف خزانات المياه بالرياض</span></a><a href="/blog/tank-insulation-materials-riyadh/"><span>أنواع مواد عزل الخزانات وأيش أفضلها لمناخ الرياض</span></a><a href="/blog/tank-reinsulation-timing-riyadh/"><span>خزانك عمره كم سنة؟ علامة تعلمك انه حان وقت العزل</span></a></div>
-        </div>
-
-        <div class="srv-card" style="text-align:center;background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(201,168,76,.03))">
-          <h2 style="color:var(--white)">احجز شركة تنظيف وعزل خزانات بالرياض الآن</h2>
-          <p>تواصل معنا الآن للحصول على عرض سعر مجاني ومناسب لحجم خزانك.</p>
-          <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:16px">
-            <a href="https://wa.me/966545833481?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%AD%D8%AA%D8%A7%D8%AC%20%D8%A5%D9%84%D9%89%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%AA%D9%86%D8%B8%D9%8A%D9%81%20%D9%88%D8%B9%D8%B2%D9%84%20%D8%A7%D9%84%D8%AE%D8%B2%D8%A7%D9%86%D8%A7%D8%AA%0A%D8%A7%D9%84%D8%AD%D9%8A%3A%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D8%AE%D8%B2%D8%A7%D9%86%3A%20%D8%A3%D8%B1%D8%B6%D9%8A%20%2F%20%D8%B9%D9%84%D9%88%D9%8A" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;padding:13px 28px;border-radius:50px;font-weight:700;font-size:14px">💬 احجز عبر واتساب</a>
-            <a href="tel:0545833481" style="border:1px solid rgba(201,168,76,.4);color:var(--gold2);padding:13px 28px;border-radius:50px;font-weight:700;font-size:14px">📞 اتصل الآن للحجز</a>
-          </div>
-        </div>
-      </main>
-
-      <aside class="srv-sidebar">
-        <div class="sidebar-card">
-          <h3>📞 احجز الآن</h3>
-          <a href="tel:0545833481" class="sidebar-cta-btn" style="background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy)">📞 0545833481</a>
-          <a href="https://wa.me/966545833481?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%AD%D8%AA%D8%A7%D8%AC%20%D8%A5%D9%84%D9%89%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%AA%D9%86%D8%B8%D9%8A%D9%81%20%D9%88%D8%B9%D8%B2%D9%84%20%D8%A7%D9%84%D8%AE%D8%B2%D8%A7%D9%86%D8%A7%D8%AA%0A%D8%A7%D9%84%D8%AD%D9%8A%3A%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D8%AE%D8%B2%D8%A7%D9%86%3A%20%D8%A3%D8%B1%D8%B6%D9%8A%20%2F%20%D8%B9%D9%84%D9%88%D9%8A" target="_blank" rel="noopener" class="sidebar-cta-btn" style="background:linear-gradient(135deg,#25D366,#128C7E)">💬 واتساب</a>
-          <p style="font-size:13px;color:var(--gray);text-align:center;margin-top:8px">متاحون 24/7</p>
-        </div>
-        <div class="sidebar-card">
-          <h3>خدمات أخرى بالرياض</h3>
-          <ul style="list-style:none;padding:0"><li style="padding:6px 0;border-bottom:1px solid rgba(201,168,76,.06)"><a href="/شركة-تنظيف-بالرياض/تنظيف-خزانات/" style="color:var(--gray);font-size:13px">شركة تنظيف خزانات بالرياض</a></li><li style="padding:6px 0;border-bottom:1px solid rgba(201,168,76,.06)"><a href="/شركة-تنظيف-بالرياض/عزل-خزانات/" style="color:var(--gray);font-size:13px">شركة عزل خزانات بالرياض</a></li><li style="padding:6px 0;border-bottom:1px solid rgba(201,168,76,.06)"><a href="/شركة-تنظيف-بالرياض/تنظيف-منازل/" style="color:var(--gray);font-size:13px">شركة تنظيف منازل بالرياض</a></li><li style="padding:6px 0;border-bottom:1px solid rgba(201,168,76,.06)"><a href="/شركة-تنظيف-بالرياض/تنظيف-فلل/" style="color:var(--gray);font-size:13px">شركة تنظيف فلل بالرياض</a></li><li style="padding:6px 0;border-bottom:1px solid rgba(201,168,76,.06)"><a href="/شركة-تنظيف-بالرياض/تنظيف-شقق/" style="color:var(--gray);font-size:13px">شركة تنظيف شقق بالرياض</a></li><li style="padding:6px 0;border-bottom:1px solid rgba(201,168,76,.06)"><a href="/شركة-تنظيف-بالرياض/مكافحة-حشرات/" style="color:var(--gray);font-size:13px">شركة مكافحة حشرات بالرياض</a></li><li style="padding:6px 0;border-bottom:1px solid rgba(201,168,76,.06)"><a href="/شركة-تنظيف-بالرياض/شركة-تنظيف-مجالس/" style="color:var(--gray);font-size:13px">شركة تنظيف مجالس وكنب بالرياض</a></li><li style="padding:6px 0;border-bottom:1px solid rgba(201,168,76,.06)"><a href="/شركة-تنظيف-بالرياض/غسيل-سجاد/" style="color:var(--gray);font-size:13px">شركة تنظيف سجاد وموكيت بالرياض</a></li><li style="padding:6px 0;border-bottom:1px solid rgba(201,168,76,.06)"><a href="/شركة-تنظيف-بالرياض/تنظيف-بعد-التشطيب/" style="color:var(--gray);font-size:13px">شركة تنظيف بعد التشطيب بالرياض</a></li><li style="padding:6px 0;border-bottom:1px solid rgba(201,168,76,.06)"><a href="/شركة-تنظيف-بالرياض/عقود-تنظيف-دورية/" style="color:var(--gray);font-size:13px">عقود تنظيف شهرية وسنوية بالرياض</a></li></ul>
-        </div>
-      </aside>
+    <div class="tk-tank-box" id="tk-tank-box" aria-hidden="true">
+      <svg class="tk-tank" viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="tkIn"><rect x="82" y="92" width="236" height="276" rx="22"/></clipPath>
+          <linearGradient id="tkGlass" x1="0" x2="1"><stop offset="0" stop-color="#1b3354"/><stop offset=".5" stop-color="#0e2038"/><stop offset="1" stop-color="#1b3354"/></linearGradient>
+          <linearGradient id="tkClean" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#67e8f9"/><stop offset="1" stop-color="#0369a1"/></linearGradient>
+          <linearGradient id="tkMud" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9a8257"/><stop offset="1" stop-color="#4a3b22"/></linearGradient>
+          <linearGradient id="tkRim" x1="0" x2="1"><stop offset="0" stop-color="#c9a84c"/><stop offset=".5" stop-color="#f5d98e"/><stop offset="1" stop-color="#c9a84c"/></linearGradient>
+        </defs>
+        <ellipse cx="200" cy="400" rx="150" ry="14" fill="rgba(0,0,0,.35)"/>
+        <path d="M330 300 h32 a10 10 0 0 1 10 10 v60" fill="none" stroke="#33507a" stroke-width="12" stroke-linecap="round"/>
+        <rect x="70" y="80" width="260" height="300" rx="30" fill="url(#tkGlass)" stroke="url(#tkRim)" stroke-width="4"/>
+        <g clip-path="url(#tkIn)">
+          <rect x="82" y="92" width="236" height="276" fill="#0b1a2e"/>
+          <g class="tk-murky">
+            <path class="tk-wave2" fill="#6d5a37" d="M-200 156 q50 -12 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 V380 H-200 Z"/>
+            <path class="tk-wave1" fill="url(#tkMud)" d="M-200 166 q50 -14 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 V380 H-200 Z"/>
+          </g>
+          <g class="tk-dirt">
+            <ellipse cx="200" cy="366" rx="130" ry="22" fill="#3b2f1b"/>
+            <circle cx="120" cy="250" r="9" fill="#556b2f" opacity=".8"/><circle cx="132" cy="268" r="6" fill="#556b2f" opacity=".7"/>
+            <circle cx="286" cy="214" r="10" fill="#4d6b2a" opacity=".8"/><circle cx="276" cy="232" r="5" fill="#4d6b2a" opacity=".7"/>
+            <circle cx="170" cy="300" r="3" fill="#2a2214"/><circle cx="230" cy="280" r="2.5" fill="#2a2214"/><circle cx="250" cy="320" r="3.5" fill="#2a2214"/><circle cx="150" cy="330" r="2.5" fill="#2a2214"/><circle cx="210" cy="240" r="2" fill="#2a2214"/>
+          </g>
+          <g class="tk-clean">
+            <path class="tk-wave2" fill="#38bdf8" opacity=".55" d="M-200 156 q50 -12 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 V380 H-200 Z"/>
+            <path class="tk-wave1" fill="url(#tkClean)" d="M-200 166 q50 -14 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 V380 H-200 Z"/>
+            <path d="M110 220 q20 -8 40 0 M200 260 q24 -9 48 0 M140 310 q18 -7 36 0" stroke="rgba(255,255,255,.35)" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </g>
+          <g fill="rgba(255,255,255,.75)">
+            <circle class="tk-bub" cx="130" cy="360" r="4"/><circle class="tk-bub" cx="180" cy="362" r="3" style="animation-delay:-1.2s"/>
+            <circle class="tk-bub" cx="230" cy="358" r="5" style="animation-delay:-2.4s"/><circle class="tk-bub" cx="270" cy="362" r="3" style="animation-delay:-.6s"/>
+            <circle class="tk-bub" cx="205" cy="364" r="2.5" style="animation-delay:-3.1s"/>
+          </g>
+          <g class="tk-scan"><rect x="82" y="94" width="236" height="3" fill="#f5d98e"/><rect x="82" y="80" width="236" height="16" fill="url(#tkRim)" opacity=".18"/></g>
+        </g>
+        <rect class="tk-coat" x="86" y="96" width="228" height="268" rx="20" fill="none" stroke="#22d3ee" stroke-width="5" stroke-linecap="round"/>
+        <g fill="#fff">
+          <path class="tk-spark" d="M140 200 l4 10 l10 4 l-10 4 l-4 10 l-4 -10 l-10 -4 l10 -4z"/>
+          <path class="tk-spark" style="animation-delay:.4s" d="M262 250 l3 7 l7 3 l-7 3 l-3 7 l-3 -7 l-7 -3 l7 -3z"/>
+          <path class="tk-spark" style="animation-delay:.8s" d="M210 320 l3 8 l8 3 l-8 3 l-3 8 l-3 -8 l-8 -3 l8 -3z"/>
+        </g>
+        <rect x="150" y="62" width="100" height="24" rx="8" fill="#1b3354" stroke="url(#tkRim)" stroke-width="3"/>
+        <rect x="186" y="54" width="28" height="10" rx="3" fill="#c9a84c"/>
+        <g stroke="rgba(201,168,76,.5)" stroke-width="2"><line x1="70" y1="140" x2="58" y2="140"/><line x1="70" y1="200" x2="58" y2="200"/><line x1="70" y1="260" x2="58" y2="260"/><line x1="70" y1="320" x2="58" y2="320"/></g>
+        <path d="M96 110 q-6 60 0 120" stroke="rgba(255,255,255,.18)" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <text class="tk-lbl tk-lbl-b" x="200" y="430" text-anchor="middle" fill="#c4a97a" direction="rtl">قبل التنظيف</text>
+        <text class="tk-lbl tk-lbl-a" x="200" y="430" text-anchor="middle" fill="#67e8f9" direction="rtl">بعد التنظيف والعزل ✓</text>
+      </svg>
+      <div class="tk-chip c1">🧽 غسيل <b>بالضغط</b></div>
+      <div class="tk-chip c2">🧪 تعقيم <b>آمن</b></div>
+      <div class="tk-chip c3">🛡️ عزل <b>بضمان</b></div>
     </div>
   </div>
-</div>
+</section>
 
+<div class="tk-ticker" aria-label="معلومات سريعة"><div class="tk-track" id="tk-track">
+  <span>💧 يُنصح بتنظيف الخزان وتعقيمه <b>كل 6 أشهر</b></span>
+  <span>🛡️ العزل يمنع <b>التسريب</b> ويحمي المياه من التلوث</span>
+  <span>🧽 العزل لازم يتم على خزان <b>نظيف وجاف</b> عشان يثبت صح</span>
+  <span>✅ مواد معتمدة و<b>آمنة على مياه الشرب</b></span>
+  <span>📍 نغطي <b>معظم أحياء الرياض</b></span>
+</div></div>
+
+<section class="tk-sec">
+  <div class="tk-wrap tk-center">
+    <div class="tk-eyebrow rv">💡 ليش الاثنين مع بعض؟</div>
+    <h2 class="tk-h2 rv" style="--d:.05s">نبذة عن <em>شركة تنظيف وعزل خزانات بالرياض</em></h2>
+    <p class="tk-lead rv" style="--d:.1s">التنظيف يشيل الطين والرواسب والطحالب، والعزل يمنع التسريب ويحمي المياه من التلوث. والأفضل يتموا مع بعض، لأن العزل لازم يتعمل على خزان نظيف وجاف عشان يثبت صح. تقدم مؤسسة نقاء للتنظيف خدمة <strong>تنظيف وعزل خزانات بالرياض</strong> في زيارة واحدة بضمان رسمي على العزل، للخزانات العلوية والأرضية بمختلف الأحجام.</p>
+    <div class="tk-combo">
+      <div class="tk-ccard rv rv-r"><div class="ic">🧽</div><h3>تنظيف وتعقيم</h3><p>تفريغ، شفط الرواسب، غسيل بالضغط، وتعقيم كامل بمواد آمنة.</p></div>
+      <div class="tk-op rv rv-z" style="--d:.15s">+</div>
+      <div class="tk-ccard gold rv rv-z" style="--d:.25s"><div class="ic">🛡️</div><h3>عزل معتمد</h3><p>معالجة الشقوق وطبقة عزل آمنة لمياه الشرب تمنع التسريب.</p></div>
+      <div class="tk-op rv rv-z" style="--d:.35s">=</div>
+      <div class="tk-ccard win rv rv-l" style="--d:.45s"><div class="ic">💎</div><h3>خزان محمي لسنوات</h3><p>مياه نظيفة، خزان بدون تسريب، ووقت وتكلفة أقل في زيارة واحدة.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tk-sec">
+  <div class="tk-wrap tk-center">
+    <div class="tk-eyebrow rv">👀 شوف الفرق بنفسك</div>
+    <h2 class="tk-h2 rv" style="--d:.05s">خزانك <em>قبل وبعد</em> التنظيف والعزل</h2>
+    <div class="tk-ba rv rv-z" id="tk-ba" style="--d:.1s">
+      <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="baW1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b5a3e"/><stop offset="1" stop-color="#3a2f1d"/></linearGradient>
+          <radialGradient id="baSt"><stop offset="0" stop-color="#2b2213" stop-opacity=".85"/><stop offset="1" stop-color="#2b2213" stop-opacity="0"/></radialGradient>
+          <radialGradient id="baAl"><stop offset="0" stop-color="#4f6b25" stop-opacity=".9"/><stop offset="1" stop-color="#4f6b25" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect width="1600" height="900" fill="url(#baW1)"/>
+        <g stroke="rgba(0,0,0,.18)" stroke-width="4"><path d="M0 150H1600M0 300H1600M0 450H1600M400 0V620M800 0V620M1200 0V620"/></g>
+        <ellipse cx="300" cy="260" rx="220" ry="150" fill="url(#baSt)"/><ellipse cx="1050" cy="180" rx="260" ry="120" fill="url(#baSt)"/>
+        <ellipse cx="620" cy="420" rx="200" ry="110" fill="url(#baAl)"/><ellipse cx="1350" cy="400" rx="230" ry="130" fill="url(#baAl)"/>
+        <path d="M520 0 l30 180 l-20 120 l40 160" stroke="#1d160b" stroke-width="6" fill="none"/>
+        <rect y="620" width="1600" height="280" fill="#5b4a2c" opacity=".95"/>
+        <path d="M0 620 q100 -18 200 0 t200 0 t200 0 t200 0 t200 0 t200 0 t200 0 t200 0 V900 H0Z" fill="#6e5a35"/>
+        <ellipse cx="800" cy="880" rx="900" ry="70" fill="#2e2414"/>
+        <g fill="#241c0f"><circle cx="300" cy="720" r="9"/><circle cx="700" cy="760" r="6"/><circle cx="1100" cy="700" r="8"/><circle cx="1400" cy="780" r="7"/><circle cx="500" cy="820" r="5"/></g>
+      </svg>
+      <svg class="after" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="baW2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfeaf7"/><stop offset="1" stop-color="#8cc8e6"/></linearGradient>
+          <linearGradient id="baWa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5fd4f5"/><stop offset="1" stop-color="#0277b6"/></linearGradient>
+          <linearGradient id="baGl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+        </defs>
+        <rect width="1600" height="900" fill="url(#baW2)"/>
+        <g stroke="rgba(255,255,255,.5)" stroke-width="3"><path d="M0 150H1600M0 300H1600M0 450H1600M400 0V620M800 0V620M1200 0V620"/></g>
+        <path d="M200 -50 L700 -50 L300 620 L-200 620Z" fill="url(#baGl)"/><path d="M1000 -50 L1200 -50 L800 620 L600 620Z" fill="url(#baGl)" opacity=".6"/>
+        <rect y="620" width="1600" height="280" fill="url(#baWa)"/>
+        <path d="M0 620 q100 -18 200 0 t200 0 t200 0 t200 0 t200 0 t200 0 t200 0 t200 0 V900 H0Z" fill="#7ee0fa"/>
+        <g stroke="rgba(255,255,255,.55)" stroke-width="5" fill="none" stroke-linecap="round"><path d="M200 720 q40 -14 80 0"/><path d="M700 780 q50 -16 100 0"/><path d="M1200 730 q40 -14 80 0"/></g>
+        <g fill="#fff"><path d="M1300 200 l12 30 l30 12 l-30 12 l-12 30 l-12 -30 l-30 -12 l30 -12z"/><path d="M1000 380 l8 20 l20 8 l-20 8 l-8 20 l-8 -20 l-20 -8 l20 -8z"/></g>
+      </svg>
+      <div class="bar"></div>
+      <div class="knob" id="tk-knob" role="slider" tabindex="0" aria-label="مقارنة قبل وبعد" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">⇆</div>
+      <span class="tag b">قبل</span><span class="tag a">بعد ✓</span>
+    </div>
+    <p class="tk-hint rv">⇆ اسحب الخط يمين وشمال عشان تشوف الفرق</p>
+  </div>
+</section>
+
+<section class="tk-sec">
+  <div class="tk-wrap tk-center">
+    <div class="tk-eyebrow rv">🧰 الخدمة كاملة</div>
+    <h2 class="tk-h2 rv" style="--d:.05s">ماذا تشمل الخدمة في <em>شركة تنظيف وعزل خزانات بالرياض</em>؟</h2>
+    <div class="tk-inc" style="text-align:right">
+      <div class="tk-item rv" style="--d:0s"><span class="n">01</span><div class="ic">🔍</div><div><h3>فحص الخزان</h3><p>تحديد حالة الجدران والشقوق قبل البدء.</p></div></div>
+      <div class="tk-item rv" style="--d:.08s"><span class="n">02</span><div class="ic">🚰</div><div><h3>تفريغ وشفط</h3><p>تفريغ المياه وشفط الطين والرواسب من القاع.</p></div></div>
+      <div class="tk-item rv" style="--d:.16s"><span class="n">03</span><div class="ic">💦</div><div><h3>غسيل بالضغط</h3><p>إزالة الطحالب والصدأ من الجدران والأرضية.</p></div></div>
+      <div class="tk-item rv" style="--d:.24s"><span class="n">04</span><div class="ic">🧪</div><div><h3>تعقيم كامل</h3><p>تعقيم الخزان بالكامل بمواد آمنة.</p></div></div>
+      <div class="tk-item rv" style="--d:.32s"><span class="n">05</span><div class="ic">🛡️</div><div><h3>معالجة وعزل</h3><p>معالجة الشقوق وعزل الخزان بمواد معتمدة لمياه الشرب.</p></div></div>
+      <div class="tk-item rv" style="--d:.4s"><span class="n">06</span><div class="ic">✅</div><div><h3>فحص وتعبئة</h3><p>فحص نهائي للعزل وإعادة تعبئة الخزان.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="tk-sec">
+  <div class="tk-wrap tk-center">
+    <div class="tk-eyebrow rv">⚙️ خطوة بخطوة</div>
+    <h2 class="tk-h2 rv" style="--d:.05s">كيف تتم الخدمة في <em>شركة تنظيف وعزل خزانات بالرياض</em>؟</h2>
+    <div class="tk-tl" id="tk-tl" style="text-align:right">
+      <div class="fill"></div>
+      <div class="tk-step rv"><div class="dot"><span>📞</span></div><small>الخطوة 1</small><h3>تواصل وتحديد الاحتياج</h3><p>اتصال أو واتساب لتحديد الحي ونوع الخزان (علوي أو أرضي) وسعته التقريبية.</p></div>
+      <div class="tk-step rv"><div class="dot"><span>💰</span></div><small>الخطوة 2</small><h3>عرض سعر واضح</h3><p>تحديد السعر وموعد الزيارة بدون أي رسوم مخفية قبل بدء العمل.</p></div>
+      <div class="tk-step rv"><div class="dot"><span>🧽</span></div><small>الخطوة 3</small><h3>تنظيف ثم عزل</h3><p>تفريغ وغسيل وتعقيم الخزان، وبعد ما ينشف نبدأ العزل بمواد معتمدة.</p></div>
+      <div class="tk-step rv"><div class="dot"><span>✅</span></div><small>الخطوة 4</small><h3>مراجعة نهائية</h3><p>فحص العزل مع العميل وإعادة تعبئة الخزان قبل المغادرة.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tk-sec">
+  <div class="tk-wrap tk-center">
+    <div class="tk-eyebrow rv">💰 أسعار واضحة</div>
+    <h2 class="tk-h2 rv" style="--d:.05s">الأسعار</h2>
+    <div class="tk-price rv rv-z" style="text-align:right;--d:.1s">
+      <div class="main">
+        <div class="from">تنظيف + عزل الخزان يبدأ</div>
+        <div class="num">من <span data-count="900">900</span><small>ريال</small></div>
+        <p class="note">الأسعار تقريبية وتختلف حسب سعة الخزان ونوعه (علوي أو أرضي) وحالته — تواصل معنا لعرض سعر دقيق ومجاني.</p>
+        <a href="https://wa.me/966545833481?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%AD%D8%AA%D8%A7%D8%AC%20%D8%A5%D9%84%D9%89%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%AA%D9%86%D8%B8%D9%8A%D9%81%20%D9%88%D8%B9%D8%B2%D9%84%20%D8%A7%D9%84%D8%AE%D8%B2%D8%A7%D9%86%D8%A7%D8%AA%0A%D8%A7%D9%84%D8%AD%D9%8A%3A%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D8%AE%D8%B2%D8%A7%D9%86%3A%20%D8%A3%D8%B1%D8%B6%D9%8A%20%2F%20%D8%B9%D9%84%D9%88%D9%8A" target="_blank" rel="noopener" class="tk-btn tk-btn-wa">💬 اطلب عرض سعر مجاني</a>
+      </div>
+      <div class="side">
+        <a href="/شركة-تنظيف-بالرياض/تنظيف-خزانات/">🧽 تنظيف فقط <b>من 200 ريال</b></a>
+        <a href="/شركة-تنظيف-بالرياض/عزل-خزانات/">🛡️ عزل خزانات <b>من 900 ريال</b></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tk-sec">
+  <div class="tk-wrap tk-center">
+    <div class="tk-eyebrow rv">📍 نوصلك وين ما كنت</div>
+    <h2 class="tk-h2 rv" style="--d:.05s">مناطق الرياض التي نغطيها في <em>شركة تنظيف وعزل خزانات بالرياض</em></h2>
+    <p class="tk-lead rv" style="--d:.1s">نصل إلى معظم أحياء الرياض بنفس اليوم غالبًا:</p>
+  </div>
+  <div class="tk-areas rv" style="--d:.15s">
+    <div class="row"><span>العليا</span><span>الملقا</span><span>النرجس</span><span>حطين</span><span>الياسمين</span><span>السويدي</span><span>النخيل</span><span>العليا</span><span>الملقا</span><span>النرجس</span><span>حطين</span><span>الياسمين</span><span>السويدي</span><span>النخيل</span></div>
+    <div class="row rev"><span>الربيع</span><span>الملز</span><span>الروضة</span><span>الازدهار</span><span>قرطبة</span><span>الدرعية</span><span>النزهة</span><span>الربيع</span><span>الملز</span><span>الروضة</span><span>الازدهار</span><span>قرطبة</span><span>الدرعية</span><span>النزهة</span></div>
+  </div>
+</section>
+
+<section class="tk-sec">
+  <div class="tk-wrap tk-center">
+    <div class="tk-eyebrow rv">⭐ ليش نقاء؟</div>
+    <h2 class="tk-h2 rv" style="--d:.05s">لماذا تختار مؤسسة نقاء كـ <em>شركة تنظيف وعزل خزانات بالرياض</em>؟</h2>
+    <div class="tk-why">
+      <div class="tk-tilt rv" style="--d:0s"><div class="ic">⏱️</div><h3>تنظيف وعزل في زيارة واحدة يوفر وقتك وتكلفتك</h3></div>
+      <div class="tk-tilt rv" style="--d:.08s"><div class="ic">📜</div><h3>ضمان رسمي على أعمال العزل</h3></div>
+      <div class="tk-tilt rv" style="--d:.16s"><div class="ic">👶</div><h3>مواد آمنة على مياه الشرب والأطفال</h3></div>
+      <div class="tk-tilt rv" style="--d:.24s"><div class="ic">🗺️</div><h3>تغطية معظم أحياء الرياض</h3></div>
+      <div class="tk-tilt rv" style="--d:.32s"><div class="ic">💬</div><h3>أسعار واضحة وخدمة عملاء على مدار الساعة</h3></div>
+    </div>
+  </div>
+</section>
+
+<section class="tk-sec">
+  <div class="tk-wrap tk-center">
+    <div class="tk-eyebrow rv">❓ عندك سؤال؟</div>
+    <h2 class="tk-h2 rv" style="--d:.05s">الأسئلة الشائعة</h2>
+    <div class="tk-faq" style="text-align:right">
+      <div class="tk-q rv open"><button type="button" aria-expanded="true"><span>ليش أعمل تنظيف وعزل مع بعض؟</span><i>+</i></button><div class="a"><div><p>العزل لازم يتم على خزان نظيف وجاف عشان يثبت صح، فعمل الاثنين في زيارة واحدة يوفر عليك الوقت والتكلفة ويضمن نتيجة أفضل.</p></div></div></div>
+      <div class="tk-q rv"><button type="button" aria-expanded="false"><span>هل مواد العزل والتعقيم آمنة على مياه الشرب؟</span><i>+</i></button><div class="a"><div><p>نعم، نستخدم مواد تعقيم وعزل معتمدة وآمنة للاستخدام مع مياه الشرب.</p></div></div></div>
+      <div class="tk-q rv"><button type="button" aria-expanded="false"><span>هل تقدمون ضمانًا على العزل؟</span><i>+</i></button><div class="a"><div><p>نعم، نقدم ضمانًا رسميًا على أعمال العزل.</p></div></div></div>
+      <div class="tk-q rv"><button type="button" aria-expanded="false"><span>كم يستغرق تنظيف وعزل خزان واحد؟</span><i>+</i></button><div class="a"><div><p>يعتمد على حجم الخزان وحالته، وغالبًا يتم إنجازه في نفس اليوم مع ترك وقت كافٍ لجفاف العزل قبل التعبئة.</p></div></div></div>
+      <div class="tk-q rv"><button type="button" aria-expanded="false"><span>هل تتعاملون مع الخزانات الأرضية الكبيرة؟</span><i>+</i></button><div class="a"><div><p>نعم، نتعامل مع الخزانات العلوية والأرضية بمختلف الأحجام.</p></div></div></div>
+      <div class="tk-q rv"><button type="button" aria-expanded="false"><span>كيف أحجز الخدمة؟</span><i>+</i></button><div class="a"><div><p>اتصل بنا أو راسلنا واتساب على 0545833481 وحدد الحي ونوع الخزان وسعته التقريبية.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="tk-sec">
+  <div class="tk-wrap">
+    <h2 class="tk-h2 rv">📚 مقالات ذات صلة</h2>
+    <div class="tk-links">
+      <a class="rv" href="/blog/عزل-خزانات-بالرياض/">عزل وتنظيف الخزانات بالرياض بضمان رسمي</a>
+      <a class="rv" style="--d:.06s" href="/blog/water-tank-insulation-cleaning-tips-riyadh/">نصائح لعزل وتنظيف خزانات المياه بالرياض</a>
+      <a class="rv" style="--d:.12s" href="/blog/tank-insulation-materials-riyadh/">أنواع مواد عزل الخزانات وأيش أفضلها لمناخ الرياض</a>
+      <a class="rv" style="--d:.18s" href="/blog/tank-reinsulation-timing-riyadh/">خزانك عمره كم سنة؟ علامة تعلمك انه حان وقت العزل</a>
+    </div>
+    <h2 class="tk-h2 rv" style="margin-top:44px">خدمات أخرى بالرياض</h2>
+    <div class="tk-links">
+      <a class="rv" href="/شركة-تنظيف-بالرياض/تنظيف-خزانات/">شركة تنظيف خزانات بالرياض</a>
+      <a class="rv" href="/شركة-تنظيف-بالرياض/عزل-خزانات/">شركة عزل خزانات بالرياض</a>
+      <a class="rv" href="/شركة-تنظيف-بالرياض/تنظيف-منازل/">شركة تنظيف منازل بالرياض</a>
+      <a class="rv" href="/شركة-تنظيف-بالرياض/تنظيف-فلل/">شركة تنظيف فلل بالرياض</a>
+      <a class="rv" href="/شركة-تنظيف-بالرياض/تنظيف-شقق/">شركة تنظيف شقق بالرياض</a>
+      <a class="rv" href="/شركة-تنظيف-بالرياض/مكافحة-حشرات/">شركة مكافحة حشرات بالرياض</a>
+      <a class="rv" href="/شركة-تنظيف-بالرياض/شركة-تنظيف-مجالس/">شركة تنظيف مجالس وكنب بالرياض</a>
+      <a class="rv" href="/شركة-تنظيف-بالرياض/غسيل-سجاد/">شركة تنظيف سجاد وموكيت بالرياض</a>
+      <a class="rv" href="/شركة-تنظيف-بالرياض/تنظيف-بعد-التشطيب/">شركة تنظيف بعد التشطيب بالرياض</a>
+      <a class="rv" href="/شركة-تنظيف-بالرياض/عقود-تنظيف-دورية/">عقود تنظيف شهرية وسنوية بالرياض</a>
+    </div>
+    <p class="tk-note rv">وهي جزء من <a href="/شركة-تنظيف-بالرياض/">خدمات شركة تنظيف بالرياض</a> الشاملة اللي بنقدمها. ولو محتاج خدمة واحدة بس، شوف صفحة <a href="/شركة-تنظيف-بالرياض/تنظيف-خزانات/">تنظيف خزانات بالرياض</a> أو صفحة <a href="/شركة-تنظيف-بالرياض/عزل-خزانات/">عزل خزانات بالرياض</a>.</p>
+  </div>
+</section>
+
+<section class="tk-final">
+  <div class="tk-wrap">
+    <div class="tk-eyebrow rv">🚀 جاهزين نخدمك</div>
+    <h2 class="tk-h2 rv" style="--d:.05s">احجز <em>شركة تنظيف وعزل خزانات بالرياض</em> الآن</h2>
+    <p class="tk-lead rv" style="--d:.1s;margin:0 auto">تواصل معنا الآن للحصول على عرض سعر مجاني ومناسب لحجم خزانك.</p>
+    <div class="tk-btns rv" style="--d:.15s">
+      <a href="https://wa.me/966545833481?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%AD%D8%AA%D8%A7%D8%AC%20%D8%A5%D9%84%D9%89%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%AA%D9%86%D8%B8%D9%8A%D9%81%20%D9%88%D8%B9%D8%B2%D9%84%20%D8%A7%D9%84%D8%AE%D8%B2%D8%A7%D9%86%D8%A7%D8%AA%0A%D8%A7%D9%84%D8%AD%D9%8A%3A%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D8%AE%D8%B2%D8%A7%D9%86%3A%20%D8%A3%D8%B1%D8%B6%D9%8A%20%2F%20%D8%B9%D9%84%D9%88%D9%8A" target="_blank" rel="noopener" class="tk-btn tk-btn-wa">💬 احجز عبر واتساب</a>
+      <a href="tel:0545833481" class="tk-btn tk-btn-call">📞 اتصل الآن للحجز</a>
+    </div>
+  </div>
+  <div class="waves" aria-hidden="true">
+    <svg class="w1" viewBox="0 0 2880 150" preserveAspectRatio="none"><path fill="#0369a1" d="M0 70 q180 -50 360 0 t360 0 t360 0 t360 0 t360 0 t360 0 t360 0 t360 0 V150 H0Z"/></svg>
+    <svg class="w2" viewBox="0 0 2880 150" preserveAspectRatio="none"><path fill="#38bdf8" opacity=".55" d="M0 95 q180 -40 360 0 t360 0 t360 0 t360 0 t360 0 t360 0 t360 0 t360 0 V150 H0Z"/></svg>
+  </div>
+</section>
+
+<div class="tk-meter" id="tk-meter" aria-hidden="true"><div class="tank"><div class="lvl"></div></div><b id="tk-meter-v">0%</b><small>نظافة خزانك</small></div>
 <footer id="nq-footer">
   <div class="nq-wrap">
     <div class="nq-f-links"><a href="/">الرئيسية</a><a href="/services/">الخدمات</a><a href="/pricing/">الأسعار</a><a href="/blog/">المدونة</a><a href="/faq/">الأسئلة الشائعة</a><a href="/شركة-تنظيف-بالرياض/">شركة تنظيف بالرياض</a><a href="/en/" hreflang="en" lang="en">English</a></div>
@@ -323,5 +777,193 @@ window.addEventListener('scroll',()=>{document.getElementById('backTop').classLi
 document.getElementById('copy-year').textContent=new Date().getFullYear();
 </script>
 <script src="/assets/nq-ui.js" defer></script>
+<script>
+/* Tank landing: animations + dynamic content */
+(function(){
+  var d = document, w = window;
+  var reduce = w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function $(s){ return d.querySelector(s); }
+  function $$(s){ return Array.prototype.slice.call(d.querySelectorAll(s)); }
+
+  /* 1) headline from the ad link: ?tank=ground | roof */
+  var types = { ground:'أرضية', ard:'أرضية', roof:'علوية', top:'علوية' };
+  var tp = null;
+  try { tp = types[(new URLSearchParams(location.search).get('tank') || '').toLowerCase()] || null; } catch(e){}
+  if (tp) $('#tk-h1-type').textContent = tp + ' ';
+
+  /* 2) live status by Riyadh time (UTC+3) */
+  var live = $('#tk-live');
+  if (live) {
+    var h = (new Date().getUTCHours() + 3) % 24;
+    if (h >= 23 || h < 7) {
+      live.classList.add('night');
+      live.querySelector('span').textContent = 'نستقبل طلبك الآن — ونأكد موعدك أول الصباح';
+    } else {
+      live.querySelector('span').textContent = (h < 12 ? 'صباح الخير ☀️ ' : 'مساء الخير 🌙 ') + 'فريقنا متاح الآن — نوصلك غالبًا بنفس اليوم';
+    }
+  }
+
+  /* 3) typed rotating word */
+  var words = tp === 'علوية' ? ['علوية','الفلل','العماير','أرضية','المنشآت'] : tp === 'أرضية' ? ['أرضية','الفلل','العماير','علوية','المنشآت'] : ['أرضية','علوية','الفلل','العماير','المطاعم والمنشآت'];
+  var typed = $('#tk-typed');
+  if (typed) {
+    if (reduce) typed.textContent = words.join(' • ');
+    else (function(){
+      var wi = 0, ci = 0, del = false;
+      (function tick(){
+        var word = words[wi];
+        ci += del ? -1 : 1;
+        typed.textContent = word.slice(0, ci);
+        var t = del ? 45 : 95;
+        if (!del && ci === word.length){ del = true; t = 1700; }
+        else if (del && ci === 0){ del = false; wi = (wi + 1) % words.length; t = 300; }
+        setTimeout(tick, t);
+      })();
+    })();
+  }
+
+  /* 4) ticker: duplicate for a seamless loop + live Riyadh temperature */
+  var track = $('#tk-track'), base = track ? track.innerHTML : '';
+  function render(extra){ if (track) track.innerHTML = extra + base + extra + base; }
+  function addTemp(t){
+    if (typeof t !== 'number' || isNaN(t)) return;
+    render('<span>🌡️ الحرارة في الرياض الآن <b>' + Math.round(t) + '°</b> — الحر يسرّع نمو الطحالب والبكتيريا في الخزانات</span>');
+  }
+  render('');
+  var cached = null;
+  try { cached = JSON.parse(sessionStorage.getItem('tkTemp') || 'null'); } catch(e){}
+  if (cached && Date.now() - cached.at < 30 * 60 * 1000) addTemp(cached.t);
+  else if (w.fetch) {
+    var ctl = w.AbortController ? new AbortController() : null;
+    var to = setTimeout(function(){ if (ctl) ctl.abort(); }, 3500);
+    fetch('https://api.open-meteo.com/v1/forecast?latitude=24.71&longitude=46.68&current=temperature_2m', ctl ? { signal: ctl.signal } : {})
+      .then(function(r){ return r.json(); })
+      .then(function(j){
+        var t = j && j.current && j.current.temperature_2m;
+        addTemp(t);
+        try { sessionStorage.setItem('tkTemp', JSON.stringify({ t: t, at: Date.now() })); } catch(e){}
+      })
+      .catch(function(){})
+      .then(function(){ clearTimeout(to); });
+  }
+
+  /* 5) reveal on scroll + counters */
+  function count(el){
+    var end = parseFloat(el.getAttribute('data-count')), dec = +el.getAttribute('data-dec') || 0, t0 = null, dur = 1600;
+    if (reduce) return;
+    (function step(ts){
+      if (!t0) t0 = ts;
+      var p = Math.min((ts - t0) / dur, 1), v = end * (1 - Math.pow(1 - p, 3));
+      el.textContent = dec ? v.toFixed(dec) : Math.round(v).toLocaleString('en-US');
+      if (p < 1) requestAnimationFrame(step);
+    })(performance.now());
+  }
+  if ('IntersectionObserver' in w) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (!e.isIntersecting) return;
+        e.target.classList.add('in');
+        $$('[data-count]').forEach(function(c){ if (!c._done && e.target.contains(c)) { c._done = 1; count(c); } });
+        io.unobserve(e.target);
+      });
+    }, { threshold: .15, rootMargin: '0px 0px -40px 0px' });
+    $$('.rv').forEach(function(el){ io.observe(el); });
+    $$('.tk-stat').forEach(function(el){ io.observe(el); });
+    /* pause hero animation when off screen */
+    var hero = $('#tk-hero');
+    if (hero) new IntersectionObserver(function(es){ hero.classList.toggle('tk-paused', !es[0].isIntersecting); }).observe(hero);
+  } else $$('.rv').forEach(function(el){ el.classList.add('in'); });
+
+  /* 6) tank follows the mouse */
+  var box = $('#tk-tank-box'), tank = box && box.querySelector('.tk-tank');
+  var heroEl = $('#tk-hero');
+  if (tank && heroEl && !reduce && w.matchMedia('(hover:hover)').matches) {
+    heroEl.addEventListener('pointermove', function(e){
+      var r = box.getBoundingClientRect();
+      tank.style.setProperty('--mx', Math.max(-1, Math.min(1, (e.clientX - r.left - r.width / 2) / r.width)).toFixed(3));
+      tank.style.setProperty('--my', Math.max(-1, Math.min(1, (e.clientY - r.top - r.height / 2) / r.height)).toFixed(3));
+    });
+    heroEl.addEventListener('pointerleave', function(){ tank.style.setProperty('--mx', 0); tank.style.setProperty('--my', 0); });
+  }
+
+  /* 7) before / after slider */
+  var ba = $('#tk-ba'), knob = $('#tk-knob'), touched = false;
+  function setP(p){ p = Math.max(0, Math.min(100, p)); ba.style.setProperty('--p', p + '%'); knob.setAttribute('aria-valuenow', Math.round(p)); }
+  if (ba && knob) {
+    var drag = false;
+    function at(e){ var r = ba.getBoundingClientRect(); setP((e.clientX - r.left) / r.width * 100); }
+    ba.addEventListener('pointerdown', function(e){ drag = touched = true; at(e); try { ba.setPointerCapture(e.pointerId); } catch(_){} });
+    ba.addEventListener('pointermove', function(e){ if (drag) at(e); });
+    ba.addEventListener('pointerup', function(){ drag = false; });
+    ba.addEventListener('pointercancel', function(){ drag = false; });
+    knob.addEventListener('keydown', function(e){
+      var v = +knob.getAttribute('aria-valuenow');
+      if (e.key === 'ArrowLeft') { touched = true; setP(v - 5); e.preventDefault(); }
+      if (e.key === 'ArrowRight') { touched = true; setP(v + 5); e.preventDefault(); }
+    });
+    /* demo sweep the first time it is seen */
+    if (!reduce && 'IntersectionObserver' in w) {
+      var bo = new IntersectionObserver(function(es){
+        if (!es[0].isIntersecting) return;
+        bo.disconnect();
+        var keys = [[0,50],[900,18],[2000,82],[2900,50]], t0 = null;
+        setTimeout(function(){
+          (function anim(ts){
+            if (touched) return;
+            if (!t0) t0 = ts;
+            var t = ts - t0, i = 0;
+            while (i < keys.length - 1 && t > keys[i + 1][0]) i++;
+            if (i >= keys.length - 1) { setP(50); return; }
+            var a = keys[i], b = keys[i + 1], p = (t - a[0]) / (b[0] - a[0]), e = p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+            setP(a[1] + (b[1] - a[1]) * e);
+            requestAnimationFrame(anim);
+          })(performance.now());
+        }, 500);
+      }, { threshold: .5 });
+      bo.observe(ba);
+    }
+  }
+
+  /* 8) 3D tilt cards */
+  if (!reduce && w.matchMedia('(hover:hover)').matches) {
+    $$('.tk-tilt').forEach(function(c){
+      c.addEventListener('pointermove', function(e){
+        var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        c.style.setProperty('--ry', (x * 14).toFixed(2) + 'deg'); c.style.setProperty('--rx', (-y * 14).toFixed(2) + 'deg');
+      });
+      c.addEventListener('pointerleave', function(){ c.style.setProperty('--ry', '0deg'); c.style.setProperty('--rx', '0deg'); });
+    });
+  }
+
+  /* 9) FAQ accordion */
+  $$('.tk-q button').forEach(function(b){
+    b.addEventListener('click', function(){
+      var q = b.parentNode, open = !q.classList.contains('open');
+      q.classList.toggle('open', open); b.setAttribute('aria-expanded', open);
+    });
+  });
+
+  /* 10) scroll: timeline fill + side tank meter */
+  var tl = $('#tk-tl'), steps = $$('.tk-step'), meter = $('#tk-meter'), mv = $('#tk-meter-v'), ticking = false;
+  function onScroll(){
+    ticking = false;
+    var vh = w.innerHeight;
+    if (tl) {
+      var r = tl.getBoundingClientRect(), p = Math.max(0, Math.min(1, (vh * .6 - r.top) / r.height));
+      tl.style.setProperty('--tlp', (p * 100).toFixed(1) + '%');
+      steps.forEach(function(s){ s.classList.toggle('on', s.getBoundingClientRect().top < vh * .6); });
+    }
+    if (meter) {
+      var y = w.scrollY, max = d.documentElement.scrollHeight - vh, lv = max > 0 ? Math.round(y / max * 100) : 0;
+      meter.classList.toggle('show', y > vh * .7);
+      meter.style.setProperty('--lv', lv + '%');
+      mv.textContent = lv >= 99 ? '✨ 100%' : lv + '%';
+    }
+  }
+  w.addEventListener('scroll', function(){ if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  w.addEventListener('resize', onScroll);
+  onScroll();
+})();
+</script>
 </body>
 </html>
