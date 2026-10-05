@@ -898,6 +898,56 @@ body.nq-inner .sidebar-inner{top:110px}</style>
 
 .tk-plans.three{grid-template-columns:repeat(3,1fr);max-width:760px}
 @media(max-width:900px){.tk-plans.three{grid-template-columns:1fr 1fr}.tk-plans.three .link{grid-column:span 2}}
+
+/* ===== per-page heroes ===== */
+/* pest radar */
+.pr-sweep{transform-origin:200px 215px;animation:prSpin 4s linear infinite}
+@keyframes prSpin{to{transform:rotate(360deg)}}
+.pr-icon{opacity:.35}.pr-ring{opacity:0}.pr-ok{opacity:0}
+.pr-hit .pr-icon{animation:prIcon 4s linear infinite;animation-delay:inherit}
+.pr-hit .pr-ring{animation:prRing 4s ease-out infinite;animation-delay:inherit;transform-box:fill-box;transform-origin:center}
+.pr-hit .pr-ok{animation:prOk 4s ease infinite;animation-delay:inherit;transform-box:fill-box;transform-origin:center}
+@keyframes prIcon{0%{opacity:.35}4%{opacity:1}30%{opacity:1}38%,100%{opacity:0}}
+@keyframes prRing{0%{opacity:0;transform:scale(.6)}4%{opacity:1;transform:scale(1)}26%{opacity:0;transform:scale(1.6)}100%{opacity:0}}
+@keyframes prOk{0%,32%{opacity:0;transform:scale(.4)}40%{opacity:1;transform:scale(1.15)}46%,80%{opacity:1;transform:scale(1)}92%,100%{opacity:0}}
+.pr-core{animation:prCore 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes prCore{50%{transform:scale(1.06)}}
+/* apartment */
+.ap-dust circle{opacity:0;animation:apDust 10s ease-in-out infinite}
+@keyframes apDust{0%{opacity:.9;transform:translateY(0)}35%{opacity:.9;transform:translateY(-12px)}50%,100%{opacity:0;transform:translateY(-20px)}}
+.ap-bot{transform:translateX(250px);animation:apBot 10s var(--tk-ease) infinite}
+@keyframes apBot{0%,6%{transform:translateX(0)}52%,92%{transform:translateX(250px)}100%{transform:translateX(0)}}
+.ap-trail{transform-box:fill-box;transform-origin:left;animation:apTrail 10s var(--tk-ease) infinite}
+@keyframes apTrail{0%,6%{transform:scaleX(0)}52%,92%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+.ap-spark{animation:tkSpark 10s ease infinite;animation-delay:-1s}
+.ap-key{transform-box:fill-box;transform-origin:top center;animation:apKey 10s ease-in-out infinite}
+@keyframes apKey{0%,50%{opacity:0;transform:rotate(-14deg)}58%{opacity:1;transform:rotate(10deg)}66%{transform:rotate(-6deg)}74%,92%{opacity:1;transform:rotate(0)}100%{opacity:0}}
+/* after finishing */
+.fn-m{opacity:0;animation:fnMess 10s ease infinite}
+@keyframes fnMess{0%,18%{opacity:1}34%,94%{opacity:0}100%{opacity:1}}
+.fn-dust circle{opacity:0;animation:apDust 10s ease-in-out infinite}
+.fn-broom{opacity:0;animation:fnBroom 10s var(--tk-ease) infinite}
+@keyframes fnBroom{0%,10%{opacity:0;transform:translateX(40px)}14%{opacity:1}46%{opacity:1;transform:translateX(-300px) rotate(-8deg)}52%,100%{opacity:0;transform:translateX(-300px)}}
+.fn-sticker{opacity:0;transform-box:fill-box;transform-origin:top left;animation:fnSticker 10s ease infinite}
+@keyframes fnSticker{0%,44%{opacity:1;transform:rotate(0)}54%{opacity:1;transform:rotate(-38deg) translate(-6px,4px)}64%,96%{opacity:0;transform:rotate(-70deg) translateY(60px)}100%{opacity:1;transform:rotate(0)}}
+.fn-ladder{animation:fnMess 10s ease infinite}
+.fn-spark{animation:tkSpark 10s ease infinite;animation-delay:-1s}
+/* tank cleaning glass */
+.gl-drop{animation:glDrop 2s ease-in infinite}
+@keyframes glDrop{0%{transform:translateY(0);opacity:0}10%{opacity:1}80%{transform:translateY(96px);opacity:1}90%,100%{transform:translateY(100px);opacity:0}}
+/* insulation wall */
+.wl-coat{transform-box:fill-box;transform-origin:top;animation:wlCoat 12s var(--tk-ease) infinite}
+@keyframes wlCoat{0%,22%{transform:scaleY(0)}58%,92%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+.wl-gloss{opacity:1;animation:wlGloss 12s ease infinite}
+@keyframes wlGloss{0%,58%{opacity:0}66%,92%{opacity:1}100%{opacity:0}}
+.wl-leak{opacity:0;animation:wlLeak 12s ease infinite}
+@keyframes wlLeak{0%,30%{opacity:1}50%,100%{opacity:0}}
+.wl-drip{animation:glDrop 1.6s ease-in infinite}
+.wl-roller{opacity:0;animation:wlRoller 12s var(--tk-ease) infinite}
+@keyframes wlRoller{0%,18%{opacity:0;transform:translateY(0)}22%{opacity:1;transform:translateY(0)}58%{opacity:1;transform:translateY(296px)}64%,100%{opacity:0;transform:translateY(296px)}}
+.wl-badge{transform-box:fill-box;transform-origin:center;animation:wlBadge 12s var(--tk-ease) infinite}
+@keyframes wlBadge{0%,60%{opacity:0;transform:scale(.4)}68%{opacity:1;transform:scale(1.12)}74%,92%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.4)}}
+@media(prefers-reduced-motion:reduce){.pr-ok{opacity:1}.pr-icon{opacity:0}.ap-key,.wl-badge,.wl-gloss{opacity:1}}
 /* ---- phone-first hero: headline, tank and buttons all on the first screen ---- */
 .tk-sec,.tk-final{overflow-x:clip}
 @media(max-width:900px){
@@ -1016,100 +1066,28 @@ body.nq-inner .sidebar-inner{top:110px}</style>
     </div>
     <div class="tk-tank-box" id="tk-tank-box" aria-hidden="true">
       <svg class="tk-tank" viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg">
-        <defs><linearGradient id="tkRim" x1="0" x2="1"><stop offset="0" stop-color="#c9a84c"/><stop offset=".5" stop-color="#f5d98e"/><stop offset="1" stop-color="#c9a84c"/></linearGradient>
-          <linearGradient id="hzWall" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#1b3354"/><stop offset="1" stop-color="#0e2038"/></linearGradient>
-          <linearGradient id="hzGlass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e0f7ff"/><stop offset="1" stop-color="#38bdf8"/></linearGradient>
-          <linearGradient id="hzShine" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#f5d98e" stop-opacity=".6"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><clipPath id="hzBody"><rect x="96" y="70" width="208" height="300"/></clipPath></defs>
-        <ellipse cx="200" cy="392" rx="160" ry="14" fill="rgba(0,0,0,.35)"/>
-        <rect x="96" y="70" width="208" height="300" fill="url(#hzWall)" stroke="url(#tkRim)" stroke-width="4"/>
-        <path d="M88 70 H312 V56 H88 Z" fill="#132a48" stroke="url(#tkRim)" stroke-width="3"/>
-        <rect x="236" y="38" width="30" height="18" fill="#1b3354" stroke="url(#tkRim)" stroke-width="2"/>
-        <g>
-          <rect x="114" y="88" width="44" height="40" rx="4" fill="#0b1a2e" stroke="url(#tkRim)" stroke-width="3"/>
-          <rect class="tk-clean" x="117" y="91" width="38" height="34" fill="url(#hzGlass)"/>
-          <path class="tk-clean" d="M122 118 L133.8 96" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".8"/>
-          <rect class="tk-murky" x="117" y="91" width="38" height="34" fill="#6d5a37" opacity=".92"/>
-          <g class="tk-dirt" stroke="#3b2f1b" stroke-width="2" stroke-linecap="round"><path d="M124 100 q8 10 2 22 M144 98 q-6 12 0 24"/></g>
-          <path d="M136 88 V128 M114 108 H158" stroke="url(#tkRim)" stroke-width="2"/>
-        </g><g>
-          <rect x="178" y="88" width="44" height="40" rx="4" fill="#0b1a2e" stroke="url(#tkRim)" stroke-width="3"/>
-          <rect class="tk-clean" x="181" y="91" width="38" height="34" fill="url(#hzGlass)"/>
-          <path class="tk-clean" d="M186 118 L197.8 96" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".8"/>
-          <rect class="tk-murky" x="181" y="91" width="38" height="34" fill="#6d5a37" opacity=".92"/>
-          <g class="tk-dirt" stroke="#3b2f1b" stroke-width="2" stroke-linecap="round"><path d="M188 100 q8 10 2 22 M208 98 q-6 12 0 24"/></g>
-          <path d="M200 88 V128 M178 108 H222" stroke="url(#tkRim)" stroke-width="2"/>
-        </g><g>
-          <rect x="242" y="88" width="44" height="40" rx="4" fill="#0b1a2e" stroke="url(#tkRim)" stroke-width="3"/>
-          <rect class="tk-clean" x="245" y="91" width="38" height="34" fill="url(#hzGlass)"/>
-          <path class="tk-clean" d="M250 118 L261.8 96" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".8"/>
-          <rect class="tk-murky" x="245" y="91" width="38" height="34" fill="#6d5a37" opacity=".92"/>
-          <g class="tk-dirt" stroke="#3b2f1b" stroke-width="2" stroke-linecap="round"><path d="M252 100 q8 10 2 22 M272 98 q-6 12 0 24"/></g>
-          <path d="M264 88 V128 M242 108 H286" stroke="url(#tkRim)" stroke-width="2"/>
+        <defs><linearGradient id="apRim" x1="0" x2="1"><stop offset="0" stop-color="#c9a84c"/><stop offset=".5" stop-color="#f5d98e"/><stop offset="1" stop-color="#c9a84c"/></linearGradient>
+          <linearGradient id="apWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b3354"/><stop offset="1" stop-color="#132a48"/></linearGradient>
+          <linearGradient id="apSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7dd3fc"/><stop offset="1" stop-color="#e0f2fe"/></linearGradient>
+          <linearGradient id="apShine" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#f5d98e" stop-opacity=".5"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+          <clipPath id="apRoom"><rect x="22" y="54" width="356" height="346" rx="18"/></clipPath></defs>
+        <rect x="22" y="54" width="356" height="346" rx="18" fill="url(#apWall)" stroke="url(#apRim)" stroke-width="4"/>
+        <g clip-path="url(#apRoom)">
+          <path d="M22 300 H378 V400 H22 Z" fill="#2a1f14"/>
+          <g stroke="rgba(0,0,0,.35)" stroke-width="2"><path d="M22 325 H378 M22 352 H378 M22 378 H378 M90 300 V325 M200 325 V352 M300 300 V325 M140 352 V378 M260 378 V400"/></g>
+          <rect class="ap-trail" x="40" y="352" width="320" height="22" rx="6" fill="url(#apShine)"/>
+          <rect x="236" y="88" width="118" height="118" rx="6" fill="url(#apSky)" stroke="url(#apRim)" stroke-width="4"/><path d="M295 88 V206 M236 147 H354" stroke="url(#apRim)" stroke-width="3"/>
+          <circle cx="330" cy="112" r="10" fill="#fde68a"/>
+          <rect x="60" y="100" width="70" height="52" rx="4" fill="#0b1a2e" stroke="url(#apRim)" stroke-width="3"/><path d="M68 142 l18 -20 l14 12 l10 -8 l12 16" stroke="#38bdf8" stroke-width="3" fill="none"/>
+          <rect x="44" y="228" width="160" height="48" rx="12" fill="#2b4a73"/><rect x="44" y="208" width="160" height="30" rx="10" fill="#36598a"/><rect x="36" y="214" width="20" height="62" rx="8" fill="#2b4a73"/><rect x="192" y="214" width="20" height="62" rx="8" fill="#2b4a73"/>
+          <rect x="60" y="276" width="8" height="24" fill="#1b3354"/><rect x="180" y="276" width="8" height="24" fill="#1b3354"/>
+          <path d="M226 300 V246 M216 246 h20 l-6 -22 h-8 z" stroke="#c9a84c" stroke-width="3" fill="#f5d98e"/>
+          <g class="ap-dust" fill="#c4a97a"><circle cx="70" cy="180" r="2" style="animation-delay:0.0s"/><circle cx="130" cy="160" r="3" style="animation-delay:-0.4s"/><circle cx="170" cy="200" r="4" style="animation-delay:-0.8s"/><circle cx="260" cy="240" r="2" style="animation-delay:-1.2s"/><circle cx="320" cy="280" r="3" style="animation-delay:-1.6s"/><circle cx="110" cy="290" r="4" style="animation-delay:-2.0s"/><circle cx="300" cy="220" r="2" style="animation-delay:-2.4s"/><circle cx="210" cy="170" r="3" style="animation-delay:-2.8s"/></g>
+          <g class="ap-bot"><ellipse cx="70" cy="370" rx="26" ry="9" fill="rgba(0,0,0,.35)"/><rect x="46" y="348" width="48" height="20" rx="10" fill="#e2e8f0"/><rect x="52" y="352" width="36" height="6" rx="3" fill="#38bdf8"/><circle cx="82" cy="358" r="2.5" fill="#22c55e"/></g>
+          <g class="ap-spark" fill="#fff"><path d="M150 360 l3 7 l7 3 l-7 3 l-3 7 l-3 -7 l-7 -3 l7 -3z"/><path d="M280 366 l3 7 l7 3 l-7 3 l-3 7 l-3 -7 l-7 -3 l7 -3z"/></g>
         </g>
-        <g>
-          <rect x="114" y="150" width="44" height="40" rx="4" fill="#0b1a2e" stroke="url(#tkRim)" stroke-width="3"/>
-          <rect class="tk-clean" x="117" y="153" width="38" height="34" fill="url(#hzGlass)"/>
-          <path class="tk-clean" d="M122 180 L133.8 158" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".8"/>
-          <rect class="tk-murky" x="117" y="153" width="38" height="34" fill="#6d5a37" opacity=".92"/>
-          <g class="tk-dirt" stroke="#3b2f1b" stroke-width="2" stroke-linecap="round"><path d="M124 162 q8 10 2 22 M144 160 q-6 12 0 24"/></g>
-          <path d="M136 150 V190 M114 170 H158" stroke="url(#tkRim)" stroke-width="2"/>
-        </g><g>
-          <rect x="178" y="150" width="44" height="40" rx="4" fill="#0b1a2e" stroke="url(#tkRim)" stroke-width="3"/>
-          <rect class="tk-clean" x="181" y="153" width="38" height="34" fill="url(#hzGlass)"/>
-          <path class="tk-clean" d="M186 180 L197.8 158" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".8"/>
-          <rect class="tk-murky" x="181" y="153" width="38" height="34" fill="#6d5a37" opacity=".92"/>
-          <g class="tk-dirt" stroke="#3b2f1b" stroke-width="2" stroke-linecap="round"><path d="M188 162 q8 10 2 22 M208 160 q-6 12 0 24"/></g>
-          <path d="M200 150 V190 M178 170 H222" stroke="url(#tkRim)" stroke-width="2"/>
-        </g><g>
-          <rect x="242" y="150" width="44" height="40" rx="4" fill="#0b1a2e" stroke="url(#tkRim)" stroke-width="3"/>
-          <rect class="tk-clean" x="245" y="153" width="38" height="34" fill="url(#hzGlass)"/>
-          <path class="tk-clean" d="M250 180 L261.8 158" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".8"/>
-          <rect class="tk-murky" x="245" y="153" width="38" height="34" fill="#6d5a37" opacity=".92"/>
-          <g class="tk-dirt" stroke="#3b2f1b" stroke-width="2" stroke-linecap="round"><path d="M252 162 q8 10 2 22 M272 160 q-6 12 0 24"/></g>
-          <path d="M264 150 V190 M242 170 H286" stroke="url(#tkRim)" stroke-width="2"/>
-        </g>
-        <g>
-          <rect x="114" y="212" width="44" height="40" rx="4" fill="#0b1a2e" stroke="url(#tkRim)" stroke-width="3"/>
-          <rect class="tk-clean" x="117" y="215" width="38" height="34" fill="url(#hzGlass)"/>
-          <path class="tk-clean" d="M122 242 L133.8 220" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".8"/>
-          <rect class="tk-murky" x="117" y="215" width="38" height="34" fill="#6d5a37" opacity=".92"/>
-          <g class="tk-dirt" stroke="#3b2f1b" stroke-width="2" stroke-linecap="round"><path d="M124 224 q8 10 2 22 M144 222 q-6 12 0 24"/></g>
-          <path d="M136 212 V252 M114 232 H158" stroke="url(#tkRim)" stroke-width="2"/>
-        </g><g>
-          <rect x="178" y="212" width="44" height="40" rx="4" fill="#0b1a2e" stroke="url(#tkRim)" stroke-width="3"/>
-          <rect class="tk-clean" x="181" y="215" width="38" height="34" fill="url(#hzGlass)"/>
-          <path class="tk-clean" d="M186 242 L197.8 220" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".8"/>
-          <rect class="tk-murky" x="181" y="215" width="38" height="34" fill="#6d5a37" opacity=".92"/>
-          <g class="tk-dirt" stroke="#3b2f1b" stroke-width="2" stroke-linecap="round"><path d="M188 224 q8 10 2 22 M208 222 q-6 12 0 24"/></g>
-          <path d="M200 212 V252 M178 232 H222" stroke="url(#tkRim)" stroke-width="2"/>
-        </g><g>
-          <rect x="242" y="212" width="44" height="40" rx="4" fill="#0b1a2e" stroke="url(#tkRim)" stroke-width="3"/>
-          <rect class="tk-clean" x="245" y="215" width="38" height="34" fill="url(#hzGlass)"/>
-          <path class="tk-clean" d="M250 242 L261.8 220" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".8"/>
-          <rect class="tk-murky" x="245" y="215" width="38" height="34" fill="#6d5a37" opacity=".92"/>
-          <g class="tk-dirt" stroke="#3b2f1b" stroke-width="2" stroke-linecap="round"><path d="M252 224 q8 10 2 22 M272 222 q-6 12 0 24"/></g>
-          <path d="M264 212 V252 M242 232 H286" stroke="url(#tkRim)" stroke-width="2"/>
-        </g>
-        <g>
-          <rect x="114" y="290" width="44" height="40" rx="4" fill="#0b1a2e" stroke="url(#tkRim)" stroke-width="3"/>
-          <rect class="tk-clean" x="117" y="293" width="38" height="34" fill="url(#hzGlass)"/>
-          <path class="tk-clean" d="M122 320 L133.8 298" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".8"/>
-          <rect class="tk-murky" x="117" y="293" width="38" height="34" fill="#6d5a37" opacity=".92"/>
-          <g class="tk-dirt" stroke="#3b2f1b" stroke-width="2" stroke-linecap="round"><path d="M124 302 q8 10 2 22 M144 300 q-6 12 0 24"/></g>
-          <path d="M136 290 V330 M114 310 H158" stroke="url(#tkRim)" stroke-width="2"/>
-        </g><g>
-          <rect x="242" y="290" width="44" height="40" rx="4" fill="#0b1a2e" stroke="url(#tkRim)" stroke-width="3"/>
-          <rect class="tk-clean" x="245" y="293" width="38" height="34" fill="url(#hzGlass)"/>
-          <path class="tk-clean" d="M250 320 L261.8 298" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".8"/>
-          <rect class="tk-murky" x="245" y="293" width="38" height="34" fill="#6d5a37" opacity=".92"/>
-          <g class="tk-dirt" stroke="#3b2f1b" stroke-width="2" stroke-linecap="round"><path d="M252 302 q8 10 2 22 M272 300 q-6 12 0 24"/></g>
-          <path d="M264 290 V330 M242 310 H286" stroke="url(#tkRim)" stroke-width="2"/>
-        </g>
-        <rect x="178" y="292" width="44" height="78" rx="5" fill="#24426b" stroke="url(#tkRim)" stroke-width="3"/><circle cx="213" cy="334" r="3" fill="#f5d98e"/>
-        <path d="M96 272 H304" stroke="url(#tkRim)" stroke-width="2"/>
-        <g class="tk-dirt" fill="#8a7448"><circle cx="70" cy="370" r="5" opacity=".7"/><circle cx="100" cy="382" r="3" opacity=".7"/><circle cx="320" cy="376" r="4" opacity=".7"/><circle cx="336" cy="356" r="3" opacity=".7"/><circle cx="120" cy="50" r="3" opacity=".7"/><circle cx="290" cy="40" r="3" opacity=".7"/></g>
-        <g clip-path="url(#hzBody)"><g transform="skewX(-14)"><rect class="hz-sweep" x="0" y="60" width="80" height="320" fill="url(#hzShine)"/></g></g>
-        <g fill="#fff"><path class="tk-spark" style="animation-delay:0.00s" d="M136 104 l4 10 l10 4 l-10 4 l-4 10 l-4 -10 l-10 -4 l10 -4z"/><path class="tk-spark" style="animation-delay:0.35s" d="M258 230 l4 10 l10 4 l-10 4 l-4 10 l-4 -10 l-10 -4 l10 -4z"/><path class="tk-spark" style="animation-delay:0.70s" d="M200 168 l4 10 l10 4 l-10 4 l-4 10 l-4 -10 l-10 -4 l10 -4z"/></g>
+        <g transform="translate(-178 8)"><g class="ap-key"><path d="M330 30 V62" stroke="#c9a84c" stroke-width="3"/><circle cx="330" cy="70" r="8" fill="none" stroke="#f5d98e" stroke-width="4"/><path d="M330 78 v16 m0 -6 h6 m-6 6 h5" stroke="#f5d98e" stroke-width="4" stroke-linecap="round"/>
+          <rect x="262" y="92" width="96" height="28" rx="8" fill="#22c55e"/><text x="310" y="111" text-anchor="middle" font-family="Cairo,sans-serif" font-weight="900" font-size="13" fill="#07111f" direction="rtl">جاهزة للسكن ✓</text></g></g>
       </svg>
       <div class="tk-chip c1">🏢 الشقة <b>كاملة</b></div>
       <div class="tk-chip c2">👷 فريق <b>ومشرف</b></div>

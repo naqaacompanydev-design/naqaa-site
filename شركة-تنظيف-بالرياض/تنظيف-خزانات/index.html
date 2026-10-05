@@ -898,6 +898,56 @@ body.nq-inner .sidebar-inner{top:110px}</style>
 
 .tk-plans.three{grid-template-columns:repeat(3,1fr);max-width:760px}
 @media(max-width:900px){.tk-plans.three{grid-template-columns:1fr 1fr}.tk-plans.three .link{grid-column:span 2}}
+
+/* ===== per-page heroes ===== */
+/* pest radar */
+.pr-sweep{transform-origin:200px 215px;animation:prSpin 4s linear infinite}
+@keyframes prSpin{to{transform:rotate(360deg)}}
+.pr-icon{opacity:.35}.pr-ring{opacity:0}.pr-ok{opacity:0}
+.pr-hit .pr-icon{animation:prIcon 4s linear infinite;animation-delay:inherit}
+.pr-hit .pr-ring{animation:prRing 4s ease-out infinite;animation-delay:inherit;transform-box:fill-box;transform-origin:center}
+.pr-hit .pr-ok{animation:prOk 4s ease infinite;animation-delay:inherit;transform-box:fill-box;transform-origin:center}
+@keyframes prIcon{0%{opacity:.35}4%{opacity:1}30%{opacity:1}38%,100%{opacity:0}}
+@keyframes prRing{0%{opacity:0;transform:scale(.6)}4%{opacity:1;transform:scale(1)}26%{opacity:0;transform:scale(1.6)}100%{opacity:0}}
+@keyframes prOk{0%,32%{opacity:0;transform:scale(.4)}40%{opacity:1;transform:scale(1.15)}46%,80%{opacity:1;transform:scale(1)}92%,100%{opacity:0}}
+.pr-core{animation:prCore 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes prCore{50%{transform:scale(1.06)}}
+/* apartment */
+.ap-dust circle{opacity:0;animation:apDust 10s ease-in-out infinite}
+@keyframes apDust{0%{opacity:.9;transform:translateY(0)}35%{opacity:.9;transform:translateY(-12px)}50%,100%{opacity:0;transform:translateY(-20px)}}
+.ap-bot{transform:translateX(250px);animation:apBot 10s var(--tk-ease) infinite}
+@keyframes apBot{0%,6%{transform:translateX(0)}52%,92%{transform:translateX(250px)}100%{transform:translateX(0)}}
+.ap-trail{transform-box:fill-box;transform-origin:left;animation:apTrail 10s var(--tk-ease) infinite}
+@keyframes apTrail{0%,6%{transform:scaleX(0)}52%,92%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+.ap-spark{animation:tkSpark 10s ease infinite;animation-delay:-1s}
+.ap-key{transform-box:fill-box;transform-origin:top center;animation:apKey 10s ease-in-out infinite}
+@keyframes apKey{0%,50%{opacity:0;transform:rotate(-14deg)}58%{opacity:1;transform:rotate(10deg)}66%{transform:rotate(-6deg)}74%,92%{opacity:1;transform:rotate(0)}100%{opacity:0}}
+/* after finishing */
+.fn-m{opacity:0;animation:fnMess 10s ease infinite}
+@keyframes fnMess{0%,18%{opacity:1}34%,94%{opacity:0}100%{opacity:1}}
+.fn-dust circle{opacity:0;animation:apDust 10s ease-in-out infinite}
+.fn-broom{opacity:0;animation:fnBroom 10s var(--tk-ease) infinite}
+@keyframes fnBroom{0%,10%{opacity:0;transform:translateX(40px)}14%{opacity:1}46%{opacity:1;transform:translateX(-300px) rotate(-8deg)}52%,100%{opacity:0;transform:translateX(-300px)}}
+.fn-sticker{opacity:0;transform-box:fill-box;transform-origin:top left;animation:fnSticker 10s ease infinite}
+@keyframes fnSticker{0%,44%{opacity:1;transform:rotate(0)}54%{opacity:1;transform:rotate(-38deg) translate(-6px,4px)}64%,96%{opacity:0;transform:rotate(-70deg) translateY(60px)}100%{opacity:1;transform:rotate(0)}}
+.fn-ladder{animation:fnMess 10s ease infinite}
+.fn-spark{animation:tkSpark 10s ease infinite;animation-delay:-1s}
+/* tank cleaning glass */
+.gl-drop{animation:glDrop 2s ease-in infinite}
+@keyframes glDrop{0%{transform:translateY(0);opacity:0}10%{opacity:1}80%{transform:translateY(96px);opacity:1}90%,100%{transform:translateY(100px);opacity:0}}
+/* insulation wall */
+.wl-coat{transform-box:fill-box;transform-origin:top;animation:wlCoat 12s var(--tk-ease) infinite}
+@keyframes wlCoat{0%,22%{transform:scaleY(0)}58%,92%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+.wl-gloss{opacity:1;animation:wlGloss 12s ease infinite}
+@keyframes wlGloss{0%,58%{opacity:0}66%,92%{opacity:1}100%{opacity:0}}
+.wl-leak{opacity:0;animation:wlLeak 12s ease infinite}
+@keyframes wlLeak{0%,30%{opacity:1}50%,100%{opacity:0}}
+.wl-drip{animation:glDrop 1.6s ease-in infinite}
+.wl-roller{opacity:0;animation:wlRoller 12s var(--tk-ease) infinite}
+@keyframes wlRoller{0%,18%{opacity:0;transform:translateY(0)}22%{opacity:1;transform:translateY(0)}58%{opacity:1;transform:translateY(296px)}64%,100%{opacity:0;transform:translateY(296px)}}
+.wl-badge{transform-box:fill-box;transform-origin:center;animation:wlBadge 12s var(--tk-ease) infinite}
+@keyframes wlBadge{0%,60%{opacity:0;transform:scale(.4)}68%{opacity:1;transform:scale(1.12)}74%,92%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.4)}}
+@media(prefers-reduced-motion:reduce){.pr-ok{opacity:1}.pr-icon{opacity:0}.ap-key,.wl-badge,.wl-gloss{opacity:1}}
 /* ---- phone-first hero: headline, tank and buttons all on the first screen ---- */
 .tk-sec,.tk-final{overflow-x:clip}
 @media(max-width:900px){
@@ -1016,49 +1066,23 @@ body.nq-inner .sidebar-inner{top:110px}</style>
     </div>
     <div class="tk-tank-box" id="tk-tank-box" aria-hidden="true">
       <svg class="tk-tank" viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <clipPath id="tkIn"><rect x="82" y="92" width="236" height="276" rx="22"/></clipPath>
-          <linearGradient id="tkGlass" x1="0" x2="1"><stop offset="0" stop-color="#1b3354"/><stop offset=".5" stop-color="#0e2038"/><stop offset="1" stop-color="#1b3354"/></linearGradient>
-          <linearGradient id="tkClean" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#67e8f9"/><stop offset="1" stop-color="#0369a1"/></linearGradient>
-          <linearGradient id="tkMud" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9a8257"/><stop offset="1" stop-color="#4a3b22"/></linearGradient>
-          <linearGradient id="tkRim" x1="0" x2="1"><stop offset="0" stop-color="#c9a84c"/><stop offset=".5" stop-color="#f5d98e"/><stop offset="1" stop-color="#c9a84c"/></linearGradient>
-        </defs>
-        <ellipse cx="200" cy="400" rx="150" ry="14" fill="rgba(0,0,0,.35)"/>
-        <path d="M330 300 h32 a10 10 0 0 1 10 10 v60" fill="none" stroke="#33507a" stroke-width="12" stroke-linecap="round"/>
-        <rect x="70" y="80" width="260" height="300" rx="30" fill="url(#tkGlass)" stroke="url(#tkRim)" stroke-width="4"/>
-        <g clip-path="url(#tkIn)">
-          <rect x="82" y="92" width="236" height="276" fill="#0b1a2e"/>
-          <g class="tk-murky">
-            <path class="tk-wave2" fill="#6d5a37" d="M-200 156 q50 -12 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 V380 H-200 Z"/>
-            <path class="tk-wave1" fill="url(#tkMud)" d="M-200 166 q50 -14 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 V380 H-200 Z"/>
-          </g>
-          <g class="tk-dirt">
-            <ellipse cx="200" cy="366" rx="130" ry="22" fill="#3b2f1b"/>
-            <circle cx="120" cy="250" r="9" fill="#556b2f" opacity=".8"/><circle cx="132" cy="268" r="6" fill="#556b2f" opacity=".7"/>
-            <circle cx="286" cy="214" r="10" fill="#4d6b2a" opacity=".8"/><circle cx="276" cy="232" r="5" fill="#4d6b2a" opacity=".7"/>
-            <circle cx="170" cy="300" r="3" fill="#2a2214"/><circle cx="230" cy="280" r="2.5" fill="#2a2214"/><circle cx="250" cy="320" r="3.5" fill="#2a2214"/><circle cx="150" cy="330" r="2.5" fill="#2a2214"/><circle cx="210" cy="240" r="2" fill="#2a2214"/>
-          </g>
-          <g class="tk-clean">
-            <path class="tk-wave2" fill="#38bdf8" opacity=".55" d="M-200 156 q50 -12 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 V380 H-200 Z"/>
-            <path class="tk-wave1" fill="url(#tkClean)" d="M-200 166 q50 -14 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 V380 H-200 Z"/>
-            <path d="M110 220 q20 -8 40 0 M200 260 q24 -9 48 0 M140 310 q18 -7 36 0" stroke="rgba(255,255,255,.35)" stroke-width="3" fill="none" stroke-linecap="round"/>
-          </g>
-          <g fill="rgba(255,255,255,.75)">
-            <circle class="tk-bub" cx="130" cy="360" r="4"/><circle class="tk-bub" cx="180" cy="362" r="3" style="animation-delay:-1.2s"/>
-            <circle class="tk-bub" cx="230" cy="358" r="5" style="animation-delay:-2.4s"/><circle class="tk-bub" cx="270" cy="362" r="3" style="animation-delay:-.6s"/>
-            <circle class="tk-bub" cx="205" cy="364" r="2.5" style="animation-delay:-3.1s"/>
-          </g>
-          <g class="tk-scan"><rect x="82" y="94" width="236" height="3" fill="#f5d98e"/><rect x="82" y="80" width="236" height="16" fill="url(#tkRim)" opacity=".18"/></g>
+        <defs><linearGradient id="glRim" x1="0" x2="1"><stop offset="0" stop-color="#c9a84c"/><stop offset=".5" stop-color="#f5d98e"/><stop offset="1" stop-color="#c9a84c"/></linearGradient>
+          <clipPath id="glIn"><path d="M122 132 L278 132 L262 384 Q260 392 252 392 L148 392 Q140 392 138 384 Z"/></clipPath>
+          <linearGradient id="glClean" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a5f3fc"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient>
+          <linearGradient id="glMud" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a8916a"/><stop offset="1" stop-color="#5b4a2e"/></linearGradient></defs>
+        <path d="M300 40 H340 Q352 40 352 52 V70 H332 V60 H300 Z" fill="#94a3b8"/><rect x="286" y="34" width="20" height="20" rx="4" fill="#cbd5e1"/><rect x="332" y="70" width="20" height="10" rx="3" fill="#64748b"/>
+        <path class="gl-drop" d="M342 86 q-7 11 0 16 q7 -5 0 -16z" fill="#7dd3fc"/>
+        <ellipse cx="200" cy="404" rx="96" ry="12" fill="rgba(0,0,0,.35)"/>
+        <g clip-path="url(#glIn)">
+          <rect x="110" y="120" width="180" height="280" fill="#0b1a2e"/>
+          <g class="tk-murky"><g transform="translate(0 170)"><path class="tk-wave1" fill="url(#glMud)" d="M-200 0 q50 -10 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 V240 H-200Z"/></g></g>
+          <g class="tk-clean"><g transform="translate(0 170)"><path class="tk-wave1" fill="url(#glClean)" d="M-200 0 q50 -10 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 V240 H-200Z"/></g></g>
+          <g class="tk-dirt" fill="#3b2f1b"><ellipse cx="200" cy="388" rx="70" ry="10"/><circle cx="160" cy="300" r="3"/><circle cx="230" cy="270" r="2.5"/><circle cx="210" cy="340" r="3.5"/><circle cx="175" cy="240" r="2"/><circle cx="245" cy="320" r="2.5"/></g>
+          <g fill="rgba(255,255,255,.8)"><circle class="tk-bub" cx="170" cy="380" r="4"/><circle class="tk-bub" cx="210" cy="384" r="3" style="animation-delay:-1.3s"/><circle class="tk-bub" cx="240" cy="378" r="5" style="animation-delay:-2.6s"/><circle class="tk-bub" cx="190" cy="382" r="2.5" style="animation-delay:-.7s"/></g>
         </g>
-        <g fill="#fff">
-          <path class="tk-spark" d="M140 200 l4 10 l10 4 l-10 4 l-4 10 l-4 -10 l-10 -4 l10 -4z"/>
-          <path class="tk-spark" style="animation-delay:.4s" d="M262 250 l3 7 l7 3 l-7 3 l-3 7 l-3 -7 l-7 -3 l7 -3z"/>
-          <path class="tk-spark" style="animation-delay:.8s" d="M210 320 l3 8 l8 3 l-8 3 l-3 8 l-3 -8 l-8 -3 l8 -3z"/>
-        </g>
-        <rect x="150" y="62" width="100" height="24" rx="8" fill="#1b3354" stroke="url(#tkRim)" stroke-width="3"/>
-        <rect x="186" y="54" width="28" height="10" rx="3" fill="#c9a84c"/>
-        <g stroke="rgba(201,168,76,.5)" stroke-width="2"><line x1="70" y1="140" x2="58" y2="140"/><line x1="70" y1="200" x2="58" y2="200"/><line x1="70" y1="260" x2="58" y2="260"/><line x1="70" y1="320" x2="58" y2="320"/></g>
-        <path d="M96 110 q-6 60 0 120" stroke="rgba(255,255,255,.18)" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path d="M118 128 L282 128 L266 386 Q264 398 252 398 L148 398 Q136 398 134 386 Z" fill="none" stroke="url(#glRim)" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M136 150 L148 370" stroke="rgba(255,255,255,.35)" stroke-width="8" stroke-linecap="round"/>
+        <g fill="#fff"><path class="tk-spark" d="M170 220 l4 10 l10 4 l-10 4 l-4 10 l-4 -10 l-10 -4 l10 -4z"/><path class="tk-spark" style="animation-delay:.4s" d="M236 290 l3 8 l8 3 l-8 3 l-3 8 l-3 -8 l-8 -3 l8 -3z"/></g>
       </svg>
       <div class="tk-chip c1">🧽 غسيل <b>بالضغط</b></div>
       <div class="tk-chip c2">🧪 تعقيم <b>آمن</b></div>

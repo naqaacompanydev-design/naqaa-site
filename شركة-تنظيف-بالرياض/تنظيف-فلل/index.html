@@ -906,6 +906,56 @@ body.nq-inner .sidebar-inner{top:110px}</style>
 
 .tk-plans.three{grid-template-columns:repeat(3,1fr);max-width:760px}
 @media(max-width:900px){.tk-plans.three{grid-template-columns:1fr 1fr}.tk-plans.three .link{grid-column:span 2}}
+
+/* ===== per-page heroes ===== */
+/* pest radar */
+.pr-sweep{transform-origin:200px 215px;animation:prSpin 4s linear infinite}
+@keyframes prSpin{to{transform:rotate(360deg)}}
+.pr-icon{opacity:.35}.pr-ring{opacity:0}.pr-ok{opacity:0}
+.pr-hit .pr-icon{animation:prIcon 4s linear infinite;animation-delay:inherit}
+.pr-hit .pr-ring{animation:prRing 4s ease-out infinite;animation-delay:inherit;transform-box:fill-box;transform-origin:center}
+.pr-hit .pr-ok{animation:prOk 4s ease infinite;animation-delay:inherit;transform-box:fill-box;transform-origin:center}
+@keyframes prIcon{0%{opacity:.35}4%{opacity:1}30%{opacity:1}38%,100%{opacity:0}}
+@keyframes prRing{0%{opacity:0;transform:scale(.6)}4%{opacity:1;transform:scale(1)}26%{opacity:0;transform:scale(1.6)}100%{opacity:0}}
+@keyframes prOk{0%,32%{opacity:0;transform:scale(.4)}40%{opacity:1;transform:scale(1.15)}46%,80%{opacity:1;transform:scale(1)}92%,100%{opacity:0}}
+.pr-core{animation:prCore 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes prCore{50%{transform:scale(1.06)}}
+/* apartment */
+.ap-dust circle{opacity:0;animation:apDust 10s ease-in-out infinite}
+@keyframes apDust{0%{opacity:.9;transform:translateY(0)}35%{opacity:.9;transform:translateY(-12px)}50%,100%{opacity:0;transform:translateY(-20px)}}
+.ap-bot{transform:translateX(250px);animation:apBot 10s var(--tk-ease) infinite}
+@keyframes apBot{0%,6%{transform:translateX(0)}52%,92%{transform:translateX(250px)}100%{transform:translateX(0)}}
+.ap-trail{transform-box:fill-box;transform-origin:left;animation:apTrail 10s var(--tk-ease) infinite}
+@keyframes apTrail{0%,6%{transform:scaleX(0)}52%,92%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+.ap-spark{animation:tkSpark 10s ease infinite;animation-delay:-1s}
+.ap-key{transform-box:fill-box;transform-origin:top center;animation:apKey 10s ease-in-out infinite}
+@keyframes apKey{0%,50%{opacity:0;transform:rotate(-14deg)}58%{opacity:1;transform:rotate(10deg)}66%{transform:rotate(-6deg)}74%,92%{opacity:1;transform:rotate(0)}100%{opacity:0}}
+/* after finishing */
+.fn-m{opacity:0;animation:fnMess 10s ease infinite}
+@keyframes fnMess{0%,18%{opacity:1}34%,94%{opacity:0}100%{opacity:1}}
+.fn-dust circle{opacity:0;animation:apDust 10s ease-in-out infinite}
+.fn-broom{opacity:0;animation:fnBroom 10s var(--tk-ease) infinite}
+@keyframes fnBroom{0%,10%{opacity:0;transform:translateX(40px)}14%{opacity:1}46%{opacity:1;transform:translateX(-300px) rotate(-8deg)}52%,100%{opacity:0;transform:translateX(-300px)}}
+.fn-sticker{opacity:0;transform-box:fill-box;transform-origin:top left;animation:fnSticker 10s ease infinite}
+@keyframes fnSticker{0%,44%{opacity:1;transform:rotate(0)}54%{opacity:1;transform:rotate(-38deg) translate(-6px,4px)}64%,96%{opacity:0;transform:rotate(-70deg) translateY(60px)}100%{opacity:1;transform:rotate(0)}}
+.fn-ladder{animation:fnMess 10s ease infinite}
+.fn-spark{animation:tkSpark 10s ease infinite;animation-delay:-1s}
+/* tank cleaning glass */
+.gl-drop{animation:glDrop 2s ease-in infinite}
+@keyframes glDrop{0%{transform:translateY(0);opacity:0}10%{opacity:1}80%{transform:translateY(96px);opacity:1}90%,100%{transform:translateY(100px);opacity:0}}
+/* insulation wall */
+.wl-coat{transform-box:fill-box;transform-origin:top;animation:wlCoat 12s var(--tk-ease) infinite}
+@keyframes wlCoat{0%,22%{transform:scaleY(0)}58%,92%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+.wl-gloss{opacity:1;animation:wlGloss 12s ease infinite}
+@keyframes wlGloss{0%,58%{opacity:0}66%,92%{opacity:1}100%{opacity:0}}
+.wl-leak{opacity:0;animation:wlLeak 12s ease infinite}
+@keyframes wlLeak{0%,30%{opacity:1}50%,100%{opacity:0}}
+.wl-drip{animation:glDrop 1.6s ease-in infinite}
+.wl-roller{opacity:0;animation:wlRoller 12s var(--tk-ease) infinite}
+@keyframes wlRoller{0%,18%{opacity:0;transform:translateY(0)}22%{opacity:1;transform:translateY(0)}58%{opacity:1;transform:translateY(296px)}64%,100%{opacity:0;transform:translateY(296px)}}
+.wl-badge{transform-box:fill-box;transform-origin:center;animation:wlBadge 12s var(--tk-ease) infinite}
+@keyframes wlBadge{0%,60%{opacity:0;transform:scale(.4)}68%{opacity:1;transform:scale(1.12)}74%,92%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.4)}}
+@media(prefers-reduced-motion:reduce){.pr-ok{opacity:1}.pr-icon{opacity:0}.ap-key,.wl-badge,.wl-gloss{opacity:1}}
 /* ---- phone-first hero: headline, tank and buttons all on the first screen ---- */
 .tk-sec,.tk-final{overflow-x:clip}
 @media(max-width:900px){
