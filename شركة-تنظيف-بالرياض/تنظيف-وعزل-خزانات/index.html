@@ -751,6 +751,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 
 
 
+
 </head>
 <body class="nq-inner">
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSS7QXXP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -793,7 +794,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
       <nav class="tk-crumb" aria-label="مسار التنقل"><a href="/">الرئيسية</a><span>›</span><a href="/شركة-تنظيف-بالرياض/">شركة تنظيف بالرياض</a><span>›</span><span>شركة تنظيف وعزل خزانات بالرياض</span></nav>
       <div class="tk-live" id="tk-live"><i></i><span>فريقنا متاح الحين، ويوصلك غالبًا بنفس اليوم</span></div>
       <h1>شركة <span class="gl">تنظيف وعزل خزانات</span> <span id="tk-h1-type"></span>بالرياض</h1>
-      <div class="tk-typed" aria-hidden="true">نخدم خزانات <b id="tk-typed"></b><span class="cur"></span></div>
+      <div class="tk-typed" aria-hidden="true">نخدم خزانات <b id="tk-typed" data-words="أرضية|علوية|الفلل|العماير|المطاعم والمحلات"></b><span class="cur"></span></div>
       <p class="tk-sub">نغسل خزانك ونعقمه ونعزله في زيارة وحدة، علوي كان أو أرضي. المويه تطلع نظيفة، والعزل عليه ضمان مكتوب 10 سنين.</p>
       <div class="tk-btns">
         <a href="https://wa.me/966545833481?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%AD%D8%AA%D8%A7%D8%AC%20%D8%A5%D9%84%D9%89%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%AA%D9%86%D8%B8%D9%8A%D9%81%20%D9%88%D8%B9%D8%B2%D9%84%20%D8%A7%D9%84%D8%AE%D8%B2%D8%A7%D9%86%D8%A7%D8%AA%0A%D8%A7%D9%84%D8%AD%D9%8A%3A%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D8%AE%D8%B2%D8%A7%D9%86%3A%20%D8%A3%D8%B1%D8%B6%D9%8A%20%2F%20%D8%B9%D9%84%D9%88%D9%8A" target="_blank" rel="noopener" class="tk-btn tk-btn-wa">💬 احجز عبر واتساب</a>
@@ -865,7 +866,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   </div>
 </section>
 
-<div class="tk-ticker" aria-label="معلومات سريعة"><div class="tk-track" id="tk-track">
+<div class="tk-ticker" aria-label="معلومات سريعة"><div class="tk-track" id="tk-track" data-temp="والحر يسرّع نمو الطحالب والبكتيريا في الخزان">
   <span>💧 الأفضل تنظف الخزان وتعقمه <b>كل 6 شهور</b></span>
   <span>🛡️ العزل يمنع <b>التسريب</b> ويحمي المويه من التلوث</span>
   <span>🧽 العزل ما يثبت إلا على خزان <b>نظيف وناشف</b></span>
@@ -1207,7 +1208,7 @@ document.getElementById('copy-year').textContent=new Date().getFullYear();
   var types = { ground:'أرضية', ard:'أرضية', roof:'علوية', top:'علوية' };
   var tp = null;
   try { tp = types[(new URLSearchParams(location.search).get('tank') || '').toLowerCase()] || null; } catch(e){}
-  if (tp) $('#tk-h1-type').textContent = tp + ' ';
+  if (tp && $('#tk-h1-type')) $('#tk-h1-type').textContent = tp + ' ';
 
   /* 2) live status by Riyadh time (UTC+3) */
   var live = $('#tk-live');
@@ -1222,8 +1223,10 @@ document.getElementById('copy-year').textContent=new Date().getFullYear();
   }
 
   /* 3) typed rotating word */
-  var words = tp === 'علوية' ? ['علوية','الفلل','العماير','أرضية','المنشآت'] : tp === 'أرضية' ? ['أرضية','الفلل','العماير','علوية','المنشآت'] : ['أرضية','علوية','الفلل','العماير','المطاعم والمحلات'];
   var typed = $('#tk-typed');
+  var words = ((typed && typed.getAttribute('data-words')) || '').split('|').filter(Boolean);
+  if (tp && words.indexOf(tp) > 0) { words.splice(words.indexOf(tp), 1); words.unshift(tp); }
+  if (!words.length) typed = null;
   if (typed) {
     if (reduce) typed.textContent = words.join(' • ');
     else (function(){
@@ -1245,7 +1248,8 @@ document.getElementById('copy-year').textContent=new Date().getFullYear();
   function render(extra){ if (track) track.innerHTML = extra + base + extra + base; }
   function addTemp(t){
     if (typeof t !== 'number' || isNaN(t)) return;
-    render('<span>🌡️ الحرارة في الرياض الحين <b>' + Math.round(t) + '°</b>، والحر يسرّع نمو الطحالب والبكتيريا في الخزان</span>');
+    var tail = (track && track.getAttribute('data-temp')) || '';
+    render('<span>🌡️ الحرارة في الرياض الحين <b>' + Math.round(t) + '°</b>' + (tail ? '، ' + tail : '') + '</span>');
   }
   render('');
   var cached = null;
@@ -1435,7 +1439,7 @@ document.getElementById('copy-year').textContent=new Date().getFullYear();
   if (hsVis) {
     hs(0);
     if ('IntersectionObserver' in w) new IntersectionObserver(function(es){ hsSeen = es[0].isIntersecting; }, { threshold: .4 }).observe(hsVis);
-    if (!reduce) setInterval(function(){ if (hsSeen && !hsTouched) hs((hsI + 1) % 4); }, 3200);
+    if (!reduce) setInterval(function(){ if (hsSeen && !hsTouched) hs((hsI + 1) % ($$('.tk-hs-card').length || 1)); }, 3200);
   }
 
   /* 18) Google review clicks */
@@ -1452,6 +1456,69 @@ document.getElementById('copy-year').textContent=new Date().getFullYear();
       tabsBox.classList.toggle('s2', i === 1);
     });
   });
+
+  /* 20) before/after: switch between several pairs */
+  $$('.tk-ba-tabs button').forEach(function(b){
+    b.addEventListener('click', function(){
+      var box = $('#tk-ba'); if (!box) return;
+      var imgs = box.querySelectorAll('img');
+      imgs[0].src = b.getAttribute('data-b'); imgs[0].alt = b.getAttribute('data-ba') || '';
+      imgs[1].src = b.getAttribute('data-a'); imgs[1].alt = b.getAttribute('data-aa') || '';
+      $$('.tk-ba-tabs button').forEach(function(x){ x.classList.toggle('on', x === b); });
+      box.style.setProperty('--p', '50%');
+    });
+  });
+
+  /* 21) price plans: pick the home condition */
+  var plans = $$('.tk-plan'), planNum = $('#tk-plan-num'), planName = $('#tk-plan-name'), planWa = $('#tk-plan-wa'), planVal = 0;
+  function animNum(el, from, to){
+    if (reduce || !w.requestAnimationFrame) { el.textContent = to; return; }
+    var t0 = null;
+    (function step(ts){ if (!t0) t0 = ts; var p = Math.min((ts - t0) / 600, 1); el.textContent = Math.round(from + (to - from) * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); })(performance.now());
+  }
+  function pickPlan(pl){
+    plans.forEach(function(x){ var on = x === pl; x.classList.toggle('on', on); x.setAttribute('aria-checked', on); });
+    var v = +pl.getAttribute('data-price');
+    if (planNum) { animNum(planNum, planVal, v); planVal = v; }
+    if (planName) planName.textContent = pl.getAttribute('data-name');
+    if (planWa) planWa.href = waLink('السلام عليكم، أبي ' + pl.getAttribute('data-msg') + '.' + (pl.getAttribute('data-tail') || TAIL));
+  }
+  plans.forEach(function(pl){ pl.addEventListener('click', function(){ pickPlan(pl); }); });
+  if (plans.length) pickPlan($('.tk-plan.on') || plans[0]);
+
+  /* 22) quote builder: choices become a ready WhatsApp message */
+  var qb = $('#tk-qb');
+  if (qb) {
+    var qbOut = $('#tk-qb-out'), qbWa = $('#tk-qb-wa');
+    var qbUpdate = function(){
+      var parts = [], lines = [];
+      $$('#tk-qb .tk-qb-row').forEach(function(row){
+        var on = row.querySelector('button.on');
+        if (on) { parts.push(on.textContent.trim()); lines.push(row.getAttribute('data-label') + ': ' + on.textContent.trim()); }
+      });
+      qbOut.textContent = parts.length ? parts.join(' • ') : qbOut.getAttribute('data-empty');
+      qb.classList.toggle('ready', parts.length > 0);
+      qbWa.href = waLink(qb.getAttribute('data-msg') + (lines.length ? '\n' + lines.join('\n') : '') + '\nالحي:');
+    };
+    $$('#tk-qb .tk-qb-row button').forEach(function(b){
+      b.addEventListener('click', function(){
+        b.parentNode.querySelectorAll('button').forEach(function(x){ x.classList.toggle('on', x === b); });
+        qbUpdate();
+      });
+    });
+    qbUpdate();
+  }
+
+  /* 23) team: normal job vs big job */
+  var team = $('#tk-team');
+  if (team) {
+    $$('#tk-team .tk-team-sw button').forEach(function(b){
+      b.addEventListener('click', function(){
+        $$('#tk-team .tk-team-sw button').forEach(function(x){ x.classList.toggle('on', x === b); });
+        team.setAttribute('data-size', b.getAttribute('data-size'));
+      });
+    });
+  }
 
   /* 12) scroll: timeline fill + side tank meter */
   var tl = $('#tk-tl'), steps = $$('.tk-step'), meter = $('#tk-meter'), mv = $('#tk-meter-v'), ticking = false;
@@ -1475,6 +1542,7 @@ document.getElementById('copy-year').textContent=new Date().getFullYear();
   onScroll();
 })();
 </script>
+
 
 
 
