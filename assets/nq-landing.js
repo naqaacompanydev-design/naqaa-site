@@ -221,8 +221,10 @@
     qres.setAttribute('data-lv', lv);
     qt.textContent = t[0]; qd.textContent = t[1]; qwa.textContent = t[2];
     flash(qt.parentNode);
-    if (lv === 'ok') qwa.href = waLink((qres.getAttribute('data-msg-ok') || 'السلام عليكم، أبي أحجز موعد تنظيف خزان.') + TAIL);
-    else if (lv !== '0') qwa.href = waLink((qres.getAttribute('data-msg') || 'السلام عليكم، أبي تنظيف خزان.') + '\nلاحظت: ' + sel.join('، ') + TAIL);
+    var qtail = qres.getAttribute('data-tail'); if (qtail === null) qtail = TAIL;
+    var qlabel = qres.getAttribute('data-label') || 'لاحظت';
+    if (lv === 'ok') qwa.href = waLink((qres.getAttribute('data-msg-ok') || 'السلام عليكم، أبي أحجز موعد تنظيف خزان.') + qtail);
+    else if (lv !== '0') qwa.href = waLink((qres.getAttribute('data-msg') || 'السلام عليكم، أبي تنظيف خزان.') + '\n' + qlabel + ': ' + sel.join('، ') + qtail);
   }
   opts.forEach(function(o){
     o.addEventListener('click', function(){
