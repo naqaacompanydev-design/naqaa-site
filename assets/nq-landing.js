@@ -268,7 +268,9 @@
     b.addEventListener('click', function(){
       var box = $('#tk-ba'); if (!box) return;
       var imgs = box.querySelectorAll('img');
-      if (b.getAttribute('data-bs')) imgs[0].srcset = b.getAttribute('data-bs'); imgs[0].src = b.getAttribute('data-b'); imgs[0].alt = b.getAttribute('data-ba') || '';
+      if (b.getAttribute('data-bs')) imgs[0].srcset = b.getAttribute('data-bs'); else imgs[0].removeAttribute('srcset');
+      if (!b.getAttribute('data-as')) imgs[1].removeAttribute('srcset');
+      imgs[0].src = b.getAttribute('data-b'); imgs[0].alt = b.getAttribute('data-ba') || '';
       if (b.getAttribute('data-as')) imgs[1].srcset = b.getAttribute('data-as'); imgs[1].src = b.getAttribute('data-a'); imgs[1].alt = b.getAttribute('data-aa') || '';
       $$('.tk-ba-tabs button').forEach(function(x){ x.classList.toggle('on', x === b); });
       box.style.setProperty('--p', '50%');
@@ -324,6 +326,92 @@
         team.setAttribute('data-size', b.getAttribute('data-size'));
       });
     });
+  }
+
+  /* 24) hub: orbit highlight cycles through services and updates the caption */
+  var hbIcos = $$('.hb-ico'), hbCap = $('#hb-cap'), hbI = 0, hbHold = false;
+  function hbShow(i){
+    hbI = i;
+    hbIcos.forEach(function(a, j){ a.classList.toggle('on', j === i); });
+    var a = hbIcos[i];
+    if (hbCap && a) { hbCap.href = a.getAttribute('href'); hbCap.querySelector('.ic').textContent = a.getAttribute('data-ic'); hbCap.querySelector('.t').textContent = a.getAttribute('data-name'); hbCap.querySelector('.p').textContent = a.getAttribute('data-price'); flash(hbCap); }
+  }
+  if (hbIcos.length) {
+    hbShow(0);
+    hbIcos.forEach(function(a, j){ a.addEventListener('pointerenter', function(){ hbHold = true; hbShow(j); }); a.addEventListener('pointerleave', function(){ hbHold = false; }); });
+    if (!reduce) setInterval(function(){ if (!hbHold && !d.hidden) hbShow((hbI + 1) % hbIcos.length); }, 2600);
+  }
+
+  /* 25) hub: service filter */
+  var hbF = $$('.hb-filter button'), hbCards = $$('.hb-card');
+  hbF.forEach(function(b){
+    b.addEventListener('click', function(){
+      var f = b.getAttribute('data-f');
+      hbF.forEach(function(x){ x.classList.toggle('on', x === b); x.setAttribute('aria-pressed', x === b); });
+      var k = 0;
+      hbCards.forEach(function(c){
+        var show = f === 'all' || (' ' + c.getAttribute('data-c') + ' ').indexOf(' ' + f + ' ') > -1;
+        c.classList.toggle('off', !show);
+        if (show) { c.style.setProperty('--k', k++); c.classList.remove('pop'); void c.offsetWidth; c.classList.add('pop'); }
+      });
+    });
+  });
+
+  /* 26) hub: "not sure what you need?" helper */
+  var wz = $('#hb-wz');
+  if (wz) {
+    var wzPlace = null, wzNeed = null, wzOut = $('#hb-wz-out');
+    var MAP = JSON.parse(wz.getAttribute('data-map'));
+    var wzStep = function(n){ wz.setAttribute('data-step', n); $$('#hb-wz .hb-dots i').forEach(function(x, j){ x.classList.toggle('on', j < n); }); };
+    $$('#hb-wz [data-place]').forEach(function(b){
+      b.addEventListener('click', function(){
+        wzPlace = b.getAttribute('data-place');
+        $$('#hb-wz [data-place]').forEach(function(x){ x.classList.toggle('on', x === b); });
+        wzStep(2);
+      });
+    });
+    $$('#hb-wz [data-need]').forEach(function(b){
+      b.addEventListener('click', function(){
+        wzNeed = b.getAttribute('data-need');
+        $$('#hb-wz [data-need]').forEach(function(x){ x.classList.toggle('on', x === b); });
+        var r = (MAP[wzNeed] && (MAP[wzNeed][wzPlace] || MAP[wzNeed]['*'])) || MAP['general']['*'];
+        $('#hb-wz-ic').textContent = r[0]; $('#hb-wz-t').textContent = r[1]; $('#hb-wz-p').textContent = r[2];
+        $('#hb-wz-go').href = r[3];
+        $('#hb-wz-wa').href = waLink('السلام عليكم، أبي ' + r[1] + '.\nنوع المكان: ' + wzPlace + '\nالحي:');
+        wzStep(3); flash(wzOut);
+      });
+    });
+    var back = $('#hb-wz-back');
+    if (back) back.addEventListener('click', function(){ wzPlace = wzNeed = null; $$('#hb-wz .on[data-place], #hb-wz .on[data-need]').forEach(function(x){ x.classList.remove('on'); }); wzStep(1); });
+  }
+
+  /* 27) hub: district finder with compass */
+  var dz = $('#hb-dz');
+  if (dz) {
+    var tabs = $$('#hb-dz .hb-reg button'), lists = $$('#hb-dz .hb-dlist'), needle = $('#hb-needle'), dzTouched = false, dzI = 0;
+    var DEG = { north: 0, east: 90, south: 180, west: 270, center: 0 };
+    var region = function(r, i){
+      dzI = i;
+      tabs.forEach(function(t){ var on = t.getAttribute('data-r') === r; t.classList.toggle('on', on); t.setAttribute('aria-selected', on); });
+      lists.forEach(function(l){ l.classList.toggle('on', l.getAttribute('data-r') === r); });
+      if (needle) { needle.style.setProperty('--deg', DEG[r] + 'deg'); needle.classList.toggle('mid', r === 'center'); }
+    };
+    tabs.forEach(function(t, i){ t.addEventListener('click', function(){ dzTouched = true; region(t.getAttribute('data-r'), i); }); });
+    region(tabs[0].getAttribute('data-r'), 0);
+    if (!reduce) setInterval(function(){ if (!dzTouched && !d.hidden) { var n = (dzI + 1) % tabs.length; region(tabs[n].getAttribute('data-r'), n); } }, 3800);
+    var inp = $('#hb-dz-in'), res = $('#hb-dz-res'), norm = function(s){ return s.replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').trim().replace(/^حي\s+/, '').replace(/^ال/, ''); };
+    var all = $$('#hb-dz .hb-dlist span').map(function(s){ return { n: s.textContent.trim(), r: s.parentNode.getAttribute('data-r'), label: s.parentNode.getAttribute('data-label') }; });
+    var check = function(){
+      var q = norm(inp.value || '');
+      if (q.length < 2) { res.className = 'hb-dz-res'; res.innerHTML = ''; return; }
+      var hit = all.filter(function(x){ return norm(x.n).indexOf(q) === 0 || norm(x.n) === q; })[0];
+      dzTouched = true;
+      var name = hit ? hit.n : inp.value.trim().replace(/^حي\s+/, '');
+      if (hit) region(hit.r, tabs.map(function(t){ return t.getAttribute('data-r'); }).indexOf(hit.r));
+      res.className = 'hb-dz-res show';
+      res.innerHTML = '<b>✓ نخدم حي ' + name.replace(/[<>&"]/g, '') + (hit ? ' (' + hit.label + ')' : '') + '</b><span>ونوصلك غالبًا بنفس اليوم.</span><a class="tk-btn tk-btn-wa" target="_blank" rel="noopener" href="' + waLink('السلام عليكم، أبي أحجز تنظيف في حي ' + name + '.\nالخدمة:') + '">💬 احجز في حيّك</a>';
+    };
+    if (inp) { inp.addEventListener('input', check); inp.addEventListener('change', check); }
   }
 
   /* 12) scroll: timeline fill + side tank meter */
