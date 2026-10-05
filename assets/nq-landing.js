@@ -264,15 +264,15 @@
     b.addEventListener('click', function(){
       var box = $('#tk-ba'); if (!box) return;
       var imgs = box.querySelectorAll('img');
-      imgs[0].src = b.getAttribute('data-b'); imgs[0].alt = b.getAttribute('data-ba') || '';
-      imgs[1].src = b.getAttribute('data-a'); imgs[1].alt = b.getAttribute('data-aa') || '';
+      if (b.getAttribute('data-bs')) imgs[0].srcset = b.getAttribute('data-bs'); imgs[0].src = b.getAttribute('data-b'); imgs[0].alt = b.getAttribute('data-ba') || '';
+      if (b.getAttribute('data-as')) imgs[1].srcset = b.getAttribute('data-as'); imgs[1].src = b.getAttribute('data-a'); imgs[1].alt = b.getAttribute('data-aa') || '';
       $$('.tk-ba-tabs button').forEach(function(x){ x.classList.toggle('on', x === b); });
       box.style.setProperty('--p', '50%');
     });
   });
 
   /* 21) price plans: pick the home condition */
-  var plans = $$('.tk-plan'), planNum = $('#tk-plan-num'), planName = $('#tk-plan-name'), planWa = $('#tk-plan-wa'), planVal = 0;
+  var plans = $$('.tk-plan:not(.link)'), planNum = $('#tk-plan-num'), planName = $('#tk-plan-name'), planWa = $('#tk-plan-wa'), planVal = 0;
   function animNum(el, from, to){
     if (reduce || !w.requestAnimationFrame) { el.textContent = to; return; }
     var t0 = null;
