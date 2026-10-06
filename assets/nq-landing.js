@@ -454,6 +454,38 @@
     upd();
   }
 
+  /* 30) contract builder: pick place, duration, visits and extras, then send them on WhatsApp */
+  var ctb = $('#ct-b');
+  if (ctb) {
+    var ctSel = { place: '', dur: '', freq: '', extra: [] };
+    var ctL = { place: 'نوع المكان', dur: 'مدة العقد', freq: 'الزيارات', extra: 'خدمات إضافية' };
+    var ctUpd = function(){
+      var items = [];
+      if (ctSel.place) items.push('🏷️ ' + ctSel.place);
+      if (ctSel.dur) items.push('🗓️ عقد ' + ctSel.dur);
+      if (ctSel.freq) items.push('🔁 زيارات ' + ctSel.freq);
+      ctSel.extra.forEach(function(x){ items.push('➕ ' + x); });
+      $('#ct-list').innerHTML = items.length ? items.map(function(x){ return '<li>' + x + '</li>'; }).join('') : '<li class="ph">اختر نوع المكان ومدة العقد</li>';
+      $('#ct-save').classList.toggle('show', ctSel.dur === 'سنوي');
+      var msg = 'السلام عليكم، أبي عرض سعر لعقد تنظيف دوري.\n' + ctL.place + ': ' + (ctSel.place || '') + '\n' + ctL.dur + ': ' + (ctSel.dur || '') + (ctSel.dur === 'سنوي' ? ' (خصم 20%)' : '') + '\n' + ctL.freq + ': ' + (ctSel.freq || '') + (ctSel.extra.length ? '\n' + ctL.extra + ': ' + ctSel.extra.join('، ') : '') + '\nالحي:';
+      $('#ct-wa').href = waLink(msg);
+    };
+    $$('#ct-b [data-g]').forEach(function(b){
+      b.addEventListener('click', function(){
+        var g = b.getAttribute('data-g'), v = b.getAttribute('data-v');
+        if (g === 'extra') {
+          var i = ctSel.extra.indexOf(v);
+          if (i > -1) ctSel.extra.splice(i, 1); else ctSel.extra.push(v);
+          b.classList.toggle('on', i < 0); b.setAttribute('aria-pressed', i < 0);
+        } else {
+          ctSel[g] = v;
+          $$('#ct-b [data-g="' + g + '"]').forEach(function(x){ x.classList.toggle('on', x === b); x.setAttribute('aria-pressed', x === b); });
+        }
+        ctUpd(); flash($('#ct-sum'));
+      });
+    });
+  }
+
   /* 12) scroll: timeline fill + side tank meter */
   var tl = $('#tk-tl'), steps = $$('.tk-step'), meter = $('#tk-meter'), mv = $('#tk-meter-v'), ticking = false;
   function onScroll(){
