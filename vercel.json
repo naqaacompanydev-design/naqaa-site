@@ -51,8 +51,18 @@
       "permanent": true
     },
     {
+      "source": "/services/تنظيف-المنازل-والفلل/",
+      "destination": "/شركة-تنظيف-بالرياض/تنظيف-منازل-وفلل/",
+      "permanent": true
+    },
+    {
+      "source": "/services/تنظيف-المنازل-والفلل",
+      "destination": "/شركة-تنظيف-بالرياض/تنظيف-منازل-وفلل/",
+      "permanent": true
+    },
+    {
       "source": "/services/تنظيف-المنازل-والفلل.html",
-      "destination": "/services/تنظيف-المنازل-والفلل/",
+      "destination": "/شركة-تنظيف-بالرياض/تنظيف-منازل-وفلل/",
       "permanent": true
     },
     {
