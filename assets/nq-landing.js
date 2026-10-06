@@ -486,6 +486,27 @@
     });
   }
 
+  /* 31) carpet calculator: length x width rows -> area and starting price */
+  var cpc = $('#cp-calc');
+  if (cpc) {
+    var cpP = +cpc.getAttribute('data-price') || 15, cpRows = $('#cp-rows'), cpOut = $('.cp-out', cpc);
+    var cpNum = function(v){ v = String(v || '').replace(/[٠-٩]/g, function(c){ return '٠١٢٣٤٥٦٧٨٩'.indexOf(c); }).replace(/[,٫]/, '.'); var n = parseFloat(v); return isFinite(n) && n > 0 ? n : 0; };
+    var cpCalc = function(){
+      var area = 0, sizes = [];
+      $$('#cp-rows .cp-row').forEach(function(r){
+        var ins = r.querySelectorAll('input'), l = cpNum(ins[0].value), wd = cpNum(ins[1].value);
+        if (l && wd) { area += l * wd; sizes.push(l + '×' + wd); }
+      });
+      area = Math.round(area * 100) / 100;
+      $('#cp-area').textContent = area.toLocaleString('en-US');
+      $('#cp-total').textContent = Math.round(area * cpP).toLocaleString('en-US');
+      $('#cp-wa').href = waLink('السلام عليكم، أبي تنظيف سجاد وموكيت.\n' + (sizes.length ? 'المقاسات: ' + sizes.join(' ، ') + ' م\nالمساحة: ' + area + ' م²\n' : 'المساحة التقريبية:\n') + 'الحي:');
+    };
+    cpRows.addEventListener('input', function(){ cpCalc(); flash(cpOut); });
+    cpRows.addEventListener('click', function(e){ var b = e.target.closest('.cp-del'); if (b && cpRows.children.length > 1) { b.parentNode.remove(); cpCalc(); } });
+    $('#cp-add').addEventListener('click', function(){ cpRows.insertAdjacentHTML('beforeend', $('#cp-tpl').innerHTML); var ins = cpRows.lastElementChild.querySelector('input'); if (ins) ins.focus(); });
+  }
+
   /* 12) scroll: timeline fill + side tank meter */
   var tl = $('#tk-tl'), steps = $$('.tk-step'), meter = $('#tk-meter'), mv = $('#tk-meter-v'), ticking = false;
   function onScroll(){
