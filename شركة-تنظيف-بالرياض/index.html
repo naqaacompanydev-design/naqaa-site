@@ -1142,6 +1142,8 @@ body.nq-inner .sidebar-inner{top:110px}</style>
 .hb-card.pop.lit{animation:hbPop .5s var(--tk-ease) both,hbA 2.2s linear infinite}
 @keyframes hbA{to{--hb-a:360deg}}
 .hb-card.off{display:none}
+.hb-card.wide{grid-column:span 2;background:linear-gradient(135deg,rgba(201,168,76,.18),rgba(13,29,51,.95) 60%)}
+.hb-card.wide .ic{letter-spacing:4px}
 .hb-card.pop{animation:hbPop .5s var(--tk-ease) both;animation-delay:calc(var(--k,0) * 50ms)}
 @keyframes hbPop{from{opacity:0;transform:translateY(16px) scale(.96)}to{opacity:1;transform:none}}
 /* helper */
@@ -1369,6 +1371,7 @@ body.nq-inner .sidebar-inner{top:110px}</style>
       <button type="button" class="on" data-f="all" aria-pressed="true">الكل</button><button type="button" data-f="clean" aria-pressed="false">🧹 التنظيف</button><button type="button" data-f="tanks" aria-pressed="false">💧 الخزانات</button><button type="button" data-f="pest" aria-pressed="false">🐜 المكافحة</button><button type="button" data-f="furn" aria-pressed="false">🛋️ مجالس وسجاد</button>
     </div>
     <div class="hb-grid">
+      <a class="hb-card wide rv" data-c="clean" href="/شركة-تنظيف-بالرياض/تنظيف-منازل-وفلل/"><span class="ic">🏠🏡</span><b>تنظيف منازل وفلل</b><span class="pr">البيوت من 250 والفلل من 600 ريال</span><span class="tag">بيت ولا فيلا؟ كلها في صفحة وحدة</span><span class="go">شوف التفاصيل <i>←</i></span></a>
       <a class="hb-card rv" style="--d:0.00s" data-c="clean" href="/شركة-تنظيف-بالرياض/تنظيف-منازل/"><span class="ic">🏠</span><b>تنظيف منازل</b><span class="pr">من 250 ريال</span><span class="tag">ضمان الرجوع</span><span class="go">شوف التفاصيل <i>←</i></span></a>
       <a class="hb-card rv" style="--d:0.05s" data-c="clean" href="/شركة-تنظيف-بالرياض/تنظيف-شقق/"><span class="ic">🏢</span><b>تنظيف شقق</b><span class="pr">من 250 ريال</span><span class="tag">ضمان الرجوع</span><span class="go">شوف التفاصيل <i>←</i></span></a>
       <a class="hb-card rv" style="--d:0.10s" data-c="clean" href="/شركة-تنظيف-بالرياض/تنظيف-فلل/"><span class="ic">🏡</span><b>تنظيف فلل</b><span class="pr">من 600 ريال</span><span class="tag">ضمان الرجوع</span><span class="go">شوف التفاصيل <i>←</i></span></a>
