@@ -956,6 +956,10 @@ body.nq-inner .sidebar-inner{top:110px}</style>
 .wl-badge{transform-box:fill-box;transform-origin:center;animation:wlBadge 12s var(--tk-ease) infinite}
 @keyframes wlBadge{0%,60%{opacity:0;transform:scale(.4)}68%{opacity:1;transform:scale(1.12)}74%,92%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.4)}}
 @media(prefers-reduced-motion:reduce){.pr-ok{opacity:1}.pr-icon{opacity:0}.ap-key,.wl-badge,.wl-gloss{opacity:1}}
+
+/* combined houses & villas: two detail links under the hero buttons */
+.hv-only{display:flex;flex-wrap:wrap;gap:4px 18px}
+@media(max-width:900px){.tk-hero .hv-only{order:5;justify-content:center}}
 /* ---- phone-first hero: headline, tank and buttons all on the first screen ---- */
 .tk-sec,.tk-final{overflow-x:clip}
 @media(max-width:900px){

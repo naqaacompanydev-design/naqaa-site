@@ -962,6 +962,10 @@ body.nq-inner .sidebar-inner{top:110px}</style>
 @keyframes wlBadge{0%,60%{opacity:0;transform:scale(.4)}68%{opacity:1;transform:scale(1.12)}74%,92%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.4)}}
 @media(prefers-reduced-motion:reduce){.pr-ok{opacity:1}.pr-icon{opacity:0}.ap-key,.wl-badge,.wl-gloss{opacity:1}}
 
+/* combined houses & villas: two detail links under the hero buttons */
+.hv-only{display:flex;flex-wrap:wrap;gap:4px 18px}
+@media(max-width:900px){.tk-hero .hv-only{order:5;justify-content:center}}
+
 /* carpet & moquette */
 .cp-dirt{opacity:.72;transform-box:fill-box;transform-origin:left;animation:cpDirt 12s var(--tk-ease) infinite}
 @keyframes cpDirt{0%,4%{transform:scaleX(1)}12%,92%{transform:scaleX(0)}100%{transform:scaleX(1)}}
