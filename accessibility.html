@@ -577,7 +577,24 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0a1628">
 <link rel="stylesheet" href="/assets/nq-ui.css">
-</head>
+<style id="nq-soc-css">
+.nq-soc{display:flex;flex-direction:column;align-items:center;gap:8px;margin:2px 0 16px}
+.nq-soc-l{display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:800;color:#e4bf6a;letter-spacing:.4px}
+.nq-soc-l::before,.nq-soc-l::after{content:'';width:28px;height:1px;background:linear-gradient(90deg,transparent,rgba(228,191,106,.6),transparent)}
+.nq-soc-i{display:flex;gap:10px;justify-content:center}
+.nq-soc-i>*{position:relative;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:#fff!important;background:var(--bg);box-shadow:0 0 0 1.5px rgba(228,191,106,.55);text-decoration:none!important;transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s;animation:nqSocIn .6s cubic-bezier(.34,1.56,.64,1) both;animation-delay:calc(var(--i)*90ms)}
+.nq-soc-i svg{width:17px;height:17px;position:relative;z-index:1}
+.nq-soc-i>*::after{content:'';position:absolute;inset:-4px;border-radius:50%;background:conic-gradient(from 0deg,transparent 72%,rgba(245,217,142,.95));opacity:0;animation:nqSocRing 7.5s linear infinite;animation-delay:calc(var(--i)*1.5s);-webkit-mask:radial-gradient(circle,transparent 64%,#000 66%);mask:radial-gradient(circle,transparent 64%,#000 66%);pointer-events:none}
+.nq-soc-i a:hover,.nq-soc-i a:focus-visible{transform:translateY(-4px) scale(1.1);box-shadow:0 0 0 1.5px #f5d98e,0 8px 18px -6px var(--sh)}
+.nq-soc .s-snap{--bg:#fffc00;--sh:rgba(255,252,0,.7);color:#111!important}
+.nq-soc .s-insta{--bg:radial-gradient(circle at 30% 110%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285aeb 90%);--sh:rgba(214,36,159,.7)}
+.nq-soc .s-tiktok{--bg:#010101;--sh:rgba(37,244,238,.6)}
+.nq-soc .s-x{--bg:#000;--sh:rgba(255,255,255,.45)}
+.nq-soc .s-yt{--bg:#ff0000;--sh:rgba(255,0,0,.6)}
+@keyframes nqSocIn{from{opacity:0;transform:translateY(12px) scale(.6)}to{opacity:1;transform:none}}
+@keyframes nqSocRing{0%,82%{opacity:0;transform:rotate(0)}86%{opacity:1}100%{opacity:0;transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.nq-soc-i>*,.nq-soc-i>*::after{animation:none}}
+</style></head>
 <body class="nq-inner">
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSS7QXXP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
 <div id="nq-progress" aria-hidden="true"></div>
@@ -673,7 +690,7 @@ footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1
 
 <footer id="nq-footer">
   <div class="nq-wrap">
-    <div class="nq-f-links"><a href="/">الرئيسية</a><a href="/services/">الخدمات</a><a href="/pricing/">الأسعار <span class="mnt-tag" style="display:inline-block;margin-inline-start:6px;padding:0 7px;border-radius:50px;background:#f59e0b;color:#1a1405;font-size:10px;font-weight:800;line-height:1.7;vertical-align:middle;white-space:nowrap">تحت الصيانة</span></a><a href="/blog/">المدونة</a><a href="/faq/">الأسئلة الشائعة</a><a href="/شركة-تنظيف-بالرياض/">شركة تنظيف بالرياض</a><a href="/en/" hreflang="en" lang="en">English</a></div>
+    <div class="nq-soc" aria-label="تابعنا على السوشيال ميديا"><span class="nq-soc-l">تابعنا</span><div class="nq-soc-i"><a class="s-snap" style="--i:0" href="https://www.snapchat.com/add/naqaa.cleaning" target="_blank" rel="noopener" aria-label="سناب شات" title="سناب شات"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c2.9 0 5 2.2 5 5.1v2.3c.4.2.9.1 1.4-.1.6-.2 1.1.5.6 1-.5.4-1.4.7-2 .9.4 1.5 1.7 2.9 3.4 3.5.5.2.4.8-.1 1-.8.3-1.6.4-2 .6-.2.4-.1 1-.5 1.1-.6.2-1.4-.2-2.3.1-1 .3-1.8 1.6-3.5 1.6s-2.5-1.3-3.5-1.6c-.9-.3-1.7.1-2.3-.1-.4-.1-.3-.7-.5-1.1-.4-.2-1.2-.3-2-.6-.5-.2-.6-.8-.1-1 1.7-.6 3-2 3.4-3.5-.6-.2-1.5-.5-2-.9-.5-.5 0-1.2.6-1 .5.2 1 .3 1.4.1V7.3c0-2.9 2.1-5.1 5-5.1z" fill="currentColor"/></svg></a><a class="s-insta" style="--i:1" href="https://www.instagram.com/naqaa.sau" target="_blank" rel="noopener" aria-label="إنستجرام" title="إنستجرام"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a><a class="s-tiktok" style="--i:2" href="https://www.tiktok.com/@naqaa.sau" target="_blank" rel="noopener" aria-label="تيك توك" title="تيك توك"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 3h3c.2 1.9 1.6 3.4 3.5 3.6v3c-1.3 0-2.5-.4-3.5-1v6.2a5.8 5.8 0 1 1-5.8-5.8c.3 0 .6 0 .9.1v3.1a2.8 2.8 0 1 0 1.9 2.6V3z" fill="currentColor"/></svg></a><a class="s-x" style="--i:3" href="https://x.com/Naqaa_sau" target="_blank" rel="noopener" aria-label="إكس" title="إكس"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h4.6l4.1 5.6L17.6 3H20l-6.2 7.2L21 21h-4.6l-4.5-6.1L6.6 21H4.2l6.6-7.6L4 3zm3.3 1.6 9.8 14.8h1.5L8.8 4.6H7.3z" fill="currentColor"/></svg></a><span class="s-yt" style="--i:4" title="يوتيوب" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2c-.2-.9-.9-1.6-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4c-.9.2-1.6.9-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8c.2.9.9 1.6 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z" fill="currentColor"/></svg></span></div></div><div class="nq-f-links"><a href="/">الرئيسية</a><a href="/services/">الخدمات</a><a href="/pricing/">الأسعار <span class="mnt-tag" style="display:inline-block;margin-inline-start:6px;padding:0 7px;border-radius:50px;background:#f59e0b;color:#1a1405;font-size:10px;font-weight:800;line-height:1.7;vertical-align:middle;white-space:nowrap">تحت الصيانة</span></a><a href="/blog/">المدونة</a><a href="/faq/">الأسئلة الشائعة</a><a href="/شركة-تنظيف-بالرياض/">شركة تنظيف بالرياض</a><a href="/en/" hreflang="en" lang="en">English</a></div>
     <div class="nq-f-bottom">
       <div>جميع الحقوق محفوظة © <span id="nq-yr"></span> — <b>مؤسسة نقاء للتنظيف</b></div>
       <div class="nq-f-legal"><a href="/terms">الشروط والأحكام</a><a href="/privacy">سياسة الخصوصية</a><a href="/refund">سياسة الإلغاء والاسترجاع</a><a href="/accessibility">إمكانية الوصول</a></div>
