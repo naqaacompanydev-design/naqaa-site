@@ -535,6 +535,21 @@ footer{background:#050d18;border-top:1px solid rgba(201,168,76,.1);padding:24px 
 @keyframes nqSocIn{from{opacity:0;transform:translateY(12px) scale(.6)}to{opacity:1;transform:none}}
 @keyframes nqSocRing{0%,82%{opacity:0;transform:rotate(0)}86%{opacity:1}100%{opacity:0;transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){.nq-soc-i>*,.nq-soc-i>*::after{animation:none}}
+</style><style id="nq-logos-css">
+/* compact logo tiles with a name caption on tap/hover */
+.logos{padding:0 0 4px!important}
+.logos .head{margin-bottom:12px!important}
+.marq ul{gap:12px;padding:6px 0 30px;animation-duration:32s}
+.marq.hold ul,.marq:hover ul{animation-play-state:paused}
+.marq li,.marq li.big{position:relative;height:64px;width:110px;flex:0 0 110px;border-radius:14px;background:#f5f0e4;border:1px solid rgba(228,191,106,.75);box-shadow:0 8px 20px -12px rgba(0,0,0,.7);cursor:pointer;outline:none;transition:transform .3s cubic-bezier(.34,1.56,.64,1),border-color .3s,box-shadow .3s}
+.marq img,.marq li.big img{max-height:42px;max-width:88px}
+.marq li.big img{max-height:52px}
+.marq img:hover{transform:none}
+.marq li:hover,.marq li.on,.marq li:focus-visible{transform:translateY(-4px);border-color:#f5d98e;box-shadow:0 0 0 3px rgba(228,191,106,.18),0 12px 24px -12px rgba(0,0,0,.8)}
+.lg-cap{position:absolute;top:calc(100% + 4px);left:50%;transform:translate(-50%,-4px);display:flex;flex-direction:column;align-items:center;white-space:nowrap;direction:rtl;font:800 11.5px/1.5 'Cairo',sans-serif;color:#e4bf6a;background:rgba(7,17,31,.95);border:1px solid rgba(201,168,76,.45);padding:3px 10px;border-radius:50px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:2}
+.lg-cap small{font-size:10px;font-weight:700;color:#cbd5e1}
+.marq li:hover .lg-cap,.marq li.on .lg-cap,.marq li:focus-visible .lg-cap{opacity:1;transform:translate(-50%,0)}
+@media(min-width:900px){.marq ul{gap:16px}.marq li,.marq li.big{height:80px;width:140px;flex-basis:140px}.marq img,.marq li.big img{max-height:54px;max-width:112px}.marq li.big img{max-height:64px}}
 </style></head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSS7QXXP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -623,18 +638,18 @@ footer{background:#050d18;border-top:1px solid rgba(201,168,76,.1);padding:24px 
   <div class="head rv-in"><span class="eyebrow"><i></i>عملاؤنا</span><h2 class="h2">جهات نفخر <span class="gold">بخدمتها</span></h2></div>
   <div class="marq">
     <ul id="marq">
-      <li class="big"><img src="/images/clients/alhilal.png" alt="نادي الهلال" width="104" height="200" loading="lazy"></li>
-      <li><img src="/images/clients/alrajhi.png" alt="مصرف الراجحي" width="440" height="156" loading="lazy"></li>
-      <li><img src="/images/clients/elaik.png" alt="مطعم إليك" width="336" height="200" loading="lazy"></li>
-      <li><img src="/images/clients/q-mall.png" alt="مول كيو" width="370" height="200" loading="lazy"></li>
-      <li><img src="/images/clients/al-lounge.png" alt="ال اي لاونج" width="146" height="200" loading="lazy"></li>
-      <li><img src="/images/clients/haret-alsamak.png" alt="مطعم حارة السمك" width="204" height="200" loading="lazy"></li>
-      <li><img src="/images/clients/alshams.png" alt="الشمس للمقاولات العامة" width="224" height="200" loading="lazy"></li>
-      <li><img src="/images/clients/alsufyani.png" alt="شركة السفياني" width="369" height="200" loading="lazy"></li>
-      <li><img src="/images/clients/alatawi.png" alt="العطاوي لخدمات الجوال" width="440" height="132" loading="lazy"></li>
-      <li><img src="/images/clients/concrete.png" alt="كونكريت" width="344" height="200" loading="lazy"></li>
-      <li><img src="/images/clients/aldalal.png" alt="الدلال لتجهيز الملاعب" width="184" height="200" loading="lazy"></li>
-      <li><img src="/images/clients/zahrat-alrawdah.png" alt="زهرة الروضة" width="440" height="145" loading="lazy"></li>
+      <li class="big" tabindex="0"><img src="/images/clients/alhilal.png" alt="نادي الهلال" width="104" height="200" loading="lazy"><span class="lg-cap">نادي الهلال</span></li>
+      <li tabindex="0"><img src="/images/clients/alrajhi.png" alt="مصرف الراجحي" width="440" height="156" loading="lazy"><span class="lg-cap">مصرف الراجحي</span></li>
+      <li tabindex="0"><img src="/images/clients/elaik.png" alt="مطعم إليك" width="336" height="200" loading="lazy"><span class="lg-cap">مطعم إليك</span></li>
+      <li tabindex="0"><img src="/images/clients/q-mall.png" alt="مول كيو" width="370" height="200" loading="lazy"><span class="lg-cap">مول كيو</span></li>
+      <li tabindex="0"><img src="/images/clients/al-lounge.png" alt="LA Lounge" width="146" height="200" loading="lazy"><span class="lg-cap">LA Lounge</span></li>
+      <li tabindex="0"><img src="/images/clients/haret-alsamak.png" alt="مطعم حارة السمك" width="204" height="200" loading="lazy"><span class="lg-cap">مطعم حارة السمك</span></li>
+      <li tabindex="0"><img src="/images/clients/alshams.png" alt="الشمس للمقاولات العامة" width="224" height="200" loading="lazy"><span class="lg-cap">الشمس للمقاولات العامة</span></li>
+      <li tabindex="0"><img src="/images/clients/alsufyani.png" alt="شركة السفياني" width="369" height="200" loading="lazy"><span class="lg-cap">شركة السفياني</span></li>
+      <li tabindex="0"><img src="/images/clients/alatawi.png" alt="العطاوي لخدمات الجوال" width="440" height="132" loading="lazy"><span class="lg-cap">العطاوي لخدمات الجوال</span></li>
+      <li tabindex="0"><img src="/images/clients/concrete.png" alt="كونكريت" width="344" height="200" loading="lazy"><span class="lg-cap">كونكريت</span></li>
+      <li tabindex="0"><img src="/images/clients/aldalal.png" alt="الدلال لتجهيز الملاعب" width="184" height="200" loading="lazy"><span class="lg-cap">الدلال لتجهيز الملاعب</span></li>
+      <li tabindex="0"><img src="/images/clients/zahrat-alrawdah.png" alt="زهرة الروضة" width="440" height="145" loading="lazy"><span class="lg-cap">زهرة الروضة</span></li>
     </ul>
   </div>
 </section>
@@ -969,5 +984,17 @@ footer{background:#050d18;border-top:1px solid rgba(201,168,76,.1);padding:24px 
   document.addEventListener('click', function(){ pop.classList.remove('show'); });
 })();
 </script>
-</body>
+<script>
+/* client logos: tap a tile to show its name and pause the strip for a moment */
+(function(){
+  var mq = document.querySelector('.marq'); if (!mq) return; var t;
+  mq.querySelectorAll('li[aria-hidden]').forEach(function(x){ x.removeAttribute('tabindex'); });
+  mq.addEventListener('click', function(e){
+    var li = e.target.closest('li'); if (!li) return;
+    mq.querySelectorAll('li.on').forEach(function(x){ if (x !== li) x.classList.remove('on'); });
+    li.classList.toggle('on'); mq.classList.add('hold');
+    clearTimeout(t); t = setTimeout(function(){ li.classList.remove('on'); mq.classList.remove('hold'); }, 2600);
+  });
+})();
+</script></body>
 </html>
