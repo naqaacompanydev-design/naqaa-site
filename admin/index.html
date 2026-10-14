@@ -72,6 +72,28 @@ svg.i{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.9;stro
 .greet h2{font-size:22px;font-weight:700}
 .greet p{color:rgba(255,255,255,.62);font-size:13.5px;margin-top:2px}
 @media(max-width:560px){.bar .ttl,.bar .sep{display:none}.greet h2{font-size:19px}}
+.vh{display:flex;align-items:center;gap:12px}
+.back{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);transition:background .2s;flex:none}
+.back:hover{background:rgba(255,255,255,.18)}
+.view-in{animation:vin .4s var(--ease)}
+@keyframes vin{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:none}}
+.top-s{display:block;margin:-46px 0 16px;position:relative;box-shadow:var(--sh);border-radius:12px}
+.top-s .inp{padding:14px 13px 14px 13px;padding-inline-start:40px;border-color:var(--line2)}
+.sec-t{font-size:13px;font-weight:600;color:var(--mut);margin:22px 4px 10px}
+.tiles{display:grid;grid-template-columns:1fr;gap:8px}
+@media(min-width:620px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.tiles{grid-template-columns:repeat(3,1fr);gap:12px}}
+.tile{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line2);border-radius:var(--r);padding:14px 15px;box-shadow:var(--sh);text-align:start;transition:transform .25s var(--ease),box-shadow .25s,border-color .2s;animation:rise .45s var(--ease) both}
+.tile:hover{transform:translateY(-2px);box-shadow:var(--sh2);border-color:#d6dce6}
+.tile .ti{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:var(--cs,#eef1f6);color:var(--c,var(--ink2));flex:none}
+.tile .tt{flex:1;min-width:0}
+.tile .tt b{display:block;font-weight:700;font-size:15px}
+.tile .tt small{color:var(--mut);font-size:12.5px}
+.tile .tn{font-size:20px;font-weight:700;color:var(--ink)}
+.tile .go{color:#b3bccb}
+.s-all{--c:var(--navy);--cs:#e9edf4}
+button.kpi{cursor:pointer}
+.kpi .kgo{margin-inline-start:auto;color:#b3bccb}
 
 /* ---------- kpis ---------- */
 .wrap{max-width:1240px;margin:0 auto;padding:0 16px 40px}
@@ -251,6 +273,9 @@ body.sheet .toast{bottom:92px}
   <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
   <symbol id="i-save" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></symbol>
   <symbol id="i-undo" viewBox="0 0 24 24"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-15-6.7L3 13"/></symbol>
 </svg>
 
@@ -280,16 +305,19 @@ body.sheet .toast{bottom:92px}
       <button class="hb" id="b-csv" title="تنزيل الحجوزات Excel" aria-label="تنزيل Excel"><svg class="i"><use href="#i-down"/></svg></button>
       <button class="hb" id="b-out" title="تسجيل الخروج" aria-label="تسجيل الخروج"><svg class="i"><use href="#i-out"/></svg></button>
     </div>
-    <div class="greet"><h2 id="hello"></h2><p id="today"></p></div>
+    <div class="greet" id="g-home"><h2 id="hello"></h2><p id="today"></p></div>
+    <div class="greet vh hide" id="g-view"><button class="back" id="back" aria-label="رجوع للرئيسية"><svg class="i"><use href="#i-back"/></svg></button><div><h2 id="v-t"></h2><p id="v-s"></p></div></div>
   </header>
 
   <main class="wrap">
+   <div id="v-home">
     <div class="kpis" id="kpis"></div>
     <div class="banner hide" id="notif-ban"><svg class="i"><use href="#i-bell"/></svg>فعّل التنبيهات عشان يوصلك صوت وإشعار مع كل حجز جديد وأنت فاتح اللوحة<button class="btn btn-pri" id="notif-btn">فعّل التنبيهات</button></div>
-    <div class="toolbar">
-      <div class="tabs" id="tabs" role="tablist"></div>
-      <label class="search"><svg class="i"><use href="#i-search"/></svg><input class="inp" id="q" type="search" placeholder="ابحث برقم الحجز، الاسم، الجوال أو الحي"></label>
-    </div>
+    <div class="sec-t">الحجوزات حسب الحالة</div>
+    <div class="tiles" id="tiles"></div>
+   </div>
+   <div id="v-list" class="hide">
+    <label class="search top-s"><svg class="i"><use href="#i-search"/></svg><input class="inp" id="q" type="search" placeholder="ابحث برقم الحجز، الاسم، الجوال أو الحي"></label>
     <div class="main">
       <div id="list"><div class="cards"><div class="skel"></div><div class="skel"></div><div class="skel"></div></div></div>
       <aside class="pane blank" id="pane" aria-label="تفاصيل الحجز">
@@ -300,6 +328,7 @@ body.sheet .toast{bottom:92px}
         <div class="pf hide" id="p-ft"></div>
       </aside>
     </div>
+   </div>
   </main>
 </section>
 <div class="ov" id="ov"></div>
@@ -321,7 +350,7 @@ body.sheet .toast{bottom:92px}
   var FLOW = ['new', 'contacted', 'confirmed', 'done'];
   var DAYS = ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
   var MON = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'];
-  var rows = [], filter = 'new', q = '', openId = null, wide = matchMedia('(min-width:1080px)');
+  var rows = [], q = '', openId = null, wide = matchMedia('(min-width:1080px)');
 
   /* ---------- helpers ---------- */
   var ksa = function (t) { return new Date((t ? new Date(t).getTime() : Date.now()) + 3 * 3600e3).toISOString().slice(0, 10); };
@@ -365,11 +394,11 @@ body.sheet .toast{bottom:92px}
     });
   });
   $('#b-out').addEventListener('click', function () { if (DEMO) return location.reload(); sb.auth.signOut().then(function () { location.reload(); }); });
-  if (DEMO) { if (!/login/.test(location.search)) start(); } else sb.auth.getSession().then(function (r) { if (r.data.session) start(); });
+  if (DEMO) { if (!/login/.test(location.search)) setTimeout(start, 0); } else sb.auth.getSession().then(function (r) { if (r.data.session) start(); });
 
   /* ---------- data ---------- */
   function start() {
-    $('#login').classList.add('hide'); $('#app').classList.remove('hide'); greet();
+    $('#login').classList.add('hide'); $('#app').classList.remove('hide'); greet(); route();
     load(); live();
     if (!DEMO && 'Notification' in window && Notification.permission === 'default') $('#notif-ban').classList.remove('hide');
   }
@@ -397,48 +426,80 @@ body.sheet .toast{bottom:92px}
   }
   $('#notif-btn').addEventListener('click', function () { Notification.requestPermission().then(function () { $('#notif-ban').classList.add('hide'); }); });
 
-  /* ---------- kpis + tabs ---------- */
-  function renderTop() {
-    var t = ksa(), tm = addDay(t, 1), mon = t.slice(0, 7), cnt = { all: rows.length }, todayN = 0, tomN = 0, monV = 0, monN = 0;
-    rows.forEach(function (r) {
-      cnt[r.status] = (cnt[r.status] || 0) + 1;
-      if (r.status === 'cancelled') return;
-      if (r.visit_date === t) todayN++; if (r.visit_date === tm) tomN++;
-      if ((r.status === 'confirmed' || r.status === 'done') && String(r.visit_date).slice(0, 7) === mon) { monV += val(r) || 0; monN++; }
-    });
+  /* ---------- views (home tiles → separate pages) ---------- */
+  var view = 'home', fromHome = false;
+  var monName = function () { return MON[+ksa().slice(5, 7) - 1]; };
+  var inMonth = function (r) { return (r.status === 'confirmed' || r.status === 'done') && String(r.visit_date).slice(0, 7) === ksa().slice(0, 7); };
+  var byStatus = function (s) { return function (r) { return r.status === s; }; };
+  var VIEWS = {
+    new: { t: 'تنتظر ردّك', f: byStatus('new'), g: 'arr', e: ['ما فيه طلبات تنتظر ردّك', 'كل الطلبات اتواصلت معها، ممتاز 👌'] },
+    today: { t: 'مواعيد اليوم', f: function (r) { return r.status !== 'cancelled' && r.visit_date === ksa(); }, g: 'per', e: ['ما فيه مواعيد اليوم', 'يوم هادي ☕'] },
+    tomorrow: { t: 'مواعيد بكرة', f: function (r) { return r.status !== 'cancelled' && r.visit_date === addDay(ksa(), 1); }, g: 'per', e: ['ما فيه مواعيد بكرة', 'أول ما يتحجز موعد لبكرة بيظهر هنا'] },
+    month: { t: function () { return 'مبيعات ' + monName(); }, f: inMonth, g: 'visit', e: ['ما فيه مبيعات هالشهر لسه', 'الحجوزات المؤكدة والمنفّذة تنحسب هنا'] },
+    contacted: { t: 'تم التواصل', d: 'بانتظار تأكيد العميل', f: byStatus('contacted'), g: 'arr', ic: 'phone', e: ['ما فيه حجوزات هنا', 'لما تتواصل مع عميل وتحدّث حالته بيظهر هنا'] },
+    confirmed: { t: 'مؤكدة', d: 'جاهزة للتنفيذ', f: byStatus('confirmed'), g: 'visit', ic: 'check', e: ['ما فيه حجوزات مؤكدة', 'الحجوزات اللي أكدتها بتظهر هنا مرتبة بالموعد'] },
+    done: { t: 'منفّذة', d: 'شغل خلص', f: byStatus('done'), g: 'arr', ic: 'spark', e: ['ما فيه حجوزات منفّذة لسه', ''] },
+    cancelled: { t: 'ملغية', d: 'حجوزات انلغت', f: byStatus('cancelled'), g: 'arr', ic: 'x', e: ['ما فيه حجوزات ملغية', 'ممتاز 👌'] },
+    all: { t: 'كل الحجوزات', d: 'الأرشيف كامل', f: function () { return true; }, g: 'arr', ic: 'list', e: ['لسه ما وصل أي حجز', 'أول ما يحجز عميل من الموقع بيظهر هنا على طول'] }
+  };
+  var title = function (v) { var t = VIEWS[v].t; return typeof t === 'function' ? t() : t; };
+  function go(v) { fromHome = true; location.hash = v; }
+  function route() {
+    var h = decodeURIComponent(location.hash.slice(1)); view = VIEWS[h] ? h : 'home';
+    q = ''; $('#q').value = '';
+    if (openId != null) closePane();
+    var home = view === 'home';
+    $('#v-home').classList.toggle('hide', !home); $('#g-home').classList.toggle('hide', !home);
+    $('#v-list').classList.toggle('hide', home); $('#g-view').classList.toggle('hide', home);
+    [home ? '#v-home' : '#v-list', home ? '#g-home' : '#g-view'].forEach(function (s) { var el = $(s); el.classList.remove('view-in'); void el.offsetWidth; el.classList.add('view-in'); });
+    window.scrollTo(0, 0); render();
+  }
+  window.addEventListener('hashchange', route);
+  $('#back').addEventListener('click', function () { if (fromHome) { fromHome = false; history.back(); } else { history.replaceState(null, '', location.pathname + location.search); route(); } });
+
+  function renderHome() {
+    var cnt = { all: rows.length }, monV = 0, monN = 0;
+    rows.forEach(function (r) { cnt[r.status] = (cnt[r.status] || 0) + 1; if (inMonth(r)) { monV += val(r) || 0; monN++; } });
+    var nT = rows.filter(VIEWS.today.f).length, nM = rows.filter(VIEWS.tomorrow.f).length;
     var K = [
       ['new', 'تنتظر ردّك', cnt.new || 0, 'طلب', (cnt.new ? 'تواصل معهم بأسرع وقت' : 'ما فيه طلبات معلّقة'), 'inbox', 'var(--new)', 'var(--new-s)'],
-      ['', 'مواعيد اليوم', todayN, 'زيارة', fullDay(t).split('،')[0], 'cal', 'var(--con)', 'var(--con-s)'],
-      ['', 'مواعيد بكرة', tomN, 'زيارة', 'جهّز الفرق من الحين', 'clock', '#7c3aed', '#f3edff'],
-      ['', 'مبيعات ' + MON[+mon.slice(5) - 1], fmt(monV), 'ريال', monN + ' حجز مؤكد ومنفّذ', 'wallet', 'var(--cfm)', 'var(--cfm-s)']
+      ['today', 'مواعيد اليوم', nT, 'زيارة', fullDay(ksa()).split('،')[0], 'cal', 'var(--con)', 'var(--con-s)'],
+      ['tomorrow', 'مواعيد بكرة', nM, 'زيارة', 'جهّز الفرق من الحين', 'clock', '#7c3aed', '#f3edff'],
+      ['month', 'مبيعات ' + monName(), fmt(monV), 'ريال', monN + ' حجز مؤكد ومنفّذ', 'wallet', 'var(--cfm)', 'var(--cfm-s)']
     ];
     $('#kpis').innerHTML = K.map(function (k) {
-      return '<' + (k[0] ? 'button data-f="' + k[0] + '"' : 'div') + ' class="kpi"><span class="kpi-h"><span class="kpi-ic" style="background:' + k[7] + ';color:' + k[6] + '">' + ic(k[5]) + '</span>' + k[1] + '</span>' +
-        '<b>' + k[2] + '<small>' + k[3] + '</small></b><em>' + esc(k[4]) + '</em></' + (k[0] ? 'button' : 'div') + '>';
+      return '<button data-v="' + k[0] + '" class="kpi"><span class="kpi-h"><span class="kpi-ic" style="background:' + k[7] + ';color:' + k[6] + '">' + ic(k[5]) + '</span>' + k[1] + '<span class="kgo">' + ic('chev', 'width:16px;height:16px') + '</span></span>' +
+        '<b>' + k[2] + '<small>' + k[3] + '</small></b><em>' + esc(k[4]) + '</em></button>';
     }).join('');
-    $('#tabs').innerHTML = TABS.map(function (s) {
-      var n = cnt[s[0]] || 0;
-      return '<button class="tab' + (filter === s[0] ? ' on' : '') + '" role="tab" data-f="' + s[0] + '">' + s[1] + '<span class="n' + (s[0] === 'new' && n && filter !== 'new' ? ' hot' : '') + '">' + n + '</span></button>';
+    $('#tiles').innerHTML = ['contacted', 'confirmed', 'done', 'cancelled', 'all'].map(function (v, i) {
+      var V = VIEWS[v];
+      return '<button class="tile s-' + v + '" data-v="' + v + '" style="animation-delay:' + i * 40 + 'ms"><span class="ti">' + ic(V.ic) + '</span><span class="tt"><b>' + V.t + '</b><small>' + V.d + '</small></span><span class="tn">' + (cnt[v] || 0) + '</span><span class="go">' + ic('chev') + '</span></button>';
     }).join('');
   }
 
-  /* ---------- list ---------- */
+  /* ---------- list page ---------- */
   function render(freshId) {
-    renderTop();
-    var ql = q.toLowerCase();
-    var list = rows.filter(function (r) {
-      if (filter !== 'all' && r.status !== filter) return false;
-      return !ql || [r.code, r.name, r.phone, r.district].join(' ').toLowerCase().indexOf(ql) > -1;
-    });
+    if (view === 'home') return renderHome();
+    var V = VIEWS[view], ql = q.toLowerCase();
+    var all = rows.filter(V.f);
+    var list = all.filter(function (r) { return !ql || [r.code, r.name, r.phone, r.district].join(' ').toLowerCase().indexOf(ql) > -1; });
+    $('#v-t').textContent = title(view);
+    var sub = all.length + (all.length === 1 ? ' حجز' : ' حجوزات');
+    if (view === 'month') sub += ' · ' + fmt(all.reduce(function (s, r) { return s + (val(r) || 0); }, 0)) + ' ريال';
+    if (view === 'today' || view === 'tomorrow') sub = fullDay(view === 'today' ? ksa() : addDay(ksa(), 1)) + ' · ' + sub;
+    $('#v-s').textContent = sub;
     if (!list.length) {
-      var em = rows.length ? (q ? ['ما لقينا نتائج', 'جرّب تبحث بكلمة ثانية'] : filter === 'new' ? ['ما فيه طلبات جديدة', 'كل الطلبات اتواصلت معها، ممتاز 👌'] : ['ما فيه حجوزات هنا', 'لما يتغيّر حال أي حجز بيظهر في هالقسم']) : ['لسه ما وصل أي حجز', 'أول ما يحجز عميل من الموقع بيظهر هنا على طول'];
+      var em = q ? ['ما لقينا نتائج', 'جرّب تبحث بكلمة ثانية'] : V.e;
       $('#list').innerHTML = '<div class="empty"><div class="ei">' + ic('inbox', 'width:24px;height:24px') + '</div><b>' + em[0] + '</b>' + em[1] + '</div>';
       return;
     }
+    if (V.g === 'per') list = list.slice().sort(function (a, b) { return (a.period === 'pm') - (b.period === 'pm'); });
+    if (V.g === 'visit') list = list.slice().sort(function (a, b) { return String(a.visit_date).localeCompare(String(b.visit_date)) || (a.period === 'pm') - (b.period === 'pm'); });
+    var key = function (r) { return V.g === 'per' ? per(r.period) : V.g === 'visit' ? 'موعد ' + dayName(r.visit_date) : 'وصلت ' + dayName(ksa(r.created_at)); };
     var groups = [], last = null, i = 0;
-    list.forEach(function (r) { var d = ksa(r.created_at); if (d !== last) { groups.push({ d: d, r: [] }); last = d; } groups[groups.length - 1].r.push(r); });
+    list.forEach(function (r) { var d = key(r); if (d !== last) { groups.push({ d: d, r: [] }); last = d; } groups[groups.length - 1].r.push(r); });
     $('#list').innerHTML = groups.map(function (g) {
-      return '<div class="grp"><div class="grp-h">وصلت ' + dayName(g.d) + ' · ' + g.r.length + '</div><div class="cards">' + g.r.map(function (r) {
+      return '<div class="grp"><div class="grp-h">' + g.d + ' · ' + g.r.length + '</div><div class="cards">' + g.r.map(function (r) {
         var svc = (r.items || []).map(function (x) { return x.name; }).join('، ');
         return '<div class="card s-' + r.status + (r.id === freshId ? ' fresh' : '') + (r.id === openId ? ' sel' : '') + '" tabindex="0" role="button" data-id="' + r.id + '" style="animation-delay:' + Math.min(i++, 10) * 35 + 'ms">' +
           '<span class="av">' + initial(r.name) + '</span>' +
@@ -450,9 +511,7 @@ body.sheet .toast{bottom:92px}
       }).join('') + '</div></div>';
     }).join('');
   }
-  function setFilter(f) { filter = f; render(); }
-  $('#tabs').addEventListener('click', function (e) { var b = e.target.closest('[data-f]'); if (b) setFilter(b.getAttribute('data-f')); });
-  $('#kpis').addEventListener('click', function (e) { var b = e.target.closest('[data-f]'); if (b) setFilter(b.getAttribute('data-f')); });
+  $('#v-home').addEventListener('click', function (e) { var b = e.target.closest('[data-v]'); if (b) go(b.getAttribute('data-v')); });
   $('#q').addEventListener('input', function (e) { q = e.target.value.trim(); render(); });
   $('#list').addEventListener('click', function (e) { if (e.target.closest('a')) return; var c = e.target.closest('[data-id]'); if (c) openPane(+c.getAttribute('data-id')); });
   $('#list').addEventListener('keydown', function (e) { if (e.key === 'Enter') { var c = e.target.closest('[data-id]'); if (c) openPane(+c.getAttribute('data-id')); } });
