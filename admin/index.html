@@ -4,283 +4,565 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#07111f">
+<meta name="theme-color" content="#0a1628">
 <title>لوحة الحجوزات | مؤسسة نقاء</title>
 <link rel="icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#07111f;--card:#0f1f38;--card2:#14294a;--line:rgba(201,168,76,.2);--gold:#c9a84c;--gold2:#e4bf6a;--gold3:#f5d98e;--txt:#f1f5f9;--mut:#94a3b8;--ok:#22c55e;--ok2:#4ade80;--blue:#38bdf8;--red:#f87171;--warn:#fbbf24;--ease:cubic-bezier(.22,1,.36,1);--pop:cubic-bezier(.34,1.56,.64,1)}
-*{box-sizing:border-box;margin:0}
-body{background:radial-gradient(70% 30% at 50% 0%,rgba(201,168,76,.1),transparent 70%),var(--bg);color:var(--txt);font-family:'Cairo',system-ui,sans-serif;min-height:100vh}
-button,input,select,textarea{font-family:inherit}
-button{cursor:pointer}
+:root{
+  --bg:#f3f5f9;--surface:#fff;--line:#e5e9f0;--line2:#eef1f6;--ink:#0b1b33;--ink2:#46536b;--mut:#8691a5;
+  --navy:#0a1628;--navy2:#13284a;--gold:#c9a84c;--gold-d:#9c7a24;--gold-s:#fbf6e8;
+  --new:#b45309;--new-s:#fff5e2;--con:#1d4ed8;--con-s:#ebf1ff;--cfm:#15803d;--cfm-s:#e7f6ec;--done:#475569;--done-s:#eef1f5;--can:#dc2626;--can-s:#fdecec;
+  --wa:#1fa855;--r:16px;--sh:0 1px 2px rgba(11,27,51,.04),0 4px 16px rgba(11,27,51,.05);--sh2:0 10px 40px rgba(11,27,51,.14);
+  --ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;font-size:14px;line-height:1.5;min-height:100vh;font-feature-settings:"tnum"}
+button,input,textarea{font-family:inherit;font-size:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0}
+a{color:inherit;text-decoration:none}
 .hide{display:none!important}
-/* login */
-.login{min-height:100vh;display:grid;place-items:center;padding:20px}
-.login form{width:100%;max-width:380px;background:linear-gradient(165deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:26px;padding:28px 22px;text-align:center;animation:in .6s var(--ease)}
-@keyframes in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.login img{height:44px;margin-bottom:10px}
-.login h1{font-size:22px;font-weight:900;margin-bottom:4px}
-.login p{color:var(--mut);font-size:14px;margin-bottom:18px}
-.inp{width:100%;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.12);border-radius:13px;color:var(--txt);font-size:15px;font-weight:600;padding:12px 13px;margin-bottom:10px;transition:border-color .2s}
-.inp:focus{outline:0;border-color:var(--gold2)}
-.btn{border:0;border-radius:50px;padding:12px 20px;font-size:15px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;gap:7px;transition:transform .2s var(--pop),opacity .2s;text-decoration:none}
-.btn:active{transform:scale(.96)}
-.gold{background:linear-gradient(135deg,var(--gold),var(--gold3));color:#0a1628}
-.ghost{background:rgba(255,255,255,.06);color:var(--txt);border:1px solid rgba(255,255,255,.12)}
-.wa{background:#25d366;color:#04230f}
+svg.i{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ltr{direction:ltr;unicode-bidi:isolate}
+
+/* ---------- login ---------- */
+.login{min-height:100vh;display:grid;place-items:center;padding:24px 16px;background:radial-gradient(60% 50% at 50% 0%,rgba(201,168,76,.18),transparent 70%),linear-gradient(180deg,var(--navy),#061020)}
+.lg-card{width:100%;max-width:400px;background:var(--surface);border-radius:24px;padding:32px 26px 26px;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:rise .6s var(--ease)}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.lg-logo{height:46px;display:block;margin:0 auto 18px;padding:9px 16px;background:var(--navy);border-radius:14px;box-sizing:content-box}
+.lg-card h1{font-size:21px;font-weight:700;text-align:center}
+.lg-card p{color:var(--mut);text-align:center;margin:2px 0 22px}
+.fld{display:block;margin-bottom:14px}
+.fld span{display:block;font-size:12.5px;font-weight:600;color:var(--ink2);margin-bottom:6px}
+.inp{width:100%;background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:11px 13px;font-size:14.5px;transition:border-color .2s,box-shadow .2s,background .2s}
+.inp:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,168,76,.15);background:#fff}
+.pw{position:relative}
+.pw .inp{padding-inline-end:44px}
+.pw button{position:absolute;inset-inline-end:6px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:9px;color:var(--mut);display:grid;place-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;padding:11px 18px;font-weight:600;font-size:14px;transition:transform .15s,background .2s,box-shadow .2s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-pri{background:var(--navy);color:#fff}
+.btn-pri:hover{background:var(--navy2)}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-line{background:var(--surface);border:1px solid var(--line);color:var(--ink)}
+.btn-line:hover{border-color:#cdd4df}
+.btn-wa{background:var(--wa);color:#fff}
 .w100{width:100%}
-.err{color:#fca5a5;font-size:13px;font-weight:700;min-height:20px;margin-top:6px}
-/* app */
-.top{position:sticky;top:0;z-index:20;background:rgba(7,17,31,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
-.top-in{max-width:1100px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:10px}
-.top h1{font-size:18px;font-weight:900;flex:1;display:flex;align-items:center;gap:8px}
-.live{width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:ping 2s infinite}
-.live.off{background:var(--red);animation:none}
-@keyframes ping{70%{box-shadow:0 0 0 9px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
-.ib{width:40px;height:40px;border-radius:13px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:var(--txt);font-size:17px;display:grid;place-items:center}
-.wrap{max-width:1100px;margin:0 auto;padding:14px 16px 60px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
-@media(min-width:760px){.stats{grid-template-columns:repeat(6,1fr)}}
-.stat{background:linear-gradient(165deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:18px;padding:11px 12px;text-align:start;color:var(--txt);transition:border-color .25s,transform .25s var(--pop)}
-.stat:hover{transform:translateY(-2px)}
-.stat small{display:block;font-size:12px;font-weight:700;color:var(--mut)}
-.stat b{font-size:22px;font-weight:900}
-.stat.on{border-color:var(--gold2);box-shadow:0 0 0 2px rgba(201,168,76,.25)}
-.tools{display:flex;gap:8px;margin-bottom:12px}
-.tools .inp{margin:0;flex:1}
-.list{display:grid;gap:10px}
-@media(min-width:900px){.list{grid-template-columns:1fr 1fr}}
-.bk{position:relative;text-align:start;width:100%;border:1px solid var(--line);background:linear-gradient(165deg,var(--card2),var(--card));color:var(--txt);border-radius:20px;padding:13px 14px;display:grid;grid-template-columns:1fr auto;gap:3px 10px;transition:transform .25s var(--pop),border-color .25s;animation:in .45s var(--ease) both}
-.bk:hover{border-color:rgba(245,217,142,.5);transform:translateY(-2px)}
-.bk.fresh{animation:fresh 1.6s var(--ease)}
-@keyframes fresh{0%{box-shadow:0 0 0 0 rgba(34,197,94,.8);transform:scale(.97)}40%{box-shadow:0 0 0 12px rgba(34,197,94,0);transform:none}}
-.bk .code{font-weight:900;color:var(--gold3);direction:ltr;text-align:right}
-.bk .nm{font-weight:800;font-size:15px}
-.bk .meta{grid-column:1/-1;font-size:12.5px;color:var(--mut);font-weight:700;display:flex;flex-wrap:wrap;gap:4px 12px}
-.bk .tot{font-weight:900;font-size:17px;text-align:left}
-.bk .svc{grid-column:1/-1;font-size:13px;color:#cbd5e1;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.st{display:inline-block;font-size:11.5px;font-weight:900;padding:2px 10px;border-radius:50px;border:1px solid}
-.st-new{color:#86efac;border-color:rgba(34,197,94,.5);background:rgba(34,197,94,.12)}
-.st-contacted{color:#7dd3fc;border-color:rgba(56,189,248,.45);background:rgba(56,189,248,.1)}
-.st-confirmed{color:var(--gold3);border-color:rgba(201,168,76,.5);background:rgba(201,168,76,.12)}
-.st-done{color:#cbd5e1;border-color:rgba(203,213,225,.35);background:rgba(203,213,225,.08)}
-.st-cancelled{color:#fca5a5;border-color:rgba(248,113,113,.45);background:rgba(248,113,113,.1)}
-.empty{text-align:center;color:var(--mut);padding:50px 10px;font-weight:800}
-.empty span{display:block;font-size:44px;margin-bottom:6px}
-/* detail */
-.ov{position:fixed;inset:0;z-index:40;background:rgba(2,6,14,.6);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
-.ov.on{opacity:1;visibility:visible}
-.pane{position:fixed;z-index:41;top:0;bottom:0;left:0;width:min(520px,100%);background:linear-gradient(180deg,#10223e,#0a1628);border-inline-end:1px solid var(--line);transform:translateX(-102%);transition:transform .45s var(--ease);display:flex;flex-direction:column}
-.pane.on{transform:none}
-.p-hd{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.06)}
-.p-hd b{flex:1;font-size:19px;font-weight:900;direction:ltr;text-align:right;color:var(--gold3)}
-.p-bd{flex:1;overflow-y:auto;padding:14px 16px 30px}
-.sec{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:12px 14px;margin-bottom:12px}
-.sec h3{font-size:13px;font-weight:900;color:var(--mut);margin-bottom:8px}
-.row{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,.07);font-size:14px}
-.row:last-child{border-bottom:0}
-.row span{color:var(--mut);font-weight:700}
-.row b{font-weight:800;text-align:left}
-.it{padding:8px 0;border-bottom:1px dashed rgba(255,255,255,.07)}
-.it:last-child{border-bottom:0}
-.it .h{display:flex;justify-content:space-between;font-weight:900;font-size:14.5px}
-.it .h i{font-style:normal;color:var(--gold3)}
-.it small{display:block;color:var(--mut);font-size:12.5px;font-weight:600;line-height:1.6}
-.it .sv{color:var(--ok2);font-weight:800}
-.acts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
-.acts .btn{padding:10px 8px;font-size:13.5px}
-.stbtns{display:flex;flex-wrap:wrap;gap:6px}
-.stbtns button{border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:var(--txt);border-radius:50px;padding:6px 12px;font-size:13px;font-weight:800;transition:all .2s}
-.stbtns button.on{border-color:var(--gold2);background:rgba(201,168,76,.15);color:var(--gold3)}
-label.f{display:block;font-size:13px;font-weight:800;margin:10px 0 5px}
-.toast{position:fixed;z-index:60;left:50%;bottom:22px;transform:translate(-50%,30px);opacity:0;padding:10px 18px;border-radius:50px;background:#0f2a1c;border:1px solid rgba(34,197,94,.5);color:#bbf7d0;font-weight:800;font-size:14px;transition:all .4s var(--pop);pointer-events:none;white-space:nowrap}
+.err{color:var(--can);font-size:13px;font-weight:600;min-height:20px;margin-top:10px;text-align:center}
+.lg-foot{text-align:center;color:var(--mut);font-size:12px;margin-top:14px;display:flex;align-items:center;justify-content:center;gap:6px}
+
+/* ---------- header ---------- */
+.hero{background:radial-gradient(50% 120% at 15% 0%,rgba(201,168,76,.16),transparent 60%),linear-gradient(180deg,var(--navy),var(--navy2));color:#fff;padding-bottom:64px}
+.bar{max-width:1240px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;gap:10px}
+.bar img{height:30px}
+.bar .sep{width:1px;height:22px;background:rgba(255,255,255,.18)}
+.bar .ttl{font-weight:600;font-size:15px;color:rgba(255,255,255,.85)}
+.bar .sp{flex:1}
+.pill-live{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;padding:5px 11px;border-radius:50px;background:rgba(34,197,94,.14);color:#86efac}
+.pill-live i{width:7px;height:7px;border-radius:50%;background:#22c55e;animation:ping 2s infinite}
+.pill-live.off{background:rgba(248,113,113,.14);color:#fca5a5}
+.pill-live.off i{background:#ef4444;animation:none}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(34,197,94,.7)}70%,100%{box-shadow:0 0 0 7px rgba(34,197,94,0)}}
+.hb{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;color:rgba(255,255,255,.85);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);transition:background .2s}
+.hb:hover{background:rgba(255,255,255,.14)}
+.hb.spin svg{animation:spin .8s linear}
+@keyframes spin{to{transform:rotate(360deg)}}
+.greet{max-width:1240px;margin:0 auto;padding:10px 16px 0}
+.greet h2{font-size:22px;font-weight:700}
+.greet p{color:rgba(255,255,255,.62);font-size:13.5px;margin-top:2px}
+@media(max-width:560px){.bar .ttl,.bar .sep{display:none}.greet h2{font-size:19px}}
+
+/* ---------- kpis ---------- */
+.wrap{max-width:1240px;margin:0 auto;padding:0 16px 40px}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:-46px;position:relative}
+@media(min-width:880px){.kpis{grid-template-columns:repeat(4,1fr);gap:14px}}
+.kpi{background:var(--surface);border-radius:var(--r);padding:14px 15px;box-shadow:var(--sh);border:1px solid var(--line2);display:flex;flex-direction:column;gap:8px;text-align:start;transition:transform .25s var(--ease),box-shadow .25s}
+button.kpi:hover{transform:translateY(-2px);box-shadow:var(--sh2)}
+.kpi-h{display:flex;align-items:center;gap:8px;color:var(--ink2);font-size:12.5px;font-weight:600}
+.kpi-ic{width:30px;height:30px;border-radius:9px;display:grid;place-items:center}
+.kpi-ic svg.i{width:16px;height:16px}
+.kpi b{font-size:26px;font-weight:700;line-height:1.1;letter-spacing:-.5px}
+.kpi b small{font-size:13px;font-weight:600;color:var(--mut);letter-spacing:0;margin-inline-start:4px}
+.kpi em{font-style:normal;font-size:12px;color:var(--mut)}
+
+/* ---------- banner + toolbar ---------- */
+.banner{display:flex;align-items:center;gap:12px;background:var(--gold-s);border:1px solid #f0e2b8;border-radius:14px;padding:11px 14px;margin-top:14px;font-size:13.5px;color:#6b5418;font-weight:500}
+.banner .btn{margin-inline-start:auto;padding:8px 14px;font-size:13px}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:18px 0 12px}
+.tabs{display:flex;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:4px;overflow-x:auto;scrollbar-width:none;max-width:100%}
+.tabs::-webkit-scrollbar{display:none}
+.tab{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:9px;font-weight:600;font-size:13px;color:var(--ink2);white-space:nowrap;transition:background .2s,color .2s}
+.tab:hover{background:#f4f6fa}
+.tab.on{background:var(--navy);color:#fff}
+.tab .n{min-width:20px;height:20px;padding:0 6px;border-radius:50px;background:#eef1f6;color:var(--ink2);font-size:11.5px;display:grid;place-items:center}
+.tab.on .n{background:rgba(255,255,255,.16);color:#fff}
+.tab .n.hot{background:var(--new);color:#fff}
+.search{flex:1;min-width:220px;position:relative}
+.search svg{position:absolute;inset-inline-start:12px;top:50%;transform:translateY(-50%);color:var(--mut)}
+.search .inp{background:var(--surface);padding-inline-start:38px}
+
+/* ---------- layout ---------- */
+.main{display:grid;gap:16px;align-items:start}
+@media(min-width:1080px){.main{grid-template-columns:minmax(0,1fr) 440px}}
+.grp{margin-bottom:16px}
+.grp-h{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;color:var(--mut);margin:0 4px 8px}
+.grp-h::after{content:"";flex:1;height:1px;background:var(--line)}
+.cards{display:grid;gap:8px}
+
+/* ---------- booking card ---------- */
+.card{position:relative;background:var(--surface);border:1px solid var(--line2);border-radius:var(--r);padding:13px 15px 13px 13px;box-shadow:var(--sh);cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;transition:border-color .2s,box-shadow .2s,transform .2s var(--ease);animation:rise .45s var(--ease) both;outline:0}
+.card::before{content:"";position:absolute;inset-inline-start:0;top:14px;bottom:14px;width:3px;border-radius:0 3px 3px 0;background:var(--c,var(--line))}
+.card:hover{border-color:#d6dce6;box-shadow:var(--sh2)}
+.card:focus-visible{box-shadow:0 0 0 3px rgba(201,168,76,.4)}
+.card.sel{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,.18)}
+.card.fresh{animation:fresh 1.8s var(--ease)}
+@keyframes fresh{0%{box-shadow:0 0 0 0 rgba(201,168,76,.9);transform:scale(.98)}50%{box-shadow:0 0 0 12px rgba(201,168,76,0);transform:none}}
+.av{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-weight:700;font-size:16px;background:var(--cs,#eef1f6);color:var(--c,var(--ink2))}
+.cb{min-width:0}
+.cb-1{display:flex;align-items:center;gap:8px;min-width:0}
+.cb-1 b{font-weight:700;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.code{font-size:12px;color:var(--mut);font-weight:500;direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+.cb-2{color:var(--ink2);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+.cb-3{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:6px;color:var(--mut);font-size:12.5px}
+.cb-3 span{display:inline-flex;align-items:center;gap:5px}
+.cb-3 svg.i{width:14px;height:14px}
+.ce{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.amt{font-weight:700;font-size:15.5px;white-space:nowrap}
+.amt small{font-size:11.5px;color:var(--mut);font-weight:500}
+.qa{display:flex;gap:6px}
+.qa a{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;border:1px solid var(--line);color:var(--ink2);transition:background .2s,color .2s,border-color .2s}
+.qa a:hover{background:#f4f6fa}
+.qa a.w{color:var(--wa)}
+.qa svg.i{width:15px;height:15px}
+.badge{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:50px;background:var(--cs);color:var(--c);white-space:nowrap}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.s-new{--c:var(--new);--cs:var(--new-s)}.s-contacted{--c:var(--con);--cs:var(--con-s)}.s-confirmed{--c:var(--cfm);--cs:var(--cfm-s)}.s-done{--c:var(--done);--cs:var(--done-s)}.s-cancelled{--c:var(--can);--cs:var(--can-s)}
+@media(max-width:560px){.card{grid-template-columns:1fr auto;padding:13px 14px}.av{display:none}}
+.empty{background:var(--surface);border:1px dashed #d6dce6;border-radius:var(--r);padding:48px 20px;text-align:center;color:var(--mut)}
+.empty .ei{width:54px;height:54px;border-radius:16px;background:#f1f4f8;display:grid;place-items:center;margin:0 auto 12px;color:#9aa4b6}
+.empty b{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
+.skel{height:86px;border-radius:var(--r);background:linear-gradient(90deg,#eceff4 25%,#f6f8fb 50%,#eceff4 75%);background-size:200% 100%;animation:sk 1.2s infinite}
+@keyframes sk{to{background-position:-200% 0}}
+
+/* ---------- detail pane ---------- */
+.pane{background:var(--surface);border:1px solid var(--line2);border-radius:20px;box-shadow:var(--sh);display:flex;flex-direction:column;overflow:hidden}
+@media(min-width:1080px){.pane{position:sticky;top:16px;max-height:calc(100vh - 32px)}.ov{display:none}}
+@media(max-width:1079px){
+  .pane{position:fixed;z-index:41;inset:auto 0 0 0;height:94vh;height:94dvh;border-radius:22px 22px 0 0;transform:translateY(102%);transition:transform .45s var(--ease);box-shadow:0 -20px 60px rgba(0,0,0,.25)}
+  .pane.on{transform:none}
+  .pane.blank{display:none}
+  .ov{position:fixed;inset:0;z-index:40;background:rgba(6,14,28,.5);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+  .ov.on{opacity:1;visibility:visible}
+  .grab{display:block!important}
+}
+.grab{display:none;width:40px;height:4px;border-radius:4px;background:#d6dce6;margin:8px auto 0}
+.ph{padding:14px 18px;border-bottom:1px solid var(--line2);display:flex;align-items:flex-start;gap:10px}
+.ph .t{flex:1;min-width:0}
+.ph .t b{font-size:18px;font-weight:700;display:block}
+.ph .t div{display:flex;align-items:center;gap:8px;margin-top:3px;flex-wrap:wrap}
+.xb{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:var(--ink2);background:#f4f6fa}
+.pb{flex:1;overflow-y:auto;padding:16px 18px 20px;overscroll-behavior:contain}
+.pf{padding:12px 18px calc(12px + env(safe-area-inset-bottom));border-top:1px solid var(--line2);display:grid;grid-template-columns:1fr 1fr auto;gap:8px;background:#fff}
+.pf .btn{padding:11px 10px}
+.blank-in{padding:70px 30px;text-align:center;color:var(--mut)}
+.blank-in .ei{width:60px;height:60px;border-radius:18px;background:#f1f4f8;display:grid;place-items:center;margin:0 auto 12px;color:#9aa4b6}
+.blank-in b{display:block;color:var(--ink);font-size:15px}
+
+.sec{margin-bottom:18px}
+.sec-h{font-size:12px;font-weight:600;color:var(--mut);margin-bottom:8px;letter-spacing:.2px}
+/* stepper */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+.steps::before{content:"";position:absolute;top:15px;inset-inline:12.5%;height:2px;background:var(--line)}
+.steps .bar-f{position:absolute;top:15px;inset-inline-start:12.5%;height:2px;background:var(--cfm);transition:width .5s var(--ease)}
+.stp{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--mut)}
+.stp i{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#fff;border:2px solid var(--line);color:var(--mut);font-style:normal;font-size:12.5px;transition:all .3s var(--ease)}
+.stp:hover i{border-color:#b9c2d0}
+.stp.done i{background:var(--cfm);border-color:var(--cfm);color:#fff}
+.stp.cur i{background:var(--navy);border-color:var(--navy);color:#fff;box-shadow:0 0 0 5px rgba(10,22,40,.1)}
+.stp.cur{color:var(--ink)}
+.stp.done{color:var(--ink2)}
+.st-foot{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:12.5px;color:var(--mut)}
+.lnk{color:var(--can);font-weight:600;font-size:12.5px;padding:4px 2px}
+.lnk.sure{background:var(--can);color:#fff;border-radius:8px;padding:4px 10px}
+.cancel-box{display:flex;align-items:center;gap:10px;background:var(--can-s);color:var(--can);border-radius:12px;padding:10px 12px;font-weight:600}
+.cancel-box .btn{margin-inline-start:auto;padding:7px 12px;font-size:12.5px}
+/* info */
+.box{border:1px solid var(--line2);border-radius:14px;overflow:hidden}
+.ir{display:flex;align-items:center;gap:12px;padding:11px 13px;border-bottom:1px solid var(--line2)}
+.ir:last-child{border-bottom:0}
+.ir .ic{width:32px;height:32px;border-radius:9px;background:#f4f6fa;display:grid;place-items:center;color:var(--ink2);flex:none}
+.ir .ic svg.i{width:16px;height:16px}
+.ir div{flex:1;min-width:0}
+.ir small{display:block;color:var(--mut);font-size:11.5px;font-weight:500}
+.ir b{font-weight:600;font-size:14px;word-break:break-word}
+.ir a.go{color:var(--con);font-weight:600;font-size:12.5px}
+.note{background:var(--gold-s);border:1px solid #f0e2b8;border-radius:12px;padding:10px 12px;color:#5d4914;font-size:13.5px;margin-top:8px}
+.note small{display:block;font-weight:600;font-size:11.5px;color:var(--gold-d);margin-bottom:2px}
+/* receipt */
+.rc{border:1px solid var(--line2);border-radius:14px;padding:4px 14px}
+.li{padding:11px 0;border-bottom:1px dashed var(--line)}
+.li:last-child{border-bottom:0}
+.li-h{display:flex;justify-content:space-between;gap:10px;font-weight:600}
+.li-h span:last-child{white-space:nowrap}
+.li p{color:var(--mut);font-size:12.5px;margin-top:2px}
+.li .sv{color:var(--cfm);font-weight:600}
+.li .pa{color:var(--new)}
+.tot{display:flex;justify-content:space-between;align-items:baseline;padding:13px 14px;background:var(--navy);color:#fff;border-radius:14px;margin-top:8px}
+.tot span{font-size:13px;color:rgba(255,255,255,.7)}
+.tot b{font-size:20px;font-weight:700}
+.tot b small{font-size:12px;font-weight:500;color:rgba(255,255,255,.7)}
+.save-row{display:flex;justify-content:space-between;color:var(--cfm);font-weight:600;font-size:13px;padding:8px 4px 0}
+.fin{display:flex;justify-content:space-between;color:var(--gold-d);font-weight:600;font-size:13px;padding:6px 4px 0}
+/* form */
+.frm label{display:block;font-size:12.5px;font-weight:600;color:var(--ink2);margin:0 0 6px}
+.frm .g2{display:grid;grid-template-columns:140px 1fr;gap:10px;margin-bottom:12px}
+.frm textarea{resize:vertical;min-height:76px;margin-bottom:12px}
+.unit{position:relative}
+.unit span{position:absolute;inset-inline-end:12px;top:50%;transform:translateY(-50%);color:var(--mut);font-size:12.5px}
+.saved{color:var(--cfm);font-size:12.5px;font-weight:600;text-align:center;margin-top:8px;min-height:18px}
+
+.toast{position:fixed;z-index:60;left:50%;bottom:24px;transform:translate(-50%,24px);opacity:0;display:flex;align-items:center;gap:8px;padding:11px 18px;border-radius:12px;background:var(--navy);color:#fff;font-weight:600;font-size:13.5px;box-shadow:var(--sh2);transition:all .35s var(--ease);pointer-events:none;white-space:nowrap}
 .toast.on{opacity:1;transform:translate(-50%,0)}
-.banner{display:flex;align-items:center;gap:10px;background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.3);border-radius:16px;padding:10px 12px;margin-bottom:12px;font-size:13.5px;font-weight:700}
-.banner .btn{padding:7px 14px;font-size:13px;margin-inline-start:auto}
+body.sheet .toast{bottom:92px}
+.toast svg.i{color:var(--gold)}
 </style>
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/><path d="M8.5 9.5c.3 2.6 3.4 5.7 6 6l1.2-1.4-1.9-1-1 .8c-1-.4-2.2-1.6-2.6-2.6l.8-1-1-1.9z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+  <symbol id="i-out" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.9 1.9 0 0 0 3.4 0"/></symbol>
+  <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5.1 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.5-6.9A2 2 0 0 0 16.8 4H7.2a2 2 0 0 0-1.7 1.1z"/></symbol>
+  <symbol id="i-ref" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-save" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></symbol>
+  <symbol id="i-undo" viewBox="0 0 24 24"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-15-6.7L3 13"/></symbol>
+</svg>
+
+<!-- ============ login ============ -->
 <section class="login" id="login">
-  <form id="login-f" autocomplete="on">
-    <img src="/logo.svg" alt="مؤسسة نقاء للتنظيف">
+  <form class="lg-card" id="login-f" autocomplete="on">
+    <img class="lg-logo" src="/logo.svg" alt="مؤسسة نقاء للتنظيف">
     <h1>لوحة الحجوزات</h1>
-    <p>ادخل بحساب المؤسسة</p>
-    <input class="inp" id="l-email" type="email" autocomplete="username" value="info@naqaa-cleaning.com" dir="ltr" required>
-    <input class="inp" id="l-pass" type="password" autocomplete="current-password" placeholder="الباسورد" required>
-    <button class="btn gold w100" type="submit" id="l-btn">دخول</button>
+    <p>أهلًا بك، سجّل دخولك بحساب المؤسسة</p>
+    <label class="fld"><span>الإيميل</span><input class="inp ltr" id="l-email" type="email" autocomplete="username" value="info@naqaa-cleaning.com" required></label>
+    <label class="fld"><span>كلمة المرور</span><div class="pw"><input class="inp ltr" id="l-pass" type="password" autocomplete="current-password" required><button type="button" id="l-eye" aria-label="إظهار كلمة المرور"><svg class="i"><use href="#i-eye"/></svg></button></div></label>
+    <button class="btn btn-pri w100" type="submit" id="l-btn">تسجيل الدخول</button>
     <div class="err" id="l-err"></div>
+    <div class="lg-foot"><svg class="i" style="width:14px;height:14px"><use href="#i-lock"/></svg>دخول آمن ومشفّر · للإدارة فقط</div>
   </form>
 </section>
 
+<!-- ============ app ============ -->
 <section class="hide" id="app">
-  <header class="top"><div class="top-in">
-    <h1><span class="live" id="live" title="متصل"></span>الحجوزات</h1>
-    <button class="ib" id="b-csv" title="تنزيل Excel">⬇️</button>
-    <button class="ib" id="b-out" title="خروج">⎋</button>
-  </div></header>
+  <header class="hero">
+    <div class="bar">
+      <img src="/logo.svg" alt="مؤسسة نقاء">
+      <span class="sep"></span><span class="ttl">لوحة الحجوزات</span>
+      <span class="sp"></span>
+      <span class="pill-live" id="live"><i></i><span id="live-t">مباشر</span></span>
+      <button class="hb" id="b-ref" title="تحديث" aria-label="تحديث"><svg class="i"><use href="#i-ref"/></svg></button>
+      <button class="hb" id="b-csv" title="تنزيل الحجوزات Excel" aria-label="تنزيل Excel"><svg class="i"><use href="#i-down"/></svg></button>
+      <button class="hb" id="b-out" title="تسجيل الخروج" aria-label="تسجيل الخروج"><svg class="i"><use href="#i-out"/></svg></button>
+    </div>
+    <div class="greet"><h2 id="hello"></h2><p id="today"></p></div>
+  </header>
+
   <main class="wrap">
-    <div class="banner hide" id="notif-ban">🔔 فعّل تنبيهات المتصفح عشان يوصلك صوت وتنبيه مع كل حجز جديد<button class="btn gold" id="notif-btn">فعّل</button></div>
-    <div class="stats" id="stats"></div>
-    <div class="tools"><input class="inp" id="q" placeholder="🔍 ابحث برقم الحجز أو الاسم أو الجوال أو الحي"></div>
-    <div class="list" id="list"></div>
+    <div class="kpis" id="kpis"></div>
+    <div class="banner hide" id="notif-ban"><svg class="i"><use href="#i-bell"/></svg>فعّل التنبيهات عشان يوصلك صوت وإشعار مع كل حجز جديد وأنت فاتح اللوحة<button class="btn btn-pri" id="notif-btn">فعّل التنبيهات</button></div>
+    <div class="toolbar">
+      <div class="tabs" id="tabs" role="tablist"></div>
+      <label class="search"><svg class="i"><use href="#i-search"/></svg><input class="inp" id="q" type="search" placeholder="ابحث برقم الحجز، الاسم، الجوال أو الحي"></label>
+    </div>
+    <div class="main">
+      <div id="list"><div class="cards"><div class="skel"></div><div class="skel"></div><div class="skel"></div></div></div>
+      <aside class="pane blank" id="pane" aria-label="تفاصيل الحجز">
+        <span class="grab"></span>
+        <div class="blank-in" id="blank"><div class="ei"><svg class="i" style="width:26px;height:26px"><use href="#i-inbox"/></svg></div><b>اختر حجز من القائمة</b>وتطلع لك تفاصيله كاملة هنا</div>
+        <div class="ph hide" id="p-hd"></div>
+        <div class="pb hide" id="p-bd"></div>
+        <div class="pf hide" id="p-ft"></div>
+      </aside>
+    </div>
   </main>
 </section>
-
 <div class="ov" id="ov"></div>
-<aside class="pane" id="pane" aria-label="تفاصيل الحجز">
-  <div class="p-hd"><b id="p-code"></b><button class="ib" id="p-x" aria-label="إغلاق">✕</button></div>
-  <div class="p-bd" id="p-bd"></div>
-</aside>
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast"><svg class="i"><use href="#i-check"/></svg><span></span></div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
 <script>
 (function () {
   'use strict';
-  var URL = 'https://xsfhmdizydrzeyjzhluy.supabase.co', KEY = 'sb_publishable_spK_-AMFklXFVFPcV8_aoQ_Djby2RJ8';
-  var sb = window.supabase.createClient(URL, KEY);
+  var API = 'https://xsfhmdizydrzeyjzhluy.supabase.co', KEY = 'sb_publishable_spK_-AMFklXFVFPcV8_aoQ_Djby2RJ8';
+  var DEMO = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) && /[?&]demo\b/.test(location.search);
+  var sb = DEMO ? null : window.supabase.createClient(API, KEY);
   var $ = function (s) { return document.querySelector(s); };
   var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
   var fmt = function (n) { return Math.round(n || 0).toLocaleString('en-US'); };
-  var ST = [['all', 'الكل'], ['new', 'جديد'], ['contacted', 'تم التواصل'], ['confirmed', 'مؤكد'], ['done', 'اتنفذ'], ['cancelled', 'ملغي']];
-  var STN = {}; ST.forEach(function (s) { STN[s[0]] = s[1]; });
+  var ic = function (n, st) { return '<svg class="i"' + (st ? ' style="' + st + '"' : '') + '><use href="#i-' + n + '"/></svg>'; };
+  var TABS = [['new', 'جديدة'], ['contacted', 'تم التواصل'], ['confirmed', 'مؤكدة'], ['done', 'منفّذة'], ['cancelled', 'ملغية'], ['all', 'الكل']];
+  var STN = { new: 'جديد', contacted: 'تم التواصل', confirmed: 'مؤكد', done: 'منفّذ', cancelled: 'ملغي' };
+  var FLOW = ['new', 'contacted', 'confirmed', 'done'];
   var DAYS = ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
-  var rows = [], filter = 'new', q = '', openId = null, chan = null;
+  var MON = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'];
+  var rows = [], filter = 'new', q = '', openId = null, wide = matchMedia('(min-width:1080px)');
 
-  function toast(m) { var t = $('#toast'); t.textContent = m; t.classList.add('on'); clearTimeout(t._t); t._t = setTimeout(function () { t.classList.remove('on'); }, 2200); }
-  function day(d) { if (!d) return ''; var x = new Date(d + 'T00:00:00Z'); return DAYS[x.getUTCDay()] + ' ' + x.getUTCDate() + '/' + (x.getUTCMonth() + 1); }
+  /* ---------- helpers ---------- */
+  var ksa = function (t) { return new Date((t ? new Date(t).getTime() : Date.now()) + 3 * 3600e3).toISOString().slice(0, 10); };
+  var addDay = function (d, n) { var x = new Date(d + 'T00:00:00Z'); x.setUTCDate(x.getUTCDate() + n); return x.toISOString().slice(0, 10); };
+  function dayName(d) {
+    if (!d) return '—'; var t = ksa();
+    if (d === t) return 'اليوم'; if (d === addDay(t, 1)) return 'بكرة'; if (d === addDay(t, -1)) return 'أمس';
+    var x = new Date(d + 'T00:00:00Z'); return DAYS[x.getUTCDay()] + ' ' + x.getUTCDate() + ' ' + MON[x.getUTCMonth()];
+  }
+  function fullDay(d) { if (!d) return '—'; var x = new Date(d + 'T00:00:00Z'); return DAYS[x.getUTCDay()] + '، ' + x.getUTCDate() + ' ' + MON[x.getUTCMonth()] + ' ' + x.getUTCFullYear(); }
   function ago(t) {
     var s = (Date.now() - new Date(t).getTime()) / 1000;
-    if (s < 60) return 'الحين'; if (s < 3600) return 'قبل ' + Math.floor(s / 60) + ' دقيقة'; if (s < 86400) return 'قبل ' + Math.floor(s / 3600) + ' ساعة';
-    return new Date(t).toLocaleDateString('ar-SA-u-nu-latn', { day: 'numeric', month: 'short' });
+    if (s < 60) return 'الحين'; if (s < 3600) return 'قبل ' + Math.floor(s / 60) + ' د'; if (s < 86400) return 'قبل ' + Math.floor(s / 3600) + ' س';
+    return dayName(ksa(t));
   }
-  var per = function (p) { return p === 'am' ? 'صباحي ☀️' : p === 'pm' ? 'مسائي 🌙' : ''; };
-  var money = function (r) { return (r.price_from ? 'من ' : '') + fmt(r.final_price != null ? r.final_price : r.total) + ' ريال'; };
+  function clock(t) { var x = new Date(new Date(t).getTime() + 3 * 3600e3), h = x.getUTCHours(), m = x.getUTCMinutes(); return (h % 12 || 12) + ':' + (m < 10 ? '0' : '') + m + (h < 12 ? ' ص' : ' م'); }
+  var per = function (p) { return p === 'am' ? 'الفترة الصباحية' : p === 'pm' ? 'الفترة المسائية' : ''; };
+  var perS = function (p) { return p === 'am' ? 'صباحي' : p === 'pm' ? 'مسائي' : ''; };
+  var val = function (r) { return r.final_price != null ? r.final_price : r.total; };
+  function money(r) { if (r.has_quote && !r.total) return '<span class="amt">عرض سعر</span>'; return '<span class="amt">' + (r.price_from && r.final_price == null ? '<small>من </small>' : '') + fmt(val(r)) + ' <small>ريال</small></span>'; }
+  var intl = function (p) { return '966' + String(p || '').slice(1); };
+  var waLink = function (r) { return 'https://wa.me/' + intl(r.phone) + '?text=' + encodeURIComponent('السلام عليكم ' + (r.name || '') + '، معك مؤسسة نقاء للتنظيف بخصوص طلبك رقم ' + r.code + '.'); };
+  var initial = function (n) { return esc(String(n || '؟').trim().charAt(0)); };
+  function toast(m) { var t = $('#toast'); t.querySelector('span').textContent = m; t.classList.add('on'); clearTimeout(t._t); t._t = setTimeout(function () { t.classList.remove('on'); }, 2200); }
+
+  function greet() {
+    var h = new Date(Date.now() + 3 * 3600e3).getUTCHours();
+    $('#hello').textContent = (h < 12 ? 'صباح الخير' : 'مساء الخير') + ' 👋';
+    $('#today').textContent = fullDay(ksa());
+  }
 
   /* ---------- auth ---------- */
+  $('#l-eye').addEventListener('click', function () { var p = $('#l-pass'); p.type = p.type === 'password' ? 'text' : 'password'; });
   $('#login-f').addEventListener('submit', function (e) {
     e.preventDefault(); var b = $('#l-btn'); b.disabled = true; b.textContent = 'جاري الدخول…'; $('#l-err').textContent = '';
+    if (DEMO) return start();
     sb.auth.signInWithPassword({ email: $('#l-email').value.trim(), password: $('#l-pass').value }).then(function (r) {
-      b.disabled = false; b.textContent = 'دخول';
-      if (r.error) { $('#l-err').textContent = 'الإيميل أو الباسورد غلط'; return; }
+      b.disabled = false; b.textContent = 'تسجيل الدخول';
+      if (r.error) { $('#l-err').textContent = 'الإيميل أو كلمة المرور غير صحيحة'; return; }
       start();
     });
   });
-  $('#b-out').addEventListener('click', function () { sb.auth.signOut().then(function () { location.reload(); }); });
-  sb.auth.getSession().then(function (r) { if (r.data.session) start(); });
+  $('#b-out').addEventListener('click', function () { if (DEMO) return location.reload(); sb.auth.signOut().then(function () { location.reload(); }); });
+  if (DEMO) { if (!/login/.test(location.search)) start(); } else sb.auth.getSession().then(function (r) { if (r.data.session) start(); });
 
   /* ---------- data ---------- */
   function start() {
-    $('#login').classList.add('hide'); $('#app').classList.remove('hide');
+    $('#login').classList.add('hide'); $('#app').classList.remove('hide'); greet();
     load(); live();
-    if ('Notification' in window && Notification.permission === 'default') $('#notif-ban').classList.remove('hide');
+    if (!DEMO && 'Notification' in window && Notification.permission === 'default') $('#notif-ban').classList.remove('hide');
   }
-  function load() {
+  function load(btn) {
+    if (btn) { btn.classList.remove('spin'); void btn.offsetWidth; btn.classList.add('spin'); }
+    if (DEMO) { rows = demoRows(); return render(); }
     sb.from('bookings').select('*').order('created_at', { ascending: false }).limit(500).then(function (r) {
-      if (r.error) { toast('ما قدرنا نجيب الحجوزات'); return; }
-      rows = r.data || []; render();
+      if (r.error) { toast('ما قدرنا نجيب الحجوزات، جرّب تحدّث'); return; }
+      rows = r.data || []; render(); if (openId != null) openPane(openId, true);
     });
   }
+  $('#b-ref').addEventListener('click', function () { load(this); });
   function live() {
-    chan = sb.channel('bk').on('postgres_changes', { event: '*', schema: 'public', table: 'bookings' }, function (p) {
+    if (DEMO) return;
+    sb.channel('bk').on('postgres_changes', { event: '*', schema: 'public', table: 'bookings' }, function (p) {
       if (p.eventType === 'INSERT') { rows.unshift(p.new); render(p.new.id); ding(p.new); }
       else if (p.eventType === 'UPDATE') { rows = rows.map(function (x) { return x.id === p.new.id ? p.new : x; }); render(); if (openId === p.new.id) openPane(p.new.id, true); }
-    }).subscribe(function (s) { $('#live').classList.toggle('off', s !== 'SUBSCRIBED'); });
+    }).subscribe(function (s) { var ok = s === 'SUBSCRIBED'; $('#live').classList.toggle('off', !ok); $('#live-t').textContent = ok ? 'مباشر' : 'غير متصل'; });
   }
   function ding(r) {
     try { var a = new (window.AudioContext || window.webkitAudioContext)(), o = a.createOscillator(), g = a.createGain(); o.connect(g); g.connect(a.destination); o.frequency.value = 880; g.gain.value = .15; o.start(); o.frequency.setValueAtTime(1320, a.currentTime + .15); o.stop(a.currentTime + .35); } catch (e) {}
-    toast('🆕 حجز جديد ' + r.code);
-    if ('Notification' in window && Notification.permission === 'granted') { try { new Notification('🆕 حجز جديد ' + r.code, { body: r.name + ' · ' + r.district + ' · ' + money(r), icon: '/favicon-32x32.png' }); } catch (e) {} }
-    var t0 = document.title, n = 0, iv = setInterval(function () { document.title = (n++ % 2 ? t0 : '🆕 حجز جديد!'); if (n > 10 || !document.hidden) { clearInterval(iv); document.title = t0; } }, 900);
+    toast('حجز جديد ' + r.code);
+    if ('Notification' in window && Notification.permission === 'granted') { try { new Notification('حجز جديد ' + r.code, { body: r.name + ' · ' + r.district + ' · ' + fmt(r.total) + ' ريال', icon: '/favicon-32x32.png' }); } catch (e) {} }
+    var t0 = document.title, n = 0, iv = setInterval(function () { document.title = (n++ % 2 ? t0 : '🔔 حجز جديد!'); if (n > 10 || !document.hidden) { clearInterval(iv); document.title = t0; } }, 900);
   }
   $('#notif-btn').addEventListener('click', function () { Notification.requestPermission().then(function () { $('#notif-ban').classList.add('hide'); }); });
 
+  /* ---------- kpis + tabs ---------- */
+  function renderTop() {
+    var t = ksa(), tm = addDay(t, 1), mon = t.slice(0, 7), cnt = { all: rows.length }, todayN = 0, tomN = 0, monV = 0, monN = 0;
+    rows.forEach(function (r) {
+      cnt[r.status] = (cnt[r.status] || 0) + 1;
+      if (r.status === 'cancelled') return;
+      if (r.visit_date === t) todayN++; if (r.visit_date === tm) tomN++;
+      if ((r.status === 'confirmed' || r.status === 'done') && String(r.visit_date).slice(0, 7) === mon) { monV += val(r) || 0; monN++; }
+    });
+    var K = [
+      ['new', 'تنتظر ردّك', cnt.new || 0, 'طلب', (cnt.new ? 'تواصل معهم بأسرع وقت' : 'ما فيه طلبات معلّقة'), 'inbox', 'var(--new)', 'var(--new-s)'],
+      ['', 'مواعيد اليوم', todayN, 'زيارة', fullDay(t).split('،')[0], 'cal', 'var(--con)', 'var(--con-s)'],
+      ['', 'مواعيد بكرة', tomN, 'زيارة', 'جهّز الفرق من الحين', 'clock', '#7c3aed', '#f3edff'],
+      ['', 'مبيعات ' + MON[+mon.slice(5) - 1], fmt(monV), 'ريال', monN + ' حجز مؤكد ومنفّذ', 'wallet', 'var(--cfm)', 'var(--cfm-s)']
+    ];
+    $('#kpis').innerHTML = K.map(function (k) {
+      return '<' + (k[0] ? 'button data-f="' + k[0] + '"' : 'div') + ' class="kpi"><span class="kpi-h"><span class="kpi-ic" style="background:' + k[7] + ';color:' + k[6] + '">' + ic(k[5]) + '</span>' + k[1] + '</span>' +
+        '<b>' + k[2] + '<small>' + k[3] + '</small></b><em>' + esc(k[4]) + '</em></' + (k[0] ? 'button' : 'div') + '>';
+    }).join('');
+    $('#tabs').innerHTML = TABS.map(function (s) {
+      var n = cnt[s[0]] || 0;
+      return '<button class="tab' + (filter === s[0] ? ' on' : '') + '" role="tab" data-f="' + s[0] + '">' + s[1] + '<span class="n' + (s[0] === 'new' && n && filter !== 'new' ? ' hot' : '') + '">' + n + '</span></button>';
+    }).join('');
+  }
+
   /* ---------- list ---------- */
   function render(freshId) {
-    var cnt = { all: rows.length }; rows.forEach(function (r) { cnt[r.status] = (cnt[r.status] || 0) + 1; });
-    $('#stats').innerHTML = ST.map(function (s) { return '<button class="stat' + (filter === s[0] ? ' on' : '') + '" data-f="' + s[0] + '"><small>' + s[1] + '</small><b>' + (cnt[s[0]] || 0) + '</b></button>'; }).join('');
+    renderTop();
     var ql = q.toLowerCase();
     var list = rows.filter(function (r) {
       if (filter !== 'all' && r.status !== filter) return false;
-      if (!ql) return true;
-      return [r.code, r.name, r.phone, r.district].join(' ').toLowerCase().indexOf(ql) > -1;
+      return !ql || [r.code, r.name, r.phone, r.district].join(' ').toLowerCase().indexOf(ql) > -1;
     });
-    $('#list').innerHTML = list.length ? list.map(function (r, i) {
-      var svc = (r.items || []).map(function (x) { return x.name; }).join(' + ');
-      return '<button class="bk' + (r.id === freshId ? ' fresh' : '') + '" data-id="' + r.id + '" style="animation-delay:' + Math.min(i, 12) * 30 + 'ms">' +
-        '<span class="nm">' + esc(r.name) + ' <span class="st st-' + r.status + '">' + STN[r.status] + '</span></span><span class="code">' + esc(r.code) + '</span>' +
-        '<span class="svc">' + esc(svc) + '</span>' +
-        '<span class="meta"><span>📍 ' + esc(r.district) + '</span><span>📅 ' + day(r.visit_date) + ' · ' + per(r.period) + '</span><span>🕒 ' + ago(r.created_at) + '</span></span>' +
-        '<span></span><span class="tot">' + (r.has_quote && !r.total ? 'عرض سعر' : money(r)) + '</span></button>';
-    }).join('') : '<div class="empty"><span>📭</span>' + (rows.length ? 'ما فيه حجوزات بهالفلتر' : 'لسه ما وصل أي حجز') + '</div>';
+    if (!list.length) {
+      var em = rows.length ? (q ? ['ما لقينا نتائج', 'جرّب تبحث بكلمة ثانية'] : filter === 'new' ? ['ما فيه طلبات جديدة', 'كل الطلبات اتواصلت معها، ممتاز 👌'] : ['ما فيه حجوزات هنا', 'لما يتغيّر حال أي حجز بيظهر في هالقسم']) : ['لسه ما وصل أي حجز', 'أول ما يحجز عميل من الموقع بيظهر هنا على طول'];
+      $('#list').innerHTML = '<div class="empty"><div class="ei">' + ic('inbox', 'width:24px;height:24px') + '</div><b>' + em[0] + '</b>' + em[1] + '</div>';
+      return;
+    }
+    var groups = [], last = null, i = 0;
+    list.forEach(function (r) { var d = ksa(r.created_at); if (d !== last) { groups.push({ d: d, r: [] }); last = d; } groups[groups.length - 1].r.push(r); });
+    $('#list').innerHTML = groups.map(function (g) {
+      return '<div class="grp"><div class="grp-h">وصلت ' + dayName(g.d) + ' · ' + g.r.length + '</div><div class="cards">' + g.r.map(function (r) {
+        var svc = (r.items || []).map(function (x) { return x.name; }).join('، ');
+        return '<div class="card s-' + r.status + (r.id === freshId ? ' fresh' : '') + (r.id === openId ? ' sel' : '') + '" tabindex="0" role="button" data-id="' + r.id + '" style="animation-delay:' + Math.min(i++, 10) * 35 + 'ms">' +
+          '<span class="av">' + initial(r.name) + '</span>' +
+          '<div class="cb"><div class="cb-1"><b>' + esc(r.name) + '</b><span class="code">' + esc(r.code) + '</span></div>' +
+          '<div class="cb-2">' + esc(svc) + '</div>' +
+          '<div class="cb-3"><span>' + ic('cal') + dayName(r.visit_date) + ' · ' + perS(r.period) + '</span><span>' + ic('pin') + esc(r.district) + '</span></div></div>' +
+          '<div class="ce">' + money(r) + '<span class="badge">' + STN[r.status] + '</span>' +
+          '<div class="qa"><a href="tel:' + esc(r.phone) + '" title="اتصال" aria-label="اتصال">' + ic('phone') + '</a><a class="w" href="' + waLink(r) + '" target="_blank" rel="noopener" title="واتساب" aria-label="واتساب">' + ic('wa') + '</a></div></div></div>';
+      }).join('') + '</div></div>';
+    }).join('');
   }
-  $('#stats').addEventListener('click', function (e) { var b = e.target.closest('[data-f]'); if (b) { filter = b.getAttribute('data-f'); render(); } });
+  function setFilter(f) { filter = f; render(); }
+  $('#tabs').addEventListener('click', function (e) { var b = e.target.closest('[data-f]'); if (b) setFilter(b.getAttribute('data-f')); });
+  $('#kpis').addEventListener('click', function (e) { var b = e.target.closest('[data-f]'); if (b) setFilter(b.getAttribute('data-f')); });
   $('#q').addEventListener('input', function (e) { q = e.target.value.trim(); render(); });
-  $('#list').addEventListener('click', function (e) { var b = e.target.closest('[data-id]'); if (b) openPane(+b.getAttribute('data-id')); });
+  $('#list').addEventListener('click', function (e) { if (e.target.closest('a')) return; var c = e.target.closest('[data-id]'); if (c) openPane(+c.getAttribute('data-id')); });
+  $('#list').addEventListener('keydown', function (e) { if (e.key === 'Enter') { var c = e.target.closest('[data-id]'); if (c) openPane(+c.getAttribute('data-id')); } });
 
   /* ---------- detail ---------- */
   function openPane(id, keep) {
     var r = rows.filter(function (x) { return x.id === id; })[0]; if (!r) return; openId = id;
-    $('#p-code').textContent = r.code;
-    var phone = String(r.phone || ''), intl = '966' + phone.slice(1);
-    var greet = 'السلام عليكم ' + (r.name || '') + '، معك مؤسسة نقاء للتنظيف بخصوص طلبك رقم ' + r.code + '.';
+    var pos = FLOW.indexOf(r.status), cancelled = r.status === 'cancelled';
+    $('#p-hd').innerHTML = '<div class="t"><b>' + esc(r.name) + '</b><div><span class="code" style="font-size:13px">' + esc(r.code) + '</span><span class="badge s-' + r.status + '">' + STN[r.status] + '</span><span class="code">' + ago(r.created_at) + ' · ' + clock(r.created_at) + '</span></div></div>' +
+      '<button class="xb" id="p-x" aria-label="إغلاق">' + ic('x') + '</button>';
+
+    var steps = cancelled
+      ? '<div class="cancel-box">' + ic('x') + 'الحجز ملغي<button class="btn btn-line" data-s="new">' + ic('undo') + 'رجّعه</button></div>'
+      : '<div class="steps"><span class="bar-f" style="width:' + (Math.max(pos, 0) * 25) + '%"></span>' + FLOW.map(function (s, k) {
+          return '<button class="stp' + (k < pos ? ' done' : k === pos ? ' cur' : '') + '" data-s="' + s + '"><i>' + (k < pos ? ic('check', 'width:15px;height:15px') : k + 1) + '</i>' + STN[s] + '</button>';
+        }).join('') + '</div><div class="st-foot"><span>اضغط على المرحلة عشان تحدّث الحالة</span><button class="lnk" id="p-cancel">إلغاء الحجز</button></div>';
+
     var items = (r.items || []).map(function (x) {
-      return '<div class="it"><div class="h">' + esc(x.name) + '<i>' + (x.quote ? 'عرض سعر' : (x.from ? 'من ' : '') + fmt(x.price) + (x.perVisit ? ' للزيارة' : '')) + '</i></div><small>' + esc(x.label) + '</small>' +
-        (x.save || []).map(function (s) { return '<small class="sv">🎉 ' + esc(s.t) + ': وفّر ' + fmt(s.v) + '</small>'; }).join('') +
-        ((x.partial || []).length ? '<small>📝 بعد المعاينة: ' + esc(x.partial.join('، ')) + '</small>' : '') + '</div>';
+      return '<div class="li"><div class="li-h"><span>' + esc(x.name) + '</span><span>' + (x.quote ? 'عرض سعر' : (x.from ? 'من ' : '') + fmt(x.price) + ' ريال' + (x.perVisit ? ' / زيارة' : '')) + '</span></div>' +
+        '<p>' + esc(x.label) + '</p>' +
+        (x.save || []).map(function (s) { return '<p class="sv">' + esc(s.t) + ' · وفّر ' + fmt(s.v) + ' ريال</p>'; }).join('') +
+        ((x.partial || []).length ? '<p class="pa">بعد المعاينة: ' + esc(x.partial.join('، ')) + '</p>' : '') + '</div>';
     }).join('');
+
     $('#p-bd').innerHTML =
-      '<div class="acts"><a class="btn ghost" href="tel:' + esc(phone) + '">📞 اتصال</a><a class="btn wa" target="_blank" rel="noopener" href="https://wa.me/' + intl + '?text=' + encodeURIComponent(greet) + '">💬 واتساب</a>' +
-      (r.location ? '<a class="btn ghost" target="_blank" rel="noopener" href="' + esc(r.location) + '">🗺️ الموقع</a>' : '<span class="btn ghost" style="opacity:.4">🗺️ بدون موقع</span>') + '</div>' +
-      '<div class="sec"><h3>حالة الطلب</h3><div class="stbtns">' + ST.slice(1).map(function (s) { return '<button data-s="' + s[0] + '" class="' + (r.status === s[0] ? 'on' : '') + '">' + s[1] + '</button>'; }).join('') + '</div></div>' +
-      '<div class="sec"><h3>العميل والموعد</h3>' +
-        '<div class="row"><span>الاسم</span><b>' + esc(r.name) + '</b></div><div class="row"><span>الجوال</span><b dir="ltr">' + esc(phone) + '</b></div>' +
-        '<div class="row"><span>الحي</span><b>' + esc(r.district) + '</b></div><div class="row"><span>الموعد</span><b>' + day(r.visit_date) + ' · ' + per(r.period) + '</b></div>' +
-        '<div class="row"><span>وصل</span><b>' + new Date(r.created_at).toLocaleString('ar-SA-u-nu-latn', { dateStyle: 'medium', timeStyle: 'short' }) + '</b></div>' +
-        (r.notes ? '<div class="row"><span>ملاحظات</span><b>' + esc(r.notes) + '</b></div>' : '') + '</div>' +
-      '<div class="sec"><h3>الخدمات</h3>' + items +
-        '<div class="row" style="margin-top:6px"><span>الإجمالي ' + (r.price_from ? '(يبدأ من)' : 'المبدئي') + '</span><b style="color:var(--gold3);font-size:18px">' + fmt(r.total) + ' ريال</b></div>' +
-        (r.savings ? '<div class="row"><span>وفّر من العروض</span><b style="color:var(--ok2)">' + fmt(r.savings) + ' ريال</b></div>' : '') + '</div>' +
-      '<div class="sec"><h3>بعد التأكيد</h3>' +
-        '<label class="f" for="p-final">السعر النهائي (لو تغيّر)</label><input class="inp" id="p-final" inputmode="numeric" value="' + (r.final_price != null ? r.final_price : '') + '" placeholder="' + fmt(r.total) + '">' +
-        '<label class="f" for="p-fnote">سبب تغيير السعر</label><input class="inp" id="p-fnote" value="' + esc(r.final_note || '') + '" placeholder="مثلًا: المساحة طلعت أكبر">' +
-        '<label class="f" for="p-anote">ملاحظات داخلية</label><textarea class="inp" id="p-anote" rows="3" placeholder="مثلًا: الفريق 2، العميل يفضّل بعد العصر">' + esc(r.admin_note || '') + '</textarea>' +
-        '<button class="btn gold w100" id="p-save">💾 احفظ</button></div>';
-    if (!keep) { $('#ov').classList.add('on'); $('#pane').classList.add('on'); }
+      '<div class="sec"><div class="sec-h">حالة الطلب</div>' + steps + '</div>' +
+      '<div class="sec"><div class="sec-h">العميل والموعد</div><div class="box">' +
+        '<div class="ir"><span class="ic">' + ic('user') + '</span><div><small>العميل</small><b>' + esc(r.name) + '</b></div></div>' +
+        '<div class="ir"><span class="ic">' + ic('phone') + '</span><div><small>الجوال</small><b class="ltr">' + esc(r.phone) + '</b></div><a class="go" href="tel:' + esc(r.phone) + '">اتصال</a></div>' +
+        '<div class="ir"><span class="ic">' + ic('pin') + '</span><div><small>الحي</small><b>' + esc(r.district) + '</b></div>' + (r.location ? '<a class="go" target="_blank" rel="noopener" href="' + esc(r.location) + '">افتح الخريطة</a>' : '') + '</div>' +
+        '<div class="ir"><span class="ic">' + ic(r.period === 'pm' ? 'moon' : 'sun') + '</span><div><small>موعد الزيارة</small><b>' + fullDay(r.visit_date) + ' · ' + per(r.period) + '</b></div></div>' +
+      '</div>' + (r.notes ? '<div class="note"><small>ملاحظة العميل</small>' + esc(r.notes) + '</div>' : '') + '</div>' +
+      '<div class="sec"><div class="sec-h">الخدمات المطلوبة</div><div class="rc">' + items + '</div>' +
+        '<div class="tot"><span>الإجمالي ' + (r.price_from ? 'المبدئي (يبدأ من)' : 'المبدئي') + '</span><b>' + fmt(r.total) + ' <small>ريال</small></b></div>' +
+        (r.savings ? '<div class="save-row"><span>وفّر العميل من العروض</span><span>' + fmt(r.savings) + ' ريال</span></div>' : '') +
+        (r.final_price != null ? '<div class="fin"><span>السعر النهائي بعد المعاينة</span><span>' + fmt(r.final_price) + ' ريال</span></div>' : '') + '</div>' +
+      '<div class="sec frm"><div class="sec-h">المتابعة الداخلية</div>' +
+        '<div class="g2"><div><label for="p-final">السعر النهائي</label><div class="unit"><input class="inp" id="p-final" inputmode="numeric" value="' + (r.final_price != null ? r.final_price : '') + '" placeholder="' + fmt(r.total) + '"><span>ريال</span></div></div>' +
+        '<div><label for="p-fnote">سبب تغيير السعر</label><input class="inp" id="p-fnote" value="' + esc(r.final_note || '') + '" placeholder="مثلًا: المساحة أكبر من المحدد"></div></div>' +
+        '<label for="p-anote">ملاحظات للفريق</label><textarea class="inp" id="p-anote" placeholder="مثلًا: الفريق 2، العميل يفضّل بعد العصر">' + esc(r.admin_note || '') + '</textarea>' +
+        '<button class="btn btn-gold w100" id="p-save">' + ic('save') + 'حفظ التعديلات</button><div class="saved" id="p-saved"></div></div>';
+
+    $('#p-ft').innerHTML = '<a class="btn btn-wa" href="' + waLink(r) + '" target="_blank" rel="noopener">' + ic('wa') + 'واتساب</a>' +
+      '<a class="btn btn-pri" href="tel:' + esc(r.phone) + '">' + ic('phone') + 'اتصال</a>' +
+      (r.location ? '<a class="btn btn-line" target="_blank" rel="noopener" href="' + esc(r.location) + '" title="الموقع على الخريطة" aria-label="الموقع">' + ic('pin') + '</a>' : '<span class="btn btn-line" style="opacity:.35" title="ما أرسل موقع">' + ic('pin') + '</span>');
+
+    $('#pane').classList.remove('blank'); $('#blank').classList.add('hide');
+    ['#p-hd', '#p-bd', '#p-ft'].forEach(function (s) { $(s).classList.remove('hide'); });
+    document.querySelectorAll('.card.sel').forEach(function (c) { c.classList.remove('sel'); });
+    var c = document.querySelector('.card[data-id="' + id + '"]'); if (c) c.classList.add('sel');
+    if (!keep) { $('#p-bd').scrollTop = 0; if (!wide.matches) { $('#ov').classList.add('on'); $('#pane').classList.add('on'); document.body.style.overflow = 'hidden'; document.body.classList.add('sheet'); } }
   }
-  function closePane() { openId = null; $('#ov').classList.remove('on'); $('#pane').classList.remove('on'); }
-  $('#ov').addEventListener('click', closePane); $('#p-x').addEventListener('click', closePane);
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePane(); });
-  function update(id, patch, msg) {
+  function closePane() {
+    openId = null; $('#ov').classList.remove('on'); $('#pane').classList.remove('on'); document.body.style.overflow = ''; document.body.classList.remove('sheet');
+    document.querySelectorAll('.card.sel').forEach(function (c) { c.classList.remove('sel'); });
+    setTimeout(function () { if (openId != null) return; $('#pane').classList.add('blank'); $('#blank').classList.remove('hide'); ['#p-hd', '#p-bd', '#p-ft'].forEach(function (s) { $(s).classList.add('hide'); }); }, wide.matches ? 0 : 450);
+  }
+  $('#ov').addEventListener('click', closePane);
+  $('#pane').addEventListener('click', function (e) { if (e.target.closest('#p-x')) closePane(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && openId != null) closePane(); });
+
+  function update(id, patch, msg, cb) {
+    var done = function (row) { rows = rows.map(function (x) { return x.id === id ? row : x; }); render(); openPane(id, true); toast(msg); if (cb) cb(); };
+    if (DEMO) { var r0 = rows.filter(function (x) { return x.id === id; })[0]; return done(Object.assign({}, r0, patch)); }
     sb.from('bookings').update(patch).eq('id', id).select().single().then(function (r) {
       if (r.error) { toast('ما انحفظ، جرّب مرة ثانية'); return; }
-      rows = rows.map(function (x) { return x.id === id ? r.data : x; }); render(); openPane(id, true); toast(msg);
+      done(r.data);
     });
   }
   $('#p-bd').addEventListener('click', function (e) {
     var b = e.target.closest('button'); if (!b || openId == null) return;
-    if (b.hasAttribute('data-s')) update(openId, { status: b.getAttribute('data-s') }, 'تم تغيير الحالة ✓');
+    if (b.hasAttribute('data-s')) { var s = b.getAttribute('data-s'); update(openId, { status: s }, s === 'new' ? 'رجّعنا الحجز' : 'صار الحجز: ' + STN[s]); }
+    if (b.id === 'p-cancel') {
+      if (!b.classList.contains('sure')) { b.classList.add('sure'); b.textContent = 'متأكد؟ اضغط للإلغاء'; setTimeout(function () { b.classList.remove('sure'); b.textContent = 'إلغاء الحجز'; }, 3500); return; }
+      update(openId, { status: 'cancelled' }, 'تم إلغاء الحجز');
+    }
     if (b.id === 'p-save') {
       var v = String($('#p-final').value || '').replace(/[٠-٩]/g, function (c) { return '٠١٢٣٤٥٦٧٨٩'.indexOf(c); }).replace(/[^\d]/g, '');
-      update(openId, { final_price: v ? +v : null, final_note: $('#p-fnote').value.trim() || null, admin_note: $('#p-anote').value.trim() || null }, 'تم الحفظ ✓');
+      update(openId, { final_price: v ? +v : null, final_note: $('#p-fnote').value.trim() || null, admin_note: $('#p-anote').value.trim() || null }, 'تم حفظ التعديلات',
+        function () { $('#p-saved').textContent = '✓ انحفظ ' + clock(new Date()); });
     }
   });
+  if (wide.addEventListener) wide.addEventListener('change', function () { if (openId != null) { var id = openId; $('#ov').classList.remove('on'); $('#pane').classList.remove('on'); document.body.style.overflow = ''; openPane(id); } });
 
   /* ---------- export ---------- */
   $('#b-csv').addEventListener('click', function () {
     var head = ['رقم الحجز', 'وصل', 'الحالة', 'الاسم', 'الجوال', 'الحي', 'الموعد', 'الفترة', 'الخدمات', 'الإجمالي', 'السعر النهائي', 'وفّر', 'ملاحظات العميل', 'ملاحظات داخلية'];
     var lines = [head].concat(rows.map(function (r) {
-      return [r.code, new Date(r.created_at).toISOString().replace('T', ' ').slice(0, 16), STN[r.status], r.name, r.phone, r.district, r.visit_date, r.period === 'am' ? 'صباحي' : 'مسائي',
+      return [r.code, ksa(r.created_at) + ' ' + clock(r.created_at), STN[r.status], r.name, r.phone, r.district, r.visit_date, perS(r.period),
         (r.items || []).map(function (x) { return x.name + ': ' + x.label; }).join(' | '), r.total, r.final_price == null ? '' : r.final_price, r.savings, r.notes || '', r.admin_note || ''];
     })).map(function (row) { return row.map(function (c) { c = String(c == null ? '' : c); return /[",\n]/.test(c) ? '"' + c.replace(/"/g, '""') + '"' : c; }).join(','); }).join('\n');
-    var a = document.createElement('a'); a.href = URL_.createObjectURL(new Blob(['﻿' + lines], { type: 'text/csv;charset=utf-8' }));
-    a.download = 'naqaa-bookings-' + new Date().toISOString().slice(0, 10) + '.csv'; a.click();
+    var a = document.createElement('a'); a.href = window.URL.createObjectURL(new Blob(['﻿' + lines], { type: 'text/csv;charset=utf-8' }));
+    a.download = 'naqaa-bookings-' + ksa() + '.csv'; a.click(); toast('تم تنزيل الملف');
   });
-  var URL_ = window.URL;
-  setInterval(function () { if (rows.length) render(); }, 60000); // refresh "قبل X دقيقة"
+  setInterval(function () { if (rows.length) { greet(); render(); } }, 60000);
+
+  /* ---------- local design preview only (localhost ?demo) ---------- */
+  function demoRows() {
+    var t = ksa(), now = Date.now(), H = 3600e3;
+    var mk = function (id, h, st, name, ph, dist, vd, p, items, tot, extra) { return Object.assign({ id: id, code: 'NQ-' + (1000 + id), created_at: new Date(now - h * H).toISOString(), status: st, name: name, phone: ph, district: dist, visit_date: addDay(t, vd), period: p, items: items, total: tot, savings: 0, price_from: false, has_quote: false, location: null, notes: null, final_price: null, final_note: null, admin_note: null }, extra || {}); };
+    return [
+      mk(12, .2, 'new', 'عبدالله القحطاني', '0551234567', 'النرجس', 1, 'am', [{ name: 'تنظيف خزانات', label: 'علوي لحد 1,000 لتر + أرضي شقة', price: 400, save: [{ t: 'باقة العلوي والأرضي', v: 50 }] }, { name: 'تنظيف مكيفات', label: '3 مكيفات سبليت', price: 195 }], 595, { savings: 50, location: 'https://maps.google.com/?q=24.8,46.6', notes: 'البواب موجود بعد العصر' }),
+      mk(11, 1.5, 'new', 'نورة العتيبي', '0509876543', 'الياسمين', 2, 'pm', [{ name: 'تنظيف فلل', label: '300–500 م² · مفروشة', price: 1200 }], 1200),
+      mk(10, 5, 'contacted', 'فهد الدوسري', '0544441122', 'الملقا', 0, 'am', [{ name: 'مجالس وكنب وستائر', label: 'عرض المجلس الكامل + 4 ستائر', price: 475, save: [{ t: 'عرض المجلس الكامل', v: 60 }] }], 475, { savings: 60 }),
+      mk(9, 26, 'confirmed', 'سارة الشهري', '0567778899', 'العليا', 0, 'pm', [{ name: 'مكافحة حشرات', label: 'مكافحة شاملة · شقة', price: 250 }], 250),
+      mk(8, 30, 'confirmed', 'شركة الأفق', '0533332211', 'الملز', 1, 'am', [{ name: 'تنظيف مكاتب وشركات', label: 'أكبر من 200 م²', price: 600, from: true, partial: ['المساحة النهائية'] }], 600, { price_from: true }),
+      mk(7, 50, 'done', 'محمد الغامدي', '0550001111', 'الروضة', -1, 'am', [{ name: 'سجاد وموكيت', label: '3 سجادات · 18 م²', price: 180 }], 180, { final_price: 200, final_note: 'السجاد أكبر' }),
+      mk(6, 75, 'cancelled', 'خالد المطيري', '0559990000', 'الشفا', 3, 'pm', [{ name: 'عزل خزانات', label: 'خزان فيلا', price: 1200 }], 1200)
+    ];
+  }
 })();
 </script>
 </body>
