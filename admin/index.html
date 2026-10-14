@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#07111f">
+<title>لوحة الحجوزات | مؤسسة نقاء</title>
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07111f;--card:#0f1f38;--card2:#14294a;--line:rgba(201,168,76,.2);--gold:#c9a84c;--gold2:#e4bf6a;--gold3:#f5d98e;--txt:#f1f5f9;--mut:#94a3b8;--ok:#22c55e;--ok2:#4ade80;--blue:#38bdf8;--red:#f87171;--warn:#fbbf24;--ease:cubic-bezier(.22,1,.36,1);--pop:cubic-bezier(.34,1.56,.64,1)}
+*{box-sizing:border-box;margin:0}
+body{background:radial-gradient(70% 30% at 50% 0%,rgba(201,168,76,.1),transparent 70%),var(--bg);color:var(--txt);font-family:'Cairo',system-ui,sans-serif;min-height:100vh}
+button,input,select,textarea{font-family:inherit}
+button{cursor:pointer}
+.hide{display:none!important}
+/* login */
+.login{min-height:100vh;display:grid;place-items:center;padding:20px}
+.login form{width:100%;max-width:380px;background:linear-gradient(165deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:26px;padding:28px 22px;text-align:center;animation:in .6s var(--ease)}
+@keyframes in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.login img{height:44px;margin-bottom:10px}
+.login h1{font-size:22px;font-weight:900;margin-bottom:4px}
+.login p{color:var(--mut);font-size:14px;margin-bottom:18px}
+.inp{width:100%;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.12);border-radius:13px;color:var(--txt);font-size:15px;font-weight:600;padding:12px 13px;margin-bottom:10px;transition:border-color .2s}
+.inp:focus{outline:0;border-color:var(--gold2)}
+.btn{border:0;border-radius:50px;padding:12px 20px;font-size:15px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;gap:7px;transition:transform .2s var(--pop),opacity .2s;text-decoration:none}
+.btn:active{transform:scale(.96)}
+.gold{background:linear-gradient(135deg,var(--gold),var(--gold3));color:#0a1628}
+.ghost{background:rgba(255,255,255,.06);color:var(--txt);border:1px solid rgba(255,255,255,.12)}
+.wa{background:#25d366;color:#04230f}
+.w100{width:100%}
+.err{color:#fca5a5;font-size:13px;font-weight:700;min-height:20px;margin-top:6px}
+/* app */
+.top{position:sticky;top:0;z-index:20;background:rgba(7,17,31,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
+.top-in{max-width:1100px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:10px}
+.top h1{font-size:18px;font-weight:900;flex:1;display:flex;align-items:center;gap:8px}
+.live{width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:ping 2s infinite}
+.live.off{background:var(--red);animation:none}
+@keyframes ping{70%{box-shadow:0 0 0 9px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.ib{width:40px;height:40px;border-radius:13px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:var(--txt);font-size:17px;display:grid;place-items:center}
+.wrap{max-width:1100px;margin:0 auto;padding:14px 16px 60px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+@media(min-width:760px){.stats{grid-template-columns:repeat(6,1fr)}}
+.stat{background:linear-gradient(165deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:18px;padding:11px 12px;text-align:start;color:var(--txt);transition:border-color .25s,transform .25s var(--pop)}
+.stat:hover{transform:translateY(-2px)}
+.stat small{display:block;font-size:12px;font-weight:700;color:var(--mut)}
+.stat b{font-size:22px;font-weight:900}
+.stat.on{border-color:var(--gold2);box-shadow:0 0 0 2px rgba(201,168,76,.25)}
+.tools{display:flex;gap:8px;margin-bottom:12px}
+.tools .inp{margin:0;flex:1}
+.list{display:grid;gap:10px}
+@media(min-width:900px){.list{grid-template-columns:1fr 1fr}}
+.bk{position:relative;text-align:start;width:100%;border:1px solid var(--line);background:linear-gradient(165deg,var(--card2),var(--card));color:var(--txt);border-radius:20px;padding:13px 14px;display:grid;grid-template-columns:1fr auto;gap:3px 10px;transition:transform .25s var(--pop),border-color .25s;animation:in .45s var(--ease) both}
+.bk:hover{border-color:rgba(245,217,142,.5);transform:translateY(-2px)}
+.bk.fresh{animation:fresh 1.6s var(--ease)}
+@keyframes fresh{0%{box-shadow:0 0 0 0 rgba(34,197,94,.8);transform:scale(.97)}40%{box-shadow:0 0 0 12px rgba(34,197,94,0);transform:none}}
+.bk .code{font-weight:900;color:var(--gold3);direction:ltr;text-align:right}
+.bk .nm{font-weight:800;font-size:15px}
+.bk .meta{grid-column:1/-1;font-size:12.5px;color:var(--mut);font-weight:700;display:flex;flex-wrap:wrap;gap:4px 12px}
+.bk .tot{font-weight:900;font-size:17px;text-align:left}
+.bk .svc{grid-column:1/-1;font-size:13px;color:#cbd5e1;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.st{display:inline-block;font-size:11.5px;font-weight:900;padding:2px 10px;border-radius:50px;border:1px solid}
+.st-new{color:#86efac;border-color:rgba(34,197,94,.5);background:rgba(34,197,94,.12)}
+.st-contacted{color:#7dd3fc;border-color:rgba(56,189,248,.45);background:rgba(56,189,248,.1)}
+.st-confirmed{color:var(--gold3);border-color:rgba(201,168,76,.5);background:rgba(201,168,76,.12)}
+.st-done{color:#cbd5e1;border-color:rgba(203,213,225,.35);background:rgba(203,213,225,.08)}
+.st-cancelled{color:#fca5a5;border-color:rgba(248,113,113,.45);background:rgba(248,113,113,.1)}
+.empty{text-align:center;color:var(--mut);padding:50px 10px;font-weight:800}
+.empty span{display:block;font-size:44px;margin-bottom:6px}
+/* detail */
+.ov{position:fixed;inset:0;z-index:40;background:rgba(2,6,14,.6);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.ov.on{opacity:1;visibility:visible}
+.pane{position:fixed;z-index:41;top:0;bottom:0;left:0;width:min(520px,100%);background:linear-gradient(180deg,#10223e,#0a1628);border-inline-end:1px solid var(--line);transform:translateX(-102%);transition:transform .45s var(--ease);display:flex;flex-direction:column}
+.pane.on{transform:none}
+.p-hd{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.06)}
+.p-hd b{flex:1;font-size:19px;font-weight:900;direction:ltr;text-align:right;color:var(--gold3)}
+.p-bd{flex:1;overflow-y:auto;padding:14px 16px 30px}
+.sec{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:12px 14px;margin-bottom:12px}
+.sec h3{font-size:13px;font-weight:900;color:var(--mut);margin-bottom:8px}
+.row{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,.07);font-size:14px}
+.row:last-child{border-bottom:0}
+.row span{color:var(--mut);font-weight:700}
+.row b{font-weight:800;text-align:left}
+.it{padding:8px 0;border-bottom:1px dashed rgba(255,255,255,.07)}
+.it:last-child{border-bottom:0}
+.it .h{display:flex;justify-content:space-between;font-weight:900;font-size:14.5px}
+.it .h i{font-style:normal;color:var(--gold3)}
+.it small{display:block;color:var(--mut);font-size:12.5px;font-weight:600;line-height:1.6}
+.it .sv{color:var(--ok2);font-weight:800}
+.acts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.acts .btn{padding:10px 8px;font-size:13.5px}
+.stbtns{display:flex;flex-wrap:wrap;gap:6px}
+.stbtns button{border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:var(--txt);border-radius:50px;padding:6px 12px;font-size:13px;font-weight:800;transition:all .2s}
+.stbtns button.on{border-color:var(--gold2);background:rgba(201,168,76,.15);color:var(--gold3)}
+label.f{display:block;font-size:13px;font-weight:800;margin:10px 0 5px}
+.toast{position:fixed;z-index:60;left:50%;bottom:22px;transform:translate(-50%,30px);opacity:0;padding:10px 18px;border-radius:50px;background:#0f2a1c;border:1px solid rgba(34,197,94,.5);color:#bbf7d0;font-weight:800;font-size:14px;transition:all .4s var(--pop);pointer-events:none;white-space:nowrap}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.banner{display:flex;align-items:center;gap:10px;background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.3);border-radius:16px;padding:10px 12px;margin-bottom:12px;font-size:13.5px;font-weight:700}
+.banner .btn{padding:7px 14px;font-size:13px;margin-inline-start:auto}
+</style>
+</head>
+<body>
+
+<section class="login" id="login">
+  <form id="login-f" autocomplete="on">
+    <img src="/logo.svg" alt="مؤسسة نقاء للتنظيف">
+    <h1>لوحة الحجوزات</h1>
+    <p>ادخل بحساب المؤسسة</p>
+    <input class="inp" id="l-email" type="email" autocomplete="username" value="info@naqaa-cleaning.com" dir="ltr" required>
+    <input class="inp" id="l-pass" type="password" autocomplete="current-password" placeholder="الباسورد" required>
+    <button class="btn gold w100" type="submit" id="l-btn">دخول</button>
+    <div class="err" id="l-err"></div>
+  </form>
+</section>
+
+<section class="hide" id="app">
+  <header class="top"><div class="top-in">
+    <h1><span class="live" id="live" title="متصل"></span>الحجوزات</h1>
+    <button class="ib" id="b-csv" title="تنزيل Excel">⬇️</button>
+    <button class="ib" id="b-out" title="خروج">⎋</button>
+  </div></header>
+  <main class="wrap">
+    <div class="banner hide" id="notif-ban">🔔 فعّل تنبيهات المتصفح عشان يوصلك صوت وتنبيه مع كل حجز جديد<button class="btn gold" id="notif-btn">فعّل</button></div>
+    <div class="stats" id="stats"></div>
+    <div class="tools"><input class="inp" id="q" placeholder="🔍 ابحث برقم الحجز أو الاسم أو الجوال أو الحي"></div>
+    <div class="list" id="list"></div>
+  </main>
+</section>
+
+<div class="ov" id="ov"></div>
+<aside class="pane" id="pane" aria-label="تفاصيل الحجز">
+  <div class="p-hd"><b id="p-code"></b><button class="ib" id="p-x" aria-label="إغلاق">✕</button></div>
+  <div class="p-bd" id="p-bd"></div>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script>
+(function () {
+  'use strict';
+  var URL = 'https://xsfhmdizydrzeyjzhluy.supabase.co', KEY = 'sb_publishable_spK_-AMFklXFVFPcV8_aoQ_Djby2RJ8';
+  var sb = window.supabase.createClient(URL, KEY);
+  var $ = function (s) { return document.querySelector(s); };
+  var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var fmt = function (n) { return Math.round(n || 0).toLocaleString('en-US'); };
+  var ST = [['all', 'الكل'], ['new', 'جديد'], ['contacted', 'تم التواصل'], ['confirmed', 'مؤكد'], ['done', 'اتنفذ'], ['cancelled', 'ملغي']];
+  var STN = {}; ST.forEach(function (s) { STN[s[0]] = s[1]; });
+  var DAYS = ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
+  var rows = [], filter = 'new', q = '', openId = null, chan = null;
+
+  function toast(m) { var t = $('#toast'); t.textContent = m; t.classList.add('on'); clearTimeout(t._t); t._t = setTimeout(function () { t.classList.remove('on'); }, 2200); }
+  function day(d) { if (!d) return ''; var x = new Date(d + 'T00:00:00Z'); return DAYS[x.getUTCDay()] + ' ' + x.getUTCDate() + '/' + (x.getUTCMonth() + 1); }
+  function ago(t) {
+    var s = (Date.now() - new Date(t).getTime()) / 1000;
+    if (s < 60) return 'الحين'; if (s < 3600) return 'قبل ' + Math.floor(s / 60) + ' دقيقة'; if (s < 86400) return 'قبل ' + Math.floor(s / 3600) + ' ساعة';
+    return new Date(t).toLocaleDateString('ar-SA-u-nu-latn', { day: 'numeric', month: 'short' });
+  }
+  var per = function (p) { return p === 'am' ? 'صباحي ☀️' : p === 'pm' ? 'مسائي 🌙' : ''; };
+  var money = function (r) { return (r.price_from ? 'من ' : '') + fmt(r.final_price != null ? r.final_price : r.total) + ' ريال'; };
+
+  /* ---------- auth ---------- */
+  $('#login-f').addEventListener('submit', function (e) {
+    e.preventDefault(); var b = $('#l-btn'); b.disabled = true; b.textContent = 'جاري الدخول…'; $('#l-err').textContent = '';
+    sb.auth.signInWithPassword({ email: $('#l-email').value.trim(), password: $('#l-pass').value }).then(function (r) {
+      b.disabled = false; b.textContent = 'دخول';
+      if (r.error) { $('#l-err').textContent = 'الإيميل أو الباسورد غلط'; return; }
+      start();
+    });
+  });
+  $('#b-out').addEventListener('click', function () { sb.auth.signOut().then(function () { location.reload(); }); });
+  sb.auth.getSession().then(function (r) { if (r.data.session) start(); });
+
+  /* ---------- data ---------- */
+  function start() {
+    $('#login').classList.add('hide'); $('#app').classList.remove('hide');
+    load(); live();
+    if ('Notification' in window && Notification.permission === 'default') $('#notif-ban').classList.remove('hide');
+  }
+  function load() {
+    sb.from('bookings').select('*').order('created_at', { ascending: false }).limit(500).then(function (r) {
+      if (r.error) { toast('ما قدرنا نجيب الحجوزات'); return; }
+      rows = r.data || []; render();
+    });
+  }
+  function live() {
+    chan = sb.channel('bk').on('postgres_changes', { event: '*', schema: 'public', table: 'bookings' }, function (p) {
+      if (p.eventType === 'INSERT') { rows.unshift(p.new); render(p.new.id); ding(p.new); }
+      else if (p.eventType === 'UPDATE') { rows = rows.map(function (x) { return x.id === p.new.id ? p.new : x; }); render(); if (openId === p.new.id) openPane(p.new.id, true); }
+    }).subscribe(function (s) { $('#live').classList.toggle('off', s !== 'SUBSCRIBED'); });
+  }
+  function ding(r) {
+    try { var a = new (window.AudioContext || window.webkitAudioContext)(), o = a.createOscillator(), g = a.createGain(); o.connect(g); g.connect(a.destination); o.frequency.value = 880; g.gain.value = .15; o.start(); o.frequency.setValueAtTime(1320, a.currentTime + .15); o.stop(a.currentTime + .35); } catch (e) {}
+    toast('🆕 حجز جديد ' + r.code);
+    if ('Notification' in window && Notification.permission === 'granted') { try { new Notification('🆕 حجز جديد ' + r.code, { body: r.name + ' · ' + r.district + ' · ' + money(r), icon: '/favicon-32x32.png' }); } catch (e) {} }
+    var t0 = document.title, n = 0, iv = setInterval(function () { document.title = (n++ % 2 ? t0 : '🆕 حجز جديد!'); if (n > 10 || !document.hidden) { clearInterval(iv); document.title = t0; } }, 900);
+  }
+  $('#notif-btn').addEventListener('click', function () { Notification.requestPermission().then(function () { $('#notif-ban').classList.add('hide'); }); });
+
+  /* ---------- list ---------- */
+  function render(freshId) {
+    var cnt = { all: rows.length }; rows.forEach(function (r) { cnt[r.status] = (cnt[r.status] || 0) + 1; });
+    $('#stats').innerHTML = ST.map(function (s) { return '<button class="stat' + (filter === s[0] ? ' on' : '') + '" data-f="' + s[0] + '"><small>' + s[1] + '</small><b>' + (cnt[s[0]] || 0) + '</b></button>'; }).join('');
+    var ql = q.toLowerCase();
+    var list = rows.filter(function (r) {
+      if (filter !== 'all' && r.status !== filter) return false;
+      if (!ql) return true;
+      return [r.code, r.name, r.phone, r.district].join(' ').toLowerCase().indexOf(ql) > -1;
+    });
+    $('#list').innerHTML = list.length ? list.map(function (r, i) {
+      var svc = (r.items || []).map(function (x) { return x.name; }).join(' + ');
+      return '<button class="bk' + (r.id === freshId ? ' fresh' : '') + '" data-id="' + r.id + '" style="animation-delay:' + Math.min(i, 12) * 30 + 'ms">' +
+        '<span class="nm">' + esc(r.name) + ' <span class="st st-' + r.status + '">' + STN[r.status] + '</span></span><span class="code">' + esc(r.code) + '</span>' +
+        '<span class="svc">' + esc(svc) + '</span>' +
+        '<span class="meta"><span>📍 ' + esc(r.district) + '</span><span>📅 ' + day(r.visit_date) + ' · ' + per(r.period) + '</span><span>🕒 ' + ago(r.created_at) + '</span></span>' +
+        '<span></span><span class="tot">' + (r.has_quote && !r.total ? 'عرض سعر' : money(r)) + '</span></button>';
+    }).join('') : '<div class="empty"><span>📭</span>' + (rows.length ? 'ما فيه حجوزات بهالفلتر' : 'لسه ما وصل أي حجز') + '</div>';
+  }
+  $('#stats').addEventListener('click', function (e) { var b = e.target.closest('[data-f]'); if (b) { filter = b.getAttribute('data-f'); render(); } });
+  $('#q').addEventListener('input', function (e) { q = e.target.value.trim(); render(); });
+  $('#list').addEventListener('click', function (e) { var b = e.target.closest('[data-id]'); if (b) openPane(+b.getAttribute('data-id')); });
+
+  /* ---------- detail ---------- */
+  function openPane(id, keep) {
+    var r = rows.filter(function (x) { return x.id === id; })[0]; if (!r) return; openId = id;
+    $('#p-code').textContent = r.code;
+    var phone = String(r.phone || ''), intl = '966' + phone.slice(1);
+    var greet = 'السلام عليكم ' + (r.name || '') + '، معك مؤسسة نقاء للتنظيف بخصوص طلبك رقم ' + r.code + '.';
+    var items = (r.items || []).map(function (x) {
+      return '<div class="it"><div class="h">' + esc(x.name) + '<i>' + (x.quote ? 'عرض سعر' : (x.from ? 'من ' : '') + fmt(x.price) + (x.perVisit ? ' للزيارة' : '')) + '</i></div><small>' + esc(x.label) + '</small>' +
+        (x.save || []).map(function (s) { return '<small class="sv">🎉 ' + esc(s.t) + ': وفّر ' + fmt(s.v) + '</small>'; }).join('') +
+        ((x.partial || []).length ? '<small>📝 بعد المعاينة: ' + esc(x.partial.join('، ')) + '</small>' : '') + '</div>';
+    }).join('');
+    $('#p-bd').innerHTML =
+      '<div class="acts"><a class="btn ghost" href="tel:' + esc(phone) + '">📞 اتصال</a><a class="btn wa" target="_blank" rel="noopener" href="https://wa.me/' + intl + '?text=' + encodeURIComponent(greet) + '">💬 واتساب</a>' +
+      (r.location ? '<a class="btn ghost" target="_blank" rel="noopener" href="' + esc(r.location) + '">🗺️ الموقع</a>' : '<span class="btn ghost" style="opacity:.4">🗺️ بدون موقع</span>') + '</div>' +
+      '<div class="sec"><h3>حالة الطلب</h3><div class="stbtns">' + ST.slice(1).map(function (s) { return '<button data-s="' + s[0] + '" class="' + (r.status === s[0] ? 'on' : '') + '">' + s[1] + '</button>'; }).join('') + '</div></div>' +
+      '<div class="sec"><h3>العميل والموعد</h3>' +
+        '<div class="row"><span>الاسم</span><b>' + esc(r.name) + '</b></div><div class="row"><span>الجوال</span><b dir="ltr">' + esc(phone) + '</b></div>' +
+        '<div class="row"><span>الحي</span><b>' + esc(r.district) + '</b></div><div class="row"><span>الموعد</span><b>' + day(r.visit_date) + ' · ' + per(r.period) + '</b></div>' +
+        '<div class="row"><span>وصل</span><b>' + new Date(r.created_at).toLocaleString('ar-SA-u-nu-latn', { dateStyle: 'medium', timeStyle: 'short' }) + '</b></div>' +
+        (r.notes ? '<div class="row"><span>ملاحظات</span><b>' + esc(r.notes) + '</b></div>' : '') + '</div>' +
+      '<div class="sec"><h3>الخدمات</h3>' + items +
+        '<div class="row" style="margin-top:6px"><span>الإجمالي ' + (r.price_from ? '(يبدأ من)' : 'المبدئي') + '</span><b style="color:var(--gold3);font-size:18px">' + fmt(r.total) + ' ريال</b></div>' +
+        (r.savings ? '<div class="row"><span>وفّر من العروض</span><b style="color:var(--ok2)">' + fmt(r.savings) + ' ريال</b></div>' : '') + '</div>' +
+      '<div class="sec"><h3>بعد التأكيد</h3>' +
+        '<label class="f" for="p-final">السعر النهائي (لو تغيّر)</label><input class="inp" id="p-final" inputmode="numeric" value="' + (r.final_price != null ? r.final_price : '') + '" placeholder="' + fmt(r.total) + '">' +
+        '<label class="f" for="p-fnote">سبب تغيير السعر</label><input class="inp" id="p-fnote" value="' + esc(r.final_note || '') + '" placeholder="مثلًا: المساحة طلعت أكبر">' +
+        '<label class="f" for="p-anote">ملاحظات داخلية</label><textarea class="inp" id="p-anote" rows="3" placeholder="مثلًا: الفريق 2، العميل يفضّل بعد العصر">' + esc(r.admin_note || '') + '</textarea>' +
+        '<button class="btn gold w100" id="p-save">💾 احفظ</button></div>';
+    if (!keep) { $('#ov').classList.add('on'); $('#pane').classList.add('on'); }
+  }
+  function closePane() { openId = null; $('#ov').classList.remove('on'); $('#pane').classList.remove('on'); }
+  $('#ov').addEventListener('click', closePane); $('#p-x').addEventListener('click', closePane);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePane(); });
+  function update(id, patch, msg) {
+    sb.from('bookings').update(patch).eq('id', id).select().single().then(function (r) {
+      if (r.error) { toast('ما انحفظ، جرّب مرة ثانية'); return; }
+      rows = rows.map(function (x) { return x.id === id ? r.data : x; }); render(); openPane(id, true); toast(msg);
+    });
+  }
+  $('#p-bd').addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b || openId == null) return;
+    if (b.hasAttribute('data-s')) update(openId, { status: b.getAttribute('data-s') }, 'تم تغيير الحالة ✓');
+    if (b.id === 'p-save') {
+      var v = String($('#p-final').value || '').replace(/[٠-٩]/g, function (c) { return '٠١٢٣٤٥٦٧٨٩'.indexOf(c); }).replace(/[^\d]/g, '');
+      update(openId, { final_price: v ? +v : null, final_note: $('#p-fnote').value.trim() || null, admin_note: $('#p-anote').value.trim() || null }, 'تم الحفظ ✓');
+    }
+  });
+
+  /* ---------- export ---------- */
+  $('#b-csv').addEventListener('click', function () {
+    var head = ['رقم الحجز', 'وصل', 'الحالة', 'الاسم', 'الجوال', 'الحي', 'الموعد', 'الفترة', 'الخدمات', 'الإجمالي', 'السعر النهائي', 'وفّر', 'ملاحظات العميل', 'ملاحظات داخلية'];
+    var lines = [head].concat(rows.map(function (r) {
+      return [r.code, new Date(r.created_at).toISOString().replace('T', ' ').slice(0, 16), STN[r.status], r.name, r.phone, r.district, r.visit_date, r.period === 'am' ? 'صباحي' : 'مسائي',
+        (r.items || []).map(function (x) { return x.name + ': ' + x.label; }).join(' | '), r.total, r.final_price == null ? '' : r.final_price, r.savings, r.notes || '', r.admin_note || ''];
+    })).map(function (row) { return row.map(function (c) { c = String(c == null ? '' : c); return /[",\n]/.test(c) ? '"' + c.replace(/"/g, '""') + '"' : c; }).join(','); }).join('\n');
+    var a = document.createElement('a'); a.href = URL_.createObjectURL(new Blob(['﻿' + lines], { type: 'text/csv;charset=utf-8' }));
+    a.download = 'naqaa-bookings-' + new Date().toISOString().slice(0, 10) + '.csv'; a.click();
+  });
+  var URL_ = window.URL;
+  setInterval(function () { if (rows.length) render(); }, 60000); // refresh "قبل X دقيقة"
+})();
+</script>
+</body>
+</html>
