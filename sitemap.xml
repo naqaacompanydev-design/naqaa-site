@@ -680,6 +680,11 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://www.naqaa-cleaning.com/شركة-تنظيف-بالرياض/تنظيف-واجهات/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://www.naqaa-cleaning.com/شركة-تنظيف-بالرياض/تنظيف-بعد-التشطيب/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -783,6 +788,11 @@
   </url>
   <url>
     <loc>https://www.naqaa-cleaning.com/en/cleaning-company-riyadh/carpet-cleaning/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.naqaa-cleaning.com/en/cleaning-company-riyadh/facade-cleaning/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
