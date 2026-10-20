@@ -616,6 +616,7 @@ html[lang=en] .head .h2 .gold::after,html[lang=en] .final h2 .gold::after{transf
 }
 @media (prefers-reduced-motion:reduce){#ha-prog{display:none}}
 </style>
+<link rel="preload" as="image" href="/images/brand/wipe-hand-600.webp" id="nq-home-anim3-pre">
 <style id="nq-home-anim3">
 /* 1 intro: white screen, the brand icon (gloved hand) wipes, gold sparkles, then the curtains open */
 #ha-intro{position:fixed;inset:0;z-index:3000;pointer-events:none;display:grid;place-items:center}
@@ -624,13 +625,13 @@ html[lang=en] .head .h2 .gold::after,html[lang=en] .final h2 .gold::after{transf
 #ha-intro .lg{position:relative;width:min(70vw,340px);aspect-ratio:1}
 #ha-intro .lg img{width:100%;height:100%;object-fit:contain;opacity:0;transform:scale(.6) rotate(-14deg)}
 #ha-intro .sk{position:absolute;color:#c9a84c;font-size:26px;line-height:1;opacity:0;text-shadow:0 0 10px rgba(228,191,106,.6)}
-#ha-intro.go .cur.l{animation:haCurL .85s cubic-bezier(.77,0,.18,1) 2.05s forwards}
-#ha-intro.go .cur.r{animation:haCurR .85s cubic-bezier(.77,0,.18,1) 2.05s forwards}
-#ha-intro.go .lg img{animation:haHandIn .5s cubic-bezier(.34,1.56,.64,1) .1s forwards,haHandWipe 1.2s ease-in-out .6s,haHandOut .4s ease 1.85s forwards}
-#ha-intro.go .sk{animation:haSk .7s ease-out forwards}
+#ha-intro.go .cur.l{animation:haCurL .5s cubic-bezier(.77,0,.18,1) .8s forwards}
+#ha-intro.go .cur.r{animation:haCurR .5s cubic-bezier(.77,0,.18,1) .8s forwards}
+#ha-intro.go .lg img{animation:haHandIn .3s cubic-bezier(.34,1.56,.64,1) forwards,haHandWipe .5s ease-in-out .25s,haHandOut .25s ease .75s forwards}
+#ha-intro.go .sk{animation:haSk .5s ease-out forwards}
 @keyframes haCurL{to{transform:translateX(-102%)}}@keyframes haCurR{to{transform:translateX(102%)}}
 @keyframes haHandIn{to{opacity:1;transform:none}}
-@keyframes haHandWipe{0%,100%{transform:none}25%{transform:translate(-9%,4%) rotate(-7deg)}50%{transform:translate(8%,-3%) rotate(6deg)}75%{transform:translate(-7%,3%) rotate(-5deg)}}
+@keyframes haHandWipe{0%,100%{transform:none}35%{transform:translate(-9%,4%) rotate(-7deg)}70%{transform:translate(8%,-3%) rotate(6deg)}}
 @keyframes haHandOut{from{opacity:1;transform:none}to{opacity:0;transform:scale(.85)}}
 @keyframes haSk{0%{opacity:0;transform:scale(.2) rotate(0)}40%{opacity:1;transform:scale(1.25) rotate(45deg)}100%{opacity:0;transform:scale(.6) rotate(90deg)}}
 /* 4 gold word strips */
@@ -652,11 +653,11 @@ html[lang=en] .head .h2 .gold::after,html[lang=en] .final h2 .gold::after{transf
 </style>
 </head>
 <body>
-<div id="ha-intro" aria-hidden="true"><div class="cur l"></div><div class="cur r"></div><div class="lg"><img src="/images/brand/wipe-hand.webp" alt="" width="340" height="340"></div></div>
+<div id="ha-intro" aria-hidden="true"><div class="cur l"></div><div class="cur r"></div><div class="lg"><img src="/images/brand/wipe-hand-600.webp" alt="" width="340" height="340"></div></div>
 <script id="nq-home-anim3-intro">(function(){function haOnce(k,max){if(/[?&]wow/.test(location.search))return true;var t=new Date().toISOString().slice(0,10),n=0;try{var v=(localStorage.getItem(k)||'').split('|');n=v[0]===t?+v[1]||0:0;if(n>=(max||1))return false;localStorage.setItem(k,t+'|'+(n+1));}catch(e){}return true;}window.haOnce=haOnce;var el=document.getElementById('ha-intro');
 if(!haOnce('haIntro3',3)||matchMedia('(prefers-reduced-motion: reduce)').matches){el.remove();return;}
-var lg=el.querySelector('.lg'),P=[[8,18],[86,12],[92,62],[14,74],[50,4],[70,88],[30,40],[64,34]];P.forEach(function(p,i){var k=document.createElement('i');k.className='sk';k.textContent='✦';k.style.left=p[0]+'%';k.style.top=p[1]+'%';k.style.animationDelay=(.7+i*.13).toFixed(2)+'s';lg.appendChild(k);});
-el.className='go';setTimeout(function(){el.remove();document.dispatchEvent(new Event('ha-intro-done'));},2950);})();</script>
+var lg=el.querySelector('.lg'),P=[[8,18],[86,12],[92,62],[14,74],[50,4],[70,88],[30,40],[64,34]];P.forEach(function(p,i){var k=document.createElement('i');k.className='sk';k.textContent='✦';k.style.left=p[0]+'%';k.style.top=p[1]+'%';k.style.animationDelay=(.15+i*.06).toFixed(2)+'s';lg.appendChild(k);});
+el.className='go';setTimeout(function(){el.remove();document.dispatchEvent(new Event('ha-intro-done'));},1350);})();</script>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSS7QXXP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
 <div id="progress"></div>
 
