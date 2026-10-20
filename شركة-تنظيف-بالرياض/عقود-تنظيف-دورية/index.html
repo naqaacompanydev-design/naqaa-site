@@ -1099,13 +1099,46 @@ body.nq-inner .sidebar-inner{top:110px}</style>
 @keyframes nqSocIn{from{opacity:0;transform:translateY(12px) scale(.6)}to{opacity:1;transform:none}}
 @keyframes nqSocRing{0%,82%{opacity:0;transform:rotate(0)}86%{opacity:1}100%{opacity:0;transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){.nq-soc-i>*,.nq-soc-i>*::after{animation:none}}
-</style><style id="nq-pbtn">
+</style><style id="nq-pbtn-hero">.nq-calc-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#c9a84c,#e4bf6a 60%,#f5d98e)!important;color:#1a1405!important;font-weight:900;text-decoration:none!important}.nq-calc-btn svg{width:20px;height:20px}.tk-btns:has(.nq-calc-btn){flex-wrap:wrap!important}.tk-btns .nq-calc-btn{flex:1 1 100%!important;order:-1}.tk-btns:has(.nq-calc-btn)>.tk-btn:not(.nq-calc-btn){flex:1 1 0!important;min-width:0}</style>
+<style id="nq-pbtn">
 #fbar .p,#nq-fbar .p{background:linear-gradient(135deg,#c9a84c,#e4bf6a 60%,#f5d98e);color:#1a1405!important;font-weight:900}
 #fbar .p svg,#nq-fbar .p svg{width:19px;height:19px}
 @media(max-width:899px){#fbar a,#nq-fbar a{font-size:14px!important;gap:6px!important;padding:0 4px!important}#fbar .p,#nq-fbar .p{flex:1.15!important}}
 @media(max-width:359px){#fbar a,#nq-fbar a{font-size:12.5px!important}#fbar svg,#nq-fbar svg{width:17px!important;height:17px!important}}
 @media(prefers-reduced-motion:no-preference){#fbar .p svg,#nq-fbar .p svg{animation:nqCalc 5s ease-in-out 2s infinite}}
 @keyframes nqCalc{0%,88%,100%{transform:none}91%{transform:translateY(-3px) rotate(-8deg)}94%{transform:translateY(0) rotate(6deg)}}
+</style>
+<style id="nq-mm">
+.mm{position:static;display:flex;align-items:center}
+.mm-t{display:inline-flex!important;align-items:center;gap:6px}
+.mm-t i,.mm-m summary i{width:7px;height:7px;border-left:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg) translateY(-2px);transition:transform .3s}
+.mm:hover .mm-t i,.mm:focus-within .mm-t i{transform:rotate(135deg) translateY(-2px)}
+.mm-p{position:absolute;top:100%;left:50%;width:min(980px,94vw);transform:translate(-50%,12px);opacity:0;visibility:hidden;transition:opacity .25s,transform .35s cubic-bezier(.22,1,.36,1),visibility .25s;background:rgba(9,20,36,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(201,168,76,.28);border-top:0;border-radius:0 0 24px 24px;box-shadow:0 30px 60px -20px rgba(0,0,0,.85);padding:22px 24px 18px;z-index:1300;text-align:right}
+.mm:hover .mm-p,.mm:focus-within .mm-p{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.mm-gs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px 22px}
+.mm-g{display:flex;flex-direction:column}
+.mm-gt{display:flex;align-items:center;gap:8px;font:900 15px Cairo,sans-serif;color:#e4bf6a;padding:0 0 8px;margin-bottom:4px;border-bottom:1px solid rgba(201,168,76,.18)}
+.mm-gt span{font-size:18px}
+#hdr .mm-p a,#nq-hdr .mm-p a{display:block;font-size:14.5px!important;font-weight:700;color:rgba(248,246,240,.86)!important;padding:7px 0!important;white-space:normal;text-decoration:none!important;transition:color .2s,transform .2s}
+#hdr .mm-p a::after,#nq-hdr .mm-p a::after{display:none!important}
+#hdr .mm-p a:hover,#nq-hdr .mm-p a:hover{color:#f5d98e!important;transform:translateX(-4px)}
+.mm-q{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding-top:14px;border-top:1px solid rgba(201,168,76,.18)}
+#hdr .mm-q a,#nq-hdr .mm-q a,.mm-m .mm-q a{display:inline-flex!important;align-items:center;height:38px;padding:0 16px!important;border-radius:50px;border:1px solid rgba(201,168,76,.35);font-size:14px!important;font-weight:800;color:#f5d98e!important;text-decoration:none!important;transform:none!important}
+#hdr .mm-q a.g,#nq-hdr .mm-q a.g,.mm-m .mm-q a.g{background:linear-gradient(135deg,#c9a84c,#e4bf6a 60%,#f5d98e);color:#1a1405!important;border:0}
+#hdr .mm-q a.all,#nq-hdr .mm-q a.all,.mm-m .mm-q a.all{margin-inline-start:auto;border:0}
+/* phone menu */
+.mm-m{width:100%;border-bottom:1px solid rgba(201,168,76,.08)}
+.mm-m summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;font-weight:800;color:#f8f6f0;padding:12px 0}
+#menu .mm-m summary{font-size:26px}#nq-menu .mm-m summary{font-size:20px}
+.mm-m summary::-webkit-details-marker{display:none}
+.mm-m[open] summary{color:#e4bf6a}.mm-m[open] summary i{transform:rotate(135deg) translateY(-2px)}
+.mm-mb{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;padding:4px 2px 14px;text-align:right;max-height:52vh;overflow:auto}
+.mm-mb .mm-gt{font-size:14px}
+#menu .mm-mb a,#nq-menu .mm-mb a{display:block;width:auto!important;font-size:14px!important;font-weight:700;color:rgba(248,246,240,.86)!important;padding:6px 0!important;border:0!important;opacity:1!important;transform:none!important;text-align:right!important}
+.mm-mb .mm-q{grid-column:1/-1;justify-content:center;margin-top:4px}
+.mm-mb .mm-q a.all{margin-inline-start:0!important}
+#menu:has(.mm-m[open]){justify-content:flex-start;overflow:auto}
+@media(max-width:899px){.mm-p{display:none}}
 </style>
 </head>
 <body class="nq-inner">
@@ -1115,7 +1148,7 @@ body.nq-inner .sidebar-inner{top:110px}</style>
   <nav class="nq-wrap nq-hdr-in" aria-label="القائمة الرئيسية">
     <a href="/" class="nq-logo" aria-label="مؤسسة نقاء للتنظيف - الرئيسية"><img src="/logo.svg" alt="مؤسسة نقاء للتنظيف" width="230" height="46"></a>
     <div class="nq-nav">
-      <a href="/services/">الخدمات</a>
+      <div class="mm" data-mm><a class="mm-t" href="/شركة-تنظيف-بالرياض/" aria-haspopup="true">الخدمات<i aria-hidden="true"></i></a><div class="mm-p" role="menu"><div class="mm-gs"><div class="mm-g"><div class="mm-gt"><span>🏠</span>تنظيف المنازل</div><a href="/شركة-تنظيف-بالرياض/تنظيف-منازل/">تنظيف منازل</a><a href="/شركة-تنظيف-بالرياض/تنظيف-شقق/">تنظيف شقق</a><a href="/شركة-تنظيف-بالرياض/تنظيف-فلل/">تنظيف فلل</a><a href="/شركة-تنظيف-بالرياض/تنظيف-بعد-التشطيب/">تنظيف بعد التشطيب</a><a href="/services/التنظيف-العميق-الشامل/">التنظيف العميق</a><a href="/services/التنظيف-الاخضر-الصديق-للبيئة/">التنظيف الأخضر</a></div><div class="mm-g"><div class="mm-gt"><span>🛋️</span>مجالس وسجاد ومكيفات</div><a href="/شركة-تنظيف-بالرياض/شركة-تنظيف-مجالس/">تنظيف مجالس وكنب</a><a href="/شركة-تنظيف-بالرياض/غسيل-سجاد/">غسيل سجاد وموكيت</a><a href="/services/حماية-المجالس-بتقنية-النانو/">حماية النانو</a><a href="/services/تنظيف-المكيفات-والستائر/">تنظيف مكيفات وستائر</a></div><div class="mm-g"><div class="mm-gt"><span>💧</span>خزانات ومكافحة</div><a href="/شركة-تنظيف-بالرياض/تنظيف-خزانات/">تنظيف خزانات</a><a href="/شركة-تنظيف-بالرياض/عزل-خزانات/">عزل خزانات</a><a href="/شركة-تنظيف-بالرياض/تنظيف-وعزل-خزانات/">تنظيف وعزل خزانات</a><a href="/شركة-تنظيف-بالرياض/مكافحة-حشرات/">مكافحة حشرات وقوارض</a><a href="/services/تنظيف-المسابح/">تنظيف مسابح</a></div><div class="mm-g"><div class="mm-gt"><span>🏢</span>شركات ومنشآت</div><a href="/services/تنظيف-الشركات-والمكاتب/">تنظيف مكاتب وشركات</a><a href="/شركة-تنظيف-بالرياض/تنظيف-مدارس/">تنظيف مدارس</a><a href="/شركة-تنظيف-بالرياض/تنظيف-واجهات/">تنظيف واجهات</a><a href="/شركة-تنظيف-بالرياض/عقود-تنظيف-دورية/">عقود تنظيف دورية</a></div></div><div class="mm-q"><a href="/pricing/" class="g">🧮 احسب سعرك</a><a href="/ضماناتنا/">🛡️ ضماناتنا</a><a href="/آراء-العملاء/">⭐ آراء العملاء</a><a href="/شركة-تنظيف-بالرياض/" class="all">كل الخدمات ←</a></div></div></div>
       <a href="/شركة-تنظيف-بالرياض/">شركة تنظيف بالرياض</a>
       <a href="/pricing/">الأسعار </a>
       <a href="/about/">من نحن</a>
@@ -1129,7 +1162,7 @@ body.nq-inner .sidebar-inner{top:110px}</style>
   </nav>
 </header>
 <nav id="nq-menu" aria-label="قائمة الجوال">
-  <a href="/services/">الخدمات</a>
+  <details class="mm-m" data-mm><summary>الخدمات<i aria-hidden="true"></i></summary><div class="mm-mb"><div class="mm-g"><div class="mm-gt"><span>🏠</span>تنظيف المنازل</div><a href="/شركة-تنظيف-بالرياض/تنظيف-منازل/">تنظيف منازل</a><a href="/شركة-تنظيف-بالرياض/تنظيف-شقق/">تنظيف شقق</a><a href="/شركة-تنظيف-بالرياض/تنظيف-فلل/">تنظيف فلل</a><a href="/شركة-تنظيف-بالرياض/تنظيف-بعد-التشطيب/">تنظيف بعد التشطيب</a><a href="/services/التنظيف-العميق-الشامل/">التنظيف العميق</a><a href="/services/التنظيف-الاخضر-الصديق-للبيئة/">التنظيف الأخضر</a></div><div class="mm-g"><div class="mm-gt"><span>🛋️</span>مجالس وسجاد ومكيفات</div><a href="/شركة-تنظيف-بالرياض/شركة-تنظيف-مجالس/">تنظيف مجالس وكنب</a><a href="/شركة-تنظيف-بالرياض/غسيل-سجاد/">غسيل سجاد وموكيت</a><a href="/services/حماية-المجالس-بتقنية-النانو/">حماية النانو</a><a href="/services/تنظيف-المكيفات-والستائر/">تنظيف مكيفات وستائر</a></div><div class="mm-g"><div class="mm-gt"><span>💧</span>خزانات ومكافحة</div><a href="/شركة-تنظيف-بالرياض/تنظيف-خزانات/">تنظيف خزانات</a><a href="/شركة-تنظيف-بالرياض/عزل-خزانات/">عزل خزانات</a><a href="/شركة-تنظيف-بالرياض/تنظيف-وعزل-خزانات/">تنظيف وعزل خزانات</a><a href="/شركة-تنظيف-بالرياض/مكافحة-حشرات/">مكافحة حشرات وقوارض</a><a href="/services/تنظيف-المسابح/">تنظيف مسابح</a></div><div class="mm-g"><div class="mm-gt"><span>🏢</span>شركات ومنشآت</div><a href="/services/تنظيف-الشركات-والمكاتب/">تنظيف مكاتب وشركات</a><a href="/شركة-تنظيف-بالرياض/تنظيف-مدارس/">تنظيف مدارس</a><a href="/شركة-تنظيف-بالرياض/تنظيف-واجهات/">تنظيف واجهات</a><a href="/شركة-تنظيف-بالرياض/عقود-تنظيف-دورية/">عقود تنظيف دورية</a></div><div class="mm-q"><a href="/pricing/" class="g">🧮 احسب سعرك</a><a href="/ضماناتنا/">🛡️ ضماناتنا</a><a href="/آراء-العملاء/">⭐ آراء العملاء</a><a href="/شركة-تنظيف-بالرياض/" class="all">كل الخدمات ←</a></div></div></details>
   <a href="/شركة-تنظيف-بالرياض/">شركة تنظيف بالرياض</a>
   <a href="/pricing/">احسب السعر </a>
   <a href="/about/">من نحن</a>
@@ -1148,6 +1181,7 @@ body.nq-inner .sidebar-inner{top:110px}</style>
       <div class="tk-typed" aria-hidden="true">نخدم <b id="tk-typed" data-words="الشركات والمكاتب|الفلل|المنازل|الكافيهات|المطاعم|المصانع"></b><span class="cur"></span></div>
       <p class="tk-sub">مع مؤسسة نقاء، عقود تنظيف شهرية وسنوية بالرياض بفريق ثابت يبدأ من 4 عمال ومشرف، وجدول زيارات يناسبك: يومي أو أسبوعي أو شهري أو موسمي. والعقد السنوي عليه خصم 20%.</p>
       <div class="tk-btns">
+        <a class="tk-btn nq-calc-btn" data-nq="price-hero" href="/pricing/?s=contract"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2.5" width="16" height="19" rx="3"/><path d="M8 7h8"/><path d="M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg>اطلب عرض سعر للعقد</a>
         <a href="https://wa.me/966545833481?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D9%8A%20%D8%B9%D8%B1%D8%B6%20%D8%B3%D8%B9%D8%B1%20%D9%84%D8%B9%D9%82%D8%AF%20%D8%AA%D9%86%D8%B8%D9%8A%D9%81%20%D8%AF%D9%88%D8%B1%D9%8A.%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%85%D9%83%D8%A7%D9%86%3A%0A%D9%85%D8%AF%D8%A9%20%D8%A7%D9%84%D8%B9%D9%82%D8%AF%3A%0A%D8%A7%D9%84%D8%AD%D9%8A%3A" target="_blank" rel="noopener" class="tk-btn tk-btn-wa">💬 اطلب عرض سعر</a>
         <a href="tel:0545833481" class="tk-btn tk-btn-call">📞 اتصل بنا</a>
       </div>
@@ -1462,7 +1496,7 @@ body.nq-inner .sidebar-inner{top:110px}</style>
 </footer>
 <div id="nq-fbar" class="cmd-bar">
   <a class="w" href="https://wa.me/966545833481?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D9%8A%20%D8%B9%D8%B1%D8%B6%20%D8%B3%D8%B9%D8%B1%20%D9%84%D8%B9%D9%82%D8%AF%20%D8%AA%D9%86%D8%B8%D9%8A%D9%81%20%D8%AF%D9%88%D8%B1%D9%8A.%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%85%D9%83%D8%A7%D9%86%3A%0A%D9%85%D8%AF%D8%A9%20%D8%A7%D9%84%D8%B9%D9%82%D8%AF%3A%0A%D8%A7%D9%84%D8%AD%D9%8A%3A" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.78h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88z"/></svg> واتساب</a>
-  <a class="p" data-nq="price" href="/pricing/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2.5" width="16" height="19" rx="3"/><path d="M8 7h8"/><path d="M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg>احسب سعرك</a>
+  <a class="p" data-nq="price" href="/pricing/?s=contract"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2.5" width="16" height="19" rx="3"/><path d="M8 7h8"/><path d="M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg>احسب سعرك</a>
   <a class="c" href="tel:+966545833481"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> اتصل بنا</a>
 </div>
 

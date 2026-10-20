@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KSS7QXXP');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VQ0QH8WEB9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VQ0QH8WEB9');</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","yohfvybmze");</script>
+<script>
+/* Lead tracking: WhatsApp and phone clicks -> GA4 events (ضغطة_واتساب / ضغطة_اتصال) */
+(function(){
+  var PHONE = '545833481';
+  function where(el){
+    if (el.closest('.cmd-bar') || el.matches('.cmd-btn,.phone-btn')) return 'الزرار العائم';
+    if (el.closest('.mobile-menu')) return 'قايمة الموبايل';
+    if (el.closest('nav,#navbar')) return 'القايمة فوق';
+    if (el.closest('footer')) return 'آخر الصفحة';
+    if (el.closest('.pkg-card')) return 'كارت الباقة';
+    if (el.closest('.hero,.page-hero,.article-hero')) return 'أول الصفحة';
+    return 'جوه الصفحة';
+  }
+  window.naqaaTrack = function(name, params){
+    if (typeof gtag === 'function') gtag('event', name, params || {});
+  };
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var name = /^tel:/i.test(href) && href.indexOf(PHONE) > -1 ? 'ضغطة_اتصال'
+             : href.indexOf('wa.me/966' + PHONE) > -1 ? 'ضغطة_واتساب' : null;
+    if (!name) return;
+    naqaaTrack(name, {
+      link_location: where(a),
+      link_text: (a.textContent || a.title || '').replace(/\s+/g, ' ').trim().slice(0, 60)
+    });
+  }, true);
+})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#0a1628">
+
+<!-- ===== SEO ===== -->
+<title>آراء العملاء | مؤسسة نقاء للتنظيف بالرياض</title>
+<meta name="description" content="آراء عملاء مؤسسة نقاء للتنظيف بالرياض: تقييم 4.7 على خرائط جوجل، وتقييمات حقيقية على تنظيف المنازل والفلل والمجالس والخزانات.">
+<meta name="keywords" content="من نحن نقاء، شركة تنظيف بالرياض، نقاء للتنظيف، تنظيف منازل احترافي">
+<meta name="author" content="مؤسسة نقاء للتنظيف">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://www.naqaa-cleaning.com/آراء-العملاء/">
+
+<!-- ===== OPEN GRAPH ===== -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.naqaa-cleaning.com/آراء-العملاء/">
+<meta property="og:title" content="آراء العملاء | مؤسسة نقاء للتنظيف بالرياض">
+<meta property="og:description" content="آراء عملاء مؤسسة نقاء للتنظيف بالرياض: تقييم 4.7 على خرائط جوجل، وتقييمات حقيقية على تنظيف المنازل والفلل والمجالس والخزانات.">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:site_name" content="مؤسسة نقاء للتنظيف">
+
+<!-- ===== SCHEMA.ORG ===== -->
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"الرئيسية","item":"https://www.naqaa-cleaning.com/"},{"@type":"ListItem","position":2,"name":"آراء العملاء","item":"https://www.naqaa-cleaning.com/آراء-العملاء/"}]},{"@type":"WebPage","name":"آراء العملاء","url":"https://www.naqaa-cleaning.com/آراء-العملاء/","inLanguage":"ar"}]}</script>
+
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300..900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300..900&display=swap"></noscript>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Cairo',sans-serif;background:#0a1628;color:#f8f6f0;overflow-x:hidden;direction:rtl;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:#0a1628}
+::-webkit-scrollbar-thumb{background:#c9a84c;border-radius:3px}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+
+:root{
+  --navy:#0a1628;--navy2:#112240;
+  --gold:#c9a84c;--gold2:#e4bf6a;--gold3:#f5d98e;
+  --white:#f8f6f0;--gray:#8a9ab5;
+  --radius:16px;--radius-sm:10px;
+}
+
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+section{padding:80px 0}
+
+/* ===== TYPOGRAPHY ===== */
+.section-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);padding:6px 16px;border-radius:50px;font-size:12px;color:var(--gold2);margin-bottom:18px}
+.section-title{font-family:'Cairo',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:900;line-height:1.25;margin-bottom:14px}
+.section-title .gold{color:var(--gold2)}
+.section-sub{font-size:clamp(14px,2vw,16px);color:var(--gray);line-height:1.75;max-width:600px}
+.divider{width:50px;height:3px;background:linear-gradient(90deg,var(--gold),transparent);margin:16px 0}
+
+/* ===== BUTTONS ===== */
+.btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);padding:14px 32px;border-radius:50px;font-weight:700;font-size:15px;border:none;cursor:pointer;transition:all .3s;box-shadow:0 6px 20px rgba(201,168,76,.35);display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,168,76,.5)}
+.btn-outline{background:transparent;color:var(--white);padding:14px 32px;border-radius:50px;font-weight:600;font-size:15px;border:1.5px solid rgba(248,246,240,.25);cursor:pointer;transition:all .3s;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold2)}
+
+/* ===== REVEAL ===== */
+.reveal{opacity:0;transform:translateY(28px);transition:all .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ===== NAVBAR ===== */
+#navbar{position:fixed;top:0;right:0;left:0;z-index:1000;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;transition:all .4s;background:rgba(10,22,40,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,.15);box-shadow:0 4px 30px rgba(0,0,0,.4)}
+.logo-img{height:50px;width:auto;display:block}
+.logo{display:flex;align-items:center;gap:12px;cursor:pointer}
+
+
+.logo-text{line-height:1.15}
+
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:rgba(248,246,240,.8);font-size:14px;font-weight:500;transition:color .3s;position:relative;cursor:pointer}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;right:0;width:0;height:2px;background:var(--gold);transition:width .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold2)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold2)) !important;color:var(--navy) !important;padding:9px 22px !important;border-radius:50px !important;font-weight:700 !important;white-space:nowrap !important}
+.nav-cta::after{display:none !important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);border-radius:8px}
+.hamburger span{width:22px;height:2px;background:var(--gold2);border-radius:2px;transition:all .3s;display:block}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:0;right:0;left:0;bottom:0;background:rgba(10,22,40,.99);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:32px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:22px;font-weight:700;color:var(--white);transition:color .3s;cursor:pointer}
+.mobile-menu a:hover{color:var(--gold2)}
+.mobile-close{position:absolute;top:20px;left:20px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);border-radius:8px;padding:8px 14px;font-size:18px;cursor:pointer;color:var(--gold2)}
+
+/* ===== PAGE HERO ===== */
+.page-hero{padding:140px 24px 70px;text-align:center;background:linear-gradient(135deg,var(--navy) 0%,#0d1f3c 100%);position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.03) 1px,transparent 1px);background-size:60px 60px}
+.page-hero h1{font-family:'Cairo',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:900;margin-bottom:16px;position:relative}
+.page-hero p{font-size:16px;color:var(--gray);max-width:600px;margin:0 auto;position:relative}
+.page-breadcrumb{display:flex;align-items:center;gap:8px;justify-content:center;margin-bottom:20px;font-size:12px;color:var(--gray);position:relative}
+.page-breadcrumb a{color:var(--gold2)}
+.page-breadcrumb a:hover{text-decoration:underline}
+
+/* ===== ABOUT INTRO ===== */
+.about-intro{background:var(--navy);padding:80px 0}
+.about-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-intro-img{border-radius:20px;overflow:hidden;position:relative}
+.about-intro-img img{width:100%;height:400px;object-fit:cover;border-radius:20px}
+.about-intro-img::after{content:'';position:absolute;inset:0;border:2px solid rgba(201,168,76,.2);border-radius:20px;pointer-events:none}
+.about-badge-overlay{position:absolute;bottom:20px;right:20px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);padding:12px 20px;border-radius:14px;font-family:'Cairo',sans-serif;font-weight:900;font-size:18px;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.about-badge-overlay small{display:block;font-size:11px;font-weight:600}
+.about-intro-text p{font-size:15px;color:rgba(248,246,240,.8);line-height:1.9;margin-bottom:16px}
+.about-services-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0}
+.about-services-list li{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(248,246,240,.8);padding:8px 12px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.12);border-radius:8px}
+.about-services-list li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0}
+
+/* ===== VISION ===== */
+.about-vision{background:linear-gradient(180deg,var(--navy) 0%,var(--navy2) 100%);padding:80px 0}
+.vision-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.vision-card{background:linear-gradient(145deg,rgba(17,34,64,.8),rgba(10,22,40,.95));border:1px solid rgba(201,168,76,.15);border-radius:20px;padding:40px 36px;position:relative;overflow:hidden}
+.vision-card::before{content:'';position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle,rgba(201,168,76,.07) 0%,transparent 70%)}
+.vision-icon{width:64px;height:64px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:30px;margin-bottom:22px}
+.vision-card h3{font-family:'Cairo',sans-serif;font-size:22px;font-weight:900;color:var(--gold2);margin-bottom:14px}
+.vision-card p{font-size:14px;color:var(--gray);line-height:1.85}
+
+/* ===== VALUES ===== */
+.about-values{background:var(--navy2);padding:80px 0}
+.values-header{text-align:center;margin-bottom:56px}
+.values-header .divider{margin:16px auto}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.value-card{background:linear-gradient(145deg,rgba(17,34,64,.6),rgba(10,22,40,.8));border:1px solid rgba(201,168,76,.1);border-radius:18px;padding:30px 26px;transition:all .4s;position:relative;overflow:hidden}
+.value-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,.05) 0%,transparent 60%);opacity:0;transition:opacity .4s}
+.value-card:hover{border-color:rgba(201,168,76,.35);transform:translateY(-5px);box-shadow:0 18px 45px rgba(0,0,0,.25)}
+.value-card:hover::before{opacity:1}
+.value-icon{width:56px;height:56px;background:linear-gradient(135deg,rgba(201,168,76,.15),rgba(201,168,76,.05));border:1px solid rgba(201,168,76,.2);border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px;transition:all .4s}
+.value-card:hover .value-icon{background:linear-gradient(135deg,var(--gold),var(--gold2));border-color:transparent}
+.value-title{font-size:16px;font-weight:700;margin-bottom:10px;color:var(--white)}
+.value-desc{font-size:13px;color:var(--gray);line-height:1.7}
+
+/* ===== SERVICES SECTION ===== */
+.about-services{background:var(--navy);padding:80px 0}
+.services-header-ab{text-align:center;margin-bottom:56px}
+.services-header-ab .divider{margin:16px auto}
+.services-ab-img{width:100%;border-radius:16px;overflow:hidden;margin-bottom:40px}
+.services-ab-img img{width:100%;height:350px;object-fit:cover;border-radius:16px}
+.services-ab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.service-ab-item{display:flex;align-items:flex-start;gap:14px;padding:22px 20px;background:rgba(17,34,64,.6);border:1px solid rgba(201,168,76,.1);border-radius:14px;transition:all .3s;cursor:pointer}
+.service-ab-item:hover{border-color:rgba(201,168,76,.35);background:rgba(17,34,64,.9);transform:translateX(-4px)}
+.service-ab-icon{width:48px;height:48px;background:linear-gradient(135deg,rgba(201,168,76,.15),rgba(201,168,76,.05));border:1px solid rgba(201,168,76,.2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;transition:all .3s}
+.service-ab-item:hover .service-ab-icon{background:linear-gradient(135deg,var(--gold),var(--gold2));border-color:transparent}
+.service-ab-title{font-size:15px;font-weight:700;color:var(--white);margin-bottom:5px}
+.service-ab-desc{font-size:12px;color:var(--gray);line-height:1.6}
+.service-ab-link{display:inline-flex;align-items:center;gap:4px;color:var(--gold2);font-size:11px;font-weight:600;margin-top:8px}
+
+/* ===== AREAS ===== */
+.about-areas{background:var(--navy2);padding:80px 0}
+.areas-grid{display:grid;grid-template-columns:1fr;max-width:640px;margin:40px auto 0}
+.area-card{background:linear-gradient(145deg,rgba(17,34,64,.8),rgba(10,22,40,.95));border:1px solid rgba(201,168,76,.15);border-radius:20px;padding:36px 30px}
+.area-card-header{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.area-badge{width:52px;height:52px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.area-title{font-family:'Cairo',sans-serif;font-size:20px;font-weight:900;color:var(--white)}
+.area-subtitle{font-size:12px;color:var(--gold2)}
+.area-desc{font-size:13px;color:var(--gray);line-height:1.8;margin-bottom:18px}
+.area-services-list{list-style:none;display:flex;flex-direction:column;gap:7px}
+.area-services-list li{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(248,246,240,.75)}
+.area-services-list li::before{content:'←';color:var(--gold);font-size:10px}
+
+/* ===== QUALITY ===== */
+.about-quality{background:linear-gradient(180deg,var(--navy2) 0%,var(--navy) 100%);padding:80px 0}
+.quality-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.quality-img{border-radius:20px;overflow:hidden}
+.quality-img img{width:100%;height:380px;object-fit:cover;border-radius:20px}
+.quality-features{display:flex;flex-direction:column;gap:16px}
+.quality-item{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;background:rgba(10,22,40,.5);border:1px solid rgba(201,168,76,.08);border-radius:14px;transition:all .3s}
+.quality-item:hover{border-color:rgba(201,168,76,.25);background:rgba(10,22,40,.8);transform:translateX(-5px)}
+.quality-num{width:40px;height:40px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Cairo',sans-serif;font-size:16px;font-weight:900;color:var(--navy);flex-shrink:0}
+.quality-text .t{font-size:14px;font-weight:700;margin-bottom:4px;color:var(--white)}
+.quality-text .d{font-size:12px;color:var(--gray);line-height:1.6}
+.guarantee-badge{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,rgba(201,168,76,.12),rgba(201,168,76,.04));border:1px solid rgba(201,168,76,.25);border-radius:16px;padding:20px 24px;margin-top:8px}
+.guarantee-icon{width:52px;height:52px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
+.guarantee-text .t{font-size:15px;font-weight:700;color:var(--white)}
+.guarantee-text .d{font-size:12px;color:var(--gray);line-height:1.5;margin-top:3px}
+
+/* ===== CTA ===== */
+.about-cta{background:var(--navy);padding:80px 0}
+.cta-box{background:linear-gradient(135deg,rgba(201,168,76,.15),rgba(201,168,76,.05));border:1px solid rgba(201,168,76,.25);border-radius:24px;padding:60px 48px;text-align:center}
+.cta-box h2{font-family:'Cairo',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:900;margin-bottom:16px}
+.cta-box h2 .gold{color:var(--gold2)}
+.cta-box p{color:var(--gray);margin-bottom:32px;font-size:15px;max-width:550px;margin-left:auto;margin-right:auto;line-height:1.8}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.discount-tag{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);padding:8px 20px;border-radius:50px;font-weight:900;font-size:16px;margin-bottom:20px}
+
+/* ===== FOOTER ===== */
+footer{background:#060f1e;padding:28px 0;border-top:1px solid rgba(201,168,76,.1)}
+.footer-nav-links{display:flex;justify-content:center;align-items:center;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+.footer-nav-links a{color:var(--gray);font-size:13px;text-decoration:none;transition:color .3s;cursor:pointer}
+.footer-nav-links a:hover{color:var(--gold2)}
+.footer-sep{color:rgba(201,168,76,.4);font-size:13px}
+.footer-bottom{border-top:1px solid rgba(201,168,76,.08);padding-top:18px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--gray);flex-wrap:wrap;gap:10px}
+.design-credit-bar{margin-top:18px;padding-top:18px;border-top:1px solid rgba(201,168,76,.08);text-align:center}
+.design-credit{position:relative;display:inline-flex;align-items:center;gap:9px;padding:10px 26px;border-radius:30px;cursor:pointer;border:1px solid rgba(201,168,76,.35);background:rgba(201,168,76,.04);animation:credit-pulse 2.5s ease-in-out infinite;transition:transform .3s}
+.design-credit:hover{transform:translateY(-2px)}
+.design-credit-dot{width:6px;height:6px;border-radius:50%;background:var(--gold2);animation:credit-blink 1.6s ease-in-out infinite}
+.design-credit-text{background:linear-gradient(90deg,#c9a84c 0%,#f6e6b4 25%,#c9a84c 50%,#f6e6b4 75%,#c9a84c 100%);background-size:300% auto;-webkit-background-clip:text;background-clip:text;color:transparent;font-size:13px;font-weight:700;letter-spacing:.3px;animation:credit-shimmer 4s linear infinite}
+@keyframes credit-shimmer{0%{background-position:0% center}100%{background-position:300% center}}
+@keyframes credit-pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,168,76,.3)}50%{box-shadow:0 0 16px 3px rgba(201,168,76,.25)}}
+@keyframes credit-blink{0%,100%{opacity:1}50%{opacity:.25}}
+.design-credit-popover{display:none;position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:#0d1830;border:1px solid rgba(201,168,76,.25);border-radius:8px;padding:8px;min-width:220px;box-shadow:0 10px 30px rgba(0,0,0,.5);z-index:60;flex-direction:column;gap:4px}
+.design-credit-popover.show{display:flex}
+.design-credit-popover a{color:var(--gray);font-size:12px;text-decoration:none;padding:8px 10px;border-radius:5px;transition:background .2s,color .2s;text-align:center}
+.design-credit-popover a:hover{background:rgba(201,168,76,.1);color:var(--gold2)}
+.design-credit-popover:after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#0d1830}
+
+.footer-bottom span{color:var(--gold2)}
+
+/* ===== FLOATING BUTTONS ===== */
+.phone-float{position:fixed;bottom:24px;left:24px;z-index:999;display:flex;flex-direction:column;gap:10px}
+.phone-btn{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;transition:all .3s;box-shadow:0 4px 18px rgba(0,0,0,.3);cursor:pointer}
+.phone-btn.green{background:#25D366;animation:waRing 2s ease-in-out infinite}
+.phone-btn.gold-btn{background:linear-gradient(135deg,var(--gold),var(--gold2))}
+@keyframes waRing{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}50%{box-shadow:0 0 0 12px rgba(37,211,102,0)}}
+.phone-btn:hover{transform:scale(1.12)}
+.back-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--navy);z-index:999;transition:all .3s;opacity:0;transform:translateY(10px);box-shadow:0 4px 14px rgba(201,168,76,.35)}
+.back-top.visible{opacity:1;transform:translateY(0)}
+.back-top:hover{transform:translateY(-2px)}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  section{padding:60px 0}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  #navbar{flex-wrap:wrap;justify-content:space-between}
+  .logo{order:2;margin:0 auto}
+  .hamburger{order:3}
+  .about-intro-grid,.vision-grid,.quality-grid,.areas-grid{grid-template-columns:1fr;gap:36px}
+  .about-intro-img img,.quality-img img{height:250px}
+  .values-grid{grid-template-columns:1fr}
+  .services-ab-grid{grid-template-columns:1fr}
+  .cta-box{padding:36px 24px}
+  .cta-btns{flex-direction:column;align-items:center}
+  .footer-nav-links{gap:10px}
+  .footer-bottom{flex-direction:column;text-align:center;gap:8px}
+  
+  
+  .quality-item:hover{transform:none}
+}
+@media(max-width:480px){
+  .footer-nav-links{gap:8px}
+  .about-services-list{grid-template-columns:1fr}
+}
+
+.btn-primary svg{color:#0a1628;fill:#0a1628}
+.btn-outline svg{color:var(--gold2);fill:var(--gold2)}
+.phone-btn.green svg{color:#fff;fill:#fff}
+.phone-btn.gold-btn svg{color:#0a1628;fill:#0a1628}
+.phone-float a{display:flex;align-items:center;justify-content:center}
+</style>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0a1628">
+<link rel="stylesheet" href="/assets/nq-ui.css">
+<style id="nq-soc-css">
+.nq-soc{display:flex;flex-direction:column;align-items:center;gap:8px;margin:2px 0 16px}
+.nq-soc-l{display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:800;color:#e4bf6a;letter-spacing:.4px}
+.nq-soc-l::before,.nq-soc-l::after{content:'';width:28px;height:1px;background:linear-gradient(90deg,transparent,rgba(228,191,106,.6),transparent)}
+.nq-soc-i{display:flex;gap:10px;justify-content:center}
+.nq-soc-i>*{position:relative;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:#fff!important;background:var(--bg);box-shadow:0 0 0 1.5px rgba(228,191,106,.55);text-decoration:none!important;transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s;animation:nqSocIn .6s cubic-bezier(.34,1.56,.64,1) both;animation-delay:calc(var(--i)*90ms)}
+.nq-soc-i svg{width:17px;height:17px;position:relative;z-index:1}
+.nq-soc-i>*::after{content:'';position:absolute;inset:-4px;border-radius:50%;background:conic-gradient(from 0deg,transparent 72%,rgba(245,217,142,.95));opacity:0;animation:nqSocRing 7.5s linear infinite;animation-delay:calc(var(--i)*1.5s);-webkit-mask:radial-gradient(circle,transparent 64%,#000 66%);mask:radial-gradient(circle,transparent 64%,#000 66%);pointer-events:none}
+.nq-soc-i a:hover,.nq-soc-i a:focus-visible{transform:translateY(-4px) scale(1.1);box-shadow:0 0 0 1.5px #f5d98e,0 8px 18px -6px var(--sh)}
+.nq-soc .s-snap{--bg:#fffc00;--sh:rgba(255,252,0,.7);color:#111!important}
+.nq-soc .s-insta{--bg:radial-gradient(circle at 30% 110%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285aeb 90%);--sh:rgba(214,36,159,.7)}
+.nq-soc .s-tiktok{--bg:#010101;--sh:rgba(37,244,238,.6)}
+.nq-soc .s-x{--bg:#000;--sh:rgba(255,255,255,.45)}
+.nq-soc .s-yt{--bg:#ff0000;--sh:rgba(255,0,0,.6)}
+@keyframes nqSocIn{from{opacity:0;transform:translateY(12px) scale(.6)}to{opacity:1;transform:none}}
+@keyframes nqSocRing{0%,82%{opacity:0;transform:rotate(0)}86%{opacity:1}100%{opacity:0;transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.nq-soc-i>*,.nq-soc-i>*::after{animation:none}}
+</style><style id="gp-css">
+.gp{padding:30px 0 70px}
+.gp .container{max-width:1080px}
+.gp-h{text-align:center;margin:44px 0 22px}
+.gp-h h2{font-size:clamp(22px,5.4vw,34px);font-weight:900;color:#f8f6f0;margin:8px 0}
+.gp-h h2 em{font-style:normal;color:#e4bf6a}
+.gp-h p{color:#9aa8bf;font-size:15.5px;max-width:640px;margin:0 auto}
+.gp-ey{display:inline-block;font-size:13px;font-weight:800;color:#e4bf6a;border:1px solid rgba(201,168,76,.35);border-radius:50px;padding:5px 14px;background:rgba(201,168,76,.08)}
+.gp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gp-card{position:relative;border-radius:22px;padding:22px 20px;background:linear-gradient(160deg,rgba(17,34,64,.92),rgba(7,17,31,.97));border:1px solid rgba(201,168,76,.22);box-shadow:0 18px 40px -22px rgba(0,0,0,.8);transition:transform .35s cubic-bezier(.22,1,.36,1),border-color .3s}
+.gp-card:hover{transform:translateY(-5px);border-color:rgba(228,191,106,.6)}
+.gp-card .ic{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;font-size:30px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);margin-bottom:12px}
+.gp-card .tag{position:absolute;top:18px;left:18px;font-size:12.5px;font-weight:900;color:#1a1405;background:linear-gradient(135deg,#c9a84c,#f5d98e);border-radius:50px;padding:4px 12px}
+.gp-card h3{font-size:18px;font-weight:900;color:#f8f6f0;margin:0 0 6px}
+.gp-card p{font-size:14.5px;line-height:1.85;color:#b6c1d4;margin:0}
+.gp-card a.more{display:inline-block;margin-top:10px;font-size:13.5px;font-weight:800;color:#e4bf6a;text-decoration:none}
+.gp-note{margin-top:22px;border-radius:20px;padding:20px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.35);color:#e9e2cf;font-size:15px;line-height:1.95}
+.gp-note b{color:#f5d98e}
+.gp-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:s}
+.gp-step{border-radius:20px;padding:18px;background:rgba(13,29,51,.8);border:1px solid rgba(255,255,255,.07);counter-increment:s}
+.gp-step::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#c9a84c,#f5d98e);color:#1a1405;font-weight:900;margin-bottom:10px}
+.gp-step b{display:block;color:#f8f6f0;font-size:16px;margin-bottom:4px}
+.gp-step span{color:#9aa8bf;font-size:14px;line-height:1.8}
+.gp-cta{margin-top:40px;text-align:center;border-radius:24px;padding:28px 18px;background:radial-gradient(70% 90% at 50% 0%,rgba(201,168,76,.16),transparent 70%),rgba(13,29,51,.85);border:1px solid rgba(201,168,76,.3)}
+.gp-cta h3{font-size:22px;font-weight:900;color:#f8f6f0;margin:0 0 6px}
+.gp-cta p{color:#9aa8bf;margin:0 0 16px}
+.gp-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.gp-btn{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 24px;border-radius:50px;font-weight:900;font-size:15.5px;text-decoration:none!important}
+.gp-btn.g{background:linear-gradient(135deg,#c9a84c,#e4bf6a 60%,#f5d98e);color:#1a1405!important}
+.gp-btn.w{background:#25D366;color:#fff!important}
+.gp-btn.o{border:1.5px solid rgba(228,191,106,.6);color:#e4bf6a!important}
+.gp-score{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin:6px auto 26px;padding:18px 22px;max-width:560px;border-radius:22px;background:rgba(13,29,51,.85);border:1px solid rgba(201,168,76,.3)}
+.gp-score b{font-size:46px;font-weight:900;color:#f5d98e;line-height:1}
+.gp-score .st{color:#f5d98e;font-size:22px;letter-spacing:2px}
+.gp-score small{display:block;color:#9aa8bf;font-size:13.5px}
+.gp-revs{columns:3 300px;column-gap:16px}
+.gp-rv{break-inside:avoid;margin:0 0 16px;border-radius:20px;padding:18px;background:linear-gradient(160deg,rgba(17,34,64,.92),rgba(7,17,31,.97));border:1px solid rgba(201,168,76,.18)}
+.gp-rv header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.gp-rv .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:900;color:#1a1405;background:linear-gradient(135deg,#c9a84c,#f5d98e);flex:none}
+.gp-rv .av.wa{background:#25D366;color:#fff}
+.gp-rv header b{display:block;color:#f8f6f0;font-size:15px}
+.gp-rv header small{color:#8a9ab5;font-size:12.5px}
+.gp-rv .st{color:#f5d98e;letter-spacing:2px;font-size:15px}
+.gp-rv .st .off{color:#4b5568}
+.gp-rv p{color:#cfd7e4;font-size:15px;line-height:1.9;margin:6px 0 0}
+.gp-rv img,.gp-rv video{width:100%;border-radius:14px;margin-top:10px;display:block}
+.gp-rv .svc{display:inline-block;margin-top:10px;font-size:12.5px;font-weight:800;color:#e4bf6a;background:rgba(201,168,76,.1);border-radius:50px;padding:3px 10px}
+@media(max-width:900px){.gp-grid,.gp-steps{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.gp-grid,.gp-steps{grid-template-columns:1fr}.gp-card{padding:18px 16px}.gp-score b{font-size:40px}}
+</style>
+<style id="nq-pbtn">
+#fbar .p,#nq-fbar .p{background:linear-gradient(135deg,#c9a84c,#e4bf6a 60%,#f5d98e);color:#1a1405!important;font-weight:900}
+#fbar .p svg,#nq-fbar .p svg{width:19px;height:19px}
+@media(max-width:899px){#fbar a,#nq-fbar a{font-size:14px!important;gap:6px!important;padding:0 4px!important}#fbar .p,#nq-fbar .p{flex:1.15!important}}
+@media(max-width:359px){#fbar a,#nq-fbar a{font-size:12.5px!important}#fbar svg,#nq-fbar svg{width:17px!important;height:17px!important}}
+@media(prefers-reduced-motion:no-preference){#fbar .p svg,#nq-fbar .p svg{animation:nqCalc 5s ease-in-out 2s infinite}}
+@keyframes nqCalc{0%,88%,100%{transform:none}91%{transform:translateY(-3px) rotate(-8deg)}94%{transform:translateY(0) rotate(6deg)}}
+</style>
+<style id="nq-mm">
+.mm{position:static;display:flex;align-items:center}
+.mm-t{display:inline-flex!important;align-items:center;gap:6px}
+.mm-t i,.mm-m summary i{width:7px;height:7px;border-left:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg) translateY(-2px);transition:transform .3s}
+.mm:hover .mm-t i,.mm:focus-within .mm-t i{transform:rotate(135deg) translateY(-2px)}
+.mm-p{position:absolute;top:100%;left:50%;width:min(980px,94vw);transform:translate(-50%,12px);opacity:0;visibility:hidden;transition:opacity .25s,transform .35s cubic-bezier(.22,1,.36,1),visibility .25s;background:rgba(9,20,36,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(201,168,76,.28);border-top:0;border-radius:0 0 24px 24px;box-shadow:0 30px 60px -20px rgba(0,0,0,.85);padding:22px 24px 18px;z-index:1300;text-align:right}
+.mm:hover .mm-p,.mm:focus-within .mm-p{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.mm-gs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px 22px}
+.mm-g{display:flex;flex-direction:column}
+.mm-gt{display:flex;align-items:center;gap:8px;font:900 15px Cairo,sans-serif;color:#e4bf6a;padding:0 0 8px;margin-bottom:4px;border-bottom:1px solid rgba(201,168,76,.18)}
+.mm-gt span{font-size:18px}
+#hdr .mm-p a,#nq-hdr .mm-p a{display:block;font-size:14.5px!important;font-weight:700;color:rgba(248,246,240,.86)!important;padding:7px 0!important;white-space:normal;text-decoration:none!important;transition:color .2s,transform .2s}
+#hdr .mm-p a::after,#nq-hdr .mm-p a::after{display:none!important}
+#hdr .mm-p a:hover,#nq-hdr .mm-p a:hover{color:#f5d98e!important;transform:translateX(-4px)}
+.mm-q{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding-top:14px;border-top:1px solid rgba(201,168,76,.18)}
+#hdr .mm-q a,#nq-hdr .mm-q a,.mm-m .mm-q a{display:inline-flex!important;align-items:center;height:38px;padding:0 16px!important;border-radius:50px;border:1px solid rgba(201,168,76,.35);font-size:14px!important;font-weight:800;color:#f5d98e!important;text-decoration:none!important;transform:none!important}
+#hdr .mm-q a.g,#nq-hdr .mm-q a.g,.mm-m .mm-q a.g{background:linear-gradient(135deg,#c9a84c,#e4bf6a 60%,#f5d98e);color:#1a1405!important;border:0}
+#hdr .mm-q a.all,#nq-hdr .mm-q a.all,.mm-m .mm-q a.all{margin-inline-start:auto;border:0}
+/* phone menu */
+.mm-m{width:100%;border-bottom:1px solid rgba(201,168,76,.08)}
+.mm-m summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;font-weight:800;color:#f8f6f0;padding:12px 0}
+#menu .mm-m summary{font-size:26px}#nq-menu .mm-m summary{font-size:20px}
+.mm-m summary::-webkit-details-marker{display:none}
+.mm-m[open] summary{color:#e4bf6a}.mm-m[open] summary i{transform:rotate(135deg) translateY(-2px)}
+.mm-mb{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;padding:4px 2px 14px;text-align:right;max-height:52vh;overflow:auto}
+.mm-mb .mm-gt{font-size:14px}
+#menu .mm-mb a,#nq-menu .mm-mb a{display:block;width:auto!important;font-size:14px!important;font-weight:700;color:rgba(248,246,240,.86)!important;padding:6px 0!important;border:0!important;opacity:1!important;transform:none!important;text-align:right!important}
+.mm-mb .mm-q{grid-column:1/-1;justify-content:center;margin-top:4px}
+.mm-mb .mm-q a.all{margin-inline-start:0!important}
+#menu:has(.mm-m[open]){justify-content:flex-start;overflow:auto}
+@media(max-width:899px){.mm-p{display:none}}
+</style>
+</head>
+<body class="nq-inner">
+<!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSS7QXXP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
+<div id="nq-progress" aria-hidden="true"></div>
+<header id="nq-hdr">
+  <nav class="nq-wrap nq-hdr-in" aria-label="القائمة الرئيسية">
+    <a href="/" class="nq-logo" aria-label="مؤسسة نقاء للتنظيف - الرئيسية"><img src="/logo.svg" alt="مؤسسة نقاء للتنظيف" width="230" height="46"></a>
+    <div class="nq-nav">
+      <div class="mm" data-mm><a class="mm-t" href="/شركة-تنظيف-بالرياض/" aria-haspopup="true">الخدمات<i aria-hidden="true"></i></a><div class="mm-p" role="menu"><div class="mm-gs"><div class="mm-g"><div class="mm-gt"><span>🏠</span>تنظيف المنازل</div><a href="/شركة-تنظيف-بالرياض/تنظيف-منازل/">تنظيف منازل</a><a href="/شركة-تنظيف-بالرياض/تنظيف-شقق/">تنظيف شقق</a><a href="/شركة-تنظيف-بالرياض/تنظيف-فلل/">تنظيف فلل</a><a href="/شركة-تنظيف-بالرياض/تنظيف-بعد-التشطيب/">تنظيف بعد التشطيب</a><a href="/services/التنظيف-العميق-الشامل/">التنظيف العميق</a><a href="/services/التنظيف-الاخضر-الصديق-للبيئة/">التنظيف الأخضر</a></div><div class="mm-g"><div class="mm-gt"><span>🛋️</span>مجالس وسجاد ومكيفات</div><a href="/شركة-تنظيف-بالرياض/شركة-تنظيف-مجالس/">تنظيف مجالس وكنب</a><a href="/شركة-تنظيف-بالرياض/غسيل-سجاد/">غسيل سجاد وموكيت</a><a href="/services/حماية-المجالس-بتقنية-النانو/">حماية النانو</a><a href="/services/تنظيف-المكيفات-والستائر/">تنظيف مكيفات وستائر</a></div><div class="mm-g"><div class="mm-gt"><span>💧</span>خزانات ومكافحة</div><a href="/شركة-تنظيف-بالرياض/تنظيف-خزانات/">تنظيف خزانات</a><a href="/شركة-تنظيف-بالرياض/عزل-خزانات/">عزل خزانات</a><a href="/شركة-تنظيف-بالرياض/تنظيف-وعزل-خزانات/">تنظيف وعزل خزانات</a><a href="/شركة-تنظيف-بالرياض/مكافحة-حشرات/">مكافحة حشرات وقوارض</a><a href="/services/تنظيف-المسابح/">تنظيف مسابح</a></div><div class="mm-g"><div class="mm-gt"><span>🏢</span>شركات ومنشآت</div><a href="/services/تنظيف-الشركات-والمكاتب/">تنظيف مكاتب وشركات</a><a href="/شركة-تنظيف-بالرياض/تنظيف-مدارس/">تنظيف مدارس</a><a href="/شركة-تنظيف-بالرياض/تنظيف-واجهات/">تنظيف واجهات</a><a href="/شركة-تنظيف-بالرياض/عقود-تنظيف-دورية/">عقود تنظيف دورية</a></div></div><div class="mm-q"><a href="/pricing/" class="g">🧮 احسب سعرك</a><a href="/ضماناتنا/">🛡️ ضماناتنا</a><a href="/آراء-العملاء/">⭐ آراء العملاء</a><a href="/شركة-تنظيف-بالرياض/" class="all">كل الخدمات ←</a></div></div></div>
+      <a href="/شركة-تنظيف-بالرياض/">شركة تنظيف بالرياض</a>
+      <a href="/pricing/">الأسعار </a>
+      <a href="/about/">من نحن</a>
+      <a href="/blog/">المدونة</a><a data-nq="careers" href="/careers/">الوظائف</a>
+    </div>
+    <div class="nq-actions">
+      <a href="/en/" class="nq-pill" hreflang="en" lang="en">EN</a>
+      <a href="tel:+966545833481" class="nq-call">اتصل الآن</a>
+      <button class="nq-burger" id="nq-burger" type="button" aria-label="القائمة" aria-expanded="false" aria-controls="nq-menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+<nav id="nq-menu" aria-label="قائمة الجوال">
+  <details class="mm-m" data-mm><summary>الخدمات<i aria-hidden="true"></i></summary><div class="mm-mb"><div class="mm-g"><div class="mm-gt"><span>🏠</span>تنظيف المنازل</div><a href="/شركة-تنظيف-بالرياض/تنظيف-منازل/">تنظيف منازل</a><a href="/شركة-تنظيف-بالرياض/تنظيف-شقق/">تنظيف شقق</a><a href="/شركة-تنظيف-بالرياض/تنظيف-فلل/">تنظيف فلل</a><a href="/شركة-تنظيف-بالرياض/تنظيف-بعد-التشطيب/">تنظيف بعد التشطيب</a><a href="/services/التنظيف-العميق-الشامل/">التنظيف العميق</a><a href="/services/التنظيف-الاخضر-الصديق-للبيئة/">التنظيف الأخضر</a></div><div class="mm-g"><div class="mm-gt"><span>🛋️</span>مجالس وسجاد ومكيفات</div><a href="/شركة-تنظيف-بالرياض/شركة-تنظيف-مجالس/">تنظيف مجالس وكنب</a><a href="/شركة-تنظيف-بالرياض/غسيل-سجاد/">غسيل سجاد وموكيت</a><a href="/services/حماية-المجالس-بتقنية-النانو/">حماية النانو</a><a href="/services/تنظيف-المكيفات-والستائر/">تنظيف مكيفات وستائر</a></div><div class="mm-g"><div class="mm-gt"><span>💧</span>خزانات ومكافحة</div><a href="/شركة-تنظيف-بالرياض/تنظيف-خزانات/">تنظيف خزانات</a><a href="/شركة-تنظيف-بالرياض/عزل-خزانات/">عزل خزانات</a><a href="/شركة-تنظيف-بالرياض/تنظيف-وعزل-خزانات/">تنظيف وعزل خزانات</a><a href="/شركة-تنظيف-بالرياض/مكافحة-حشرات/">مكافحة حشرات وقوارض</a><a href="/services/تنظيف-المسابح/">تنظيف مسابح</a></div><div class="mm-g"><div class="mm-gt"><span>🏢</span>شركات ومنشآت</div><a href="/services/تنظيف-الشركات-والمكاتب/">تنظيف مكاتب وشركات</a><a href="/شركة-تنظيف-بالرياض/تنظيف-مدارس/">تنظيف مدارس</a><a href="/شركة-تنظيف-بالرياض/تنظيف-واجهات/">تنظيف واجهات</a><a href="/شركة-تنظيف-بالرياض/عقود-تنظيف-دورية/">عقود تنظيف دورية</a></div><div class="mm-q"><a href="/pricing/" class="g">🧮 احسب سعرك</a><a href="/ضماناتنا/">🛡️ ضماناتنا</a><a href="/آراء-العملاء/">⭐ آراء العملاء</a><a href="/شركة-تنظيف-بالرياض/" class="all">كل الخدمات ←</a></div></div></details>
+  <a href="/شركة-تنظيف-بالرياض/">شركة تنظيف بالرياض</a>
+  <a href="/pricing/">احسب السعر </a>
+  <a href="/about/">من نحن</a>
+  <a href="/blog/">المدونة</a><a data-nq="careers" href="/careers/">الوظائف</a>
+  <a href="tel:+966545833481" class="nq-menu-call">📞 0545833481</a>
+</nav><div id="navbar" hidden></div><div id="nav-home" hidden></div><div id="nav-about" hidden></div><div id="nav-services" hidden></div><div id="nav-blog" hidden></div><div id="nav-faq" hidden></div><div id="nav-pricing" hidden></div><div id="ham" hidden></div><div id="mobileMenu" hidden></div><div id="main-footer" hidden></div><div id="copy-year" hidden></div><div id="design-credit" hidden></div><div id="design-credit-popover" hidden></div><div id="backTop" hidden></div>
+
+
+
+
+<!-- MOBILE MENU -->
+
+
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-breadcrumb">
+      <a href="/">الرئيسية</a>
+      <span style="color:var(--gray)">›</span>
+      <span style="color:var(--gold2)">آراء العملاء</span>
+    </div>
+    <h1>آراء <span style="color:var(--gold2)">عملائنا</span></h1>
+    <p>تقييمات حقيقية من عملائنا على خرائط جوجل وواتساب.</p>
+  </div>
+</section>
+<section class="gp"><div class="container">
+<div class="gp-score"><div><b>4.7</b></div><div><div class="st">★★★★★</div><small>تقييمنا على خرائط جوجل</small></div><a class="gp-btn o" href="https://maps.app.goo.gl/pjCBxz5XXxGcYiXA6" target="_blank" rel="noopener">📍 كل التقييمات</a></div>
+<div class="gp-revs">
+<article class="gp-rv"><header><span class="av">م</span><div><b>محمد معيوف الدوسري</b><small>تقييم على خرائط جوجل</small></div></header><div class="st">★★★★★</div><p>حدث عطل في أحد الأجهزة لدي بسبب العمال، وبمجرد تواصلت مع الإدارة كان التعامل في قمة الاحترافية والرقي والتقدير للعميل، حيث تكفلت الشركة بكامل مصاريف إصلاح الجهاز. تجربة ممتازة وتدل على أمانتهم، وأنصح بالتعامل مع شركة نقاء بشدة.</p></article>
+<article class="gp-rv"><header><span class="av">M</span><div><b>Mr.Hossam</b><small>تنظيف منازل وفلل</small></div></header><div class="st">★★★★★</div><p>يعطيهم العافية، شغلهم ممتاز ونظافتهم تفرق، وتعاملهم راقي ومحترم جداً. أنصح فيهم لتنظيف المنازل والفلل.</p></article>
+<article class="gp-rv"><header><span class="av">س</span><div><b>سلطان الخيري</b><small>تنظيف منازل وفلل</small></div></header><div class="st">★★★★★</div><p>شغلهم نظيف وسريعين بالتواصل واتقان بالعمل، هذي المرة الثانية أجربهم في تنظيف المنزل، وباعتمدهم إن شاء الله المؤسسة الأولى للتنظيف عندي.</p></article>
+<article class="gp-rv"><header><span class="av">A</span><div><b>Ahmed Ashour</b><small>تنظيف منزل</small></div></header><div class="st">★★★★★</div><p>تعاملت مع مؤسسة نقاء للتنظيف وكانت تجربتي ممتازة حقيقي؛ شغل مرتب والتزام بالمواعيد وأسعارهم مناسبة. جربتهم في تنظيف المنزل وأنصح فيهم 👍</p></article>
+<article class="gp-rv"><header><span class="av">ع</span><div><b>عبداللطيف الاجهر</b><small>تنظيف مجالس وكنب</small></div></header><div class="st">★★★★★</div><p>أفضل شركة تنظيف منازل بالرياض، يستاهلون والله. تم تنظيف المجلس عندي وشغلهم جداً ممتاز.</p></article>
+<article class="gp-rv"><header><span class="av">ت</span><div><b>تغريد العجاجي</b><small>تنظيف منازل وفلل</small></div></header><div class="st">★★★★★</div><p>ماشاء الله شغل نظيف وتعقيم للفيلا بشكل احترافي جداً، ألف شكر للعاملين اللي اشتغلوا بالتنظيف.</p></article>
+<article class="gp-rv"><header><span class="av">M</span><div><b>Mohamed Ali</b><small>تقييم على خرائط جوجل</small></div></header><div class="st">★★★★<span class="off">★</span></div><p>صحيح وصلوا متأخرين نص ساعة عن الموعد، لكن الصراحة شغل يبرد الخاطر وشيء يبيض الوجه. المشرف متواجد طول فترة التنظيف وحريص على أدق التفاصيل.. مشكورين ويعطيكم ألف عافية.</p></article>
+<article class="gp-rv"><header><span class="av">ع</span><div><b>عبدالله الشمراني</b><small>تنظيف وعزل خزانات</small></div></header><div class="st">★★★★★</div><p>تم تنظيف وعزل الخزان عندي، شغلهم ممتاز يستاهلون. أنصح بالتعامل معهم في تنظيف الخزانات وعزلها.</p></article>
+<article class="gp-rv"><header><span class="av">ح</span><div><b>حاتم الزهراني</b><small>تنظيف شامل</small></div></header><div class="st">★★★★★</div><p>ماشاء الله شغل ممتاز، ووجود المشرف أحمد هاشم وتوجيهاته للعمالة والاهتمام بأبسط الأمور يوضح مدى الاهتمام.</p></article>
+<article class="gp-rv"><header><span class="av">A</span><div><b>ahmed elnagihy</b><small>تقييم على خرائط جوجل</small></div></header><div class="st">★★★★★</div><p>ممتازين في تنظيف وعزل الخزانات ما شاء الله ومهم جدا انهم دايم يعطونك صور من بداية العزل لين يخلصون</p><img src="/شركة-تنظيف-بالرياض/تنظيف-خزانات/tank-review-photo.jpg" alt="صورة من العميل" loading="lazy"></article>
+<article class="gp-rv"><header><span class="av wa">💬</span><div><b>عميل</b><small>رسالة واتساب من عميل</small></div></header><div class="st">★★★★★</div><p>يعطيهم العافية والله شغلهم مره ممتاز نظفوا الخزان ونصحوني بالعزل وما قصروا  أبد شغل مرتب وتعامل راقي .</p></article>
+<article class="gp-rv"><header><span class="av wa">🎙️</span><div><b>رسالة صوتية من عميل بعد تنظيف خزانه</b><small>اضغط تشغيل واسمع</small></div></header><video controls preload="none" playsinline poster="/شركة-تنظيف-بالرياض/تنظيف-خزانات/tank-review-whatsapp-poster.jpg" src="/شركة-تنظيف-بالرياض/تنظيف-خزانات/tank-review-whatsapp.mp4"></video></article>
+</div>
+<div class="gp-cta"><h3>خدمناك قبل؟</h3><p>تقييمك يساعد غيرك يختار صح، وما ياخذ منك أكثر من دقيقة.</p><div class="gp-btns">
+  <a class="gp-btn g" href="https://g.page/r/CbxUQ30jfv9PEBM/review" target="_blank" rel="noopener">⭐ اكتب تقييمك على جوجل</a>
+  <a class="gp-btn w" href="/pricing/">🧮 احسب سعرك واحجز</a></div></div>
+</div></section>
+
+<!-- ===== SHARED FOOTER ===== -->
+<footer id="nq-footer">
+  <div class="nq-wrap">
+    <div class="nq-soc" aria-label="تابعنا على السوشيال ميديا"><span class="nq-soc-l">تابعنا</span><div class="nq-soc-i"><a class="s-snap" style="--i:0" href="https://www.snapchat.com/add/naqaa.cleaning" target="_blank" rel="noopener" aria-label="سناب شات" title="سناب شات"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c2.9 0 5 2.2 5 5.1v2.3c.4.2.9.1 1.4-.1.6-.2 1.1.5.6 1-.5.4-1.4.7-2 .9.4 1.5 1.7 2.9 3.4 3.5.5.2.4.8-.1 1-.8.3-1.6.4-2 .6-.2.4-.1 1-.5 1.1-.6.2-1.4-.2-2.3.1-1 .3-1.8 1.6-3.5 1.6s-2.5-1.3-3.5-1.6c-.9-.3-1.7.1-2.3-.1-.4-.1-.3-.7-.5-1.1-.4-.2-1.2-.3-2-.6-.5-.2-.6-.8-.1-1 1.7-.6 3-2 3.4-3.5-.6-.2-1.5-.5-2-.9-.5-.5 0-1.2.6-1 .5.2 1 .3 1.4.1V7.3c0-2.9 2.1-5.1 5-5.1z" fill="currentColor"/></svg></a><a class="s-insta" style="--i:1" href="https://www.instagram.com/naqaa.sau" target="_blank" rel="noopener" aria-label="إنستجرام" title="إنستجرام"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a><a class="s-tiktok" style="--i:2" href="https://www.tiktok.com/@naqaa.sau" target="_blank" rel="noopener" aria-label="تيك توك" title="تيك توك"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 3h3c.2 1.9 1.6 3.4 3.5 3.6v3c-1.3 0-2.5-.4-3.5-1v6.2a5.8 5.8 0 1 1-5.8-5.8c.3 0 .6 0 .9.1v3.1a2.8 2.8 0 1 0 1.9 2.6V3z" fill="currentColor"/></svg></a><a class="s-x" style="--i:3" href="https://x.com/Naqaa_sau" target="_blank" rel="noopener" aria-label="إكس" title="إكس"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h4.6l4.1 5.6L17.6 3H20l-6.2 7.2L21 21h-4.6l-4.5-6.1L6.6 21H4.2l6.6-7.6L4 3zm3.3 1.6 9.8 14.8h1.5L8.8 4.6H7.3z" fill="currentColor"/></svg></a><span class="s-yt" style="--i:4" title="يوتيوب" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2c-.2-.9-.9-1.6-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4c-.9.2-1.6.9-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8c.2.9.9 1.6 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z" fill="currentColor"/></svg></span></div></div><div class="nq-f-links"><a href="/">الرئيسية</a><a href="/services/">الخدمات</a><a href="/pricing/">الأسعار </a><a href="/blog/">المدونة</a><a data-nq="careers" href="/careers/">الوظائف</a><a href="/faq/">الأسئلة الشائعة</a><a href="/شركة-تنظيف-بالرياض/">شركة تنظيف بالرياض</a><a href="/en/" hreflang="en" lang="en">English</a></div>
+    <div class="nq-f-bottom">
+      <div>جميع الحقوق محفوظة © <span id="nq-yr"></span> — <b>مؤسسة نقاء للتنظيف</b></div>
+      <div class="nq-f-legal"><a href="/terms">الشروط والأحكام</a><a href="/privacy">سياسة الخصوصية</a><a href="/refund">سياسة الإلغاء والاسترجاع</a><a href="/accessibility">إمكانية الوصول</a></div>
+    </div>
+    <span class="nq-credit" id="nq-credit">✦ تصميم وتطوير الموقع: شركة كليك زودياك ✦
+      <span class="nq-credit-pop" id="nq-credit-pop"><a href="https://wa.me/201023444798" target="_blank" rel="noopener">واتساب - 01023444798</a><a href="https://wa.me/201213816311" target="_blank" rel="noopener">واتساب - 01213816311</a></span>
+    </span>
+  </div>
+</footer>
+<div id="nq-fbar" class="cmd-bar">
+  <a class="w" href="https://wa.me/966545833481?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%AD%D8%AA%D8%A7%D8%AC%20%D8%A5%D9%84%D9%89%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%AA%D9%86%D8%B8%D9%8A%D9%81%20%D9%85%D8%B9%20%D9%85%D8%A4%D8%B3%D8%B3%D8%A9%20%D9%86%D9%82%D8%A7%D8%A1%0A%D8%A7%D9%84%D8%AD%D9%8A%3A%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%85%D9%83%D8%A7%D9%86%3A%20%D8%B4%D9%82%D8%A9%20%2F%20%D9%81%D9%8A%D9%84%D8%A7%20%2F%20%D8%AF%D9%88%D8%B1%0A%D8%B9%D8%AF%D8%AF%20%D8%A7%D9%84%D8%BA%D8%B1%D9%81%3A" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.78h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88z"/></svg> واتساب</a>
+  <a class="p" data-nq="price" href="/pricing/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2.5" width="16" height="19" rx="3"/><path d="M8 7h8"/><path d="M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg>احسب سعرك</a>
+  <a class="c" href="tel:+966545833481"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> اتصل بنا</a>
+</div>
+
+
+<!-- ===== FLOATING BUTTONS ===== -->
+
+
+
+<script>
+// ===== SPA NAVIGATION =====
+const pages = ['home','services','blog','faq','article1'];
+const pageTitles = {
+  home: 'مؤسسة نقاء للتنظيف | أفضل مؤسسة تنظيف بالرياض والمملكة',
+  services: 'خدمات التنظيف | مؤسسة نقاء للتنظيف بالمملكة العربية السعودية',
+  blog: 'مدونة نقاء | نصائح تنظيف المنازل والفلل في السعودية',
+  faq: 'الأسئلة الشائعة | مؤسسة نقاء للتنظيف',
+  article1: 'مؤسسة نقاء - أفضل مؤسسة تنظيف منازل آمنة على الأطفال في السعودية | نقاء'
+};
+
+function navigateTo(page) {
+  // hide all pages
+  pages.forEach(p => {
+    const el = document.getElementById('page-' + p);
+    if(el) { el.classList.remove('active'); }
+  });
+  // show target
+  const target = document.getElementById('page-' + page);
+  if(target) {
+    target.classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+    document.title = pageTitles[page] || pageTitles.home;
+    // Update nav active state
+    ['home','services','blog','faq'].forEach(p => {
+      const navEl = document.getElementById('nav-' + p);
+      if(navEl) navEl.classList.remove('active');
+    });
+    const activeNav = document.getElementById('nav-' + page);
+    if(activeNav) activeNav.classList.add('active');
+    // Re-trigger reveals
+    setTimeout(initReveal, 100);
+    // Update URL hash
+   // history.pushState(null, '', '#/' + page);
+  }
+}
+
+// Handle back button
+window.addEventListener('popstate', () => {
+const hash = 'home';
+  if(pages.includes(hash)) navigateTo(hash);
+});
+
+// Handle initial load from hash
+window.addEventListener('load', () => {
+const hash = 'home';
+  if(hash && pages.includes(hash)) navigateTo(hash);
+  else navigateTo('home');
+});
+
+// ===== NAVBAR SCROLL =====
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+  document.getElementById('backTop').classList.toggle('visible', window.scrollY > 400);
+});
+
+// ===== SCROLL REVEAL =====
+function initReveal() {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if(e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80);
+    });
+  }, {threshold: .1});
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => obs.observe(el));
+}
+initReveal();
+
+// ===== MOBILE MENU =====
+function toggleMenu() {
+  document.getElementById('ham').classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
+}
+
+// ===== FAQ ACCORDION =====
+function toggleFaq(item) {
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+
+// ===== FORM SUBMIT → WHATSAPP =====
+function submitForm() {
+  const name = document.getElementById('f-name')?.value || 'عميل';
+  const phone = document.getElementById('f-phone')?.value || '';
+  const service = document.getElementById('f-service')?.value || 'استفسار عام';
+  const msg = 'مرحباً، أنا ' + name + '%0Aرقمي: ' + phone + '%0Aأريد: ' + service;
+  naqaaTrack('ضغطة_واتساب', {link_location: 'فورم الحجز', link_text: 'فورم الحجز'});
+  window.open('https://wa.me/966545833481?text=' + msg, '_blank');
+}
+</script>
+
+<!-- ===== DYNAMIC COPYRIGHT & LEGAL PAGES ===== -->
+<script>
+// Dynamic copyright year
+(function(){
+  var startYear = 2025;
+  var currentYear = new Date().getFullYear();
+  var yearEl = document.getElementById('copy-year');
+  if(yearEl){
+    yearEl.textContent = currentYear > startYear ? startYear + ' - ' + currentYear : currentYear;
+  }
+})();
+
+  document.body.style.overflow = '';
+</script>
+
+
+
+<script>
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+  document.getElementById('back-top-btn') && (document.getElementById('back-top-btn').classList.toggle('visible', window.scrollY > 400));
+});
+
+// Hamburger
+function toggleMenu() {
+  document.getElementById('ham').classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
+}
+
+// Reveal on scroll
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+}, { threshold: 0.12 });
+revealEls.forEach(el => revealObserver.observe(el));
+
+// Copyright year
+(function(){
+  var startYear = 2025;
+  var currentYear = new Date().getFullYear();
+  var yearEl = document.getElementById('copy-year');
+  if(yearEl) yearEl.textContent = currentYear > startYear ? startYear + ' - ' + currentYear : currentYear;
+})();
+
+// Back to top
+var backTopBtn = document.getElementById('backTop');
+window.addEventListener('scroll', function() {
+  if(backTopBtn) backTopBtn.classList.toggle('visible', window.scrollY > 400);
+});
+</script>
+
+<script>
+(function(){
+  var trigger = document.getElementById('design-credit');
+  var popover = document.getElementById('design-credit-popover');
+  if(!trigger || !popover) return;
+  trigger.addEventListener('click', function(e){
+    e.stopPropagation();
+    popover.classList.toggle('show');
+  });
+  document.addEventListener('click', function(){
+    popover.classList.remove('show');
+  });
+})();
+console.log('%cDesigned & Developed by Click Zodiac | شركة كليك زودياك', 'color:#c9a84c;font-size:14px;font-weight:bold;');
+console.log('%cWhatsApp: 01023444798 / 01213816311', 'color:#9aa5b1;font-size:12px;');
+</script>
+<script src="/assets/nq-ui.js" defer></script>
+</body>
+</html>
