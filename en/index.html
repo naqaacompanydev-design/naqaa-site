@@ -617,25 +617,27 @@ html[lang=en] .head .h2 .gold::after,html[lang=en] .final h2 .gold::after{transf
 @media (prefers-reduced-motion:reduce){#ha-prog{display:none}}
 </style>
 <style id="nq-home-anim3">
-/* 1 intro */
+/* 1 intro: white screen, the brand icon (gloved hand) wipes, gold sparkles, then the curtains open */
 #ha-intro{position:fixed;inset:0;z-index:3000;pointer-events:none;display:grid;place-items:center}
-#ha-intro .cur{position:absolute;top:0;bottom:0;width:50.5%;background:radial-gradient(80% 60% at 50% 50%,#10233f,#07111f)}
+#ha-intro .cur{position:absolute;top:0;bottom:0;width:50.5%;background:#fff}
 #ha-intro .cur.l{left:0}#ha-intro .cur.r{right:0}
-#ha-intro .lg{position:relative;width:min(62vw,280px);aspect-ratio:5/1}
-#ha-intro .lg img{width:100%;height:100%;object-fit:contain;opacity:0;transform:scale(.85);filter:drop-shadow(0 0 18px rgba(228,191,106,.45))}
-#ha-intro .dt{position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px;border-radius:50%;background:#f5d98e;box-shadow:0 0 12px #e4bf6a}
-#ha-intro.go .cur.l{animation:haCurL .9s cubic-bezier(.77,0,.18,1) 1.25s forwards}
-#ha-intro.go .cur.r{animation:haCurR .9s cubic-bezier(.77,0,.18,1) 1.25s forwards}
-#ha-intro.go .lg img{animation:haLogo .6s cubic-bezier(.22,1,.36,1) .55s forwards,haLogoOut .5s ease 1.2s forwards}
-#ha-intro.go .dt{animation:haDot .7s cubic-bezier(.22,1,.36,1) both}
+#ha-intro .lg{position:relative;width:min(70vw,340px);aspect-ratio:1}
+#ha-intro .lg img{width:100%;height:100%;object-fit:contain;opacity:0;transform:scale(.6) rotate(-14deg)}
+#ha-intro .sk{position:absolute;color:#c9a84c;font-size:26px;line-height:1;opacity:0;text-shadow:0 0 10px rgba(228,191,106,.6)}
+#ha-intro.go .cur.l{animation:haCurL .85s cubic-bezier(.77,0,.18,1) 2.05s forwards}
+#ha-intro.go .cur.r{animation:haCurR .85s cubic-bezier(.77,0,.18,1) 2.05s forwards}
+#ha-intro.go .lg img{animation:haHandIn .5s cubic-bezier(.34,1.56,.64,1) .1s forwards,haHandWipe 1.2s ease-in-out .6s,haHandOut .4s ease 1.85s forwards}
+#ha-intro.go .sk{animation:haSk .7s ease-out forwards}
 @keyframes haCurL{to{transform:translateX(-102%)}}@keyframes haCurR{to{transform:translateX(102%)}}
-@keyframes haLogo{to{opacity:1;transform:none}}@keyframes haLogoOut{to{opacity:0;transform:scale(1.15)}}
-@keyframes haDot{from{transform:translate(var(--x),var(--y)) scale(1.4);opacity:0}60%{opacity:1}to{transform:translate(0,0) scale(.2);opacity:0}}
+@keyframes haHandIn{to{opacity:1;transform:none}}
+@keyframes haHandWipe{0%,100%{transform:none}25%{transform:translate(-9%,4%) rotate(-7deg)}50%{transform:translate(8%,-3%) rotate(6deg)}75%{transform:translate(-7%,3%) rotate(-5deg)}}
+@keyframes haHandOut{from{opacity:1;transform:none}to{opacity:0;transform:scale(.85)}}
+@keyframes haSk{0%{opacity:0;transform:scale(.2) rotate(0)}40%{opacity:1;transform:scale(1.25) rotate(45deg)}100%{opacity:0;transform:scale(.6) rotate(90deg)}}
 /* A wipe the dust */
 .hero .ha-dust{position:absolute;inset:0;z-index:4;width:100%;height:100%;touch-action:none;cursor:grab;transition:opacity .7s ease}
 .hero .ha-dust.done{opacity:0;pointer-events:none}
 .ha-hint{position:absolute;z-index:5;left:50%;top:46%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:10px;padding:12px 20px;border-radius:50px;background:rgba(7,17,31,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(228,191,106,.55);color:#f5d98e;font:800 16px Cairo,sans-serif;white-space:nowrap;pointer-events:none;box-shadow:0 14px 34px -12px rgba(0,0,0,.8);transition:opacity .4s,transform .4s}
-.ha-hint i{font-style:normal;font-size:24px;display:inline-block;animation:haFinger 1.6s ease-in-out infinite}
+.ha-hint img{width:34px;height:34px;object-fit:contain;border-radius:8px;background:#fff;padding:2px;display:inline-block;animation:haFinger 1.6s ease-in-out infinite}
 @keyframes haFinger{0%,100%{transform:translateX(-14px) rotate(-10deg)}50%{transform:translateX(14px) rotate(10deg)}}
 .ha-hint.off{opacity:0;transform:translate(-50%,-30%)}
 .ha-sq{position:absolute;z-index:6;top:0;bottom:0;width:14px;border-radius:8px;background:linear-gradient(90deg,#9c7a24,#f5d98e,#9c7a24);box-shadow:0 0 30px rgba(228,191,106,.7);pointer-events:none;right:-20px}
@@ -665,11 +667,11 @@ html[lang=en] .ha-wipe.ha-in::after{animation-name:haLineL}
 </style>
 </head>
 <body>
-<div id="ha-intro" aria-hidden="true"><div class="cur l"></div><div class="cur r"></div><div class="lg"><img src="/logo.svg" alt=""></div></div>
-<script id="nq-home-anim3-intro">(function(){var el=document.getElementById('ha-intro'),seen=false;try{seen=sessionStorage.getItem('haIntro')==='1';sessionStorage.setItem('haIntro','1');}catch(e){}
-if(seen||matchMedia('(prefers-reduced-motion: reduce)').matches){el.remove();return;}
-var lg=el.querySelector('.lg');for(var i=0;i<14;i++){var d=document.createElement('i');d.className='dt';var a=i/14*Math.PI*2,r=120+Math.random()*120;d.style.setProperty('--x',Math.cos(a)*r+'px');d.style.setProperty('--y',Math.sin(a)*r+'px');d.style.animationDelay=(Math.random()*.25).toFixed(2)+'s';lg.appendChild(d);}
-el.className='go';document.documentElement.classList.add('ha-intro-on');setTimeout(function(){el.remove();document.documentElement.classList.remove('ha-intro-on');document.dispatchEvent(new Event('ha-intro-done'));},2250);})();</script>
+<div id="ha-intro" aria-hidden="true"><div class="cur l"></div><div class="cur r"></div><div class="lg"><img src="/images/brand/wipe-hand.webp" alt="" width="340" height="340"></div></div>
+<script id="nq-home-anim3-intro">(function(){function haOnce(k){if(/[?&]wow/.test(location.search))return true;var t=new Date().toISOString().slice(0,10);try{if(localStorage.getItem(k)===t)return false;localStorage.setItem(k,t);}catch(e){}return true;}window.haOnce=haOnce;var el=document.getElementById('ha-intro');
+if(!haOnce('haIntro')||matchMedia('(prefers-reduced-motion: reduce)').matches){el.remove();return;}
+var lg=el.querySelector('.lg'),P=[[8,18],[86,12],[92,62],[14,74],[50,4],[70,88],[30,40],[64,34]];P.forEach(function(p,i){var k=document.createElement('i');k.className='sk';k.textContent='✦';k.style.left=p[0]+'%';k.style.top=p[1]+'%';k.style.animationDelay=(.7+i*.13).toFixed(2)+'s';lg.appendChild(k);});
+el.className='go';setTimeout(function(){el.remove();document.dispatchEvent(new Event('ha-intro-done'));},2950);})();</script>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSS7QXXP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
 <div id="progress"></div>
 
@@ -1232,11 +1234,10 @@ el.className='go';document.documentElement.classList.add('ha-intro-on');setTimeo
   var d = document, en = true;
   /* ---------- A: wipe the dust off the hero ---------- */
   var hero = d.querySelector('.hero');
-  var played = false; try { played = sessionStorage.getItem('haDust') === '1'; sessionStorage.setItem('haDust', '1'); } catch (e) {}
-  if (hero && !played) (function () {
+  if (hero && (window.haOnce ? window.haOnce('haDust') : true)) (function () {
     var cv = d.createElement('canvas'), ctx = cv.getContext('2d'), hint = d.createElement('div'), dpr = Math.min(devicePixelRatio || 1, 2);
     cv.className = 'ha-dust'; cv.setAttribute('aria-hidden', 'true');
-    hint.className = 'ha-hint'; hint.innerHTML = (en ? 'Wipe with your finger' : 'امسح بصباعك') + ' <i>👆</i>';
+    hint.className = 'ha-hint'; hint.innerHTML = (en ? 'Wipe with your finger' : 'امسح بصباعك') + ' <img src="/images/brand/wipe-hand.webp" alt="">';
     hero.appendChild(cv); hero.appendChild(hint);
     var W, H, G = 18, cells, total, hit = 0, done = false, idle, auto;
     function paint() {
