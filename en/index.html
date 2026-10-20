@@ -558,7 +558,7 @@ h1 .gold .w{background-size:260% 100%;background-position:100% 0;animation:wIn .
 @keyframes haStar{to{opacity:1;transform:none}}
 /* 7 popular package: badge pulses, savings glow */
 .pk.feat .pk-badge{animation:haBadge 2.4s ease-in-out infinite}
-@keyframes haBadge{0%,100%{transform:none;box-shadow:0 8px 20px -6px rgba(201,168,76,.7)}50%{transform:scale(1.07);box-shadow:0 0 0 6px rgba(228,191,106,.18),0 10px 26px -6px rgba(201,168,76,.9)}}
+@keyframes haBadge{0%,100%{transform:none}50%{transform:scale(1.07)}}
 /* 8 coverage: region chips light up in turn */
 .cover .chips span{animation:haChip 7.5s ease-in-out infinite}
 .cover .chips span:nth-child(2){animation-delay:1.5s}.cover .chips span:nth-child(3){animation-delay:3s}.cover .chips span:nth-child(4){animation-delay:4.5s}.cover .chips span:nth-child(5){animation-delay:6s}
@@ -592,7 +592,7 @@ h1 .gold .w{background-size:260% 100%;background-position:100% 0;animation:wIn .
 /* 3 press feedback */
 .btn,.fbar a,#ha-top{overflow:hidden}
 .btn:active,.fbar a:active{transform:scale(.96)!important;transition-duration:.12s}
-.svc:active,.pk:active,.fcard:active,.rv:active,.marq li:active{transform:scale(.98)!important;transition:transform .15s}
+.svc:active,.fcard:active,.rv:active{transform:scale(.98)!important;transition:transform .15s}
 /* 4 swipe hint */
 .ha-nudge>*{animation:haNudge 1.4s cubic-bezier(.45,0,.2,1) .3s}
 @keyframes haNudge{0%,100%{transform:none}35%{transform:translateX(-34px)}60%{transform:translateX(6px)}}
@@ -633,16 +633,6 @@ html[lang=en] .head .h2 .gold::after,html[lang=en] .final h2 .gold::after{transf
 @keyframes haHandWipe{0%,100%{transform:none}25%{transform:translate(-9%,4%) rotate(-7deg)}50%{transform:translate(8%,-3%) rotate(6deg)}75%{transform:translate(-7%,3%) rotate(-5deg)}}
 @keyframes haHandOut{from{opacity:1;transform:none}to{opacity:0;transform:scale(.85)}}
 @keyframes haSk{0%{opacity:0;transform:scale(.2) rotate(0)}40%{opacity:1;transform:scale(1.25) rotate(45deg)}100%{opacity:0;transform:scale(.6) rotate(90deg)}}
-/* A wipe the dust */
-.hero .ha-dust{position:absolute;inset:0;z-index:4;width:100%;height:100%;touch-action:none;cursor:grab;transition:opacity .7s ease}
-.hero .ha-dust.done{opacity:0;pointer-events:none}
-.ha-hint{position:absolute;z-index:5;left:50%;top:46%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:10px;padding:12px 20px;border-radius:50px;background:rgba(7,17,31,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(228,191,106,.55);color:#f5d98e;font:800 16px Cairo,sans-serif;white-space:nowrap;pointer-events:none;box-shadow:0 14px 34px -12px rgba(0,0,0,.8);transition:opacity .4s,transform .4s}
-.ha-hint img{width:34px;height:34px;object-fit:contain;border-radius:8px;background:#fff;padding:2px;display:inline-block;animation:haFinger 1.6s ease-in-out infinite}
-@keyframes haFinger{0%,100%{transform:translateX(-14px) rotate(-10deg)}50%{transform:translateX(14px) rotate(10deg)}}
-.ha-hint.off{opacity:0;transform:translate(-50%,-30%)}
-.ha-sq{position:absolute;z-index:6;top:0;bottom:0;width:14px;border-radius:8px;background:linear-gradient(90deg,#9c7a24,#f5d98e,#9c7a24);box-shadow:0 0 30px rgba(228,191,106,.7);pointer-events:none;right:-20px}
-.ha-spk{position:absolute;z-index:6;pointer-events:none;color:#fff;font-size:14px;text-shadow:0 0 8px #f5d98e;animation:haSpk .7s ease-out forwards}
-@keyframes haSpk{from{transform:translate(-50%,-50%) scale(.4);opacity:1}to{transform:translate(-50%,-160%) scale(1.2);opacity:0}}
 /* 2 squeegee reveal of sections */
 .ha-wipe{position:relative}
 .ha-wipe.ha-pre{clip-path:inset(0 0 0 100%)}
@@ -656,20 +646,27 @@ html[lang=en] .ha-wipe.ha-in{animation-name:haWipeL}
 html[lang=en] .ha-wipe.ha-in::after{animation-name:haLineL}
 @keyframes haLineL{from{left:0;opacity:1}90%{opacity:1}to{left:100%;opacity:0}}
 /* 4 gold word strips */
-.ha-strip{overflow:hidden;padding:18px 0;background:linear-gradient(180deg,var(--bg),#0b1a2e,var(--bg));border-top:1px solid rgba(201,168,76,.12);border-bottom:1px solid rgba(201,168,76,.12);direction:ltr}
+.ha-strip{overflow:hidden;padding:8px 0;background:linear-gradient(180deg,var(--bg),#0b1a2e,var(--bg));border-top:1px solid rgba(201,168,76,.12);border-bottom:1px solid rgba(201,168,76,.12);direction:ltr}
 .ha-strip .tr{display:flex;width:max-content;will-change:transform}
-.ha-strip span{flex:none;padding:0 14px;font:900 clamp(30px,9vw,64px)/1.1 Cairo,sans-serif;white-space:nowrap;letter-spacing:-.5px}
+.ha-strip span{flex:none;padding:0 9px;font:900 clamp(16px,4.6vw,32px)/1.1 Cairo,sans-serif;white-space:nowrap;letter-spacing:-.5px}
 .ha-strip span:nth-child(odd){background:linear-gradient(120deg,#c9a84c,#f5d98e 55%,#e4bf6a);-webkit-background-clip:text;background-clip:text;color:transparent}
-.ha-strip span:nth-child(even){color:transparent;-webkit-text-stroke:1.2px rgba(228,191,106,.75)}
-.ha-strip.alt span:nth-child(odd){color:transparent;-webkit-text-stroke:1.2px rgba(228,191,106,.75);background:none}
+.ha-strip span:nth-child(even){color:transparent;-webkit-text-stroke:.8px rgba(228,191,106,.75)}
+.ha-strip.alt span:nth-child(odd){color:transparent;-webkit-text-stroke:.8px rgba(228,191,106,.75);background:none}
 .ha-strip.alt span:nth-child(even){background:linear-gradient(120deg,#c9a84c,#f5d98e 55%,#e4bf6a);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:0}
-@media(prefers-reduced-motion:reduce){#ha-intro,.ha-dust,.ha-hint,.ha-sq{display:none!important}.ha-wipe{clip-path:none!important;animation:none!important}}
+/* packages on phones: static gold border (the spinning one repaints every frame) and gentler snapping */
+@media(max-width:899px){.pk.feat{animation:none!important}.pk-grid{scroll-snap-type:x proximity}}
+/* client logos: auto-moving strip the visitor can also swipe/drag */
+.marq.ha-free{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;cursor:grab}
+.marq.ha-free::-webkit-scrollbar{display:none}
+.marq.ha-free ul{animation:none!important;transform:none!important}
+.marq.ha-free.drag{cursor:grabbing}
+@media(prefers-reduced-motion:reduce){#ha-intro{display:none!important}.ha-wipe{clip-path:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 <div id="ha-intro" aria-hidden="true"><div class="cur l"></div><div class="cur r"></div><div class="lg"><img src="/images/brand/wipe-hand.webp" alt="" width="340" height="340"></div></div>
-<script id="nq-home-anim3-intro">(function(){function haOnce(k){if(/[?&]wow/.test(location.search))return true;var t=new Date().toISOString().slice(0,10);try{if(localStorage.getItem(k)===t)return false;localStorage.setItem(k,t);}catch(e){}return true;}window.haOnce=haOnce;var el=document.getElementById('ha-intro');
-if(!haOnce('haIntro')||matchMedia('(prefers-reduced-motion: reduce)').matches){el.remove();return;}
+<script id="nq-home-anim3-intro">(function(){function haOnce(k,max){if(/[?&]wow/.test(location.search))return true;var t=new Date().toISOString().slice(0,10),n=0;try{var v=(localStorage.getItem(k)||'').split('|');n=v[0]===t?+v[1]||0:0;if(n>=(max||1))return false;localStorage.setItem(k,t+'|'+(n+1));}catch(e){}return true;}window.haOnce=haOnce;var el=document.getElementById('ha-intro');
+if(!haOnce('haIntro3',3)||matchMedia('(prefers-reduced-motion: reduce)').matches){el.remove();return;}
 var lg=el.querySelector('.lg'),P=[[8,18],[86,12],[92,62],[14,74],[50,4],[70,88],[30,40],[64,34]];P.forEach(function(p,i){var k=document.createElement('i');k.className='sk';k.textContent='✦';k.style.left=p[0]+'%';k.style.top=p[1]+'%';k.style.animationDelay=(.7+i*.13).toFixed(2)+'s';lg.appendChild(k);});
 el.className='go';setTimeout(function(){el.remove();document.dispatchEvent(new Event('ha-intro-done'));},2950);})();</script>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSS7QXXP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -1232,73 +1229,10 @@ el.className='go';setTimeout(function(){el.remove();document.dispatchEvent(new E
 (function(){
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var d = document, en = true;
-  /* ---------- A: wipe the dust off the hero ---------- */
-  var hero = d.querySelector('.hero');
-  if (hero && (window.haOnce ? window.haOnce('haDust') : true)) (function () {
-    var cv = d.createElement('canvas'), ctx = cv.getContext('2d'), hint = d.createElement('div'), dpr = Math.min(devicePixelRatio || 1, 2);
-    cv.className = 'ha-dust'; cv.setAttribute('aria-hidden', 'true');
-    hint.className = 'ha-hint'; hint.innerHTML = (en ? 'Wipe with your finger' : 'امسح بصباعك') + ' <img src="/images/brand/wipe-hand.webp" alt="">';
-    hero.appendChild(cv); hero.appendChild(hint);
-    var W, H, G = 18, cells, total, hit = 0, done = false, idle, auto;
-    function paint() {
-      W = hero.clientWidth; H = hero.clientHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      var g = ctx.createLinearGradient(0, 0, W, H); g.addColorStop(0, 'rgba(118,104,82,.93)'); g.addColorStop(.5, 'rgba(96,84,66,.95)'); g.addColorStop(1, 'rgba(120,106,84,.93)');
-      ctx.globalCompositeOperation = 'source-over'; ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-      for (var i = 0; i < 26; i++) { var x = Math.random() * W, y = Math.random() * H, r = 30 + Math.random() * 110, rg = ctx.createRadialGradient(x, y, 0, x, y, r);
-        rg.addColorStop(0, 'rgba(60,50,36,' + (.25 + Math.random() * .3) + ')'); rg.addColorStop(1, 'rgba(60,50,36,0)'); ctx.fillStyle = rg; ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.fill(); }
-      ctx.fillStyle = 'rgba(40,32,22,.55)'; for (var k = 0; k < 900; k++) ctx.fillRect(Math.random() * W, Math.random() * H, 1.4, 1.4);
-      ctx.strokeStyle = 'rgba(160,145,118,.35)'; ctx.lineWidth = 10; ctx.lineCap = 'round';
-      for (var s = 0; s < 4; s++) { ctx.beginPath(); var sx = Math.random() * W, sy = Math.random() * H; ctx.moveTo(sx, sy); ctx.quadraticCurveTo(sx + 60, sy - 40, sx + 140, sy + 10); ctx.stroke(); }
-      cells = new Uint8Array(G * G); total = G * G; hit = 0;
-    }
-    paint();
-    function erase(x, y) {
-      ctx.globalCompositeOperation = 'destination-out';
-      var r = Math.max(34, W * .09), rg = ctx.createRadialGradient(x, y, r * .35, x, y, r);
-      rg.addColorStop(0, 'rgba(0,0,0,1)'); rg.addColorStop(1, 'rgba(0,0,0,0)'); ctx.fillStyle = rg; ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.fill();
-      for (var gx = Math.max(0, ((x - r * .7) / W * G) | 0); gx <= Math.min(G - 1, ((x + r * .7) / W * G) | 0); gx++)
-        for (var gy = Math.max(0, ((y - r * .7) / H * G) | 0); gy <= Math.min(G - 1, ((y + r * .7) / H * G) | 0); gy++)
-          if (!cells[gy * G + gx]) { cells[gy * G + gx] = 1; hit++; }
-      if (Math.random() < .35) { var sp = d.createElement('span'); sp.className = 'ha-spk'; sp.textContent = '✦'; sp.style.left = x + 'px'; sp.style.top = y + 'px'; hero.appendChild(sp); setTimeout(function () { sp.remove(); }, 700); }
-      if (hit / total > .45) finish();
-    }
-    var last = null;
-    function pos(e) { var b = cv.getBoundingClientRect(); return [e.clientX - b.left, e.clientY - b.top]; }
-    function line(p) { if (!last) { erase(p[0], p[1]); last = p; return; } var dx = p[0] - last[0], dy = p[1] - last[1], n = Math.ceil(Math.hypot(dx, dy) / 14); for (var i = 1; i <= n; i++) erase(last[0] + dx * i / n, last[1] + dy * i / n); last = p; }
-    cv.addEventListener('pointerdown', function (e) { if (done) return; clearTimeout(auto); hint.classList.add('off'); last = null; line(pos(e)); try { cv.setPointerCapture(e.pointerId); } catch (x) {} });
-    var travel = 0, prevM = null;
-    cv.addEventListener('pointermove', function (e) {
-      if (done) return;
-      if (e.pointerType !== 'mouse' && !e.buttons) return;
-      if (e.pointerType === 'mouse' && !e.buttons) { /* mouse hover wipes too, but only after a real movement */
-        var p = pos(e); if (prevM) travel += Math.hypot(p[0] - prevM[0], p[1] - prevM[1]); prevM = p;
-        if (travel < 80) return; clearTimeout(auto); hint.classList.add('off');
-      }
-      line(pos(e)); clearTimeout(idle); idle = setTimeout(finish, 2200);
-    });
-    cv.addEventListener('pointerup', function () { last = null; clearTimeout(idle); idle = setTimeout(finish, 1800); });
-    cv.addEventListener('pointerleave', function () { last = null; });
-    function finish() {
-      if (done) return; done = true; clearTimeout(idle); clearTimeout(auto); hint.classList.add('off');
-      var sq = d.createElement('div'); sq.className = 'ha-sq'; hero.appendChild(sq);
-      var t0 = null, D = 900;
-      (function step(t) {
-        if (!t0) t0 = t; var p = Math.min((t - t0) / D, 1), e = p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
-        var x = en ? e * (W + 40) - 20 : W - e * (W + 40) + 20;
-        sq.style.left = (x - 7) + 'px'; sq.style.right = 'auto';
-        ctx.globalCompositeOperation = 'destination-out'; ctx.fillStyle = '#000';
-        if (en) ctx.fillRect(0, 0, x, H); else ctx.fillRect(x, 0, W - x, H);
-        if (p < 1) requestAnimationFrame(step); else { sq.remove(); cv.classList.add('done'); setTimeout(function () { cv.remove(); hint.remove(); }, 800); }
-      })(performance.now());
-    }
-    function arm() { auto = setTimeout(finish, 3000); }
-    if (d.getElementById('ha-intro')) d.addEventListener('ha-intro-done', arm, { once: true }); else arm();
-    addEventListener('resize', function () { if (!done && Math.abs(hero.clientWidth - W) > 40) paint(); });
-  })();
   /* ---------- 2: squeegee reveal of the sections ---------- */
   /* (a clipped section never "intersects", so this checks positions on scroll instead of IntersectionObserver) */
   var pend = Array.prototype.slice.call(d.querySelectorAll('main > section:not(.hero), body > section:not(.hero)')).filter(function (s) {
-    if (s.getBoundingClientRect().top < innerHeight) return false; s.classList.add('ha-wipe', 'ha-pre'); return true;
+    if (s.id === 'packages' || s.getBoundingClientRect().top < innerHeight) return false; s.classList.add('ha-wipe', 'ha-pre'); return true;
   }), wq = false;
   function wcheck() {
     wq = false;
@@ -1307,7 +1241,26 @@ el.className='go';setTimeout(function(){el.remove();document.dispatchEvent(new E
       s.classList.remove('ha-pre'); s.classList.add('ha-in'); setTimeout(function () { s.classList.remove('ha-in'); }, 1100); return false;
     });
   }
-  if (pend.length) addEventListener('scroll', function () { if (!wq) { wq = true; requestAnimationFrame(wcheck); } }, { passive: true });
+  if (pend.length) { addEventListener('scroll', function () { if (!wq) { wq = true; requestAnimationFrame(wcheck); } }, { passive: true }); var wiv = setInterval(function () { wcheck(); if (!pend.length) clearInterval(wiv); }, 500); }
+  /* ---------- logos: keep moving on their own, but the visitor can swipe or drag them both ways ---------- */
+  var mq = d.querySelector('.marq'), mul = mq && mq.querySelector('ul');
+  if (mq && mul) {
+    mq.classList.add('ha-free');
+    var paused = 0, half = function () { return mul.scrollWidth / 2; }, pos = 0, hold = function () { paused = Date.now() + 2500; };
+    ['touchstart', 'wheel', 'pointerdown'].forEach(function (ev) { mq.addEventListener(ev, hold, { passive: true }); });
+    mq.addEventListener('scroll', function () { if (Date.now() < paused) hold(); }, { passive: true });
+    var dragX = null, dragS = 0;
+    mq.addEventListener('pointerdown', function (e) { if (e.pointerType !== 'mouse') return; dragX = e.clientX; dragS = mq.scrollLeft; mq.classList.add('drag'); });
+    addEventListener('pointermove', function (e) { if (dragX === null) return; var h = half(), t = dragS - (e.clientX - dragX); while (t < 2) t += h; while (t > 2 * h - mq.clientWidth - 2) t -= h; mq.scrollLeft = t; hold(); });
+    addEventListener('pointerup', function () { dragX = null; mq.classList.remove('drag'); });
+    var wrap = function () { var h = half(); if (h <= 0) return; if (mq.scrollLeft >= 2 * h - mq.clientWidth - 2) mq.scrollLeft -= h; else if (mq.scrollLeft <= 2) mq.scrollLeft += h; };
+    mq.addEventListener('scroll', wrap, { passive: true });
+    setTimeout(function () { mq.scrollLeft = half(); pos = mq.scrollLeft; }, 60);
+    (function run() {
+      if (Date.now() > paused && mq.getBoundingClientRect().bottom > 0 && mq.getBoundingClientRect().top < innerHeight) { pos = (Math.abs(pos - mq.scrollLeft) > 3 ? mq.scrollLeft : pos) + .6; mq.scrollLeft = pos; }
+      requestAnimationFrame(run);
+    })();
+  }
   /* ---------- 4: word strips, faster while scrolling ---------- */
   var strips = Array.prototype.slice.call(d.querySelectorAll('.ha-strip')), vel = 0, lastY = scrollY, live = new Set();
   addEventListener('scroll', function () { var y = scrollY; vel += Math.abs(y - lastY) * .35; lastY = y; }, { passive: true });
