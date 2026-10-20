@@ -661,18 +661,6 @@ html[lang=en] .head .h2 .gold::after,html[lang=en] .final h2 .gold::after{transf
 @keyframes haHandWipe{0%,100%{transform:none}25%{transform:translate(-9%,4%) rotate(-7deg)}50%{transform:translate(8%,-3%) rotate(6deg)}75%{transform:translate(-7%,3%) rotate(-5deg)}}
 @keyframes haHandOut{from{opacity:1;transform:none}to{opacity:0;transform:scale(.85)}}
 @keyframes haSk{0%{opacity:0;transform:scale(.2) rotate(0)}40%{opacity:1;transform:scale(1.25) rotate(45deg)}100%{opacity:0;transform:scale(.6) rotate(90deg)}}
-/* 2 squeegee reveal of sections */
-.ha-wipe{position:relative}
-.ha-wipe.ha-pre{clip-path:inset(0 0 0 100%)}
-html[lang=en] .ha-wipe.ha-pre{clip-path:inset(0 100% 0 0)}
-.ha-wipe.ha-in{animation:haWipe 1s cubic-bezier(.65,0,.25,1) both}
-html[lang=en] .ha-wipe.ha-in{animation-name:haWipeL}
-@keyframes haWipe{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0 0 0 0)}}
-@keyframes haWipeL{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
-.ha-wipe.ha-in::after{content:'';position:absolute;top:0;bottom:0;width:4px;z-index:5;background:linear-gradient(180deg,transparent,#f5d98e 15%,#e4bf6a 85%,transparent);box-shadow:0 0 22px rgba(228,191,106,.8);animation:haLine 1s cubic-bezier(.65,0,.25,1) both;pointer-events:none}
-@keyframes haLine{from{right:0;opacity:1}90%{opacity:1}to{right:100%;opacity:0}}
-html[lang=en] .ha-wipe.ha-in::after{animation-name:haLineL}
-@keyframes haLineL{from{left:0;opacity:1}90%{opacity:1}to{left:100%;opacity:0}}
 /* 4 gold word strips */
 .ha-strip{overflow:hidden;padding:8px 0;background:linear-gradient(180deg,var(--bg),#0b1a2e,var(--bg));border-top:1px solid rgba(201,168,76,.12);border-bottom:1px solid rgba(201,168,76,.12);direction:ltr}
 .ha-strip .tr{display:flex;width:max-content;will-change:transform}
@@ -688,7 +676,7 @@ html[lang=en] .ha-wipe.ha-in::after{animation-name:haLineL}
 .marq.ha-free::-webkit-scrollbar{display:none}
 .marq.ha-free ul{animation:none!important;transform:none!important}
 .marq.ha-free.drag{cursor:grabbing}
-@media(prefers-reduced-motion:reduce){#ha-intro{display:none!important}.ha-wipe{clip-path:none!important;animation:none!important}}
+@media(prefers-reduced-motion:reduce){#ha-intro{display:none!important}}
 </style>
 </head>
 <body>
@@ -1266,19 +1254,6 @@ el.className='go';setTimeout(function(){el.remove();document.dispatchEvent(new E
 (function(){
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var d = document, en = false;
-  /* ---------- 2: squeegee reveal of the sections ---------- */
-  /* (a clipped section never "intersects", so this checks positions on scroll instead of IntersectionObserver) */
-  var pend = Array.prototype.slice.call(d.querySelectorAll('main > section:not(.hero), body > section:not(.hero)')).filter(function (s) {
-    if (s.id === 'packages' || s.getBoundingClientRect().top < innerHeight) return false; s.classList.add('ha-wipe', 'ha-pre'); return true;
-  }), wq = false;
-  function wcheck() {
-    wq = false;
-    pend = pend.filter(function (s) {
-      if (s.getBoundingClientRect().top > innerHeight * .9) return true;
-      s.classList.remove('ha-pre'); s.classList.add('ha-in'); setTimeout(function () { s.classList.remove('ha-in'); }, 1100); return false;
-    });
-  }
-  if (pend.length) { addEventListener('scroll', function () { if (!wq) { wq = true; requestAnimationFrame(wcheck); } }, { passive: true }); var wiv = setInterval(function () { wcheck(); if (!pend.length) clearInterval(wiv); }, 500); }
   /* ---------- logos: keep moving on their own, but the visitor can swipe or drag them both ways ---------- */
   var mq = d.querySelector('.marq'), mul = mq && mq.querySelector('ul');
   if (mq && mul) {
