@@ -616,8 +616,60 @@ html[lang=en] .head .h2 .gold::after,html[lang=en] .final h2 .gold::after{transf
 }
 @media (prefers-reduced-motion:reduce){#ha-prog{display:none}}
 </style>
+<style id="nq-home-anim3">
+/* 1 intro */
+#ha-intro{position:fixed;inset:0;z-index:3000;pointer-events:none;display:grid;place-items:center}
+#ha-intro .cur{position:absolute;top:0;bottom:0;width:50.5%;background:radial-gradient(80% 60% at 50% 50%,#10233f,#07111f)}
+#ha-intro .cur.l{left:0}#ha-intro .cur.r{right:0}
+#ha-intro .lg{position:relative;width:min(62vw,280px);aspect-ratio:5/1}
+#ha-intro .lg img{width:100%;height:100%;object-fit:contain;opacity:0;transform:scale(.85);filter:drop-shadow(0 0 18px rgba(228,191,106,.45))}
+#ha-intro .dt{position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px;border-radius:50%;background:#f5d98e;box-shadow:0 0 12px #e4bf6a}
+#ha-intro.go .cur.l{animation:haCurL .9s cubic-bezier(.77,0,.18,1) 1.25s forwards}
+#ha-intro.go .cur.r{animation:haCurR .9s cubic-bezier(.77,0,.18,1) 1.25s forwards}
+#ha-intro.go .lg img{animation:haLogo .6s cubic-bezier(.22,1,.36,1) .55s forwards,haLogoOut .5s ease 1.2s forwards}
+#ha-intro.go .dt{animation:haDot .7s cubic-bezier(.22,1,.36,1) both}
+@keyframes haCurL{to{transform:translateX(-102%)}}@keyframes haCurR{to{transform:translateX(102%)}}
+@keyframes haLogo{to{opacity:1;transform:none}}@keyframes haLogoOut{to{opacity:0;transform:scale(1.15)}}
+@keyframes haDot{from{transform:translate(var(--x),var(--y)) scale(1.4);opacity:0}60%{opacity:1}to{transform:translate(0,0) scale(.2);opacity:0}}
+/* A wipe the dust */
+.hero .ha-dust{position:absolute;inset:0;z-index:4;width:100%;height:100%;touch-action:none;cursor:grab;transition:opacity .7s ease}
+.hero .ha-dust.done{opacity:0;pointer-events:none}
+.ha-hint{position:absolute;z-index:5;left:50%;top:46%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:10px;padding:12px 20px;border-radius:50px;background:rgba(7,17,31,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(228,191,106,.55);color:#f5d98e;font:800 16px Cairo,sans-serif;white-space:nowrap;pointer-events:none;box-shadow:0 14px 34px -12px rgba(0,0,0,.8);transition:opacity .4s,transform .4s}
+.ha-hint i{font-style:normal;font-size:24px;display:inline-block;animation:haFinger 1.6s ease-in-out infinite}
+@keyframes haFinger{0%,100%{transform:translateX(-14px) rotate(-10deg)}50%{transform:translateX(14px) rotate(10deg)}}
+.ha-hint.off{opacity:0;transform:translate(-50%,-30%)}
+.ha-sq{position:absolute;z-index:6;top:0;bottom:0;width:14px;border-radius:8px;background:linear-gradient(90deg,#9c7a24,#f5d98e,#9c7a24);box-shadow:0 0 30px rgba(228,191,106,.7);pointer-events:none;right:-20px}
+.ha-spk{position:absolute;z-index:6;pointer-events:none;color:#fff;font-size:14px;text-shadow:0 0 8px #f5d98e;animation:haSpk .7s ease-out forwards}
+@keyframes haSpk{from{transform:translate(-50%,-50%) scale(.4);opacity:1}to{transform:translate(-50%,-160%) scale(1.2);opacity:0}}
+/* 2 squeegee reveal of sections */
+.ha-wipe{position:relative}
+.ha-wipe.ha-pre{clip-path:inset(0 0 0 100%)}
+html[lang=en] .ha-wipe.ha-pre{clip-path:inset(0 100% 0 0)}
+.ha-wipe.ha-in{animation:haWipe 1s cubic-bezier(.65,0,.25,1) both}
+html[lang=en] .ha-wipe.ha-in{animation-name:haWipeL}
+@keyframes haWipe{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0 0 0 0)}}
+@keyframes haWipeL{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+.ha-wipe.ha-in::after{content:'';position:absolute;top:0;bottom:0;width:4px;z-index:5;background:linear-gradient(180deg,transparent,#f5d98e 15%,#e4bf6a 85%,transparent);box-shadow:0 0 22px rgba(228,191,106,.8);animation:haLine 1s cubic-bezier(.65,0,.25,1) both;pointer-events:none}
+@keyframes haLine{from{right:0;opacity:1}90%{opacity:1}to{right:100%;opacity:0}}
+html[lang=en] .ha-wipe.ha-in::after{animation-name:haLineL}
+@keyframes haLineL{from{left:0;opacity:1}90%{opacity:1}to{left:100%;opacity:0}}
+/* 4 gold word strips */
+.ha-strip{overflow:hidden;padding:18px 0;background:linear-gradient(180deg,var(--bg),#0b1a2e,var(--bg));border-top:1px solid rgba(201,168,76,.12);border-bottom:1px solid rgba(201,168,76,.12);direction:ltr}
+.ha-strip .tr{display:flex;width:max-content;will-change:transform}
+.ha-strip span{flex:none;padding:0 14px;font:900 clamp(30px,9vw,64px)/1.1 Cairo,sans-serif;white-space:nowrap;letter-spacing:-.5px}
+.ha-strip span:nth-child(odd){background:linear-gradient(120deg,#c9a84c,#f5d98e 55%,#e4bf6a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ha-strip span:nth-child(even){color:transparent;-webkit-text-stroke:1.2px rgba(228,191,106,.75)}
+.ha-strip.alt span:nth-child(odd){color:transparent;-webkit-text-stroke:1.2px rgba(228,191,106,.75);background:none}
+.ha-strip.alt span:nth-child(even){background:linear-gradient(120deg,#c9a84c,#f5d98e 55%,#e4bf6a);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:0}
+@media(prefers-reduced-motion:reduce){#ha-intro,.ha-dust,.ha-hint,.ha-sq{display:none!important}.ha-wipe{clip-path:none!important;animation:none!important}}
+</style>
 </head>
 <body>
+<div id="ha-intro" aria-hidden="true"><div class="cur l"></div><div class="cur r"></div><div class="lg"><img src="/logo.svg" alt=""></div></div>
+<script id="nq-home-anim3-intro">(function(){var el=document.getElementById('ha-intro'),seen=false;try{seen=sessionStorage.getItem('haIntro')==='1';sessionStorage.setItem('haIntro','1');}catch(e){}
+if(seen||matchMedia('(prefers-reduced-motion: reduce)').matches){el.remove();return;}
+var lg=el.querySelector('.lg');for(var i=0;i<14;i++){var d=document.createElement('i');d.className='dt';var a=i/14*Math.PI*2,r=120+Math.random()*120;d.style.setProperty('--x',Math.cos(a)*r+'px');d.style.setProperty('--y',Math.sin(a)*r+'px');d.style.animationDelay=(Math.random()*.25).toFixed(2)+'s';lg.appendChild(d);}
+el.className='go';document.documentElement.classList.add('ha-intro-on');setTimeout(function(){el.remove();document.documentElement.classList.remove('ha-intro-on');document.dispatchEvent(new Event('ha-intro-done'));},2250);})();</script>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSS7QXXP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
 <div id="progress"></div>
 
@@ -703,6 +755,7 @@ html[lang=en] .head .h2 .gold::after,html[lang=en] .final h2 .gold::after{transf
   </div>
 </section>
 
+<div class="ha-strip" aria-hidden="true" data-ha3><div class="tr"><span>Clean</span><span>✦</span><span>Guaranteed</span><span>✦</span><span>Trusted</span><span>✦</span><span>All of Riyadh</span><span>✦</span><span>Clean</span><span>✦</span><span>Guaranteed</span><span>✦</span><span>Trusted</span><span>✦</span><span>All of Riyadh</span><span>✦</span><span>Clean</span><span>✦</span><span>Guaranteed</span><span>✦</span><span>Trusted</span><span>✦</span><span>All of Riyadh</span><span>✦</span><span>Clean</span><span>✦</span><span>Guaranteed</span><span>✦</span><span>Trusted</span><span>✦</span><span>All of Riyadh</span><span>✦</span></div></div>
 <!-- LOGOS -->
 <section class="logos" aria-label="Our clients">
   <div class="head rv-in"><span class="eyebrow"><i></i>Our clients</span><h2 class="h2">Organizations we're <span class="gold">proud to serve</span></h2></div>
@@ -742,6 +795,7 @@ html[lang=en] .head .h2 .gold::after,html[lang=en] .final h2 .gold::after{transf
   </div>
 </section>
 
+<div class="ha-strip alt" aria-hidden="true" data-ha3><div class="tr"><span>Villas</span><span>✦</span><span>Apartments</span><span>✦</span><span>Majlis</span><span>✦</span><span>Water tanks</span><span>✦</span><span>Pest control</span><span>✦</span><span>Villas</span><span>✦</span><span>Apartments</span><span>✦</span><span>Majlis</span><span>✦</span><span>Water tanks</span><span>✦</span><span>Pest control</span><span>✦</span><span>Villas</span><span>✦</span><span>Apartments</span><span>✦</span><span>Majlis</span><span>✦</span><span>Water tanks</span><span>✦</span><span>Pest control</span><span>✦</span><span>Villas</span><span>✦</span><span>Apartments</span><span>✦</span><span>Majlis</span><span>✦</span><span>Water tanks</span><span>✦</span><span>Pest control</span><span>✦</span></div></div>
 <!-- PACKAGES -->
 <section class="sec pk-wrap" id="packages">
   <div class="wrap">
@@ -866,6 +920,7 @@ html[lang=en] .head .h2 .gold::after,html[lang=en] .final h2 .gold::after{transf
   </div>
 </section>
 
+<div class="ha-strip" aria-hidden="true" data-ha3><div class="tr"><span>4.7★ Google</span><span>✦</span><span>2,500+ clients</span><span>✦</span><span>15 years</span><span>✦</span><span>4.7★ Google</span><span>✦</span><span>2,500+ clients</span><span>✦</span><span>15 years</span><span>✦</span><span>4.7★ Google</span><span>✦</span><span>2,500+ clients</span><span>✦</span><span>15 years</span><span>✦</span><span>4.7★ Google</span><span>✦</span><span>2,500+ clients</span><span>✦</span><span>15 years</span><span>✦</span></div></div>
 <!-- FAQ -->
 <section class="sec faq" id="faq">
   <div class="wrap">
@@ -1169,6 +1224,102 @@ html[lang=en] .head .h2 .gold::after,html[lang=en] .final h2 .gold::after{transf
       setTimeout(function () { send.classList.remove('ha-ok'); send.textContent = t; }, 2600);
     }, 30);
   });
+})();
+</script>
+<script id="nq-home-anim3-js">
+(function(){
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var d = document, en = true;
+  /* ---------- A: wipe the dust off the hero ---------- */
+  var hero = d.querySelector('.hero');
+  var played = false; try { played = sessionStorage.getItem('haDust') === '1'; sessionStorage.setItem('haDust', '1'); } catch (e) {}
+  if (hero && !played) (function () {
+    var cv = d.createElement('canvas'), ctx = cv.getContext('2d'), hint = d.createElement('div'), dpr = Math.min(devicePixelRatio || 1, 2);
+    cv.className = 'ha-dust'; cv.setAttribute('aria-hidden', 'true');
+    hint.className = 'ha-hint'; hint.innerHTML = (en ? 'Wipe with your finger' : 'امسح بصباعك') + ' <i>👆</i>';
+    hero.appendChild(cv); hero.appendChild(hint);
+    var W, H, G = 18, cells, total, hit = 0, done = false, idle, auto;
+    function paint() {
+      W = hero.clientWidth; H = hero.clientHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var g = ctx.createLinearGradient(0, 0, W, H); g.addColorStop(0, 'rgba(118,104,82,.93)'); g.addColorStop(.5, 'rgba(96,84,66,.95)'); g.addColorStop(1, 'rgba(120,106,84,.93)');
+      ctx.globalCompositeOperation = 'source-over'; ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+      for (var i = 0; i < 26; i++) { var x = Math.random() * W, y = Math.random() * H, r = 30 + Math.random() * 110, rg = ctx.createRadialGradient(x, y, 0, x, y, r);
+        rg.addColorStop(0, 'rgba(60,50,36,' + (.25 + Math.random() * .3) + ')'); rg.addColorStop(1, 'rgba(60,50,36,0)'); ctx.fillStyle = rg; ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.fill(); }
+      ctx.fillStyle = 'rgba(40,32,22,.55)'; for (var k = 0; k < 900; k++) ctx.fillRect(Math.random() * W, Math.random() * H, 1.4, 1.4);
+      ctx.strokeStyle = 'rgba(160,145,118,.35)'; ctx.lineWidth = 10; ctx.lineCap = 'round';
+      for (var s = 0; s < 4; s++) { ctx.beginPath(); var sx = Math.random() * W, sy = Math.random() * H; ctx.moveTo(sx, sy); ctx.quadraticCurveTo(sx + 60, sy - 40, sx + 140, sy + 10); ctx.stroke(); }
+      cells = new Uint8Array(G * G); total = G * G; hit = 0;
+    }
+    paint();
+    function erase(x, y) {
+      ctx.globalCompositeOperation = 'destination-out';
+      var r = Math.max(34, W * .09), rg = ctx.createRadialGradient(x, y, r * .35, x, y, r);
+      rg.addColorStop(0, 'rgba(0,0,0,1)'); rg.addColorStop(1, 'rgba(0,0,0,0)'); ctx.fillStyle = rg; ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.fill();
+      for (var gx = Math.max(0, ((x - r * .7) / W * G) | 0); gx <= Math.min(G - 1, ((x + r * .7) / W * G) | 0); gx++)
+        for (var gy = Math.max(0, ((y - r * .7) / H * G) | 0); gy <= Math.min(G - 1, ((y + r * .7) / H * G) | 0); gy++)
+          if (!cells[gy * G + gx]) { cells[gy * G + gx] = 1; hit++; }
+      if (Math.random() < .35) { var sp = d.createElement('span'); sp.className = 'ha-spk'; sp.textContent = '✦'; sp.style.left = x + 'px'; sp.style.top = y + 'px'; hero.appendChild(sp); setTimeout(function () { sp.remove(); }, 700); }
+      if (hit / total > .45) finish();
+    }
+    var last = null;
+    function pos(e) { var b = cv.getBoundingClientRect(); return [e.clientX - b.left, e.clientY - b.top]; }
+    function line(p) { if (!last) { erase(p[0], p[1]); last = p; return; } var dx = p[0] - last[0], dy = p[1] - last[1], n = Math.ceil(Math.hypot(dx, dy) / 14); for (var i = 1; i <= n; i++) erase(last[0] + dx * i / n, last[1] + dy * i / n); last = p; }
+    cv.addEventListener('pointerdown', function (e) { if (done) return; clearTimeout(auto); hint.classList.add('off'); last = null; line(pos(e)); try { cv.setPointerCapture(e.pointerId); } catch (x) {} });
+    var travel = 0, prevM = null;
+    cv.addEventListener('pointermove', function (e) {
+      if (done) return;
+      if (e.pointerType !== 'mouse' && !e.buttons) return;
+      if (e.pointerType === 'mouse' && !e.buttons) { /* mouse hover wipes too, but only after a real movement */
+        var p = pos(e); if (prevM) travel += Math.hypot(p[0] - prevM[0], p[1] - prevM[1]); prevM = p;
+        if (travel < 80) return; clearTimeout(auto); hint.classList.add('off');
+      }
+      line(pos(e)); clearTimeout(idle); idle = setTimeout(finish, 2200);
+    });
+    cv.addEventListener('pointerup', function () { last = null; clearTimeout(idle); idle = setTimeout(finish, 1800); });
+    cv.addEventListener('pointerleave', function () { last = null; });
+    function finish() {
+      if (done) return; done = true; clearTimeout(idle); clearTimeout(auto); hint.classList.add('off');
+      var sq = d.createElement('div'); sq.className = 'ha-sq'; hero.appendChild(sq);
+      var t0 = null, D = 900;
+      (function step(t) {
+        if (!t0) t0 = t; var p = Math.min((t - t0) / D, 1), e = p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+        var x = en ? e * (W + 40) - 20 : W - e * (W + 40) + 20;
+        sq.style.left = (x - 7) + 'px'; sq.style.right = 'auto';
+        ctx.globalCompositeOperation = 'destination-out'; ctx.fillStyle = '#000';
+        if (en) ctx.fillRect(0, 0, x, H); else ctx.fillRect(x, 0, W - x, H);
+        if (p < 1) requestAnimationFrame(step); else { sq.remove(); cv.classList.add('done'); setTimeout(function () { cv.remove(); hint.remove(); }, 800); }
+      })(performance.now());
+    }
+    function arm() { auto = setTimeout(finish, 3000); }
+    if (d.getElementById('ha-intro')) d.addEventListener('ha-intro-done', arm, { once: true }); else arm();
+    addEventListener('resize', function () { if (!done && Math.abs(hero.clientWidth - W) > 40) paint(); });
+  })();
+  /* ---------- 2: squeegee reveal of the sections ---------- */
+  /* (a clipped section never "intersects", so this checks positions on scroll instead of IntersectionObserver) */
+  var pend = Array.prototype.slice.call(d.querySelectorAll('main > section:not(.hero), body > section:not(.hero)')).filter(function (s) {
+    if (s.getBoundingClientRect().top < innerHeight) return false; s.classList.add('ha-wipe', 'ha-pre'); return true;
+  }), wq = false;
+  function wcheck() {
+    wq = false;
+    pend = pend.filter(function (s) {
+      if (s.getBoundingClientRect().top > innerHeight * .9) return true;
+      s.classList.remove('ha-pre'); s.classList.add('ha-in'); setTimeout(function () { s.classList.remove('ha-in'); }, 1100); return false;
+    });
+  }
+  if (pend.length) addEventListener('scroll', function () { if (!wq) { wq = true; requestAnimationFrame(wcheck); } }, { passive: true });
+  /* ---------- 4: word strips, faster while scrolling ---------- */
+  var strips = Array.prototype.slice.call(d.querySelectorAll('.ha-strip')), vel = 0, lastY = scrollY, live = new Set();
+  addEventListener('scroll', function () { var y = scrollY; vel += Math.abs(y - lastY) * .35; lastY = y; }, { passive: true });
+  strips.forEach(function (s, i) { s._x = 0; s._dir = i % 2 ? 1 : -1; s._tr = s.querySelector('.tr'); });
+  if ('IntersectionObserver' in window) {
+    var sio = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) live.add(e.target); else live.delete(e.target); }); });
+    strips.forEach(function (s) { sio.observe(s); });
+  } else strips.forEach(function (s) { live.add(s); });
+  (function loop() {
+    vel *= .9; var sp = .6 + Math.min(vel, 40);
+    live.forEach(function (s) { var w = s._tr.scrollWidth / 4; s._x += sp * s._dir; if (s._x <= -w) s._x += w; if (s._x >= 0 && s._dir > 0) s._x -= w; s._tr.style.transform = 'translate3d(' + s._x.toFixed(1) + 'px,0,0)'; });
+    requestAnimationFrame(loop);
+  })();
 })();
 </script>
 </body>
