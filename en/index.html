@@ -655,7 +655,7 @@ html[lang=en] .head .h2 .gold::after,html[lang=en] .final h2 .gold::after{transf
 <body>
 <div id="ha-intro" aria-hidden="true"><div class="cur l"></div><div class="cur r"></div><div class="lg"><img src="/images/brand/wipe-hand-600.webp" alt="" width="340" height="340"></div></div>
 <script id="nq-home-anim3-intro">(function(){function haOnce(k,max){if(/[?&]wow/.test(location.search))return true;var t=new Date().toISOString().slice(0,10),n=0;try{var v=(localStorage.getItem(k)||'').split('|');n=v[0]===t?+v[1]||0:0;if(n>=(max||1))return false;localStorage.setItem(k,t+'|'+(n+1));}catch(e){}return true;}window.haOnce=haOnce;var el=document.getElementById('ha-intro');
-if(!haOnce('haIntro3',3)||matchMedia('(prefers-reduced-motion: reduce)').matches){el.remove();return;}
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){el.remove();return;}
 var lg=el.querySelector('.lg'),P=[[8,18],[86,12],[92,62],[14,74],[50,4],[70,88],[30,40],[64,34]];P.forEach(function(p,i){var k=document.createElement('i');k.className='sk';k.textContent='✦';k.style.left=p[0]+'%';k.style.top=p[1]+'%';k.style.animationDelay=(.3+i*.09).toFixed(2)+'s';lg.appendChild(k);});
 el.className='go';setTimeout(function(){el.remove();document.dispatchEvent(new Event('ha-intro-done'));},2250);})();</script>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSS7QXXP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
