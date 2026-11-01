@@ -205,6 +205,30 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://www.naqaa-cleaning.com/blog/house-cleaning-duration-riyadh/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.naqaa-cleaning.com/blog/ceiling-leak-under-tank-riyadh/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.naqaa-cleaning.com/blog/building-tank-landlord-cleaning-riyadh/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.naqaa-cleaning.com/blog/tank-water-skin-itching-riyadh/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://www.naqaa-cleaning.com/blog/dust-sand-enter-tank-riyadh/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -406,6 +430,12 @@
   <url>
     <loc>https://www.naqaa-cleaning.com/blog/page/5/</loc>
     <lastmod>2026-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.naqaa-cleaning.com/blog/page/6/</loc>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
