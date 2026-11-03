@@ -229,6 +229,91 @@
       "source": "/blog/cleaning-company-riyadh/",
       "destination": "/شركة-تنظيف-بالرياض/",
       "permanent": true
+    },
+    {
+      "source": "/%D8%B4%D8%B1%D9%83%D8%A9-%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D8%A8%D8%AC%D8%AF%D8%A9/",
+      "destination": "/services/",
+      "permanent": false
+    },
+    {
+      "source": "/services/%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D8%A7%D9%84%D9%85%D8%AC%D8%A7%D9%84%D8%B3-%D9%88%D8%A7%D9%84%D9%83%D9%86%D8%A8.html",
+      "destination": "/services/تنظيف-المجالس-والكنب/",
+      "permanent": true
+    },
+    {
+      "source": "/services/%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D9%88%D8%B9%D8%B2%D9%84-%D8%A7%D9%84%D8%AE%D8%B2%D8%A7%D9%86%D8%A7%D8%AA.html",
+      "destination": "/services/تنظيف-وعزل-الخزانات/",
+      "permanent": true
+    },
+    {
+      "source": "/services/%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D8%A7%D9%84%D9%85%D9%83%D9%8A%D9%81%D8%A7%D8%AA-%D9%88%D8%A7%D9%84%D8%B3%D8%AA%D8%A7%D8%A6%D8%B1.html",
+      "destination": "/services/تنظيف-المكيفات-والستائر/",
+      "permanent": true
+    },
+    {
+      "source": "/services/%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%A8%D8%AD.html",
+      "destination": "/services/تنظيف-المسابح/",
+      "permanent": true
+    },
+    {
+      "source": "/services/%D9%85%D9%83%D8%A7%D9%81%D8%AD%D8%A9-%D8%A7%D9%84%D8%AD%D8%B4%D8%B1%D8%A7%D8%AA-%D9%88%D8%A7%D9%84%D9%82%D9%88%D8%A7%D8%B1%D8%B6.html",
+      "destination": "/services/مكافحة-الحشرات-والقوارض/",
+      "permanent": true
+    },
+    {
+      "source": "/services/%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA-%D9%88%D8%A7%D9%84%D9%85%D9%83%D8%A7%D8%AA%D8%A8.html",
+      "destination": "/services/تنظيف-الشركات-والمكاتب/",
+      "permanent": true
+    },
+    {
+      "source": "/services/%D8%A7%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D8%A7%D9%84%D8%B9%D9%85%D9%8A%D9%82-%D8%A7%D9%84%D8%B4%D8%A7%D9%85%D9%84.html",
+      "destination": "/services/التنظيف-العميق-الشامل/",
+      "permanent": true
+    },
+    {
+      "source": "/services/%D8%A7%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D8%A7%D9%84%D8%A7%D8%AE%D8%B6%D8%B1-%D8%A7%D9%84%D8%B5%D8%AF%D9%8A%D9%82-%D9%84%D9%84%D8%A8%D9%8A%D8%A6%D8%A9.html",
+      "destination": "/services/التنظيف-الاخضر-الصديق-للبيئة/",
+      "permanent": true
+    },
+    {
+      "source": "/services/%D8%AD%D9%85%D8%A7%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%AC%D8%A7%D9%84%D8%B3-%D8%A8%D8%AA%D9%82%D9%86%D9%8A%D8%A9-%D8%A7%D9%84%D9%86%D8%A7%D9%86%D9%88.html",
+      "destination": "/services/حماية-المجالس-بتقنية-النانو/",
+      "permanent": true
+    },
+    {
+      "source": "/%D8%B4%D8%B1%D9%83%D8%A9-%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6/%D8%B4%D8%B1%D9%83%D8%A9-%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D9%85%D9%86%D8%A7%D8%B2%D9%84/",
+      "destination": "/شركة-تنظيف-بالرياض/تنظيف-منازل/",
+      "permanent": true
+    },
+    {
+      "source": "/%D8%B4%D8%B1%D9%83%D8%A9-%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6/%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D9%82%D8%B5%D9%88%D8%B1/",
+      "destination": "/شركة-تنظيف-بالرياض/تنظيف-فلل/",
+      "permanent": true
+    },
+    {
+      "source": "/%D8%B4%D8%B1%D9%83%D8%A9-%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6/%D8%B4%D8%B1%D9%83%D8%A9-%D8%B9%D8%B2%D9%84-%D8%AE%D8%B2%D8%A7%D9%86%D8%A7%D8%AA/",
+      "destination": "/شركة-تنظيف-بالرياض/عزل-خزانات/",
+      "permanent": true
+    },
+    {
+      "source": "/%D8%B4%D8%B1%D9%83%D8%A9-%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6/%D8%B9%D8%B2%D9%84-%D8%AE%D8%B2%D8%A7%D9%86%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D9%8A%D8%A7%D9%87-%D8%A7%D9%84%D8%A7%D8%B1%D8%B6%D9%8A%D8%A9/",
+      "destination": "/شركة-تنظيف-بالرياض/عزل-خزانات/",
+      "permanent": true
+    },
+    {
+      "source": "/%D8%B4%D8%B1%D9%83%D8%A9-%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6/%D8%B4%D8%B1%D9%83%D8%A9-%D9%85%D9%83%D8%A7%D9%81%D8%AD%D8%A9-%D8%AD%D8%B4%D8%B1%D8%A7%D8%AA/",
+      "destination": "/شركة-تنظيف-بالرياض/مكافحة-حشرات/",
+      "permanent": true
+    },
+    {
+      "source": "/%D8%B4%D8%B1%D9%83%D8%A9-%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6/%D8%B4%D8%B1%D9%83%D8%A9-%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D9%83%D9%86%D8%A8/",
+      "destination": "/شركة-تنظيف-بالرياض/شركة-تنظيف-مجالس/",
+      "permanent": true
+    },
+    {
+      "source": "/%D8%B4%D8%B1%D9%83%D8%A9-%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6/%D8%B4%D8%B1%D9%83%D8%A9-%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6/",
+      "destination": "/شركة-تنظيف-بالرياض/",
+      "permanent": true
     }
   ],
   "rewrites": [
