@@ -652,6 +652,18 @@ html[lang=en] .head .h2 .gold::after,html[lang=en] .final h2 .gold::after{transf
 .marq.ha-free.drag{cursor:grabbing}
 @media(prefers-reduced-motion:reduce){#ha-intro{display:none!important}}
 </style>
+<style id="nq-wf">
+.wf-stamp{position:absolute;z-index:3;inset-inline-end:14px;bottom:8px;width:clamp(92px,25vw,112px);aspect-ratio:1;pointer-events:none;transform:rotate(-12deg);filter:drop-shadow(0 8px 16px rgba(0,0,0,.45));animation:wfLand .55s cubic-bezier(.3,1.4,.5,1) 2.3s both}
+.wf-stamp svg{position:absolute;inset:0;width:100%;height:100%}
+.wf-txt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:Cairo,sans-serif;color:#0a1628;line-height:1;text-align:center}
+.wf-txt small{font-size:clamp(10px,2.75vw,12px);font-weight:800;white-space:nowrap}
+.wf-txt b{font-size:clamp(29px,8vw,36px);font-weight:900;color:#a8822a;margin:2px 0 1px;direction:ltr}
+.wf-txt span{font-size:clamp(12px,3.3vw,14.5px);font-weight:900}
+@keyframes wfLand{0%{opacity:0;transform:rotate(8deg) scale(2.4)}70%{opacity:1;transform:rotate(-15deg) scale(.94)}100%{opacity:1;transform:rotate(-12deg) scale(1)}}
+@media(max-width:899px) and (max-height:740px){.wf-stamp{width:78px;bottom:1px;inset-inline-end:10px}.wf-txt small{font-size:8.5px}.wf-txt b{font-size:23px;margin:1px 0 0}.wf-txt span{font-size:10.5px}}
+@media(min-width:900px){.wf-stamp{width:158px;inset-inline-end:7%;bottom:auto;top:24%}.wf-txt small{font-size:15px}.wf-txt b{font-size:50px}.wf-txt span{font-size:20px}}
+@media(prefers-reduced-motion:reduce){.wf-stamp{animation:none}}
+</style>
 </head>
 <body>
 <div id="ha-intro" aria-hidden="true"><div class="cur l"></div><div class="cur r"></div><div class="lg"><img src="/images/brand/wipe-hand-600.webp" alt="" width="340" height="340"></div></div>
@@ -696,6 +708,8 @@ el.className='go';setTimeout(function(){el.remove();document.dispatchEvent(new E
 <main id="top">
 <!-- HERO -->
 <section class="hero" id="home">
+<div class="wf-stamp" id="nq-wf-stamp" role="img" aria-label="10% off for White Friday"><svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="100.00,50.00 95.61,56.00 98.30,62.94 92.50,67.60 93.30,75.00 86.49,78.00 85.36,85.36 78.00,86.49 75.00,93.30 67.60,92.50 62.94,98.30 56.00,95.61 50.00,100.00 44.00,95.61 37.06,98.30 32.40,92.50 25.00,93.30 22.00,86.49 14.64,85.36 13.51,78.00 6.70,75.00 7.50,67.60 1.70,62.94 4.39,56.00 0.00,50.00 4.39,44.00 1.70,37.06 7.50,32.40 6.70,25.00 13.51,22.00 14.64,14.64 22.00,13.51 25.00,6.70 32.40,7.50 37.06,1.70 44.00,4.39 50.00,0.00 56.00,4.39 62.94,1.70 67.60,7.50 75.00,6.70 78.00,13.51 85.36,14.64 86.49,22.00 93.30,25.00 92.50,32.40 98.30,37.06 95.61,44.00" fill="#fff" stroke="#c9a84c" stroke-width="1"/><circle cx="50" cy="50" r="40.5" fill="none" stroke="#c9a84c" stroke-width="1.2" stroke-dasharray="2.4 1.8"/></svg><div class="wf-txt"><small>White Friday</small><b>10%</b><span>OFF</span></div></div>
+
   <div class="slides" aria-hidden="true">
     <img src="/images/hero/hero-sofa.jpg" alt="" fetchpriority="high" width="736" height="981">
   </div>
