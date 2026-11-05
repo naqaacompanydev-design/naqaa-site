@@ -1,6 +1,48 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KSS7QXXP');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VQ0QH8WEB9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VQ0QH8WEB9');</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","yohfvybmze");</script>
+<script>
+/* Lead tracking: WhatsApp and phone clicks -> GA4 events (ضغطة_واتساب / ضغطة_اتصال) */
+(function(){
+  var PHONE = '545833481';
+  function where(el){
+    if (el.closest('.cmd-bar') || el.matches('.cmd-btn,.phone-btn')) return 'الزرار العائم';
+    if (el.closest('.mobile-menu')) return 'قايمة الموبايل';
+    if (el.closest('nav,#navbar')) return 'القايمة فوق';
+    if (el.closest('footer')) return 'آخر الصفحة';
+    if (el.closest('.pkg-card')) return 'كارت الباقة';
+    if (el.closest('.hero,.page-hero,.article-hero')) return 'أول الصفحة';
+    return 'جوه الصفحة';
+  }
+  window.naqaaTrack = function(name, params){
+    if (typeof gtag === 'function') gtag('event', name, params || {});
+  };
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var name = /^tel:/i.test(href) && href.indexOf(PHONE) > -1 ? 'ضغطة_اتصال'
+             : href.indexOf('wa.me/966' + PHONE) > -1 ? 'ضغطة_واتساب' : null;
+    if (!name) return;
+    naqaaTrack(name, {
+      link_location: where(a),
+      link_text: (a.textContent || a.title || '').replace(/\s+/g, ' ').trim().slice(0, 60)
+    });
+  }, true);
+})();
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ليش الغبار والرمل يدخل خزاني حتى لو مقفل؟</title>
@@ -247,6 +289,7 @@
 <script src="/assets/nq-article.js" defer></script>
 </head>
 <body class="nq-inner nq-art">
+<!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSS7QXXP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
   <div id="nq-progress" aria-hidden="true"></div>
 <header id="nq-hdr">
   <nav class="nq-wrap nq-hdr-in" aria-label="القائمة الرئيسية">
