@@ -107,3 +107,19 @@ body.nq-blogidx .pg-count b{color:var(--p-navy);font-weight:900}
   body.nq-blogidx .pg-count{display:block}
   body.nq-blogidx .pg-prev,body.nq-blogidx .pg-next{padding:0 14px;font-size:14px}
 }
+
+/* ---------- section links bar (under the hero) ---------- */
+body.nq-blogidx .blog-sections{max-width:1180px;margin:0 auto;padding:22px 20px 0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+body.nq-blogidx .blog-sections a{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border-radius:50px;background:#fff;border:1px solid var(--p-line);color:var(--p-navy);font-weight:800;font-size:14px;text-decoration:none;white-space:nowrap;transition:border-color .2s,background .2s,color .2s}
+body.nq-blogidx .blog-sections a:hover{border-color:var(--p-gold);color:var(--p-gold-d)}
+body.nq-blogidx .blog-sections a.on{background:var(--p-navy);border-color:var(--p-navy);color:#f5d98e}
+body.nq-blogidx .blog-sections small{font-size:12px;font-weight:700;color:var(--p-mut)}
+body.nq-blogidx .blog-sections a.on small{color:#c9d3e3}
+body.nq-blogidx .blog-section-intro{max-width:720px;margin:14px auto 0;padding:0 20px;text-align:center;color:var(--p-ink2);font-size:1.02rem;line-height:1.9}
+@media(max-width:639px){
+  body.nq-blogidx .blog-sections{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none;padding:16px 16px 2px;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18px,#000 calc(100% - 18px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 18px,#000 calc(100% - 18px),transparent 100%)}
+  body.nq-blogidx .blog-sections::-webkit-scrollbar{display:none}
+  body.nq-blogidx .blog-sections a{min-height:38px;padding:0 14px;font-size:13.5px}
+}
+/* phones: the active section goes first in the sideways-scrolling row so it is always in view */
+@media(max-width:639px){body.nq-blogidx .blog-sections a.on{order:-1}}

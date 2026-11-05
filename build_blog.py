@@ -19,6 +19,8 @@ build_blog.py
        "title":   "عنوان المقال اللي هيظهر في الكارت"
        "excerpt": "الوصف المختصر اللي هيظهر تحت العنوان"
        "date":    "📅 أغسطس 2026"   (للتوثيق بس: وقت القراءة في الكارت بيتحسب لوحده من المقال)
+       "section": "homes"   (القسم: homes / facilities / water-tanks / prices /
+                             choosing-a-company / pest-control — من tools/blog_sections.py)
 
 2. شغّل الأمر ده من نفس المجلد اللي فيه المدونة (مجلد الموقع الرئيسي):
        python3 build_blog.py
@@ -176,6 +178,17 @@ def main():
         print(f"✓ اتبنت صفحة {page_num} ({len(chunk)} مقال) -> {os.path.join(out_dir, 'index.html')}")
 
     update_sitemap(total_pages)
+
+    # section pages (/blog/category/<slug>/), section links bar, listing JSON-LD,
+    # and the related-article cards at the end of every article
+    import blog_categories
+    import blog_related
+    n, cats = blog_categories.build_all(articles)
+    print(f"✓ صفحات الأقسام: {len(cats)} قسم")
+    by_url = {a["url"]: a for a in articles}
+    for a in articles:
+        blog_related.convert(os.path.join(SITE_ROOT, a["url"].strip("/"), "index.html"), articles, by_url)
+    print("✓ المقالات ذات الصلة اتحدثت في كل المقالات")
     print(f"\nتم. إجمالي {total_articles} مقال على {total_pages} صفحة/صفحات.")
 
 
