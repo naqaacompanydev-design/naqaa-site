@@ -69,3 +69,10 @@ def convert(path, card='3'):
 if __name__ == '__main__':
     for p in sys.argv[1:]:
         print(p, '->', convert(p))
+
+
+
+HERO_BG = '/about/naqaa-cleaning-riyadh.webp'
+HERO_HTML = ('<header class="bh"><div class="bh-bg" aria-hidden="true">'
+             f'<img src="{HERO_BG}" alt="" fetchpriority="high" decoding="async"></div>'
+             '<div class="bh-in"><h1>مدونة خبراء <span>نقاء</span></h1></div></header>\n')

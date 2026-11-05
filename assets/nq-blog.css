@@ -73,3 +73,16 @@ body.nq-blogidx .pagination-wrap a{background:#fff;border:1px solid var(--p-line
 body.nq-blogidx .pagination-wrap a:hover{background:var(--p-navy);border-color:var(--p-navy);color:#f5d98e}
 body.nq-blogidx .pagination-wrap span.current{background:var(--p-navy);border-color:var(--p-navy);color:#f5d98e}
 body.nq-blogidx .blog-page-title{color:var(--p-mut)}
+
+/* ==========================================================================
+   Blog hero: compact team-photo band, centred title only
+   ========================================================================== */
+body.nq-blogidx .bh{position:relative;overflow:hidden;isolation:isolate;background:#0a1628;color:#fff;text-align:center}
+body.nq-blogidx .bh-bg{position:absolute;inset:0;z-index:0}
+body.nq-blogidx .bh-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+body.nq-blogidx .bh::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,22,40,.82) 0%,rgba(10,22,40,.62) 50%,rgba(10,22,40,.88) 100%)}
+body.nq-blogidx .bh::after{content:'';position:absolute;inset:auto 0 0;z-index:2;height:2px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.7),transparent)}
+body.nq-blogidx .bh-in{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:136px 20px 52px}
+body.nq-blogidx .bh h1{font-family:'Cairo',sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.3;margin:0;color:#fff;text-shadow:0 4px 24px rgba(0,0,0,.45)}
+body.nq-blogidx .bh h1 span{background:linear-gradient(135deg,#c9a84c,#f5d98e);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+@media(max-width:899px){body.nq-blogidx .bh-in{padding:108px 18px 36px}}
