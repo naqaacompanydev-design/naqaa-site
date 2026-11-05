@@ -405,7 +405,7 @@ footer{background:#050d18;border-top:1px solid rgba(201,168,76,.1);padding:24px 
 .fbar svg{width:20px;height:20px}
 .fbar .w{background:#25D366;color:#fff}
 .fbar .c{color:var(--gold2)}
-@media(min-width:900px){.fbar{left:24px;right:auto;bottom:24px;border-radius:50px;overflow:hidden;border:1px solid rgba(201,168,76,.3);box-shadow:0 16px 40px -10px rgba(0,0,0,.6);transform:translateY(120px);transition:transform .5s var(--ease)}.fbar.show{transform:none}.fbar a{flex:0 0 auto;white-space:nowrap;height:52px;padding:0 24px}}
+@media(min-width:900px){.fbar{left:24px;right:auto;bottom:24px;border-radius:50px;overflow:hidden;border:1px solid rgba(201,168,76,.3);box-shadow:0 16px 40px -10px rgba(0,0,0,.6);transform:none}.fbar.show{transform:none}.fbar a{flex:0 0 auto;white-space:nowrap;height:52px;padding:0 24px}}
 
 /* reveal */
 .rv-in{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
@@ -606,7 +606,7 @@ h1 .gold .w{background-size:260% 100%;background-position:100% 0;animation:wIn .
 .marq li img{transition:filter .5s,opacity .5s}
 @media (prefers-reduced-motion:no-preference){
 /* 2 bottom bar (phones) */
-@media(max-width:899px){.fbar{transition:transform .45s cubic-bezier(.22,1,.36,1)}.fbar.ha-hide{transform:translateY(110%)}#ha-top.ha-low{bottom:14px}}
+@media(max-width:899px){.fbar{transition:transform .45s cubic-bezier(.22,1,.36,1)}}
 .fbar .w svg{animation:haWig 4.5s ease-in-out 3s infinite;transform-origin:50% 60%}
 @keyframes haWig{0%,86%,100%{transform:none}89%{transform:rotate(-16deg) scale(1.15)}92%{transform:rotate(14deg) scale(1.15)}95%{transform:rotate(-8deg)}}
 /* 3 press feedback */
@@ -1226,11 +1226,6 @@ el.className='go';setTimeout(function(){el.remove();document.dispatchEvent(new E
     prog.style.transform = 'scaleX(' + p + ')';
     ring.style.strokeDashoffset = (132 - 132 * p).toFixed(1);
     top.classList.toggle('on', y > innerHeight * 1.2);
-    if (fbar && phone.matches && !reduce) {
-      var down = y > lastY + 4, up = y < lastY - 4;
-      if (down && y > 300) { fbar.classList.add('ha-hide'); top.classList.add('ha-low'); }
-      else if (up || y < 300) { fbar.classList.remove('ha-hide'); top.classList.remove('ha-low'); }
-    }
     if (slides && !reduce && y < (hero ? hero.offsetHeight : innerHeight)) slides.style.transform = 'translate3d(0,' + (y * .35).toFixed(1) + 'px,0)';
     lastY = y;
   }
