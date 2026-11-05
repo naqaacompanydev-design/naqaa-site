@@ -76,3 +76,41 @@ HERO_BG = '/about/naqaa-cleaning-riyadh.webp'
 HERO_HTML = ('<header class="bh"><div class="bh-bg" aria-hidden="true">'
              f'<img src="{HERO_BG}" alt="" fetchpriority="high" decoding="async"></div>'
              '<div class="bh-in"><h1>مدونة خبراء <span>نقاء</span></h1></div></header>\n')
+
+
+CHEV_RIGHT = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" '
+              'stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>')
+CHEV_LEFT = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" '
+             'stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>')
+
+
+def blog_page_url(n):
+    return '/blog/' if n == 1 else f'/blog/page/{n}/'
+
+
+def pagination_html(current, total, page_url=blog_page_url):
+    """RTL pager: previous (arrow right) · 1 … n-1 n n+1 … last · next (arrow left).
+    On phones the numbers collapse to "n من total" so it stays on one line."""
+    if current > 1:
+        prev = (f'<a class="pg-prev" href="{page_url(current - 1)}" rel="prev">{CHEV_RIGHT}'
+                '<span>السابقة</span></a>')
+    else:
+        prev = f'<span class="pg-prev is-off" aria-hidden="true">{CHEV_RIGHT}<span>السابقة</span></span>'
+    if current < total:
+        nxt = (f'<a class="pg-next" href="{page_url(current + 1)}" rel="next"><span>التالية</span>'
+               f'{CHEV_LEFT}</a>')
+    else:
+        nxt = f'<span class="pg-next is-off" aria-hidden="true"><span>التالية</span>{CHEV_LEFT}</span>'
+    show = sorted({1, total, current - 1, current, current + 1} & set(range(1, total + 1)))
+    items, last = [], 0
+    for p in show:
+        if p - last > 1:
+            items.append('<li class="pg-gap" aria-hidden="true">…</li>')
+        if p == current:
+            items.append(f'<li><span aria-current="page">{p}</span></li>')
+        else:
+            items.append(f'<li><a href="{page_url(p)}" aria-label="صفحة {p}">{p}</a></li>')
+        last = p
+    return ('<div class="pager" role="navigation" aria-label="صفحات المدونة">' + prev
+            + '<ol class="pg-nums">' + ''.join(items) + '</ol>'
+            + f'<span class="pg-count">صفحة <b>{current}</b> من {total}</span>' + nxt + '</div>')

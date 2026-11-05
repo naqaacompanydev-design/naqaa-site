@@ -86,3 +86,24 @@ body.nq-blogidx .bh-in{position:relative;z-index:2;max-width:1180px;margin:0 aut
 body.nq-blogidx .bh h1{font-family:'Cairo',sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.3;margin:0;color:#fff;text-shadow:0 4px 24px rgba(0,0,0,.45)}
 body.nq-blogidx .bh h1 span{background:linear-gradient(135deg,#c9a84c,#f5d98e);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 @media(max-width:899px){body.nq-blogidx .bh-in{padding:108px 18px 36px}}
+
+/* ---------- pager ---------- */
+body.nq-blogidx .pager{display:flex;align-items:center;justify-content:center;gap:10px;margin:8px auto 0;padding:24px 20px 8px;max-width:800px}
+body.nq-blogidx .pager a,body.nq-blogidx .pager span[aria-current],body.nq-blogidx .pg-prev,body.nq-blogidx .pg-next{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:46px;height:46px;padding:0 14px;border-radius:14px;font-weight:800;font-size:15px;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
+body.nq-blogidx .pager a{background:#fff;border:1px solid var(--p-line);color:var(--p-navy)}
+body.nq-blogidx .pager a:hover{border-color:var(--p-gold);color:var(--p-gold-d)}
+body.nq-blogidx .pager a:focus-visible{outline:3px solid var(--p-gold);outline-offset:2px}
+body.nq-blogidx .pager span[aria-current]{background:var(--p-navy);color:#f5d98e;border:1px solid var(--p-navy)}
+body.nq-blogidx .pg-prev,body.nq-blogidx .pg-next{padding:0 18px}
+body.nq-blogidx .pg-prev svg,body.nq-blogidx .pg-next svg{width:18px;height:18px}
+body.nq-blogidx .pager .is-off{background:transparent;border:1px dashed var(--p-line);color:#b7b0a1;cursor:default}
+body.nq-blogidx .pg-nums{list-style:none;display:flex;align-items:center;gap:8px;margin:0 8px;padding:0}
+body.nq-blogidx .pg-gap{color:var(--p-mut);font-weight:800;padding:0 2px}
+body.nq-blogidx .pg-count{display:none;color:var(--p-ink2);font-size:15px;white-space:nowrap}
+body.nq-blogidx .pg-count b{color:var(--p-navy);font-weight:900}
+@media(max-width:639px){
+  body.nq-blogidx .pager{justify-content:space-between;gap:8px;padding-top:16px}
+  body.nq-blogidx .pg-nums{display:none}
+  body.nq-blogidx .pg-count{display:block}
+  body.nq-blogidx .pg-prev,body.nq-blogidx .pg-next{padding:0 14px;font-size:14px}
+}
