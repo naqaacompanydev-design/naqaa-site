@@ -8,6 +8,11 @@ build_blog.py
 
 طريقة الاستخدام
 ----------------
+الطريقة المختصرة لمقالة جديدة (التفاصيل في CLAUDE.md):
+   python3 tools/new_article.py --slug ... --title ... --section ... --cover ...
+   (اكتب المحتوى مكان كل TODO في blog/<slug>/index.html)
+   python3 build_blog.py
+
 1. لما تضيف مقال جديد للمدونة:
    - جهز صورة ومجلد المقال العادي زي ما بتعمل دايمًا (blog/اسم-المقال/index.html + الصور).
    - افتح articles.json وضيف عنصر جديد (Object) في *أول* القائمة (عشان يظهر
@@ -113,7 +118,11 @@ def update_sitemap(total_pages):
     if not os.path.isfile(SITEMAP_FILE):
         print("⚠ ملف sitemap.xml مش موجود - اتخطى التحديث.")
         return
-    xml = open(SITEMAP_FILE, encoding="utf-8").read()
+    raw = open(SITEMAP_FILE, encoding="utf-8", newline="").read()
+    eol = "\r\n" if "\r\n" in raw else "\n"   # keep the file's line endings
+    xml = raw.replace("\r\n", "\n")
+    import datetime
+    today = datetime.date.today().isoformat()
 
     # امسح كل مدخلات /blog/page/N/ القديمة
     xml = re.sub(
@@ -126,7 +135,7 @@ def update_sitemap(total_pages):
             entries.append(
                 "  <url>\n"
                 f"    <loc>{BASE_URL}/blog/page/{n}/</loc>\n"
-                "    <lastmod>2026-08-12</lastmod>\n"
+                f"    <lastmod>{today}</lastmod>\n"
                 "    <changefreq>weekly</changefreq>\n"
                 "    <priority>0.5</priority>\n"
                 "  </url>"
@@ -139,13 +148,17 @@ def update_sitemap(total_pages):
         else:
             xml = xml.replace("</urlset>", block + "\n</urlset>")
 
-    open(SITEMAP_FILE, "w", encoding="utf-8").write(xml)
+    open(SITEMAP_FILE, "w", encoding="utf-8", newline="").write(xml.replace("\n", eol))
     print(f"✓ sitemap.xml اتحدّث ({total_pages - 1} صفحة ترقيم إضافية غير صفحة 1)")
 
 
 def main():
     with open(ARTICLES_FILE, encoding="utf-8") as f:
         articles = json.load(f)
+
+    # check every article and prepare new ones (WebP images, FAQ data, new layout)
+    import blog_pipeline
+    articles = blog_pipeline.prepare(articles)
     total_articles = len(articles)
 
     head_tmpl = open(os.path.join(TEMPLATES_DIR, "head.html"), encoding="utf-8").read()
@@ -189,6 +202,8 @@ def main():
     for a in articles:
         blog_related.convert(os.path.join(SITE_ROOT, a["url"].strip("/"), "index.html"), articles, by_url)
     print("✓ المقالات ذات الصلة اتحدثت في كل المقالات")
+    # sitemap entries for new articles + final checks on every article
+    blog_pipeline.finish(articles)
     print(f"\nتم. إجمالي {total_articles} مقال على {total_pages} صفحة/صفحات.")
 
 
