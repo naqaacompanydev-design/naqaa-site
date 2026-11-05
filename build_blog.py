@@ -18,7 +18,7 @@ build_blog.py
        "cat":     "التصنيف • كلمة مختصرة تانية"
        "title":   "عنوان المقال اللي هيظهر في الكارت"
        "excerpt": "الوصف المختصر اللي هيظهر تحت العنوان"
-       "date":    "📅 أغسطس 2026 • 15 دقيقة"   (النص زي ما هو هيظهر تحت الكارت)
+       "date":    "📅 أغسطس 2026"   (للتوثيق بس: وقت القراءة في الكارت بيتحسب لوحده من المقال)
 
 2. شغّل الأمر ده من نفس المجلد اللي فيه المدونة (مجلد الموقع الرئيسي):
        python3 build_blog.py
@@ -37,6 +37,10 @@ import json
 import os
 import re
 import shutil
+import sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "tools"))
+from blog_index_layout import date_line, reading_minutes  # noqa: E402
 
 # ============ إعدادات ============
 SITE_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -61,7 +65,7 @@ ARTICLE_CARD_TMPL = """<a href="{url}" class="blog-card-link"><article class="bl
 <span class="blog-cat">{cat}</span>
 <h2 class="blog-card-title">{title}</h2>
 <p class="blog-card-excerpt">{excerpt}</p>
-<div class="blog-date">{date}</div>
+{date_html}
 </div></article></a>"""
 
 
@@ -97,7 +101,9 @@ def build_page_html(head_tmpl, middle, footer, page_num, total_pages, articles_s
             .replace("{{DESC}}", desc)
             .replace("{{CANONICAL}}", canonical))
 
-    cards = "\n".join(ARTICLE_CARD_TMPL.format(**a) for a in articles_slice)
+    # the reading time on each card is measured from the article itself
+    cards = "\n".join(ARTICLE_CARD_TMPL.format(**a, date_html=date_line(reading_minutes(a["url"])))
+                      for a in articles_slice)
 
     pagination = build_pagination(page_num, total_pages)
     page_info = f'<p class="blog-page-title">صفحة {page_num} من {total_pages} — {total_articles} مقال</p>'
@@ -108,6 +114,7 @@ def build_page_html(head_tmpl, middle, footer, page_num, total_pages, articles_s
             + "</div></div>\n"
             + f'<div class="pagination-wrap">\n  {pagination}\n</div>\n'
             + page_info + "\n"
+            + "</section>\n"
             + footer)
     return html
 
