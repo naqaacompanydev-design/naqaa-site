@@ -73,3 +73,76 @@ body.nq-blogidx .pagination-wrap a{background:#fff;border:1px solid var(--p-line
 body.nq-blogidx .pagination-wrap a:hover{background:var(--p-navy);border-color:var(--p-navy);color:#f5d98e}
 body.nq-blogidx .pagination-wrap span.current{background:var(--p-navy);border-color:var(--p-navy);color:#f5d98e}
 body.nq-blogidx .blog-page-title{color:var(--p-mut)}
+
+/* ==========================================================================
+   Blog hero (.bh). Variant chosen by data-hero: 1 featured / 2 photo / 3 compact
+   ========================================================================== */
+body.nq-blogidx .bh{position:relative;overflow:hidden;background:linear-gradient(160deg,#0d1f3c 0%,#0a1628 60%);color:#fff;isolation:isolate}
+body.nq-blogidx .bh::after{content:'';position:absolute;inset:auto 0 0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.45),transparent)}
+body.nq-blogidx .bh-in{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:128px 20px 56px;display:grid;gap:40px;align-items:center}
+body.nq-blogidx .bh .page-breadcrumb{font-size:13px;color:#8a9ab5;margin-bottom:16px}
+body.nq-blogidx .bh .page-breadcrumb a{color:#b9c4d6}
+body.nq-blogidx .bh-eyebrow{display:inline-flex;align-items:center;gap:8px;color:#e4bf6a;font-weight:800;font-size:14px;margin-bottom:10px}
+body.nq-blogidx .bh-eyebrow::before{content:'';width:22px;height:2px;background:#c9a84c;border-radius:2px}
+body.nq-blogidx .bh h1{font-family:'Cairo',sans-serif;font-size:clamp(2rem,5.2vw,3.4rem);font-weight:900;line-height:1.25;margin:0 0 14px;color:#fff;text-wrap:balance}
+body.nq-blogidx .bh h1 span{background:linear-gradient(135deg,#c9a84c,#f5d98e);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+body.nq-blogidx .bh-sub{color:#c3cddd;font-size:1.08rem;line-height:1.9;max-width:560px;margin:0 0 22px}
+body.nq-blogidx .bh-stats{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0}
+body.nq-blogidx .bh-stats li{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:50px;background:rgba(255,255,255,.06);border:1px solid rgba(201,168,76,.25);font-size:14px;color:#dbe2ee}
+body.nq-blogidx .bh-stats b{color:#f5d98e;font-weight:900}
+body.nq-blogidx .bh-ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+body.nq-blogidx .bh-ctas a{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border-radius:14px;font-weight:800;text-decoration:none}
+body.nq-blogidx .bh-ctas .c1{background:linear-gradient(135deg,#c9a84c,#e4bf6a 60%,#f5d98e);color:#1a1405}
+body.nq-blogidx .bh-ctas .c2{border:1.5px solid rgba(255,255,255,.35);color:#fff}
+body.nq-blogidx .bh-ctas svg{width:18px;height:18px}
+body.nq-blogidx .bh-bg,body.nq-blogidx .bh-feat,body.nq-blogidx .bh-collage,body.nq-blogidx .bh-ctas{display:none}
+
+/* --- 1: featured latest article beside the text --- */
+body.nq-blogidx .bh[data-hero="1"] .bh-in{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}
+body.nq-blogidx .bh[data-hero="1"] .bh-feat{display:flex;position:relative;flex-direction:column;justify-content:flex-end;aspect-ratio:5/4;border-radius:24px;overflow:hidden;text-decoration:none;color:#fff;box-shadow:0 30px 60px -30px rgba(0,0,0,.8);border:1px solid rgba(201,168,76,.3)}
+body.nq-blogidx .bh-feat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+body.nq-blogidx .bh-feat:hover img{transform:scale(1.04)}
+body.nq-blogidx .bh-feat::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,22,40,0) 35%,rgba(10,22,40,.92) 100%)}
+body.nq-blogidx .bh-feat-b{position:relative;z-index:2;padding:24px}
+body.nq-blogidx .bh-feat-tag{display:inline-block;background:linear-gradient(135deg,#c9a84c,#e4bf6a);color:#1a1405;font-size:12px;font-weight:900;padding:4px 12px;border-radius:50px;margin-bottom:10px}
+body.nq-blogidx .bh-feat h2{font-size:clamp(1.15rem,2.2vw,1.5rem);font-weight:900;line-height:1.5;margin:0 0 8px;color:#fff}
+body.nq-blogidx .bh-feat-m{color:#c9d3e3;font-size:14px}
+
+/* --- 2: full-width team photo behind the text --- */
+body.nq-blogidx .bh[data-hero="2"] .bh-bg{display:block;position:absolute;inset:0;z-index:0}
+body.nq-blogidx .bh-bg img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
+body.nq-blogidx .bh[data-hero="2"]::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(270deg,rgba(10,22,40,.96) 0%,rgba(10,22,40,.82) 45%,rgba(10,22,40,.35) 100%)}
+body.nq-blogidx .bh[data-hero="2"] .bh-in{padding-top:150px;padding-bottom:90px;min-height:520px}
+body.nq-blogidx .bh[data-hero="2"] .bh-ctas{display:flex}
+
+/* --- 3: compact band with a small photo stack --- */
+body.nq-blogidx .bh[data-hero="3"] .bh-in{grid-template-columns:minmax(0,1fr) auto;padding-top:120px;padding-bottom:40px}
+body.nq-blogidx .bh[data-hero="3"] h1{font-size:clamp(1.8rem,4.4vw,2.6rem)}
+body.nq-blogidx .bh[data-hero="3"] .bh-sub{margin-bottom:16px}
+body.nq-blogidx .bh[data-hero="3"] .bh-collage{display:block;position:relative;width:300px;height:210px}
+body.nq-blogidx .bh-collage img{position:absolute;width:170px;height:200px;object-fit:cover;border-radius:18px;border:3px solid #0a1628;box-shadow:0 20px 40px -18px rgba(0,0,0,.8)}
+body.nq-blogidx .bh-collage img:nth-child(1){left:0;top:10px;transform:rotate(-7deg)}
+body.nq-blogidx .bh-collage img:nth-child(2){left:66px;top:0;z-index:2;transform:rotate(1deg)}
+body.nq-blogidx .bh-collage img:nth-child(3){left:130px;top:12px;z-index:1;transform:rotate(8deg)}
+
+@media(max-width:899px){
+  body.nq-blogidx .bh-in{padding:104px 18px 40px;gap:26px}
+  body.nq-blogidx .bh[data-hero="1"] .bh-in{grid-template-columns:minmax(0,1fr)}
+  body.nq-blogidx .bh[data-hero="1"] .bh-feat{aspect-ratio:16/11}
+  body.nq-blogidx .bh[data-hero="2"] .bh-in{padding-top:118px;padding-bottom:56px;min-height:0}
+  body.nq-blogidx .bh[data-hero="2"]::before{background:linear-gradient(180deg,rgba(10,22,40,.7) 0%,rgba(10,22,40,.9) 55%,#0a1628 100%)}
+  body.nq-blogidx .bh[data-hero="3"] .bh-in{grid-template-columns:minmax(0,1fr);padding-bottom:28px}
+  body.nq-blogidx .bh[data-hero="3"] .bh-collage{display:none}
+  body.nq-blogidx .bh-sub{font-size:1rem}
+  body.nq-blogidx .bh-stats li{font-size:13px;padding:7px 12px}
+}
+@media(max-width:899px){body.nq-blogidx .bh[data-hero="3"] .bh-stats{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -18px;padding:0 18px}}
+
+/* preview-only hero switcher (?hero=) */
+.nq-hero-switch{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);z-index:1200;display:inline-flex;gap:4px;padding:4px;background:#0a1628;border:1px solid rgba(201,168,76,.4);border-radius:50px;box-shadow:0 10px 30px -10px rgba(0,0,0,.7);max-width:calc(100vw - 24px)}
+.nq-hero-switch a{padding:8px 14px;border-radius:50px;color:#c9d3e3;font:800 13px 'Cairo',sans-serif;text-decoration:none;white-space:nowrap}
+.nq-hero-switch a.on{background:linear-gradient(135deg,#c9a84c,#e4bf6a);color:#1a1405}
+@media(min-width:900px){.nq-hero-switch{bottom:auto;top:104px}}
+/* the breadcrumb is a <nav>: undo the old page-wide nav bar styling */
+body.nq-blogidx .bh .page-breadcrumb{position:static!important;inset:auto!important;z-index:auto!important;display:flex!important;justify-content:flex-start!important;align-items:center;gap:8px;width:auto!important;height:auto!important;padding:0!important;margin:0 0 16px!important;background:none!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;text-align:start}
+body.nq-blogidx .bh .page-breadcrumb span{color:#8a9ab5}
