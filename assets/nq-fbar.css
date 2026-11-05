@@ -1,0 +1,17 @@
+/* Fixed contact bar (WhatsApp / price / call) for pages that don't load the full page styles */
+#nq-fbar{position:fixed;bottom:0;right:0;left:0;z-index:1100;display:flex;background:rgba(7,17,31,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid rgba(201,168,76,.3);padding-bottom:env(safe-area-inset-bottom);font-family:'Cairo',system-ui,sans-serif;transform:none!important}
+#nq-fbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;height:60px;padding:0 4px;font-weight:800;font-size:14px;line-height:1;text-decoration:none!important;white-space:nowrap}
+#nq-fbar svg{width:20px;height:20px;flex-shrink:0}
+#nq-fbar .w{background:#25D366;color:#fff!important}
+#nq-fbar .c{color:#e4bf6a!important;background:transparent}
+#nq-fbar .p{flex:1.15;background:linear-gradient(135deg,#c9a84c,#e4bf6a 60%,#f5d98e);color:#1a1405!important;font-weight:900}
+#nq-fbar .p svg{width:19px;height:19px}
+@media(prefers-reduced-motion:no-preference){#nq-fbar .p svg{animation:nqCalc 5s ease-in-out 2s infinite}}
+@keyframes nqCalc{0%,88%,100%{transform:none}91%{transform:translateY(-3px) rotate(-8deg)}94%{transform:translateY(0) rotate(6deg)}}
+@media(max-width:899px){body{padding-bottom:calc(64px + env(safe-area-inset-bottom))!important}.back-top,.phone-float,#ha-top{bottom:calc(76px + env(safe-area-inset-bottom))!important}}
+@media(max-width:359px){#nq-fbar a{font-size:12.5px}#nq-fbar svg{width:17px;height:17px}}
+@media(min-width:900px){
+  #nq-fbar{left:24px;right:auto;bottom:24px;border-radius:50px;overflow:hidden;border:1px solid rgba(201,168,76,.3);box-shadow:0 16px 40px -10px rgba(0,0,0,.6)}
+  html[dir=ltr] #nq-fbar{left:auto;right:24px}
+  #nq-fbar a{flex:0 0 auto;height:52px;padding:0 24px;font-size:15px;gap:8px}
+}
