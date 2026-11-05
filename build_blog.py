@@ -40,7 +40,7 @@ import shutil
 import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "tools"))
-from blog_index_layout import date_line, reading_minutes  # noqa: E402
+from blog_index_layout import date_line, pagination_html, reading_minutes  # noqa: E402
 
 # ============ إعدادات ============
 SITE_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -78,17 +78,7 @@ def page_dir(n):
 
 
 def build_pagination(current, total):
-    parts = []
-    if current > 1:
-        parts.append(f'<a href="{page_url(current-1)}" title="الصفحة السابقة" class="pag-prev">‹ السابقة</a>')
-    for p in range(1, total + 1):
-        if p == current:
-            parts.append(f'<span class="current">{p}</span>')
-        else:
-            parts.append(f'<a href="{page_url(p)}">{p}</a>')
-    if current < total:
-        parts.append(f'<a href="{page_url(current+1)}" title="الصفحة التالية" class="pag-next">التالية ›</a>')
-    return "\n  ".join(parts)
+    return pagination_html(current, total, page_url)
 
 
 def build_page_html(head_tmpl, middle, footer, page_num, total_pages, articles_slice, total_articles):
@@ -106,14 +96,12 @@ def build_page_html(head_tmpl, middle, footer, page_num, total_pages, articles_s
                       for a in articles_slice)
 
     pagination = build_pagination(page_num, total_pages)
-    page_info = f'<p class="blog-page-title">صفحة {page_num} من {total_pages} — {total_articles} مقال</p>'
 
     html = (head
             + middle
             + cards
             + "</div></div>\n"
-            + f'<div class="pagination-wrap">\n  {pagination}\n</div>\n'
-            + page_info + "\n"
+            + pagination + "\n"
             + "</section>\n"
             + footer)
     return html
