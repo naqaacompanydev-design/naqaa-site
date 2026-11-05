@@ -122,3 +122,6 @@ body.nq-inner .article-hero{margin-top:74px}
 /* old blog breadcrumb bar was fixed at the top: keep it in the article flow */
 body.nq-inner nav.breadcrumb{position:static!important;top:auto!important;box-shadow:none!important;margin-bottom:14px}
 body.nq-inner .sidebar-inner{top:110px}
+/* English header: the labels are longer than the Arabic ones, so tighten the menu on mid-size screens */
+@media(min-width:1000px) and (max-width:1399px){html[dir=ltr] body .nq-nav{gap:14px}html[dir=ltr] body .nq-nav a{font-size:14px}}
+@media(min-width:1000px) and (max-width:1149px){html[dir=ltr] body .nq-nav{gap:10px}html[dir=ltr] body .nq-nav a{font-size:13px}html[dir=ltr] body .nq-call{padding-inline:14px}}
