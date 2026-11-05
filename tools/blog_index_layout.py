@@ -2,9 +2,9 @@
 
 Usage: python3 tools/blog_index_layout.py blog/index.html blog/page/2/index.html ...
 
-- adds body class "nq-blogidx" plus /assets/nq-blog.css and /assets/nq-blog.js
+- adds body class "nq-blogidx" plus /assets/nq-blog.css
 - wraps the cards + pagination in <section class="blog-paper">
-- sets the default card style (data-card="1")
+- uses the full-image card style (data-card="3")
 - replaces each card's "date • 40 min" line with the article's real reading
   time and a "read the article" cue
 """
@@ -13,7 +13,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
-from blog_article_layout import ICON_CLOCK, WPM, text_of  # noqa: E402
+from blog_article_layout import ICON_CLOCK, WPM, minutes_label, text_of  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -35,12 +35,12 @@ def reading_minutes(url):
 
 
 def date_line(minutes):
-    t = f'{minutes} دقيقة قراءة' if minutes else 'مقال'
+    t = minutes_label(minutes) if minutes else 'مقال'
     return (f'<div class="blog-date"><span>{ICON_CLOCK}{t}</span>'
             '<span class="bd-more">اقرأ المقال</span></div>')
 
 
-def convert(path, card='1'):
+def convert(path, card='3'):
     raw = open(path, encoding='utf-8', newline='').read()
     nl = '\r\n' if '\r\n' in raw else '\n'
     t = raw.replace('\r\n', '\n')
@@ -61,8 +61,7 @@ def convert(path, card='1'):
          + t[start:end_m.end()].replace('<div class="blog-grid">', f'<div class="blog-grid" data-card="{card}">', 1)
          + '</section>\n' + t[end_m.end():])
     t = t.replace('<body class="nq-inner">', '<body class="nq-inner nq-blogidx">', 1)
-    t = t.replace('</head>', '<link rel="stylesheet" href="/assets/nq-blog.css">\n'
-                  '<script src="/assets/nq-blog.js" defer></script>\n</head>', 1)
+    t = t.replace('</head>', '<link rel="stylesheet" href="/assets/nq-blog.css">\n</head>', 1)
     open(path, 'w', encoding='utf-8', newline='').write(t.replace('\n', nl))
     return 'ok'
 

@@ -140,3 +140,37 @@ body.nq-art .sidebar .qp-row{border-color:var(--p-line)!important}
 body.nq-art .sidebar .qp-price{color:var(--p-gold-d)!important}
 body.nq-art .sidebar .sidebar-cta{background:linear-gradient(150deg,#0d1f3c,#0a1628)!important;border:1px solid rgba(201,168,76,.3)!important;border-radius:16px!important}
 @media(max-width:999px){body.nq-art .sidebar-inner{position:static}}
+
+/* ---------- older article template (art-layout / art-card / sb-card) ---------- */
+body.nq-art .art-layout{align-items:start}
+body.nq-art .art-card{background:none!important;border:0!important;border-radius:0!important;padding:0!important;box-shadow:none!important}
+body.nq-art .art-card h2{border-bottom:0;padding-bottom:0}
+body.nq-art .art-card p,body.nq-art .art-card li{font-size:1.07rem}
+body.nq-art .art-card li::marker{color:var(--p-gold-d)}
+body.nq-art .highlight-box{background:var(--p-gold-s)!important;border:1px solid #efe2bb!important;border-right:4px solid var(--p-gold)!important;border-radius:14px!important;color:var(--p-ink)!important}
+body.nq-art .highlight-box *{color:var(--p-ink)!important}
+body.nq-art .sb-card{border-radius:16px}
+/* "offer ended" stamp sits on the cover image */
+body.nq-art .art-cover.nq-ended-wrap{position:relative}
+
+/* ---------- article-specific components, restyled for the light page ---------- */
+body.nq-art :is(.time-card,.package-card,.service-card,.contract-card,.district-card,.compare-card,.school-type-card,.benefit-item,.price-table-wrapper){background:var(--p-card)!important;border:1px solid var(--p-line)!important;border-radius:16px!important;box-shadow:0 8px 24px -18px rgba(10,22,40,.35)!important;color:var(--p-ink2)!important}
+body.nq-art :is(.time-card,.package-card,.service-card,.contract-card,.district-card,.compare-card,.school-type-card,.benefit-item) :is(h3,h4,b,strong,.package-name){color:var(--p-navy)!important}
+body.nq-art :is(.time-card,.package-card,.service-card,.contract-card,.district-card,.compare-card,.school-type-card,.benefit-item) :is(p,li,span:not([class*="icon"])){color:var(--p-ink2)!important}
+body.nq-art :is(.package-card,.compare-card).vip,body.nq-art .package-card.featured{border:2px solid var(--p-gold)!important}
+body.nq-art .package-price{color:var(--p-gold-d)!important}
+body.nq-art .package-price span{color:var(--p-mut)!important}
+body.nq-art .price-table-wrapper th{background:var(--p-navy)!important;color:#f5d98e!important}
+body.nq-art .price-table-wrapper td{color:var(--p-ink2)!important;border-color:var(--p-line)!important;background:transparent!important}
+body.nq-art :is(.district-tag,.occasion-tag){background:var(--p-gold-s)!important;border:1px solid #ecdcae!important;color:var(--p-gold-d)!important}
+body.nq-art .problem-item{background:#fff6f3!important;border:1px solid #f2d6cd!important;color:#5c2b1f!important}
+body.nq-art .discount-box{background:linear-gradient(150deg,#0d1f3c,#0a1628)!important;border:1px solid rgba(201,168,76,.35)!important;border-radius:20px!important;color:#e9edf4}
+body.nq-art .discount-box :is(h3,p,.discount-label){color:#e9edf4!important}
+body.nq-art .article-body li{color:var(--p-ink2)}
+body.nq-art .offer-box .btn-phone{color:var(--p-gold-d)!important;border-color:var(--p-gold-d)!important}
+body.nq-art .end-links-grid .sidebar-card-body p{color:var(--p-ink2)!important}
+body.nq-art .end-links-grid .btn-service-highlight{color:var(--p-gold-d);border-color:var(--p-gold)}
+body.nq-art .price-badge{background:var(--p-gold-s)!important;color:var(--p-gold-d)!important}
+body.nq-art .sidebar-card .sidebar-card-body p{color:var(--p-ink2)!important}
+body.nq-art .btn-service-highlight[style*="transparent"]{color:var(--p-gold-d)!important;border-color:var(--p-gold)!important}
+body.nq-art .article-body p[style*="--gold2"]{color:var(--p-gold-d)!important}

@@ -30,6 +30,11 @@ ICON_WA = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path
 EMOJI = re.compile(r'^[\s☀-➿\U0001F000-\U0001FAFF️‍]+')
 
 
+def minutes_label(m):
+    """Arabic: 3-10 take the plural (دقائق), everything else the singular (دقيقة)."""
+    return f'{m} دقائق قراءة' if 3 <= m <= 10 else f'{m} دقيقة قراءة'
+
+
 def text_of(fragment):
     t = re.sub(r'<(script|style)[^>]*>.*?</\1>', ' ', fragment, flags=re.S)
     return H.unescape(re.sub(r'<[^>]+>', ' ', t))
@@ -47,11 +52,15 @@ def convert(path):
         return 'skip (already converted)'
 
     # ---- hero ----
-    hero = re.search(r'[ \t]*<div class="article-hero">\s*<img src="([^"]+)" alt="([^"]*)"[^>]*>\s*'
+    if '<div class="art-layout">' in t and 'class="article-hero' not in t:
+        return convert_legacy(path, raw, nl, t)
+    hero = re.search(r'[ \t]*<div class="(?:nq-ended-wrap )?article-hero">\s*<img src="([^"]+)" alt="([^"]*)"[^>]*>'
+                     r'(\s*<div class="nq-ended".*?</div>)?\s*'
                      r'<div class="hero-overlay">(.*?)</div>\s*</div>\n', t, re.S)
     if not hero:
         return 'FAIL: no article-hero'
-    hero_src, hero_alt, overlay = hero.groups()
+    hero_src, hero_alt, stamp, overlay = hero.groups()
+    stamp = (stamp or '').strip()
     cat_m = re.search(r'<span class="article-cat">(.*?)</span>', overlay, re.S)
     cat = cat_m.group(1).strip() if cat_m else ''
 
@@ -128,14 +137,14 @@ def convert(path):
     meta_html = '<div class="art-meta">'
     if date:
         meta_html += f'<span>{ICON_CAL}{H.escape(date)}</span>'
-    meta_html += f'<span>{ICON_CLOCK}{minutes} دقيقة قراءة</span>'
+    meta_html += f'<span>{ICON_CLOCK}{minutes_label(minutes)}</span>'
     if author:
         meta_html += f'<span>{ICON_USER}{H.escape(author.replace("بقلم:", "").strip())}</span>'
     meta_html += '</div>'
     band = ('<header class="art-head"><div class="art-head-in">\n' + bc.group(0).strip() + '\n' + cat_html
             + f'<h1>{h1.group(1)}</h1>\n' + meta_html + '\n</div></header>\n'
             + '<div class="art-paper">\n'
-            + f'<figure class="art-cover"><img src="{hero_src}" alt="{hero_alt}" fetchpriority="high" decoding="async"></figure>\n')
+            + cover_html(hero_src, hero_alt, stamp))
     t = t.replace(hero.group(0), band, 1)
     # close .art-paper right before the site footer
     fpos = t.find('<footer', t.find('</aside>', t.find('<aside class="sidebar"')))
@@ -160,6 +169,112 @@ def convert(path):
 
     open(path, 'w', encoding='utf-8', newline='').write(t.replace('\n', nl))
     return f'ok: {words} words, {minutes} min, {len(toc)} sections'
+
+
+def cover_html(src, alt, stamp=''):
+    cls = 'art-cover nq-ended-wrap' if stamp else 'art-cover'
+    return (f'<figure class="{cls}"><img src="{src}" alt="{alt}" fetchpriority="high" decoding="async">'
+            f'{stamp}</figure>\n')
+
+
+def meta_block(date, minutes, author=''):
+    h = '<div class="art-meta">'
+    if date:
+        h += f'<span>{ICON_CAL}{H.escape(date)}</span>'
+    h += f'<span>{ICON_CLOCK}{minutes_label(minutes)}</span>'
+    if author:
+        h += f'<span>{ICON_USER}{H.escape(author.replace("بقلم:", "").strip())}</span>'
+    return h + '</div>'
+
+
+def booking_card(title):
+    from urllib.parse import quote
+    wa_text = 'السلام عليكم، قريت مقال "' + title + '" وأبي أستفسر عن الخدمة'
+    return ('<aside class="art-book" aria-label="احجز">'
+            '<div class="art-book-txt"><b>تبي تعرف السعر قبل ما تحجز؟</b>'
+            '<span>اختار الخدمة واحسب سعرك في دقيقة، أو كلمنا على واتساب.</span></div>'
+            f'<div class="art-book-btns"><a class="bk-p" data-nq="price" href="/pricing/">{ICON_CALC}احسب سعرك</a>'
+            f'<a class="bk-w" href="https://wa.me/{WA}?text={quote(wa_text)}" target="_blank" rel="noopener">{ICON_WA}واتساب</a></div>'
+            '</aside>\n')
+
+
+def add_toc(main):
+    """Give section h2s ids; return (main, toc_inline, toc_side)."""
+    cta_at = main.find('<div class="cta-section')
+    head_part, tail_part = (main[:cta_at], main[cta_at:]) if cta_at > 0 else (main, '')
+    toc = []
+
+    def add_id(m):
+        n = len(toc) + 1
+        toc.append((f's{n}', strip_emoji(text_of(m.group(2))).strip()))
+        return f'<h2{m.group(1)} id="s{n}">{m.group(2)}</h2>'
+    head_part = re.sub(r'<h2((?:(?!\bid=)[^>])*)>(.*?)</h2>', add_id, head_part, flags=re.S)
+    items = ''.join(f'<li><a href="#{i}">{H.escape(l)}</a></li>' for i, l in toc)
+    head = f'<summary>محتويات المقال <small>{len(toc)} قسم</small></summary><ol>{items}</ol></details>\n'
+    return (head_part + tail_part,
+            '<details class="art-toc art-toc-inline">' + head,
+            '<details class="art-toc art-toc-side" open>' + head)
+
+
+def insert_before_nth_h2(main, html, n=3):
+    h2s = [m.start() for m in re.finditer(r'<h2[^>]* id="s\d+"', main)]
+    pos = h2s[n - 1] if len(h2s) >= n else (h2s[-1] if h2s else len(main))
+    return main[:pos] + html + main[pos:]
+
+
+def finish(t, minutes):
+    t = re.sub(r'<body class="([^"]*)">', lambda m: f'<body class="{m.group(1)} nq-art">', t, count=1)
+    t = t.replace('</head>', '<link rel="stylesheet" href="/assets/nq-article.css">\n'
+                  '<script src="/assets/nq-article.js" defer></script>\n</head>', 1)
+    t = re.sub(r'"timeRequired"\s*:\s*"PT\d+M"', f'"timeRequired": "PT{minutes}M"', t)
+    t = re.sub(r'(<div class="(?:sidebar-card-head|sb-card)[^"]*"[^>]*><h[34][^>]*>)(.*?)(</h[34]>)',
+               lambda m: m.group(1) + strip_emoji(m.group(2)) + m.group(3), t)
+    return t
+
+
+def convert_legacy(path, raw, nl, t):
+    """Older article template (art-hero / art-layout / art-card / art-sidebar)."""
+    strip = re.search(r'<div style="background:rgba\(17,34,64,\.5\)[^"]*">\s*<div class="container"[^>]*>\s*'
+                      r'<nav class="page-breadcrumb">(.*?)</nav>\s*</div>\s*</div>\n', t, re.S)
+    hero = re.search(r'<div class="art-hero">\s*<div class="container">\s*<div class="section-tag">(.*?)</div>\s*'
+                     r'<h1>(.*?)</h1>\s*<div class="art-hero-meta">(.*?)</div>\s*</div>\s*</div>\n', t, re.S)
+    wrap = re.search(r'<div style="background:var\(--navy\);padding-bottom:80px">\s*<div class="art-layout">\s*<main>', t)
+    cover = re.search(r'<div class="(?:nq-ended-wrap )?art-cover">(<img[^>]*>)(<div class="nq-ended".*?</div>)?</div>\n?', t, re.S)
+    if not (strip and hero and wrap and cover):
+        return 'FAIL: legacy layout not recognised'
+    links = re.findall(r'<a href="([^"]+)">(.*?)</a>', strip.group(1))
+    last = re.findall(r'<span style="color:var\(--white\)">(.*?)</span>', strip.group(1))
+    bc = '<nav class="breadcrumb" aria-label="مسار التنقل">' + ''.join(
+        f'<a href="{u}">{x}</a><span class="bc-sep">›</span>' for u, x in links) + (f'<span>{last[0]}</span>' if last else '') + '</nav>'
+    cat = strip_emoji(text_of(hero.group(1)))
+    title = hero.group(2)
+    spans = [strip_emoji(text_of(s)).strip() for s in re.findall(r'<span>(.*?)</span>', hero.group(3), re.S)]
+    date = next((s for s in spans if re.search(r'20\d\d', s)), '')
+
+    img = re.sub(r'\sloading="[^"]*"', '', cover.group(1)).replace('<img ', '<img fetchpriority="high" decoding="async" ', 1)
+    stamp = cover.group(2) or ''
+    cls = 'art-cover nq-ended-wrap' if stamp else 'art-cover'
+    t = t.replace(cover.group(0), '', 1)
+    t = t.replace(wrap.group(0), f'<div class="art-paper">\n<figure class="{cls}">{img}{stamp}</figure>\n'
+                  '<div class="art-layout page-wrapper">\n<main>', 1)
+
+    main_m = re.search(r'<main>(.*?)</main>', t, re.S)
+    main = main_m.group(1)
+    minutes = max(1, round(len(text_of(main).split()) / WPM))
+    main, toc_inline, toc_side = add_toc(main)
+    main = toc_inline + insert_before_nth_h2(main, booking_card(text_of(title).strip()))
+    t = t.replace(main_m.group(0), '<main class="article-body">' + main + '</main>', 1)
+
+    band = ('<header class="art-head"><div class="art-head-in">\n' + bc + '\n'
+            + (f'<span class="art-cat">{H.escape(cat)}</span>\n' if cat else '')
+            + f'<h1>{title}</h1>\n' + meta_block(date, minutes) + '\n</div></header>\n')
+    t = t.replace(strip.group(0), '', 1).replace(hero.group(0), band, 1)
+    t = t.replace('<aside class="art-sidebar">', '<aside class="art-sidebar sidebar"><div class="sidebar-inner">\n' + toc_side, 1)
+    a_end = t.find('</aside>', t.find('<aside class="art-sidebar sidebar">'))
+    t = t[:a_end] + '</div>' + t[a_end:]
+    t = finish(t, minutes)
+    open(path, 'w', encoding='utf-8', newline='').write(t.replace('\n', nl))
+    return f'ok (legacy): {minutes} min'
 
 
 if __name__ == '__main__':

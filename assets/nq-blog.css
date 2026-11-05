@@ -73,10 +73,3 @@ body.nq-blogidx .pagination-wrap a{background:#fff;border:1px solid var(--p-line
 body.nq-blogidx .pagination-wrap a:hover{background:var(--p-navy);border-color:var(--p-navy);color:#f5d98e}
 body.nq-blogidx .pagination-wrap span.current{background:var(--p-navy);border-color:var(--p-navy);color:#f5d98e}
 body.nq-blogidx .blog-page-title{color:var(--p-mut)}
-
-/* preview-only card style switcher (shown when the URL has ?card=) */
-.nq-card-switch{position:sticky;top:84px;z-index:50;display:flex;justify-content:center;padding:14px 0 0}
-.nq-card-switch div{display:inline-flex;max-width:calc(100vw - 32px);gap:4px;padding:4px;background:#0a1628;border-radius:50px;box-shadow:0 10px 30px -12px rgba(10,22,40,.6)}
-.nq-card-switch a{padding:8px 16px;border-radius:50px;color:#c9d3e3;font:800 14px 'Cairo',sans-serif;text-decoration:none;white-space:nowrap}
-.nq-card-switch a.on{background:linear-gradient(135deg,#c9a84c,#e4bf6a);color:#1a1405}
-@media(max-width:479px){.nq-card-switch{top:76px}.nq-card-switch a{padding:7px 11px;font-size:12.5px}}
