@@ -41,9 +41,19 @@
       "permanent": true
     },
     {
+      "source": "/شركة-تنظيف-بجدة",
+      "destination": "/شركة-تنظيف-بالرياض/",
+      "permanent": true
+    },
+    {
       "source": "/شركة-تنظيف-بجدة/",
-      "destination": "/services/",
-      "permanent": false
+      "destination": "/شركة-تنظيف-بالرياض/",
+      "permanent": true
+    },
+    {
+      "source": "/about/naqaa-cleaning-riyadh-jeddah.jpg",
+      "destination": "/about/naqaa-cleaning-riyadh.jpg",
+      "permanent": true
     },
     {
       "source": "/faq.html",
