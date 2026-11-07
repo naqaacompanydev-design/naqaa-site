@@ -633,17 +633,19 @@ html[dir="rtl"] .cr-steps li::before{transform:translateX(50%)}
 </style>
 <style id="nq-cr-closed">
 .cr-off,.cr-chips{display:none!important}
+.cr-job.cr-closed{max-height:290px}
 .cr-job.cr-closed::after{display:none}
+.cr-job.cr-closed::before{content:'';position:absolute;z-index:4;left:0;right:0;bottom:0;height:80px;pointer-events:none;background:linear-gradient(transparent,#07111f)}
 .cr-job.cr-closed>*:not(.cr-closed-badge){filter:blur(4.5px);pointer-events:none;user-select:none;-webkit-user-select:none}
-.cr-closed-badge{position:absolute;z-index:5;top:230px;left:-20%;width:140%;transform:translateY(-50%) rotate(-9deg);padding:14px 20% 12px;text-align:center;font-family:Cairo,sans-serif;line-height:1.25;color:#1a1405;background:linear-gradient(135deg,#c9a84c,#e4bf6a 55%,#f5d98e);box-shadow:0 14px 34px rgba(0,0,0,.6);border-block:2px solid #fff}
+.cr-closed-badge{position:absolute;z-index:5;top:150px;left:-20%;width:140%;transform:translateY(-50%) rotate(-9deg);padding:14px 20% 12px;text-align:center;font-family:Cairo,sans-serif;line-height:1.25;color:#1a1405;background:linear-gradient(135deg,#c9a84c,#e4bf6a 55%,#f5d98e);box-shadow:0 14px 34px rgba(0,0,0,.6);border-block:2px solid #fff}
 .cr-closed-badge b{display:block;font-size:clamp(22px,6.4vw,34px);font-weight:900}
 .cr-closed-badge small{display:block;margin-top:2px;font-size:clamp(13px,3.6vw,16px);font-weight:800}
 .cr-live.cr-shut i{background:#f87171!important;animation:none!important}
 .cr-go{display:none!important}
-.cr-mailonly{max-width:860px;margin:0 auto 18px;padding:20px;border-radius:20px;text-align:center;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.45);font-family:Cairo,sans-serif}
+.cr-mailonly{max-width:860px;margin:16px auto 0;padding:20px;border-radius:20px;text-align:center;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.45);font-family:Cairo,sans-serif}
 .cr-mailonly h2{margin:0 0 10px;font-size:clamp(18px,5vw,23px);font-weight:900;color:#fff}
 .cr-mailonly a{display:inline-block;padding:10px 20px;border-radius:50px;font-size:clamp(15px,4.2vw,18px);font-weight:900;color:#1a1405;background:linear-gradient(135deg,#c9a84c,#e4bf6a 60%,#f5d98e);text-decoration:none;direction:ltr}
-.cr-mailonly p{margin:12px 0 0;font-size:15px;font-weight:800;line-height:1.7;color:#fca5a5}
+.cr-mailonly p{margin:12px 0 0;font-size:15px;font-weight:800;line-height:1.7;color:#e4bf6a}
 body{padding-bottom:0!important}
 </style>
 </head>
@@ -714,8 +716,7 @@ body{padding-bottom:0!important}
 
 <section class="cr-sec" id="jobs">
   <div class="wrap">
-    <div class="cr-mailonly"><h2>Job applications and inquiries by email only</h2><a href="mailto:info@naqaa-cleaning.com">info@naqaa-cleaning.com</a><p>WhatsApp messages about jobs will not be answered.</p></div>
-<article class="cr-job cr-closed cr-rv"><div class="cr-closed-badge" role="status"><b>Position filled</b><small>No openings right now</small></div>
+    <article class="cr-job cr-closed cr-rv"><div class="cr-closed-badge" role="status"><b>Position filled</b><small>No openings right now</small></div>
       <header>
         <span class="cr-ic">🚐</span>
         <div><h2>Driver & Cleaning Worker</h2><div class="cr-tags"><span>Full-time</span><span>Riyadh</span><span>2 openings</span></div></div>
@@ -731,6 +732,8 @@ body{padding-bottom:0!important}
       <div class="cr-dead"><div class="bar"><i id="cr-bar"></i></div><span>Apply before: 9 January 2027</span></div>
       <a class="btn btn-gold cr-go" inert tabindex="-1">Apply now ↓</a>
     </article>
+<div class="cr-mailonly"><h2>Job applications and inquiries by email only</h2><a href="mailto:info@naqaa-cleaning.com">info@naqaa-cleaning.com</a><p>We apologize that we cannot reply to WhatsApp messages about jobs. Thank you for your understanding.</p></div>
+
 </div>
 </section>
 

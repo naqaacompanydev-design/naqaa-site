@@ -1054,17 +1054,19 @@ html[dir="rtl"] .cr-steps li::before{transform:translateX(50%)}
 <link rel="stylesheet" href="/assets/nq-fbar.css">
 <style id="nq-cr-closed">
 .cr-off,.cr-chips{display:none!important}
+.cr-job.cr-closed{max-height:290px}
 .cr-job.cr-closed::after{display:none}
+.cr-job.cr-closed::before{content:'';position:absolute;z-index:4;left:0;right:0;bottom:0;height:80px;pointer-events:none;background:linear-gradient(transparent,#07111f)}
 .cr-job.cr-closed>*:not(.cr-closed-badge){filter:blur(4.5px);pointer-events:none;user-select:none;-webkit-user-select:none}
-.cr-closed-badge{position:absolute;z-index:5;top:230px;left:-20%;width:140%;transform:translateY(-50%) rotate(-9deg);padding:14px 20% 12px;text-align:center;font-family:Cairo,sans-serif;line-height:1.25;color:#1a1405;background:linear-gradient(135deg,#c9a84c,#e4bf6a 55%,#f5d98e);box-shadow:0 14px 34px rgba(0,0,0,.6);border-block:2px solid #fff}
+.cr-closed-badge{position:absolute;z-index:5;top:150px;left:-20%;width:140%;transform:translateY(-50%) rotate(-9deg);padding:14px 20% 12px;text-align:center;font-family:Cairo,sans-serif;line-height:1.25;color:#1a1405;background:linear-gradient(135deg,#c9a84c,#e4bf6a 55%,#f5d98e);box-shadow:0 14px 34px rgba(0,0,0,.6);border-block:2px solid #fff}
 .cr-closed-badge b{display:block;font-size:clamp(22px,6.4vw,34px);font-weight:900}
 .cr-closed-badge small{display:block;margin-top:2px;font-size:clamp(13px,3.6vw,16px);font-weight:800}
 .cr-live.cr-shut i{background:#f87171!important;animation:none!important}
 .cr-go{display:none!important}
-.cr-mailonly{max-width:860px;margin:0 auto 18px;padding:20px;border-radius:20px;text-align:center;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.45);font-family:Cairo,sans-serif}
+.cr-mailonly{max-width:860px;margin:16px auto 0;padding:20px;border-radius:20px;text-align:center;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.45);font-family:Cairo,sans-serif}
 .cr-mailonly h2{margin:0 0 10px;font-size:clamp(18px,5vw,23px);font-weight:900;color:#fff}
 .cr-mailonly a{display:inline-block;padding:10px 20px;border-radius:50px;font-size:clamp(15px,4.2vw,18px);font-weight:900;color:#1a1405;background:linear-gradient(135deg,#c9a84c,#e4bf6a 60%,#f5d98e);text-decoration:none;direction:ltr}
-.cr-mailonly p{margin:12px 0 0;font-size:15px;font-weight:800;line-height:1.7;color:#fca5a5}
+.cr-mailonly p{margin:12px 0 0;font-size:15px;font-weight:800;line-height:1.7;color:#e4bf6a}
 body{padding-bottom:0!important}
 </style>
 </head>
@@ -1105,7 +1107,7 @@ body{padding-bottom:0!important}
       <span class="cr-live cr-shut" id="cr-live"><i></i><span>التقديم مغلق حاليًا</span><b id="cr-days" hidden>0</b></span>
     </div>
     <h1>الوظائف في <em>مؤسسة نقاء</em> بالرياض</h1>
-    <p class="cr-sub">تم شغل الوظيفة، وما فيه وظائف متاحة حاليًا. شكرًا لاهتمامكم.</p>
+    <p class="cr-sub">تم شغل الوظيفة، ولا توجد وظائف شاغرة حاليًا. نشكر لكم اهتمامكم.</p>
     <svg class="cr-van" viewBox="0 0 360 120" aria-hidden="true">
       <defs><linearGradient id="crG" x1="0" x2="1"><stop offset="0" stop-color="#c9a84c"/><stop offset=".5" stop-color="#f5d98e"/><stop offset="1" stop-color="#c9a84c"/></linearGradient></defs>
       <rect x="0" y="100" width="360" height="6" rx="3" fill="rgba(255,255,255,.08)"/>
@@ -1132,8 +1134,7 @@ body{padding-bottom:0!important}
 
 <section class="cr-sec" id="jobs">
   <div class="tk-wrap">
-    <div class="cr-mailonly"><h2>التقديم وأي استفسار عن الوظايف بالإيميل فقط</h2><a href="mailto:info@naqaa-cleaning.com">info@naqaa-cleaning.com</a><p>أي رسالة واتساب بخصوص التوظيف ما راح يتم الرد عليها.</p></div>
-<article class="cr-job cr-closed rv"><div class="cr-closed-badge" role="status"><b>تم شغل الوظيفة</b><small>ما فيه وظائف متاحة حاليًا</small></div>
+    <article class="cr-job cr-closed rv"><div class="cr-closed-badge" role="status"><b>تم شغل الوظيفة</b><small>لا توجد وظائف شاغرة حاليًا</small></div>
       <header>
         <span class="cr-ic">🚐</span>
         <div><h2>سائق وعامل نظافة</h2>
@@ -1150,6 +1151,8 @@ body{padding-bottom:0!important}
       <div class="cr-dead"><div class="bar"><i id="cr-bar"></i></div><span>آخر موعد للتقديم: 9 يناير 2027</span></div>
       <a class="tk-btn tk-btn-wa cr-go" inert tabindex="-1">قدّم الآن ↓</a>
     </article>
+<div class="cr-mailonly"><h2>التقديم والاستفسارات عن الوظائف عبر البريد الإلكتروني فقط</h2><a href="mailto:info@naqaa-cleaning.com">info@naqaa-cleaning.com</a><p>نعتذر عن عدم الرد على رسائل الواتساب المتعلقة بالتوظيف، ونشكر لكم تفهمكم.</p></div>
+
 </div>
 </section>
 
