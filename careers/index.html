@@ -1060,6 +1060,11 @@ html[dir="rtl"] .cr-steps li::before{transform:translateX(50%)}
 .cr-closed-badge b{display:block;font-size:clamp(22px,6.4vw,34px);font-weight:900}
 .cr-closed-badge small{display:block;margin-top:2px;font-size:clamp(13px,3.6vw,16px);font-weight:800}
 .cr-live.cr-shut i{background:#f87171!important;animation:none!important}
+.cr-go{display:none!important}
+.cr-mailonly{max-width:860px;margin:0 auto 18px;padding:20px;border-radius:20px;text-align:center;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.45);font-family:Cairo,sans-serif}
+.cr-mailonly h2{margin:0 0 10px;font-size:clamp(18px,5vw,23px);font-weight:900;color:#fff}
+.cr-mailonly a{display:inline-block;padding:10px 20px;border-radius:50px;font-size:clamp(15px,4.2vw,18px);font-weight:900;color:#1a1405;background:linear-gradient(135deg,#c9a84c,#e4bf6a 60%,#f5d98e);text-decoration:none;direction:ltr}
+.cr-mailonly p{margin:12px 0 0;font-size:15px;font-weight:800;line-height:1.7;color:#fca5a5}
 body{padding-bottom:0!important}
 </style>
 </head>
@@ -1127,7 +1132,8 @@ body{padding-bottom:0!important}
 
 <section class="cr-sec" id="jobs">
   <div class="tk-wrap">
-    <article class="cr-job cr-closed rv"><div class="cr-closed-badge" role="status"><b>تم شغل الوظيفة</b><small>ما فيه وظائف متاحة حاليًا</small></div>
+    <div class="cr-mailonly"><h2>التقديم على الوظايف بالإيميل فقط</h2><a href="mailto:info@naqaa-cleaning.com">info@naqaa-cleaning.com</a><p>أي رسالة واتساب بخصوص التوظيف ما راح يتم الرد عليها.</p></div>
+<article class="cr-job cr-closed rv"><div class="cr-closed-badge" role="status"><b>تم شغل الوظيفة</b><small>ما فيه وظائف متاحة حاليًا</small></div>
       <header>
         <span class="cr-ic">🚐</span>
         <div><h2>سائق وعامل نظافة</h2>
@@ -1144,7 +1150,7 @@ body{padding-bottom:0!important}
       <div class="cr-dead"><div class="bar"><i id="cr-bar"></i></div><span>آخر موعد للتقديم: 9 يناير 2027</span></div>
       <a class="tk-btn tk-btn-wa cr-go" inert tabindex="-1">قدّم الآن ↓</a>
     </article>
-  </div>
+</div>
 </section>
 
 <section class="cr-sec cr-off" id="apply">
