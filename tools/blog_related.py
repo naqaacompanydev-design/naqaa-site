@@ -18,6 +18,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from blog_article_layout import ICON_CLOCK, minutes_label  # noqa: E402
 from blog_index_layout import reading_minutes  # noqa: E402
 from blog_sections import SECTION_NAMES  # noqa: E402
+from blog_io import write_keep_eol  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 N = 3
@@ -119,7 +120,7 @@ def convert(path, articles, by_url):
     if main_end < 0:
         return 'FAIL: no </main>'
     t = t[:main_end] + cards_html(urls, by_url) + t[main_end:]
-    open(path, 'w', encoding='utf-8', newline='').write(t.replace('\n', nl))
+    write_keep_eol(path, t, nl)
     return 'ok: ' + ', '.join(u.split('/')[2] for u in urls)
 
 
