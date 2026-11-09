@@ -17,6 +17,7 @@ import sys
 sys.path.insert(0, os.path.dirname(__file__))
 from blog_index_layout import date_line, reading_minutes  # noqa: E402
 from blog_sections import SECTIONS, SECTION_NAMES, section_url  # noqa: E402
+from blog_io import write_keep_eol  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = 'https://www.naqaa-cleaning.com'
@@ -83,8 +84,7 @@ def read(p):
 
 
 def write(p, t, nl):
-    os.makedirs(os.path.dirname(p), exist_ok=True)
-    open(p, 'w', encoding='utf-8', newline='').write(t.replace('\n', nl))
+    write_keep_eol(p, t, nl)
 
 
 def fix_listing_pages(articles):
@@ -147,7 +147,8 @@ def update_sitemap(today=None):
     t = re.sub(r'\n\s*<!-- blog sections -->.*?<!-- /blog sections -->', '', t, flags=re.S)
     entries = ''.join(f'\n  <url>\n    <loc>{BASE}{section_url(s)}</loc>\n    <lastmod>{today}</lastmod>\n'
                       '    <changefreq>weekly</changefreq>\n    <priority>0.7</priority>\n  </url>' for s, _, _ in SECTIONS)
-    t = t.replace('</urlset>', f'\n  <!-- blog sections -->{entries}\n  <!-- /blog sections -->\n</urlset>', 1)
+    end = t.rfind('</urlset>')
+    t = t[:end].rstrip('\n') + f'\n  <!-- blog sections -->{entries}\n  <!-- /blog sections -->\n' + t[end:]
     write(p, t, nl)
 
 

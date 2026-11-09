@@ -20,6 +20,7 @@ import sys
 sys.path.insert(0, os.path.dirname(__file__))
 import blog_article_layout  # noqa: E402
 from blog_sections import SECTION_NAMES  # noqa: E402
+from blog_io import write_keep_eol  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = 'https://www.naqaa-cleaning.com'
@@ -35,7 +36,7 @@ def read(p):
 
 
 def write(p, t, nl):
-    open(p, 'w', encoding='utf-8', newline='').write(t.replace('\n', nl))
+    write_keep_eol(p, t, nl)
 
 
 def fail(title, problems):

@@ -18,6 +18,9 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from blog_io import write_keep_eol  # noqa: E402
+
 WPM = 200
 WA = "966545833481"
 
@@ -167,7 +170,7 @@ def convert(path):
     # schema: keep timeRequired in step with the shown reading time, if present
     t = re.sub(r'"timeRequired"\s*:\s*"PT\d+M"', f'"timeRequired": "PT{minutes}M"', t)
 
-    open(path, 'w', encoding='utf-8', newline='').write(t.replace('\n', nl))
+    write_keep_eol(path, t, nl)
     return f'ok: {words} words, {minutes} min, {len(toc)} sections'
 
 
@@ -273,7 +276,7 @@ def convert_legacy(path, raw, nl, t):
     a_end = t.find('</aside>', t.find('<aside class="art-sidebar sidebar">'))
     t = t[:a_end] + '</div>' + t[a_end:]
     t = finish(t, minutes)
-    open(path, 'w', encoding='utf-8', newline='').write(t.replace('\n', nl))
+    write_keep_eol(path, t, nl)
     return f'ok (legacy): {minutes} min'
 
 

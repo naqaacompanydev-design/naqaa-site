@@ -14,6 +14,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
 from blog_article_layout import ICON_CLOCK, WPM, minutes_label, text_of  # noqa: E402
+from blog_io import write_keep_eol  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -62,7 +63,7 @@ def convert(path, card='3'):
          + '</section>\n' + t[end_m.end():])
     t = t.replace('<body class="nq-inner">', '<body class="nq-inner nq-blogidx">', 1)
     t = t.replace('</head>', '<link rel="stylesheet" href="/assets/nq-blog.css">\n</head>', 1)
-    open(path, 'w', encoding='utf-8', newline='').write(t.replace('\n', nl))
+    write_keep_eol(path, t, nl)
     return 'ok'
 
 
