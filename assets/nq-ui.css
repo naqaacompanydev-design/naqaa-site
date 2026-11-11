@@ -50,7 +50,7 @@ html[dir=ltr] #nq-progress{transform-origin:left}
 #nq-fbar{position:fixed;bottom:0;right:0;left:0;z-index:1100;display:flex;background:rgba(7,17,31,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid rgba(201,168,76,.3);padding-bottom:env(safe-area-inset-bottom);font-family:'Cairo',sans-serif;transform:none!important;border-radius:0}
 #nq-fbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;height:60px;font-weight:800;font-size:15px;text-decoration:none!important;padding:0}
 #nq-fbar svg{width:20px;height:20px;flex-shrink:0}
-#nq-fbar .w{background:#25D366;color:#fff!important}
+#nq-fbar .w{background:#25D366;color:#04230f!important}
 #nq-fbar .c{color:var(--nq-gold2)!important;background:transparent}
 body.nq-inner{padding-bottom:64px}
 @media(min-width:900px){

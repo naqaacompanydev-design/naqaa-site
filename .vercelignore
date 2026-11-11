@@ -1,3 +1,4 @@
 *.py
 articles.json
 blog_templates/
+CLAUDE.md

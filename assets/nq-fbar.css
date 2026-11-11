@@ -2,7 +2,7 @@
 #nq-fbar{position:fixed;bottom:0;right:0;left:0;z-index:1100;display:flex;background:rgba(7,17,31,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid rgba(201,168,76,.3);padding-bottom:env(safe-area-inset-bottom);font-family:'Cairo',system-ui,sans-serif;transform:none!important}
 #nq-fbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;height:60px;padding:0 4px;font-weight:800;font-size:14px;line-height:1;text-decoration:none!important;white-space:nowrap}
 #nq-fbar svg{width:20px;height:20px;flex-shrink:0}
-#nq-fbar .w{background:#25D366;color:#fff!important}
+#nq-fbar .w{background:#25D366;color:#04230f!important}
 #nq-fbar .c{color:#e4bf6a!important;background:transparent}
 #nq-fbar .p{flex:1.15;background:linear-gradient(135deg,#c9a84c,#e4bf6a 60%,#f5d98e);color:#1a1405!important;font-weight:900}
 #nq-fbar .p svg{width:19px;height:19px}

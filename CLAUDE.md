@@ -69,11 +69,27 @@ content area only), then run `python3 build_blog.py` so listings and related car
 |---|---|---|
 | `/blog/`, `/blog/page/N/`, `/blog/category/*/`, related cards, blog sitemap entries | `articles.json`, `blog_templates/*.html`, `tools/blog_*.py` | `python3 build_blog.py` |
 | `/en/pricing/` (English price calculator) | `pricing/index.html` (prices + logic) and `tools/pricing_en_strings.py` (English text) | `python3 tools/build_pricing_en.py` |
+| `/en/terms/`, `/en/privacy/`, `/en/refund/`, `/en/accessibility/` | layout from `terms.html` etc., English text in `tools/build_legal_en.py` | `python3 tools/build_legal_en.py` |
 
 - Prices live only in `pricing/index.html`. After changing them, run `tools/build_pricing_en.py`;
   it stops if any new Arabic text has no English translation: add it to `tools/pricing_en_strings.py`.
 
 ## House rules
+
+- The organisation's name is always **مؤسسة نقاء للتنظيف** (English: **Naqaa Cleaning**). Never "شركة نقاء" or
+  "نقاء للتنظيف والصيانة".
+- Facts that must stay the same everywhere: service area is Riyadh only; annual contracts get 20% off;
+  cancelling is free before the team arrives and costs 30 SAR after it arrives; pest control warranty is
+  6 months (3 months for a single insect); tank insulation 10 years; nano protection up to 24 months.
+  The numbers shown on the site (4.7 on Google, 2,700+ clients, 15 years) come from the owner: change them
+  only when the owner says so, and in every page at once.
+- Every page needs `og:image` (a jpg, not a "before cleaning" photo) and a description of 110 to 155 characters.
+- Arabic text is Saudi dialect: no Egyptian words (مش، إزاي، كده، كتير، دلوقتي، عايز).
+- WhatsApp buttons use dark text (`#04230f`) on the green background, not white (contrast).
+- Legal pages exist in both languages: after editing `terms.html`, `privacy.html`, `refund.html` or
+  `accessibility.html`, update the English text in `tools/build_legal_en.py` and run it.
+- `404.html` is the site's not-found page (Vercel serves it automatically).
+- `/blog/category/` and `/blog/page/` are generated: never upload `category/` or `page/` folders to the repo root.
 
 - Images: use WebP for page images (keep the jpg/png next to it for `og:image`).
 - Keep each file's existing line endings (some files are CRLF).
