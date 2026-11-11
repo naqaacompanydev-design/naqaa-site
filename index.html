@@ -143,7 +143,7 @@ section{position:relative}
 .btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 40px -10px rgba(201,168,76,.75)}
 .btn-ghost{border:1.5px solid rgba(248,246,240,.28);color:var(--white);background:rgba(7,17,31,.35);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .btn-ghost:hover{border-color:var(--gold2);color:var(--gold2)}
-.btn-wa{background:#25D366;color:#fff;box-shadow:0 10px 30px -10px rgba(37,211,102,.6)}
+.btn-wa{background:#25D366;color:#04230f;box-shadow:0 10px 30px -10px rgba(37,211,102,.6)}
 .btn-wa:hover{transform:translateY(-2px)}
 
 /* progress + header */
@@ -403,7 +403,7 @@ footer{background:#050d18;border-top:1px solid rgba(201,168,76,.1);padding:24px 
 .fbar{position:fixed;bottom:0;right:0;left:0;z-index:1000;display:flex;background:rgba(7,17,31,.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid rgba(201,168,76,.3);padding-bottom:env(safe-area-inset-bottom)}
 .fbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;height:60px;font-weight:800;font-size:15px}
 .fbar svg{width:20px;height:20px}
-.fbar .w{background:#25D366;color:#fff}
+.fbar .w{background:#25D366;color:#04230f}
 .fbar .c{color:var(--gold2)}
 @media(min-width:900px){.fbar{left:24px;right:auto;bottom:24px;border-radius:50px;overflow:hidden;border:1px solid rgba(201,168,76,.3);box-shadow:0 16px 40px -10px rgba(0,0,0,.6);transform:none}.fbar.show{transform:none}.fbar a{flex:0 0 auto;white-space:nowrap;height:52px;padding:0 24px}}
 
@@ -733,6 +733,8 @@ html[lang=en] .head .h2 .gold::after,html[lang=en] .final h2 .gold::after{transf
 <div id="ha-intro" aria-hidden="true"><div class="cur l"></div><div class="cur r"></div><div class="lg"><img src="/images/brand/wipe-hand-600.webp" alt="" width="340" height="340"></div></div>
 <script id="nq-home-anim3-intro">(function(){function haOnce(k,max){if(/[?&]wow/.test(location.search))return true;var t=new Date().toISOString().slice(0,10),n=0;try{var v=(localStorage.getItem(k)||'').split('|');n=v[0]===t?+v[1]||0:0;if(n>=(max||1))return false;localStorage.setItem(k,t+'|'+(n+1));}catch(e){}return true;}window.haOnce=haOnce;var el=document.getElementById('ha-intro');
 if(matchMedia('(prefers-reduced-motion: reduce)').matches){el.remove();return;}
+/* play the intro once a day per visitor; repeat visits see the page straight away */
+if(!haOnce('nq-intro',1)){el.remove();setTimeout(function(){document.dispatchEvent(new Event('ha-intro-done'));},0);return;}
 var lg=el.querySelector('.lg'),P=[[8,18],[86,12],[92,62],[14,74],[50,4],[70,88],[30,40],[64,34]];P.forEach(function(p,i){var k=document.createElement('i');k.className='sk';k.textContent='✦';k.style.left=p[0]+'%';k.style.top=p[1]+'%';k.style.animationDelay=(.3+i*.09).toFixed(2)+'s';lg.appendChild(k);});
 el.className='go';setTimeout(function(){el.remove();document.dispatchEvent(new Event('ha-intro-done'));},2250);})();</script>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSS7QXXP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -788,7 +790,7 @@ el.className='go';setTimeout(function(){el.remove();document.dispatchEvent(new E
       </div>
       <div class="stats" id="stats">
         <div class="stat"><b><span data-to="4.7" data-dec="1">0</span><em>★</em></b><span>تقييم جوجل</span></div>
-        <div class="stat"><b><em>+</em><span data-to="2500">0</span></b><span>عميل راضٍ</span></div>
+        <div class="stat"><b><em>+</em><span data-to="2700">0</span></b><span>عميل راضٍ</span></div>
         <div class="stat"><b><span data-to="15">0</span></b><span>سنة خبرة</span></div>
         <div class="stat"><b>24<em>/</em>7</b><span>نستقبل طلباتك</span></div>
       </div>
@@ -807,12 +809,12 @@ el.className='go';setTimeout(function(){el.remove();document.dispatchEvent(new E
       <p class="lead">فريق مدرب ومعدات حديثة ومواد آمنة، لكل مساحة من بيتك أو منشأتك.</p>
     </div>
     <div class="bento">
-      <a class="svc xl rv-in" href="/شركة-تنظيف-بالرياض/تنظيف-منازل-وفلل/"><img src="/images/hero/home-carpet.webp" alt="تنظيف المنازل والفلل" loading="lazy" style="object-position:center 62%"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span><div class="in"><span class="tag">الأكثر طلباً</span><h3>تنظيف المنازل والفلل</h3><p>تنظيف شامل لكل الغرف والحمامات والمطابخ والأرضيات بأحدث المعدات ومنظفات آمنة.</p></div></a>
-      <a class="svc w2 rv-in" style="--d:.08s" href="/services/تنظيف-وعزل-الخزانات/"><img src="/images/tank-cleaning-insulation.webp" alt="تنظيف وعزل الخزانات" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span><div class="in"><span class="tag">ضمان 10 سنوات</span><h3>تنظيف وعزل الخزانات</h3><p>تعقيم كامل وعزل احترافي بالإيبوكسي للخزانات العلوية والأرضية.</p></div></a>
-      <a class="svc rv-in" style="--d:.12s" href="/services/تنظيف-المجالس-والكنب/"><img src="/images/majlis-cleaning.webp" alt="تنظيف المجالس والكنب" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span><div class="in"><span class="tag">عناية بالأقمشة</span><h3>تنظيف المجالس</h3></div></a>
-      <a class="svc rv-in" style="--d:.16s" href="/services/مكافحة-الحشرات-والقوارض/"><img src="/images/pest-control.webp" alt="مكافحة الحشرات والقوارض" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span><div class="in"><span class="tag">ضمان 6 أشهر</span><h3>مكافحة الحشرات</h3></div></a>
-      <a class="svc w2 rv-in" style="--d:.08s" href="/services/تنظيف-الشركات-والمكاتب/"><img src="/images/office-cleaning.webp" alt="تنظيف الشركات والمكاتب" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span><div class="in"><span class="tag">عقود مرنة</span><h3>تنظيف الشركات والمكاتب</h3><p>عقود شهرية وسنوية للمكاتب والمنشآت التجارية.</p></div></a>
-      <a class="svc w2 rv-in" style="--d:.12s" href="/services/التنظيف-العميق-الشامل/"><img src="/images/deep-cleaning.webp" alt="التنظيف العميق الشامل" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span><div class="in"><span class="tag">تنظيف 360°</span><h3>التنظيف العميق الشامل</h3><p>خلف الأثاث والأسقف والجدران، مثالي قبل وبعد الانتقال.</p></div></a>
+      <a class="svc xl rv-in" href="/شركة-تنظيف-بالرياض/تنظيف-منازل-وفلل/"><img src="/images/hero/home-carpet.webp" alt="تنظيف المنازل والفلل" loading="lazy" style="object-position:center 62%" width="1000" height="1500"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span><div class="in"><span class="tag">الأكثر طلباً</span><h3>تنظيف المنازل والفلل</h3><p>تنظيف شامل لكل الغرف والحمامات والمطابخ والأرضيات بأحدث المعدات ومنظفات آمنة.</p></div></a>
+      <a class="svc w2 rv-in" style="--d:.08s" href="/services/تنظيف-وعزل-الخزانات/"><img src="/images/tank-cleaning-insulation.webp" alt="تنظيف وعزل الخزانات" loading="lazy" width="720" height="520"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span><div class="in"><span class="tag">ضمان 10 سنوات</span><h3>تنظيف وعزل الخزانات</h3><p>تعقيم كامل وعزل احترافي بالإيبوكسي للخزانات العلوية والأرضية.</p></div></a>
+      <a class="svc rv-in" style="--d:.12s" href="/services/تنظيف-المجالس-والكنب/"><img src="/images/majlis-cleaning.webp" alt="تنظيف المجالس والكنب" loading="lazy" width="634" height="321"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span><div class="in"><span class="tag">عناية بالأقمشة</span><h3>تنظيف المجالس</h3></div></a>
+      <a class="svc rv-in" style="--d:.16s" href="/services/مكافحة-الحشرات-والقوارض/"><img src="/images/pest-control.webp" alt="مكافحة الحشرات والقوارض" loading="lazy" width="634" height="356"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span><div class="in"><span class="tag">ضمان 6 أشهر</span><h3>مكافحة الحشرات</h3></div></a>
+      <a class="svc w2 rv-in" style="--d:.08s" href="/services/تنظيف-الشركات-والمكاتب/"><img src="/images/office-cleaning.webp" alt="تنظيف الشركات والمكاتب" loading="lazy" width="634" height="381"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span><div class="in"><span class="tag">عقود مرنة</span><h3>تنظيف الشركات والمكاتب</h3><p>عقود شهرية وسنوية للمكاتب والمنشآت التجارية.</p></div></a>
+      <a class="svc w2 rv-in" style="--d:.12s" href="/services/التنظيف-العميق-الشامل/"><img src="/images/deep-cleaning.webp" alt="التنظيف العميق الشامل" loading="lazy" width="576" height="374"><span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span><div class="in"><span class="tag">تنظيف 360°</span><h3>التنظيف العميق الشامل</h3><p>خلف الأثاث والأسقف والجدران، مثالي قبل وبعد الانتقال.</p></div></a>
     </div>
     <div class="more rv-in"><a class="btn btn-ghost" href="/services/">كل خدماتنا ←</a></div>
   </div>
@@ -871,7 +873,7 @@ el.className='go';setTimeout(function(){el.remove();document.dispatchEvent(new E
       <article class="pk feat pkg-card rv-in">
         <span class="pk-badge">وفّر 176 ريال</span>
         <div class="pk-in">
-          <div class="pk-img"><img src="/images/hero/hero-home.webp" alt="باقة المنزل الشامل" loading="lazy"></div>
+          <div class="pk-img"><img src="/images/hero/hero-home.webp" alt="باقة المنزل الشامل" loading="lazy" width="1000" height="750"></div>
           <div class="pk-body">
             <span class="pk-kind">⭐ الأكثر طلباً</span>
             <h3>باقة المنزل الشامل</h3>
@@ -886,7 +888,7 @@ el.className='go';setTimeout(function(){el.remove();document.dispatchEvent(new E
       <article class="pk pkg-card rv-in" style="--d:.08s">
         <span class="pk-badge">وفّر 600 ريال</span>
         <div class="pk-in">
-          <div class="pk-img"><img src="/images/hero/hero-office.webp" alt="باقة العقد الشهري للشركات" loading="lazy"></div>
+          <div class="pk-img"><img src="/images/hero/hero-office.webp" alt="باقة العقد الشهري للشركات" loading="lazy" width="1000" height="742"></div>
           <div class="pk-body">
             <span class="pk-kind">🏢 عقد شركات</span>
             <h3>باقة العقد الشهري للشركات</h3>
@@ -901,7 +903,7 @@ el.className='go';setTimeout(function(){el.remove();document.dispatchEvent(new E
       <article class="pk pkg-card rv-in" style="--d:.16s">
         <span class="pk-badge">وفّر 251 ريال</span>
         <div class="pk-in">
-          <div class="pk-img"><img src="/images/hero/hero-tank.webp" alt="باقة ما بعد التشطيب والخزانات" loading="lazy"></div>
+          <div class="pk-img"><img src="/images/hero/hero-tank.webp" alt="باقة ما بعد التشطيب والخزانات" loading="lazy" width="1000" height="618"></div>
           <div class="pk-body">
             <span class="pk-kind">💧 ما بعد التشطيب</span>
             <h3>باقة ما بعد التشطيب والخزانات</h3>
@@ -971,19 +973,19 @@ el.className='go';setTimeout(function(){el.remove();document.dispatchEvent(new E
     <div class="rv-row" id="rvRow">
       <article class="rv"><div class="st">★★★★★</div><p>حدث عطل في أحد الأجهزة لدي بسبب العمال، وبمجرد تواصلت مع الإدارة كان التعامل في قمة الاحترافية والرقي والتقدير للعميل، حيث تكفلت الشركة بكامل مصاريف إصلاح الجهاز. تجربة ممتازة وتدل على أمانتهم، وأنصح بالتعامل مع شركة نقاء بشدة.</p><div class="who"><div class="av">م</div><div><b>محمد معيوف الدوسري</b><span>تقييم على خرائط جوجل</span></div></div></article>
       <article class="rv"><div class="st">★★★★★</div><p>يعطيهم العافية، شغلهم ممتاز ونظافتهم تفرق، وتعاملهم راقي ومحترم جداً. أنصح فيهم لتنظيف المنازل والفلل.</p><div class="who"><div class="av">H</div><div><b>Mr.Hossam</b><span>تنظيف منازل وفلل</span></div></div></article>
-      <article class="rv"><div class="st">★★★★★</div><p>شغلهم نظيف وسريعين بالتواصل واتقان بالعمل، هذي المرة الثانية أجربهم في تنظيف المنزل، وباعتمدهم إن شاء الله المؤسسة الأولى للتنظيف عندي.</p><div class="who"><div class="av"><img src="/images/testimonials/sultan.webp" alt="سلطان الخيري" loading="lazy" style="object-position:center 22%"></div><div><b>سلطان الخيري</b><span>تنظيف منازل وفلل</span></div></div></article>
+      <article class="rv"><div class="st">★★★★★</div><p>شغلهم نظيف وسريعين بالتواصل واتقان بالعمل، هذي المرة الثانية أجربهم في تنظيف المنزل، وباعتمدهم إن شاء الله المؤسسة الأولى للتنظيف عندي.</p><div class="who"><div class="av"><img src="/images/testimonials/sultan.webp" alt="سلطان الخيري" loading="lazy" style="object-position:center 22%" width="192" height="190"></div><div><b>سلطان الخيري</b><span>تنظيف منازل وفلل</span></div></div></article>
       <article class="rv"><div class="st">★★★★★</div><p>تعاملت مع مؤسسة نقاء للتنظيف وكانت تجربتي ممتازة حقيقي؛ شغل مرتب والتزام بالمواعيد وأسعارهم مناسبة. جربتهم في تنظيف المنزل وأنصح فيهم 👍</p><div class="who"><div class="av">A</div><div><b>Ahmed Ashour</b><span>تنظيف منزل</span></div></div></article>
-      <article class="rv"><div class="st">★★★★★</div><p>أفضل شركة تنظيف منازل بالرياض، يستاهلون والله. تم تنظيف المجلس عندي وشغلهم جداً ممتاز.</p><div class="who"><div class="av"><img src="/images/testimonials/abdullatif.webp" alt="عبداللطيف الاجهر" loading="lazy" style="object-position:center 18%"></div><div><b>عبداللطيف الاجهر</b><span>تنظيف مجالس وكنب</span></div></div></article>
-      <article class="rv"><div class="st">★★★★★</div><p>ماشاء الله شغل نظيف وتعقيم للفيلا بشكل احترافي جداً، ألف شكر للعاملين اللي اشتغلوا بالتنظيف.</p><div class="who"><div class="av"><img src="/images/testimonials/taghreed.webp" alt="تغريد العجاجي" loading="lazy" style="object-position:center 20%"></div><div><b>تغريد العجاجي</b><span>تنظيف منازل وفلل</span></div></div></article>
+      <article class="rv"><div class="st">★★★★★</div><p>أفضل شركة تنظيف منازل بالرياض، يستاهلون والله. تم تنظيف المجلس عندي وشغلهم جداً ممتاز.</p><div class="who"><div class="av"><img src="/images/testimonials/abdullatif.webp" alt="عبداللطيف الاجهر" loading="lazy" style="object-position:center 18%" width="108" height="192"></div><div><b>عبداللطيف الاجهر</b><span>تنظيف مجالس وكنب</span></div></div></article>
+      <article class="rv"><div class="st">★★★★★</div><p>ماشاء الله شغل نظيف وتعقيم للفيلا بشكل احترافي جداً، ألف شكر للعاملين اللي اشتغلوا بالتنظيف.</p><div class="who"><div class="av"><img src="/images/testimonials/taghreed.webp" alt="تغريد العجاجي" loading="lazy" style="object-position:center 20%" width="144" height="192"></div><div><b>تغريد العجاجي</b><span>تنظيف منازل وفلل</span></div></div></article>
       <article class="rv"><div class="st">★★★★<span class="off">★</span></div><p>صحيح وصلوا متأخرين نص ساعة عن الموعد، لكن الصراحة شغل يبرد الخاطر وشيء يبيض الوجه. المشرف متواجد طول فترة التنظيف وحريص على أدق التفاصيل.. مشكورين ويعطيكم ألف عافية.</p><div class="who"><div class="av">M</div><div><b>Mohamed Ali</b><span>تقييم على خرائط جوجل</span></div></div></article>
-      <article class="rv"><div class="st">★★★★★</div><p>تم تنظيف وعزل الخزان عندي، شغلهم ممتاز يستاهلون. أنصح بالتعامل معهم في تنظيف الخزانات وعزلها.</p><div class="who"><div class="av"><img src="/images/testimonials/abdullah.webp" alt="عبدالله الشمراني" loading="lazy" style="object-position:center 25%"></div><div><b>عبدالله الشمراني</b><span>تنظيف وعزل خزانات</span></div></div></article>
-      <article class="rv"><div class="st">★★★★★</div><p>ماشاء الله شغل ممتاز، ووجود المشرف أحمد هاشم وتوجيهاته للعمالة والاهتمام بأبسط الأمور يوضح مدى الاهتمام.</p><div class="who"><div class="av"><img src="/images/testimonials/hatem.webp" alt="حاتم الزهراني" loading="lazy" style="object-position:center 22%"></div><div><b>حاتم الزهراني</b><span>تنظيف شامل</span></div></div></article>
+      <article class="rv"><div class="st">★★★★★</div><p>تم تنظيف وعزل الخزان عندي، شغلهم ممتاز يستاهلون. أنصح بالتعامل معهم في تنظيف الخزانات وعزلها.</p><div class="who"><div class="av"><img src="/images/testimonials/abdullah.webp" alt="عبدالله الشمراني" loading="lazy" style="object-position:center 25%" width="108" height="192"></div><div><b>عبدالله الشمراني</b><span>تنظيف وعزل خزانات</span></div></div></article>
+      <article class="rv"><div class="st">★★★★★</div><p>ماشاء الله شغل ممتاز، ووجود المشرف أحمد هاشم وتوجيهاته للعمالة والاهتمام بأبسط الأمور يوضح مدى الاهتمام.</p><div class="who"><div class="av"><img src="/images/testimonials/hatem.webp" alt="حاتم الزهراني" loading="lazy" style="object-position:center 22%" width="117" height="192"></div><div><b>حاتم الزهراني</b><span>تنظيف شامل</span></div></div></article>
     </div>
     <div class="rv-ctrl"><button id="rvPrev" aria-label="السابق">→</button><button id="rvNext" aria-label="التالي">←</button></div>
   </div>
 </section>
 
-<div class="ha-strip" aria-hidden="true" data-ha3><div class="tr"><span>4.7★ جوجل</span><span>✦</span><span>+2,500 عميل</span><span>✦</span><span>15 سنة خبرة</span><span>✦</span><span>4.7★ جوجل</span><span>✦</span><span>+2,500 عميل</span><span>✦</span><span>15 سنة خبرة</span><span>✦</span><span>4.7★ جوجل</span><span>✦</span><span>+2,500 عميل</span><span>✦</span><span>15 سنة خبرة</span><span>✦</span><span>4.7★ جوجل</span><span>✦</span><span>+2,500 عميل</span><span>✦</span><span>15 سنة خبرة</span><span>✦</span></div></div>
+<div class="ha-strip" aria-hidden="true" data-ha3><div class="tr"><span>4.7★ جوجل</span><span>✦</span><span>+2,700 عميل</span><span>✦</span><span>15 سنة خبرة</span><span>✦</span><span>4.7★ جوجل</span><span>✦</span><span>+2,700 عميل</span><span>✦</span><span>15 سنة خبرة</span><span>✦</span><span>4.7★ جوجل</span><span>✦</span><span>+2,700 عميل</span><span>✦</span><span>15 سنة خبرة</span><span>✦</span><span>4.7★ جوجل</span><span>✦</span><span>+2,700 عميل</span><span>✦</span><span>15 سنة خبرة</span><span>✦</span></div></div>
 <!-- FAQ -->
 <section class="sec faq">
   <div class="wrap">

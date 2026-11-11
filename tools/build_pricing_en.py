@@ -20,9 +20,9 @@ BASE = 'https://www.naqaa-cleaning.com'
 AR_URL, EN_URL = '/pricing/', '/en/pricing/'
 AR = re.compile(r'[؀-ۿ]')
 
-TITLE = 'Cleaning Prices in Riyadh: Instant Price Calculator | Naqaa Cleaning'
-DESC = ('Get an instant price for home, villa, water tank, majlis, AC, pest control and office cleaning in Riyadh, '
-        'then book in a minute. Apartments from 200 SAR, tanks from 200 SAR. Price confirmed before work starts.')
+TITLE = 'Cleaning Prices in Riyadh: Price Calculator | Naqaa Cleaning'
+DESC = ('Instant prices for home, villa, water tank, majlis, AC and pest control cleaning in Riyadh. '
+        'Apartments from 200 SAR. Book in a minute.')
 
 
 def read(rel):
@@ -124,7 +124,8 @@ def build():
     ra, rb = region(ref, '<header id="nq-hdr">', '\n', include_end=False)
     rb = ref.index('\n', ref.index('</nav><div id="navbar"', ra)) + 1
     en_header = ref[ra:rb]
-    en_header = re.sub(r'href="/services/"( class="nq-pill" hreflang="ar")', r'href="/pricing/"\1', en_header)
+    # every "Arabic version" link (header pill and mobile menu) must point at the Arabic calculator
+    en_header = re.sub(r'href="/services/"((?: class="[^"]*")? hreflang="ar")', r'href="/pricing/"\1', en_header)
     # keep the hidden placeholder elements the page's older scripts expect
     old_header = t[a:b]
     for pid in re.findall(r'<div id="([^"]+)" hidden></div>', old_header):
@@ -143,9 +144,11 @@ def build():
     a, b = region(t, '<footer id="nq-footer">', '</footer>')
     ra, rb = region(ref, '<footer id="nq-footer">', '</footer>')
     t = t[:a] + ref[ra:rb] + t[b:]
+    t = t.replace('<a href="/services/" hreflang="ar" lang="ar">', '<a href="/pricing/" hreflang="ar" lang="ar">')  # Arabic link in copied blocks -> Arabic calculator
     a, b = region(t, '<div id="nq-fbar"', '</div>')
     ra, rb = region(ref, '<div id="nq-fbar"', '</div>')
     t = t[:a] + ref[ra:rb] + t[b:]
+    t = t.replace('<a href="/services/" hreflang="ar" lang="ar">', '<a href="/pricing/" hreflang="ar" lang="ar">')  # Arabic link in copied blocks -> Arabic calculator
 
     # ---------------- calculator script ----------------
     a = t.index('<script>window.NQ_BOOKING')
