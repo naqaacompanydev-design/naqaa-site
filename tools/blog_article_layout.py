@@ -28,6 +28,23 @@ ICON_CALC = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-w
 ICON_WA = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.78h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88z"/></svg>'
 
 EMOJI = re.compile(r'^[\s☀-➿\U0001F000-\U0001FAFF️‍]+')
+COMMENT = re.compile(r'<!--.*?-->', re.S)
+HIDDEN = re.compile(r'\x00(\d+)\x00')
+
+
+def hide_comments(s):
+    """Swap HTML comments for placeholders so tag scans never match markup inside a comment
+    (the article template's instructions comment contains example tags such as <h2>)."""
+    store = []
+
+    def keep(m):
+        store.append(m.group(0))
+        return f'\x00{len(store) - 1}\x00'
+    return COMMENT.sub(keep, s), store
+
+
+def show_comments(s, store):
+    return HIDDEN.sub(lambda m: store[int(m.group(1))], s)
 
 
 def minutes_label(m):
@@ -36,7 +53,8 @@ def minutes_label(m):
 
 
 def text_of(fragment):
-    t = re.sub(r'<(script|style)[^>]*>.*?</\1>', ' ', fragment, flags=re.S)
+    t = HIDDEN.sub(' ', COMMENT.sub(' ', fragment))
+    t = re.sub(r'<(script|style)[^>]*>.*?</\1>', ' ', t, flags=re.S)
     return H.unescape(re.sub(r'<[^>]+>', ' ', t))
 
 
@@ -77,7 +95,7 @@ def convert(path):
     main_m = re.search(r'<main class="article-body">(.*?)</main>', t, re.S)
     if not main_m:
         return 'FAIL: no main'
-    main = main_m.group(1)
+    main, comments = hide_comments(main_m.group(1))
     cta_at = main.find('<div class="cta-section')
     body_for_count = main[:cta_at] if cta_at > 0 else main
     words = len(text_of(body_for_count).split())
@@ -130,7 +148,7 @@ def convert(path):
     pos = h2s[2] if len(h2s) > 2 else (h2s[-1] if h2s else len(main))
     main = main[:pos] + book + main[pos:]
 
-    t = t.replace(main_m.group(1), main, 1)
+    t = t.replace(main_m.group(1), show_comments(main, comments), 1)
 
     # ---- header band + cover ----
     cat_html = f'<span class="art-cat">{cat}</span>\n' if cat else ''
@@ -259,11 +277,11 @@ def convert_legacy(path, raw, nl, t):
                   '<div class="art-layout page-wrapper">\n<main>', 1)
 
     main_m = re.search(r'<main>(.*?)</main>', t, re.S)
-    main = main_m.group(1)
+    main, comments = hide_comments(main_m.group(1))
     minutes = max(1, round(len(text_of(main).split()) / WPM))
     main, toc_inline, toc_side = add_toc(main)
     main = toc_inline + insert_before_nth_h2(main, booking_card(text_of(title).strip()))
-    t = t.replace(main_m.group(0), '<main class="article-body">' + main + '</main>', 1)
+    t = t.replace(main_m.group(0), '<main class="article-body">' + show_comments(main, comments) + '</main>', 1)
 
     band = ('<header class="art-head"><div class="art-head-in">\n' + bc + '\n'
             + (f'<span class="art-cat">{H.escape(cat)}</span>\n' if cat else '')

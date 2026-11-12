@@ -87,7 +87,8 @@ def webp_page_images(page, t):
 
 # ---------------------------------------------------------------- FAQ structured data
 def faq_jsonld(t):
-    qa = re.findall(r'<div class="faq-q">(.*?)</div>\s*<div class="faq-a">(.*?)</div>', t, re.S)
+    qa = re.findall(r'<div class="faq-q">(.*?)</div>\s*<div class="faq-a">(.*?)</div>',
+                    blog_article_layout.COMMENT.sub('', t), re.S)  # not the examples inside comments
     t = re.sub(r'[ \t]*<script type="application/ld\+json">\s*\{"@context": ?"https://schema.org", ?"@type": ?"FAQPage".*?</script>\n?', '', t, flags=re.S)
     if not qa:
         return t
@@ -141,7 +142,7 @@ def prepare(articles):
         if '{{' in t:
             problems.append(f'{url}: template placeholders left: {sorted(set(re.findall(r"{{[A-Z_]+}}", t)))}')
         main = re.search(r'<main class="article-body">(.*?)</main>', t, re.S)
-        if main and 'TODO' in re.sub(r'<!--.*?-->', '', main.group(1), flags=re.S):  # ignore the template's instructions comment
+        if main and 'TODO' in blog_article_layout.COMMENT.sub('', main.group(1)):  # ignore the template's instructions comment
             problems.append(f'{url}: the article still has TODO text, write the content first')
     if problems:
         fail('articles.json / article pages need fixing', problems)
@@ -202,7 +203,7 @@ def finish(articles, today=None):
     for a in articles:
         p = page_path(a['url'])
         t, _ = read(p)
-        if len(re.findall(r'<h1[\s>]', t)) != 1:
+        if len(re.findall(r'<h1[\s>]', blog_article_layout.COMMENT.sub('', t))) != 1:
             problems.append(f'{a["url"]}: needs exactly one <h1>')
         if 'nq-art' not in t:
             problems.append(f'{a["url"]}: not in the new article layout')
