@@ -46,6 +46,10 @@ edit the source and re-run the script, never hand-edit the generated output.
      the `anthropic-skills:humanizer` skill on the article text, then the `anthropic-skills:remove-ai-marks`
      skill on the article (text and images). Only then build, open the PR and publish. After the
      humanizer pass, re-check the keyword counts the owner asked for (it can drop or add occurrences).
+     remove-ai-marks needs its separate cleaning service (`WATERMARKS_SERVICE_URL`, default
+     `http://127.0.0.1:8765`). If that service is not reachable, the owner said to publish anyway
+     without asking: still run the humanizer, check the article for invisible Unicode characters and
+     the images for EXIF/XMP/C2PA metadata, and mention in the report that remove-ai-marks did not run.
 
 3. **Build** (from the repo root):
 
