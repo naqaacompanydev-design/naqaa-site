@@ -42,6 +42,10 @@ edit the source and re-run the script, never hand-edit the generated output.
      statistics, reviews or discounts. Current offers: only the contract discounts and the mosque
      discount that already exist on the site.
    - Extra images go in the article folder; reference them relatively (`<img src="name.jpg" alt="...">`).
+   - **Owner's rule (every article):** after writing the content and before building/publishing, run
+     the `anthropic-skills:humanizer` skill on the article text, then the `anthropic-skills:remove-ai-marks`
+     skill on the article (text and images). Only then build, open the PR and publish. After the
+     humanizer pass, re-check the keyword counts the owner asked for (it can drop or add occurrences).
 
 3. **Build** (from the repo root):
 
